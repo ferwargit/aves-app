@@ -1,23 +1,15 @@
 # aves-app
 
-## 1) Para hacer correr este programa es necesario tener instalado pipenv
-
-En MAC
-$ brew install pipenv
-
-En Ubuntu 17.10
-$ sudo apt install software-properties-common python-software-properties
-$ sudo add-apt-repository ppa:pypa/ppa
-$ sudo apt update
-$ sudo apt install pipenv
+## 1) Para levantar la webapp localmente crear un entorno virtual (usamos venv pero puede ser cualquiera)
 
 En WINDOWS
-$ pip install pipenv
+$ python -m venv venv
+$ .\venv\Scripts\activate
 
-## 2) Si ya fue instalado, hay que crear el entorno virtual(idealmente dentro del directorio del programa):
+## 2) Instalar las dependencias necesarias del requirements
 
-$ pipenv install
+$ pip -r requirements.txt
 
-## 3) Con el entorno virtual creado, ejecutamos
+## 3) Con el entorno virtual creado, ya levantamos el servidor
 
-$ pipenv run python app.py
+$ python manage.py runserver
