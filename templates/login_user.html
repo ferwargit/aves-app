@@ -1,0 +1,7 @@
+<h1>Login cuenta</h1>
+
+<form action="/home/" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Crear</button>
+</form>
