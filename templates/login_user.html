@@ -1,7 +1,7 @@
 <h1>Login cuenta</h1>
 
-<form action="/home/" method="POST">
+<form action="/login_user/" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button>Crear</button>
+    <button type="submit">Login</button>
 </form>

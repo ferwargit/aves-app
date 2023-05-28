@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required
-def ir_home(request):
+def home(request):
     return render(request, 'home.html')
 
 def crear_cuenta(request):
@@ -38,7 +38,7 @@ def login_user(request):
             print(user)
             login(request, user=user)
             print("login exitoso!!")
-            return redirect('home.html')
+            return redirect('home')
         else:
             print(user)
             return HttpResponse("Usuario inexistente")
