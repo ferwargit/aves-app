@@ -15,3 +15,8 @@ En WINDOWS
 ### 3) Con el entorno virtual creado, levantamos el servidor
 
 > $ python manage.py runserver
+
+#### Ejecutar migraciones de la app
+> python manage.py makemigrations
+> python manage.py migrate
+> python manage.py loaddata province.json
