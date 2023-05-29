@@ -20,3 +20,5 @@ En WINDOWS
 > python manage.py makemigrations
 > python manage.py migrate
 > python manage.py loaddata province.json
+
+# Prueba test3
