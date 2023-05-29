@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login
-from .models import User
+from .models import User, Province
 from .forms import CustomUserCreationForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
 
@@ -22,7 +22,10 @@ def crear_cuenta(request):
             user = User.objects.create_user(
                 username=request.POST['username'],
                 password=request.POST['password1'],
+                email= request.POST['email'],
+                province = Province.objects.get(id=request.POST['province'])
             )
+            print(user)
     return HttpResponse("Cuenta creada con exito!!")
 
 def login_user(request):

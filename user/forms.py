@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import User, Province
 
 class UserLoginForm(forms.Form):
     username = forms.CharField(
@@ -58,6 +58,7 @@ class CustomUserCreationForm(forms.Form):
     )
 
     password2 = forms.CharField(
+        label='Confirmar password',
         widget=forms.PasswordInput(
             attrs={
                 'id': 'password2',
@@ -68,6 +69,8 @@ class CustomUserCreationForm(forms.Form):
     )
 
     image = forms.ImageField(required=False)
+
+    province = forms.ModelChoiceField(queryset=Province.objects.all())
 
 # class CustomUserChangeForm(UserChangeForm):
     
