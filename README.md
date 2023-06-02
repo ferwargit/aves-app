@@ -31,6 +31,7 @@ Crear superusuario para el manejo del Admin
 Levantar la webapp
 
 > $ python manage.py runserver
+<<<<<<< Updated upstream
 
 Ejecutar migraciones de la app
 
@@ -45,3 +46,5 @@ Crear json con datos para cargar en tablas
 Cargar datos a tabla province desde json
 
 > $ python manage.py loaddata province.json
+=======
+>>>>>>> Stashed changes
