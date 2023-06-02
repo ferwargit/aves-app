@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser, UserManager, PermissionsMix
 class Province(models.Model):
     name = models.CharField(max_length=20)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
     
 class User(AbstractUser):
