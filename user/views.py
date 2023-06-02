@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import User, Province
 from .forms import CustomUserCreationForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
@@ -9,6 +9,9 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def home(request):
     return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 def crear_cuenta(request):
     if request.method == 'GET':
@@ -45,3 +48,7 @@ def login_user(request):
         else:
             print(user)
             return HttpResponse("Usuario inexistente")
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
