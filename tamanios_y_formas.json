@@ -1,0 +1,170 @@
+[
+{
+  "model": "appves.tamanioforma",
+  "pk": 1,
+  "fields": {
+    "tamanio": "Muy chico < 10 cm"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 2,
+  "fields": {
+    "tamanio": "Chico 11 a 25 cm"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 3,
+  "fields": {
+    "tamanio": "Mediano 26 a 50 cm"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 4,
+  "fields": {
+    "tamanio": "Grande 51 a 75 cm"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 5,
+  "fields": {
+    "tamanio": "Muy grande > de 75 cm"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 6,
+  "fields": {
+    "tamanio": "Pico mediano"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 7,
+  "fields": {
+    "tamanio": "Patas largas"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 8,
+  "fields": {
+    "tamanio": "Cuello largo"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 9,
+  "fields": {
+    "tamanio": "No vuela"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 10,
+  "fields": {
+    "tamanio": "Cola corta"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 11,
+  "fields": {
+    "tamanio": "Sin cola"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 12,
+  "fields": {
+    "tamanio": "Alas largas y anchas"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 13,
+  "fields": {
+    "tamanio": "Otro"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 14,
+  "fields": {
+    "tamanio": "Pico largo"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 15,
+  "fields": {
+    "tamanio": "Alas en punta"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 16,
+  "fields": {
+    "tamanio": "Estirado"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 17,
+  "fields": {
+    "tamanio": "Patas medianas"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 18,
+  "fields": {
+    "tamanio": "Cuello corto"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 19,
+  "fields": {
+    "tamanio": "Cresta"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 20,
+  "fields": {
+    "tamanio": "en S"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 21,
+  "fields": {
+    "tamanio": "Capuchón"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 22,
+  "fields": {
+    "tamanio": "Patas cortas"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 23,
+  "fields": {
+    "tamanio": "Cortas y redondeadas"
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 24,
+  "fields": {
+    "tamanio": "Pico corto"
+  }
+}
+]
