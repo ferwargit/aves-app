@@ -14,11 +14,11 @@ En Windows
 
 - Instalacion desde cero
 
-> $ pip -r requirements.txt
+> $ pip install -r requirements.txt
 
 - Actualizar en el venv existente
 
-> $ pip -r requirements.txt -I
+> $ pip install -r requirements.txt -I
 
 ---
 
@@ -31,7 +31,6 @@ Crear superusuario para el manejo del Admin
 Levantar la webapp
 
 > $ python manage.py runserver
-<<<<<<< Updated upstream
 
 Ejecutar migraciones de la app
 
@@ -41,10 +40,8 @@ Ejecutar migraciones de la app
 
 Crear json con datos para cargar en tablas
 
-> $ python manage.py dumpdata [app].[class model] > [nombre archivo].json
+> $ python manage.py dumpdata --indent 2 [app].[class model] > [nombre archivo].json
 
 Cargar datos a tabla province desde json
 
 > $ python manage.py loaddata province.json
-=======
->>>>>>> Stashed changes

@@ -1,1 +1,107 @@
-[{"model": "appves.grupo", "pk": 1, "fields": {"grupo": "Lechuzas"}}, {"model": "appves.grupo", "pk": 2, "fields": {"grupo": "Albatros y petreles"}}, {"model": "appves.grupo", "pk": 3, "fields": {"grupo": "Cigüeñas"}}, {"model": "appves.grupo", "pk": 4, "fields": {"grupo": "Cóndor y jotes"}}, {"model": "appves.grupo", "pk": 5, "fields": {"grupo": "Cormoranes"}}, {"model": "appves.grupo", "pk": 6, "fields": {"grupo": "Flamencos"}}, {"model": "appves.grupo", "pk": 7, "fields": {"grupo": "Garzas"}}, {"model": "appves.grupo", "pk": 8, "fields": {"grupo": "Gaviotas y gaviotines"}}, {"model": "appves.grupo", "pk": 9, "fields": {"grupo": "Ñandúes"}}, {"model": "appves.grupo", "pk": 10, "fields": {"grupo": "Caranchos, chimangos y halcones"}}, {"model": "appves.grupo", "pk": 11, "fields": {"grupo": "Pingüinos"}}, {"model": "appves.grupo", "pk": 12, "fields": {"grupo": "Palomas"}}, {"model": "appves.grupo", "pk": 13, "fields": {"grupo": "Espátula y cuervillos"}}, {"model": "appves.grupo", "pk": 14, "fields": {"grupo": "Patos"}}, {"model": "appves.grupo", "pk": 15, "fields": {"grupo": "Carpinteros"}}]
+[
+{
+  "model": "appves.grupo",
+  "pk": 1,
+  "fields": {
+    "grupo": "Lechuzas"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 2,
+  "fields": {
+    "grupo": "Albatros y petreles"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 3,
+  "fields": {
+    "grupo": "Cigüeñas"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 4,
+  "fields": {
+    "grupo": "Cóndor y jotes"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 5,
+  "fields": {
+    "grupo": "Cormoranes"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 6,
+  "fields": {
+    "grupo": "Flamencos"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 7,
+  "fields": {
+    "grupo": "Garzas"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 8,
+  "fields": {
+    "grupo": "Gaviotas y gaviotines"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 9,
+  "fields": {
+    "grupo": "Ñandúes"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 10,
+  "fields": {
+    "grupo": "Caranchos, chimangos y halcones"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 11,
+  "fields": {
+    "grupo": "Pingüinos"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 12,
+  "fields": {
+    "grupo": "Palomas"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 13,
+  "fields": {
+    "grupo": "Espátula y cuervillos"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 14,
+  "fields": {
+    "grupo": "Patos"
+  }
+},
+{
+  "model": "appves.grupo",
+  "pk": 15,
+  "fields": {
+    "grupo": "Carpinteros"
+  }
+}
+]

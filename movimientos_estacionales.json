@@ -1,1 +1,23 @@
-[{"model": "appves.movimientoestacion", "pk": 1, "fields": {"temporada": "Primavera - Verano"}}, {"model": "appves.movimientoestacion", "pk": 2, "fields": {"temporada": "Otoño - Invierno"}}, {"model": "appves.movimientoestacion", "pk": 3, "fields": {"temporada": "Sedentario"}}]
+[
+{
+  "model": "appves.movimientoestacion",
+  "pk": 1,
+  "fields": {
+    "temporada": "Primavera - Verano"
+  }
+},
+{
+  "model": "appves.movimientoestacion",
+  "pk": 2,
+  "fields": {
+    "temporada": "Otoño - Invierno"
+  }
+},
+{
+  "model": "appves.movimientoestacion",
+  "pk": 3,
+  "fields": {
+    "temporada": "Sedentario"
+  }
+}
+]

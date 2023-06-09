@@ -1,1 +1,51 @@
-[{"model": "appves.plumaje", "pk": 1, "fields": {"plumaje": "Aperdizado"}}, {"model": "appves.plumaje", "pk": 2, "fields": {"plumaje": "Barreado"}}, {"model": "appves.plumaje", "pk": 3, "fields": {"plumaje": "Manchado"}}, {"model": "appves.plumaje", "pk": 4, "fields": {"plumaje": "Estriado"}}, {"model": "appves.plumaje", "pk": 5, "fields": {"plumaje": "Bandas alares"}}, {"model": "appves.plumaje", "pk": 6, "fields": {"plumaje": "Bandas caudales"}}, {"model": "appves.plumaje", "pk": 7, "fields": {"plumaje": "Uniforme"}}]
+[
+{
+  "model": "appves.plumaje",
+  "pk": 1,
+  "fields": {
+    "plumaje": "Aperdizado"
+  }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 2,
+  "fields": {
+    "plumaje": "Barreado"
+  }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 3,
+  "fields": {
+    "plumaje": "Manchado"
+  }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 4,
+  "fields": {
+    "plumaje": "Estriado"
+  }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 5,
+  "fields": {
+    "plumaje": "Bandas alares"
+  }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 6,
+  "fields": {
+    "plumaje": "Bandas caudales"
+  }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 7,
+  "fields": {
+    "plumaje": "Uniforme"
+  }
+}
+]
