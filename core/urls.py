@@ -21,6 +21,11 @@ from user import views
 # Se agrega para que se pueda ver el contenido de la carpeta static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+# Para poder ver las imagenes en el navegador
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home, name='home'),
@@ -32,3 +37,7 @@ urlpatterns = [
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
 urlpatterns += staticfiles_urlpatterns()
+
+# Configuracion para poder ver las imagenes en el navegador
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

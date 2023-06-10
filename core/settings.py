@@ -135,3 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.User'
 
 LOGIN_URL = '/login_user'
+
+
+# Archivos multimedia
+# Esto configura la ruta y la carpeta donde se almacenarán los archivos multimedia.
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
