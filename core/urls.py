@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from user import views
 
+# Se agrega para que se pueda ver el contenido de la carpeta static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home, name='home'),
@@ -26,3 +29,6 @@ urlpatterns = [
     path('login_user/', views.login_user, name='login'),
     path('logout_user/', views.logout_user, name='logout')
 ]
+
+# Se agrega para que se pueda ver el contenido de la carpeta static
+urlpatterns += staticfiles_urlpatterns()
