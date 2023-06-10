@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
 # Create your models here.
 class Family(models.Model):
@@ -55,6 +56,7 @@ class Bird(models.Model):
     nombre_ingles = models.CharField(max_length=100)
     familia = models.ForeignKey(Family, on_delete=models.SET_NULL, null=True) # campo q se puede agrupar
     descripcion = models.TextField(max_length=1000)
+    imagen = models.ImageField(upload_to='bird_images/', default='bird_images/default.jpg', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png', 'gif'])])
     tamanio = models.ForeignKey(TamanioForma, on_delete=models.SET_NULL, null=True, related_name='tamanio_ave')
     habitat = models.ForeignKey(Habitat, on_delete=models.SET_NULL, null=True)
     voz = models.CharField(max_length=50) # puede llegar a ser sonido
