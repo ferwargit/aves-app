@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from user import views
 
+# Para poder ver las imagenes en el navegador
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home, name='home'),
@@ -26,3 +30,7 @@ urlpatterns = [
     path('login_user/', views.login_user, name='login'),
     path('logout_user/', views.logout_user, name='logout')
 ]
+
+# Configuracion para poder ver las imagenes en el navegador
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
