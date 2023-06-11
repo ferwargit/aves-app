@@ -45,3 +45,7 @@ Crear json con datos para cargar en tablas
 Cargar datos a tabla province desde json
 
 > $ python manage.py loaddata province.json
+
+# Carga de todos los DATOS de todos los json JUNTOS hasta el momento (10-06-23)
+
+py manage.py loaddata_ascii appves/fixtures/grupos.json appves/fixtures/habitat.json appves/fixtures/movimientos_estacionales.json appves/fixtures/tamanios_y_formas.json appves/fixtures/familias.json appves/fixtures/plumajes.json appves/fixtures/birds.json user/fixtures/province.json
