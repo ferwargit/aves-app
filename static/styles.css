@@ -1,0 +1,24 @@
+body {
+  font-family: 'Nunito', sans-serif !important;
+  background-color: #E2E1CD !important;
+}
+
+p {
+  text-align: justify;
+}
+
+.navbar-custom-color {
+  /* background-color: #6D732C !important; */
+  background-color: #3C644C !important;
+}
+
+.navbar-custom-text-color .navbar-nav .nav-link {
+  color: #E2E1CD !important; /* Color Fuente */
+}
+
+.navbar-custom-text-color .navbar-nav .nav-link:hover {
+  color: #A3AC44 !important; /* Color Fuente */
+}
+.container {
+  padding: 20px;
+}

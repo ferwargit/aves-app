@@ -32,7 +32,9 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('create_user/', views.crear_cuenta, name='create_user'),
     path('login_user/', views.login_user, name='login'),
-    path('logout_user/', views.logout_user, name='logout')
+    path('logout_user/', views.logout_user, name='logout'),
+    path('logeado/', views.logeado, name='logeado'),
+    
 ]
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
