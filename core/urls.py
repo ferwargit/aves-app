@@ -25,6 +25,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
 
+from appves.views import ListarBirds, CrearAve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +33,10 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('create_user/', views.crear_cuenta, name='create_user'),
     path('login_user/', views.login_user, name='login'),
-    path('logout_user/', views.logout_user, name='logout')
+    path('logout_user/', views.logout_user, name='logout'),
+
+    path('listar/', ListarBirds.as_view(), name='list_birds'),
+    path('crear/', CrearAve.as_view(), name='create_bird')
 ]
 
 # Se agrega para que se pueda ver el contenido de la carpeta static

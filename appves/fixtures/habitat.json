@@ -10,21 +10,21 @@
   "model": "appves.habitat",
   "pk": 2,
   "fields": {
-    "habitat": "Antártida e islas del sur"
+    "habitat": "AntÃ¡rtida e islas del sur"
   }
 },
 {
   "model": "appves.habitat",
   "pk": 3,
   "fields": {
-    "habitat": "Bosque de tipo chaqueño"
+    "habitat": "Bosque de tipo chaqueÃ±o"
   }
 },
 {
   "model": "appves.habitat",
   "pk": 4,
   "fields": {
-    "habitat": "Bosques patagónicos"
+    "habitat": "Bosques patagÃ³nicos"
   }
 },
 {
@@ -94,7 +94,7 @@
   "model": "appves.habitat",
   "pk": 14,
   "fields": {
-    "habitat": "Sierras y montañas"
+    "habitat": "Sierras y montaÃ±as"
   }
 }
 ]

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Listar aves</h1>
+<ul>
+    {% for ave in object_list %}
+    <h3> {{ ave.nombre }} </h3>
+    <li> {{ ave.nombre_cientifico }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
