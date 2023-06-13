@@ -34,6 +34,7 @@ urlpatterns = [
     path('create_user/', views.crear_cuenta, name='create_user'),
     path('login_user/', views.login_user, name='login'),
     path('logout_user/', views.logout_user, name='logout'),
+    path('logeado/', views.logeado, name='logeado'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', CrearAve.as_view(), name='create_bird')

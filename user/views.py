@@ -6,7 +6,7 @@ from .forms import CustomUserCreationForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
+# @login_required
 def home(request):
     return render(request, 'home.html')
 
@@ -44,10 +44,13 @@ def login_user(request):
             print(user)
             login(request, user=user)
             print("login exitoso!!")
-            return redirect('home')
+            return redirect('logeado')
         else:
             print(user)
             return HttpResponse("Usuario inexistente")
+
+def logeado(request):
+    return render(request, 'logeado.html')
 
 def logout_user(request):
     logout(request)
