@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 from django.views.generic import View, ListView, CreateView
 from .models import Bird
 from .forms import BirdForm
@@ -9,6 +10,7 @@ class ListarBirds(ListView):
     model = Bird
     template_name = 'appves/listar_aves.html'
 
+#@login_required
 class CrearAve(CreateView):
     model = Bird
     form_class = BirdForm
