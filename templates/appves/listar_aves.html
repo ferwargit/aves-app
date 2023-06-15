@@ -1,17 +1,29 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<h1>Listar aves</h1>
-<ul>
-    {% for ave in object_list %}
-    <div class="card card-body">
-    <h3 style="color: aqua;"> {{ ave.nombre }} </h3>
-    <li> {{ ave.nombre_cientifico }} </li>
-    <li> {{ ave.descripcion }} </li>
-    
-    <img src="../media/{{ ave.imagen }}" height="150" width="200">
-    <button>Ver mas</button>
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appves/listar_aves.css' %}">
+{% endblock %}
+
+<h1>Lista de Aves de la República Argentina</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for ave in aves %}
+    <div class="col">
+        <div class="card h-100 card-hover">
+            <img src="../media/{{ ave.imagen }}" class="card-img-top img-fluid">
+            <div class="card-body">
+                <h5 class="card-title">{{ ave.nombre }}</h5>
+                <div class="custom-center">
+                    <a href="{% url 'list_birds' %}" class="btn btn-success">Ver ficha</a>
+                </div>
+            </div>
+        </div>
     </div>
     {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
