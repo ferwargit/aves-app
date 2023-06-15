@@ -9,6 +9,8 @@ from .forms import BirdForm
 class ListarBirds(ListView):
     model = Bird
     template_name = 'appves/listar_aves.html'
+    # Se agrega el atributo context_object_name y se asígna un nombre descriptivo para el contexto de las aves
+    context_object_name = 'aves'
 
 #@login_required
 class CrearAve(CreateView):

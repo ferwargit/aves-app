@@ -1,6 +1,6 @@
 body {
-  font-family: 'Nunito', sans-serif !important;
-  background-color: #E2E1CD !important;
+  font-family: 'Nunito', sans-serif;
+  background-color: #E2E1CD;
 }
 
 p {
@@ -9,15 +9,16 @@ p {
 
 .navbar-custom-color {
   /* background-color: #6D732C !important; */
-  background-color: #3C644C !important;
+  background-color: #3C644C;
 }
 
 .navbar-custom-text-color .navbar-nav .nav-link {
-  color: #E2E1CD !important; /* Color Fuente */
+  /* color: #E2E1CD; */
+  color: white;
 }
 
 .navbar-custom-text-color .navbar-nav .nav-link:hover {
-  color: #A3AC44 !important; /* Color Fuente */
+  color: #A3AC44; /* Color Fuente */
 }
 .container {
   padding: 20px;

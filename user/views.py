@@ -15,7 +15,7 @@ def about(request):
 
 def crear_cuenta(request):
     if request.method == 'GET':
-        return render(request, 'add_user.html', {
+        return render(request, 'user/create_user.html', {
             'form': CustomUserCreationForm
         })
     else:
@@ -33,7 +33,7 @@ def crear_cuenta(request):
 
 def login_user(request):
     if request.method == 'GET':
-        return render(request, 'login_user.html', {
+        return render(request, 'user/login_user.html', {
             'form': UserLoginForm
         })
     else:
@@ -50,7 +50,7 @@ def login_user(request):
             return HttpResponse("Usuario inexistente")
 
 def logeado(request):
-    return render(request, 'logeado.html')
+    return render(request, 'user/logeado_user.html')
 
 def logout_user(request):
     logout(request)

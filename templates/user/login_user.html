@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user/login_user.css' %}">
+{% endblock %}
+<h1>Login</h1>
+
+<form action="/login_user/" method="POST">
+    {% csrf_token %}
+    {% comment %} {{ form.as_p }} {% endcomment %}
+    <label for="username">Username:</label>
+    <input type="text" class="form-control smaller-input" name="username" placeholder="">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control smaller-input" name="password" placeholder="">
+    <button class="btn btn-success mt-2" type="submit">Login</button>
+</form>
+{% endblock %}

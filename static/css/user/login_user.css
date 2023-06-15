@@ -1,0 +1,8 @@
+input {
+  margin-bottom: 16px;
+}
+
+.smaller-input {
+  width: 200px; /* Ajustar el ancho según las necesidades */
+}
+
