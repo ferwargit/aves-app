@@ -37,7 +37,14 @@ urlpatterns = [
     path('logeado/', views.logeado, name='logeado'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
-    path('crear/', CrearAve.as_view(), name='create_bird')
+    path('crear/', CrearAve.as_view(), name='create_bird'),
+    #se agregan templates Roget 16/6/23
+    path('biomas/', views.biomas, name='biomas'),
+    path('glosario/', views.glosario, name='glosario'),
+    path('lugares/', views.lugares, name='lugares'),
+    path('topografia/', views.topografia, name='topografia'),
+    path('familias/', views.familias, name='familias'),
+    path('quienes/', views.quienes, name='quienes')
 ]
 
 # Se agrega para que se pueda ver el contenido de la carpeta static

@@ -13,6 +13,24 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def biomas(request):
+    return render(request, 'biomas.html')
+
+def glosario(request):
+    return render(request, 'glosario.html')
+
+def lugares(request):
+    return render(request, 'lugares.html')
+
+def topografia(request):
+    return render(request, 'topografia.html')
+
+def familias(request):
+    return render(request, 'familias.html')
+
+def quienes(request):
+    return render(request, 'quienes.html')
+
 def crear_cuenta(request):
     if request.method == 'GET':
         return render(request, 'user/create_user.html', {

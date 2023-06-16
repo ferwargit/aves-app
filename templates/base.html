@@ -33,15 +33,30 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'list_birds' %}">Lista de Aves</a>
+            <a class="nav-link" href="{% url 'list_birds' %}">Fichas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'familias' %}">Familias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'biomas' %}">Ecorregiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'glosario' %}">Glosario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'topografia' %}">Topografía de las aves</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Guía de Aves de Argentina
+              FAQS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Especies</a></li>
-              <li><a class="dropdown-item" href="#">Conciencia Ambiental</a></li>
+              <li><a class="dropdown-item" href="{% url 'about' %}">Qué es Appves</a></li>
+              <li><a class="dropdown-item" href="{% url 'quienes' %}">Quiénes somos</a></li>
+              <li><a class="dropdown-item" href="#">Como usar la guía</a></li>
+              <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+              <li><a class="dropdown-item" href="{% url 'lugares' %}">Lugares para observar aves</a></li>
               {% comment %} <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li> {% endcomment %}
             </ul>
@@ -49,9 +64,6 @@
           {% comment %} <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li> {% endcomment %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">Info Appves</a>
-          </li>
         </ul>
         <form class="d-flex" role="search">
           {% if user.is_authenticated %}
