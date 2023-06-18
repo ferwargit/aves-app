@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from appves import views as appves
 from user import views
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
@@ -29,8 +30,8 @@ from appves.views import ListarBirds, CrearAve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.home, name='home'),
-    path('about/', views.about, name='about'),
+    path('home/', appves.home, name='home'),
+    path('about/', appves.about, name='about'),
     path('create_user/', views.crear_cuenta, name='create_user'),
     path('login_user/', views.login_user, name='login'),
     path('logout_user/', views.logout_user, name='logout'),
@@ -39,11 +40,11 @@ urlpatterns = [
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', CrearAve.as_view(), name='create_bird'),
     #se agregan templates Roget 16/6/23
-    path('biomas/', views.biomas, name='biomas'),
-    path('glosario/', views.glosario, name='glosario'),
-    path('lugares/', views.lugares, name='lugares'),
-    path('topografia/', views.topografia, name='topografia'),
-    path('familias/', views.familias, name='familias'),
+    path('biomas/', appves.biomas, name='biomas'),
+    path('glosario/', appves.glosario, name='glosario'),
+    path('lugares/', appves.lugares, name='lugares'),
+    path('topografia/', appves.topografia, name='topografia'),
+    path('familias/', appves.familias, name='familias'),
     path('quienes/', views.quienes, name='quienes')
 ]
 

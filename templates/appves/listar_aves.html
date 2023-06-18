@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
-
+{% block title %}
+<title>Fichas de Aves</title>
+{% endblock %}
 {% load static %}
 
 {% block content %}
-
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/appves/listar_aves.css' %}">
 {% endblock %}
 
-<h1 style="text-align: center;">Fichas de Aves de la República Argentina</h1>
+<h1>Fichas de Aves de la República Argentina</h1>
 
 <div class="row row-cols-1 row-cols-md-4 g-4">
     {% for ave in aves %}

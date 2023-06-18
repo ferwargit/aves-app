@@ -18,3 +18,25 @@ class CrearAve(CreateView):
     form_class = BirdForm
     template_name = 'appves/crear_aves.html'
     success_url = reverse_lazy('home/')
+
+def biomas(request):
+    return render(request, 'appves/biomas.html')
+
+def glosario(request):
+    return render(request, 'appves/glosario.html')
+
+def lugares(request):
+    return render(request, 'appves/lugares.html')
+
+def topografia(request):
+    return render(request, 'appves/topografia.html')
+
+def familias(request):
+    return render(request, 'appves/familias.html')
+
+def about(request):
+    return render(request, 'appves/about.html')
+
+def home(request):
+    return render(request, 'appves/home.html')
+

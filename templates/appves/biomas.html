@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    <title>Ecorregiones</title>
+{% endblock %}
+
+{% load static %}
+
+
+
 {% block content %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/appves/biomas.css' %}">
+{% endblock %}
 
 <h1>Ecorregiones</h1>
 
@@ -8,7 +20,7 @@
 
 <p>Argentina cuenta con 18 ecorregiones lo cual nos posiciona como uno de los países mas rícos en biodiversidad.</p>
 
-<ul>
+<ul class="ul-block">
 <li>ALTOS ANDES</li>
 <li>ANTÁRTIDA</li>
 <li>BOSQUES PATAGÓNICOS</li>
@@ -18,6 +30,7 @@
 <li>DELTA E ISLAS DEL PARANÁ</li>
 <li>ESPINAL</li>
 <li>ESTEPA PATAGÓNICA</li>
+
 <li>ESTEROS DEL IBERÁ</li>
 <li>ISLAS DEL ATLÁNTICO SUR</li>
 <li>MAR ARGENTINO</li>
@@ -29,5 +42,6 @@
 <li>YUNGAS</li>
 </ul>
 
-<img src="https://www.argentina.gob.ar/sites/default/files/ecorregiones_-_argentina.jpg" alt="Ecorregiones_Argentina">
+
+<img class="center" src="https://www.argentina.gob.ar/sites/default/files/ecorregiones_-_argentina.jpg" alt="Ecorregiones_Argentina">
 {% endblock %}
