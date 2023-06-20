@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appves/listar_aves.css' %}">
+{% endblock %}
+
+<div class="container">
+    <h1 class="text-center"><strong>{{ ave.nombre }}</strong></h1>
+    <div class="card-body">
+        
+        <div class="custom-center">
+        <img src="../media/{{ ave.imagen }}">
+            <ul>
+                <li>{{ ave.nombre_cientifico }}</li>
+                <li>{{ ave.nombre_ingles }}</li>
+                <li>{{ ave.familia }}</li>
+                <li>{{ ave.familia }}</li>
+                <li>{{ ave.descripcion }}</li>
+            </ul>                    
+        </div>
+    </div>    
+</div>
+
+{% endblock %}

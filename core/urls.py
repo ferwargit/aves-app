@@ -27,7 +27,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.conf.urls.static import static
 
-from appves.views import ListarBirds, CrearAve, EditarAve, EliminarAve
+from appves.views import ListarBirds, CrearAve, EditarAve, EliminarAve, DetalleAve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -42,6 +42,7 @@ urlpatterns = [
     path('crear/', login_required(CrearAve.as_view()), name='create_bird'),
     path('editar/<int:pk>', login_required(EditarAve.as_view()), name='edit_bird'),
     path('eliminar/<int:pk>', login_required(EliminarAve.as_view()), name='delete_bird'),
+    path('detalle/<int:pk>', DetalleAve.as_view(), name='detail_birds'),
     
     #se agregan templates Roget 16/6/23
     path('biomas/', appves.biomas, name='biomas'),
