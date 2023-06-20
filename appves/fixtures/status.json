@@ -1,0 +1,23 @@
+[
+{
+  "model": "appves.status",
+  "pk": 1,
+  "fields": {
+    "status": "Pendiente"
+  }
+},
+{
+  "model": "appves.status",
+  "pk": 2,
+  "fields": {
+    "status": "Publicado"
+  }
+},
+{
+  "model": "appves.status",
+  "pk": 3,
+  "fields": {
+    "status": "No Publicado"
+  }
+}
+]
