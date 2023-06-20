@@ -5,7 +5,30 @@ from django.views.generic import View, ListView, CreateView, UpdateView, DeleteV
 from .models import Bird, Status
 from .forms import BirdForm
 
+
 # Create your views here.
+def biomas(request):
+    return render(request, 'appves/biomas.html')
+
+def glosario(request):
+    return render(request, 'appves/glosario.html')
+
+def lugares(request):
+    return render(request, 'appves/lugares.html')
+
+def topografia(request):
+    return render(request, 'appves/topografia.html')
+
+def familias(request):
+    return render(request, 'appves/familias.html')
+
+def about(request):
+    return render(request, 'appves/about.html')
+
+def home(request):
+    return render(request, 'appves/home.html')
+
+
 class ListarBirds(ListView):
     model = Bird
     template_name = 'appves/listar_aves.html'

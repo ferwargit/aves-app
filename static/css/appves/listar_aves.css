@@ -1,10 +1,7 @@
-/* body{
-  background-color: #CC4536;
-} */
-
-/* .card-body h3{
-  color: #CC4536;
-} */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .row-cols-1 {
   display: flex;

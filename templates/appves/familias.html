@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
+{% block title %}
+<title>Familias de Aves</title>
+{% endblock %}
+{% load static %}
 
 {% block content %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appves/familias.css' %}">
+{% endblock %}
 
 <h1>Familias de aves presentes en Argentina</h1>
 
-<ul>
+<ul class="ul-block">
     <li>Tinamidae</li>
     <li>Rheidae</li>
     <li>Cracidae</li>

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-
+{% block title %}
+<title>Usuario Logeado</title>
+{% endblock %}
 {% block content %}
 <h1>Bienvenido {{user.username}}</h1>
 <h2>En esta página puedes crear una ficha de ave</h2>

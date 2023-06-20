@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ul-block {
+  list-style: none;
+  padding: 0;
+  column-count: 5;
+  column-gap: 40px;
+}
