@@ -20,12 +20,13 @@ from user import views
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth.decorators import login_required
 
 # Para poder ver las imagenes en el navegador
 from django.conf import settings
 from django.conf.urls.static import static
 
-from appves.views import ListarBirds, CrearAve, EditarAve
+from appves.views import ListarBirds, CrearAve, EditarAve, EliminarAve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,8 +38,9 @@ urlpatterns = [
     path('logeado/', views.logeado, name='logeado'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
-    path('crear/', CrearAve.as_view(), name='create_bird'),
-    path('editar/<int:pk>', EditarAve.as_view(), name='edit_bird'),
+    path('crear/', login_required(CrearAve.as_view()), name='create_bird'),
+    path('editar/<int:pk>', login_required(EditarAve.as_view()), name='edit_bird'),
+    path('eliminar/<int:pk>', login_required(EliminarAve.as_view()), name='delete_bird'),
     
     #se agregan templates Roget 16/6/23
     path('biomas/', views.biomas, name='biomas'),

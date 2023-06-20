@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Confirmacion de eliminacion</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <p><strong>Seguro que desea eliminar el registro {{object}}?</strong></p>
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'list_birds' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

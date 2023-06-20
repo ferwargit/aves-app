@@ -50,6 +50,12 @@ class Grupo(models.Model):
     def __str__(self):
         return self.grupo
     
+class Status(models.Model):
+    status = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.status
+    
 class Bird(models.Model):
     nombre = models.CharField(max_length=100)
     nombre_cientifico = models.CharField(max_length=100)
@@ -74,6 +80,7 @@ class Bird(models.Model):
     patron_coloracion = models.ForeignKey(Plumaje, on_delete=models.SET_NULL, null=True)
     cabeza = models.ForeignKey(TamanioForma, on_delete=models.SET_NULL, null=True, related_name='cabeza')
     grupo = models.ForeignKey(Grupo, on_delete=models.SET_NULL, null=True)
+    status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f'{self.nombre} - {self.nombre_cientifico}'
