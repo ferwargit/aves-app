@@ -18,7 +18,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ ave.nombre }}</h5>
                 <div class="custom-center">
-                    <a href="{% url 'list_birds' %}" class="btn btn-success">Ver ficha</a>
+                    <a href="{% url 'detail_birds' ave.id %}" class="btn btn-success">Ver ficha</a>
                     {%if user.is_authenticated %}
                     <a href="{% url 'edit_bird' ave.id %}" class="btn btn-secondary">Editar</a>
                     <a href="{% url 'delete_bird' ave.id %}" class="btn btn-danger">Eliminar</a>

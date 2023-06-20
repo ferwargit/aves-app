@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Bird, Status
 from .forms import BirdForm
 
@@ -35,3 +35,8 @@ class EliminarAve(DeleteView):
         ave.status = Status.objects.get(id=3)
         ave.save()
         return redirect('list_birds')
+
+class DetalleAve(DetailView):
+    model = Bird
+    template_name = 'appves/detalle_ave.html'
+    context_object_name = 'ave'
