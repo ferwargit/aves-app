@@ -9,14 +9,3 @@ h1 {
   -webkit-background-clip: text;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-
-.ul-block {
-  list-style: none;
-  padding: 0;
-  column-count: 5;
-  column-gap: 40px;
-  column-rule: 2px solid #ccc;
-  color: darkslategrey;
-  font-size: 120%;
-  font-weight: bold;
-}

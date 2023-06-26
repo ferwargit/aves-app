@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
 <title>Quiénes somos?</title>
 {% endblock %}
 {% block content %}
-
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user/quienes.css' %}">
+{% endblock %}
 <h1>Quiénes somos</h1>
 
 <p>Somos un grupo de compañeros de la Tecnicatura en Análisis de Sistemas.</p>

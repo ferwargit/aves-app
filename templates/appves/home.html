@@ -2,7 +2,11 @@
 {% block title %}
 <title>Home</title>
 {% endblock %}
+{% load static %}
 
 {% block content %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appves/home.css' %}">
+{% endblock %}
 <h1>Appves</h1>
 {% endblock %}

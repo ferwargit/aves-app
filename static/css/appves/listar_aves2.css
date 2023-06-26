@@ -1,0 +1,62 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.row-cols-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row-cols-md-4 > .col {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.card {
+  background-color: darkseagreen;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add transition for a smooth animation */
+.card-hover {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-success {
+  background-color: #3C644C;
+  border-color: #3C644C;
+  margin-bottom: 10px;
+}
+
+.btn-secondary {
+  margin-right: 35px;
+  /* margin-bottom: 10px; */
+}
+
+.btn-danger {
+  margin-left: 30px;
+  /* margin-bottom: 10px; */
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.custom-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
