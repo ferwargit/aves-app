@@ -1,5 +1,5 @@
 h1 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   font-size: 50px;
   font-weight: 500;
@@ -8,15 +8,4 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.ul-block {
-  list-style: none;
-  padding: 0;
-  column-count: 5;
-  column-gap: 40px;
-  column-rule: 2px solid #ccc;
-  color: darkslategrey;
-  font-size: 120%;
-  font-weight: bold;
 }

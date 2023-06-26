@@ -10,13 +10,13 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.ul-block {
-  list-style: none;
-  padding: 0;
-  column-count: 5;
-  column-gap: 40px;
-  column-rule: 2px solid #ccc;
+p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7em;
   color: darkslategrey;
-  font-size: 120%;
-  font-weight: bold;
+}
+
+li {
+  font-size: 115%; /* Ajusta el porcentaje según el tamaño de fuente deseado */
 }

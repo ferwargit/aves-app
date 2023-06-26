@@ -1,25 +1,45 @@
 {% extends 'base.html' %}
-
+{% block title %}
+<title>Detalle de ave</title>
+{% endblock %}
 {% load static %}
 
 {% block content %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'css/appves/listar_aves.css' %}">
+<link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
 {% endblock %}
 
 <div class="container">
-    <h1 class="text-center"><strong>{{ ave.nombre }}</strong></h1>
+    <h1 class="text-center mb-4"><strong>{{ ave.nombre }}</strong></h1>
     <div class="card-body">
-        
-        <div class="custom-center">
-        <img src="../media/{{ ave.imagen }}">
-            <ul>
-                <li>{{ ave.nombre_cientifico }}</li>
-                <li>{{ ave.nombre_ingles }}</li>
-                <li>{{ ave.familia }}</li>
-                <li>{{ ave.familia }}</li>
-                <li>{{ ave.descripcion }}</li>
+        <div class="row">
+        <div class="col-md-6">
+        <img src="../media/{{ ave.imagen }}" class="bird-image">
+        </div>
+        <div class="col-md-6">
+            <ul class="d-flex flex-column justify-content-center">
+                <li>Nombre Científico: {{ ave.nombre_cientifico }}</li>
+                <li>Nombre en Inglés: {{ ave.nombre_ingles }}</li>
+                <li>Familia: {{ ave.familia }}</li>
+                <li>Descripción: {{ ave.descripcion }}</li>
+                <li>Tamaño: {{ ave.tamanio }}</li>
+                <li>Habitat: {{ ave.habitat }}</li>
+                <li>Voz: {{ ave.voz }}</li>
+                <li>Alimentación: {{ ave.alimentacion }}</li>
+                <li>Cria: {{ ave.cria }}</li>
+                <li>Movimientos Estacionales: {{ ave.movimientos_estacionales }}</li>
+                <li>Estado de Conservación: {{ ave.status_conservacion }}</li>
+                <li>Largo del pico: {{ ave.largo_pico }}</li>
+                <li>Largo de las patas: {{ ave.largo_patas }}</li>
+                <li>Forma de las alas: {{ ave.forma_alas }}</li>
+                <li>Largo del cuello: {{ ave.largo_cuello }}</li>
+                <li>Cuello en vuelo: {{ ave.cuello_vuelo }}</li>
+                <li>Largo de la cola: {{ ave.largo_cola }}</li>
+                <li>Forma de la cola: {{ ave.forma_cola }}</li>
+                <li>Patrón de coloracion: {{ ave.patron_coloracion }}</li>
+                <li>Cabeza: {{ ave.cabeza }}</li>
+                <li>Grupo: {{ ave.grupo }}</li>
             </ul>                    
         </div>
     </div>    

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Fichas de Aves</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appves/listar_aves.css' %}">
+{% endblock %}
+
+<h1>Fichas de Aves de la República Argentina</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for ave in aves %}
+    <div class="col">
+        <div class="card h-100 card-hover">
+            <img src="../media/{{ ave.imagen }}" class="card-img-top img-fluid">
+            <div class="card-body">
+                <h5 class="card-title">{{ ave.nombre }}</h5>
+                <div class="custom-center">
+                    <a href="{% url 'detail_birds' ave.id %}" class="btn btn-success">Ver ficha</a>
+                </div>
+                <div class="custom-center">
+                    {%if user.is_authenticated %}
+                    <a href="{% url 'edit_bird' ave.id %}" class="btn btn-secondary">Editar</a>
+                    <a href="{% url 'delete_bird' ave.id %}" class="btn btn-danger">Eliminar</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

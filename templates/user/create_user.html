@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
 {% block title %}
 <title>Crear Cuenta</title>
 {% endblock %}
+
 {% block content %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
+{% endblock %}
 <h1>Crear cuenta</h1>
 
 <form action="/create_user/" method="POST">

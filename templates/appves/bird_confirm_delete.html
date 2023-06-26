@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
+{% block title %}
+    <title>Confirmación de eliminación</title>
+{% endblock %}
+
+{% load static %}
 
 {% block content %}
-<h1>Confirmacion de eliminacion</h1>
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appves/bird_confirm_delete.css' %}">
+{% endblock %}
+<h1>Confirmación de eliminación</h1>
 
 <form method="POST">
     {% csrf_token %}

@@ -2,8 +2,12 @@
 {% block title %}
 <title>Lugares para observar</title>
 {% endblock %}
+{% load static %}
 
 {% block content %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appves/home.css' %}">
+{% endblock %}
 
 <h1>Lugares para observar aves</h1>
 

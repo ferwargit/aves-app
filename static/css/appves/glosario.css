@@ -1,0 +1,29 @@
+h1 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: 500;
+  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.custom-strong {
+  color: darkslategrey;
+  font-size: 150%;
+}
+
+.glosario-list .glosario-li {
+  font-size: 115%;
+  color: darkslategrey;
+  text-align: justify;
+}
+
+.glosario-list li {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Ajusta el color y la opacidad según lo deseado */
+  padding-bottom: 0.5em; /* Ajusta el espacio debajo del texto según lo deseado */
+  margin-bottom: 0.5em; /* Ajusta el espacio debajo de la línea según lo deseado */
+}
+
