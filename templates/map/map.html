@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Mapa</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <h3>Lista de Aves</h3>
+          {% comment %} <p class="lead">Esta es una lista de aves</p> {% endcomment %}
+
+          {% comment %} <p class="lead">{{ locations }}</p> {% endcomment %}
+
+          <ol class="list-group">
+
+          {% for location in locations %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div>Ave: <strong class="fw-bold">{{ location.nameBird }}</strong></div>
+                <div>Ecorregión: <strong class="fw-bold">{{ location.ecorregion }}</strong></div>
+                <div>Latitud: <strong class="fw-bold">{{ location.latitude }}</strong></div>
+                <div>Longitud: <strong class="fw-bold">{{ location.longitude}}</strong></div>
+              </div>
+            </li>
+          {% endfor %}
+          </ol>
+
+
+        </div>
+        <div class="col-md-8">
+          {% comment %} <h4>MAPA</h4> {% endcomment %}
+          <div id="map" style="width: 100%; height: 400px;">
+          {{map|safe}}
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

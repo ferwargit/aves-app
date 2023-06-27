@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from appves import views as appves
+from map.views import map
 from user import views
+
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -50,7 +52,10 @@ urlpatterns = [
     path('lugares/', appves.lugares, name='lugares'),
     path('topografia/', appves.topografia, name='topografia'),
     path('familias/', appves.familias, name='familias'),
-    path('quienes/', views.quienes, name='quienes')
+    path('quienes/', views.quienes, name='quienes'),
+
+    # map
+    path('map/', map, name='map'),
 ]
 
 # Se agrega para que se pueda ver el contenido de la carpeta static

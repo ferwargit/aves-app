@@ -20,7 +20,65 @@ def topografia(request):
     return render(request, 'appves/topografia.html')
 
 def familias(request):
-    return render(request, 'appves/familias.html')
+    palabras = [
+    "Tinamidae",
+    "Rheidae",
+    "Cracidae",
+    "Struthionidae",
+    "Phoenicopteridae",
+    "Anhingidae",
+    "Ardeidae",
+    "Threskiornithidae",
+    "Pandionidae",
+    "Accipitridae",
+    "Falconidae",
+    "Odontophoridae",
+    "Numididae",
+    "Phasianidae",
+    "Podicipedidae",
+    "Anatidae",
+    "Diomedeidae",
+    "Procellariidae",
+    "Sulidae",
+    "Phaethontidae",
+    "Cathartidae",
+    "Fregatidae",
+    "Phalacrocoracidae",
+    "Charadriidae",
+    "Recurvirostridae",
+    "Rostratulidae",
+    "Haematopodidae",
+    "Scolopacidae",
+    "Laridae",
+    "Columbidae",
+    "Psittacidae",
+    "Trochilidae",
+    "Apodidae",
+    "Trogonidae",
+    "Bucconidae",
+    "Momotidae",
+    "Galbulidae",
+    "Ramphastidae",
+    "Podargidae",
+    "Cuculidae",
+    "Strigidae",
+    "Caprimulgidae",
+    "Nyctibiidae",
+    "Aegothelidae",
+    "Hemiprocnidae",
+    "Coliidae",
+    "Coraciidae",
+    "Brachypteraciidae",
+    "Alcedinidae",
+    "Megalaimidae",
+    "Meropidae",
+    "Upupidae",
+    "Bucerotidae",
+    "Phoeniculidae",
+    ]
+
+    palabras_ordenadas = sorted(palabras)  # Ordena la lista alfabéticamente
+    return render(request, 'appves/familias.html', {'palabras': palabras_ordenadas})
 
 def about(request):
     return render(request, 'appves/about.html')
@@ -32,9 +90,14 @@ def home(request):
 class ListarBirds(ListView):
     model = Bird
     template_name = 'appves/listar_aves.html'
-    queryset = Bird.objects.filter(status=Status.objects.get(id=2) and Status.objects.get(id=1))
+    # queryset = Bird.objects.filter(status=Status.objects.get(id=2) and Status.objects.get(id=1))
     # Se agrega el atributo context_object_name y se asígna un nombre descriptivo para el contexto de las aves
     context_object_name = 'aves'
+
+    #  Se redefine el método get_queryset para que el listado de aves se muestre ordenado alfabéticamente por nombre
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.order_by('nombre')
 
 #@login_required
 class CrearAve(CreateView):
