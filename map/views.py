@@ -20,6 +20,7 @@ def map(request):
     # folium.Marker([-35.6362, -57.5678], popup="Test Marker").add_to(initialMap)
 
     for location in locations:
+        print(location.latitude, location.longitude)
         coordinates = (location.latitude, location.longitude)
         # folium.Marker(coordinates, popup=location.nameBird).add_to(initialMap)
         folium.Marker(coordinates, popup=location.nameBird + '\n' + location.ecorregion,icon=folium.Icon(color="green")).add_to(initialMap)
