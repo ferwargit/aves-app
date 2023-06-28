@@ -8,10 +8,9 @@ def map(request):
     # El zoom_start es la cantidad de zoom que tiene el mapa al cargar
     # puede ser cualquier numero entero entre 0 y 18.
     # El location es la ubicacion inicial del mapa
-    initialMap = folium.Map(location=[-34.6362,-58.5678], zoom_start=5)
+    initialMap = folium.Map(location=[-34.6362,-58.5678], tiles='OpenStreetMap', attr=None, zoom_start=5)
 
-    initialMap.add_child(folium.ClickForMarker(popup="Waypoint"))
-    initialMap.add_child(folium.LatLngPopup())
+    
     # for i in initialMap._children:
     #     print(input(i))
     
@@ -26,6 +25,9 @@ def map(request):
         folium.Marker(coordinates, popup=location.nameBird + '\n' + location.ecorregion,icon=folium.Icon(color="green")).add_to(initialMap)
         # m.add_child(folium.ClickForMarker(popup="Waypoint"))
     
+    initialMap.add_child(folium.ClickForMarker())
+    
+    initialMap.add_child(folium.LatLngPopup())
 
     context = {'map': initialMap._repr_html_(), 'locations': locations, 'title': 'Mapa de Aves'}
     return render(request, 'map/map.html', context)
