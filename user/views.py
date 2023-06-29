@@ -1,9 +1,12 @@
+#from django.core.paginator import _SupportsPagination
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
-from .models import User, Province
-from .forms import CustomUserCreationForm, UserLoginForm
+from django.urls import reverse_lazy
+from .models import User, Province, Avistaje
+from .forms import AvistajeForm, CustomUserCreationForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
+from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView, DetailView
 
 # Create your views here.
 # @login_required
@@ -65,3 +68,20 @@ def logeado(request):
 def logout_user(request):
     logout(request)
     return redirect('home')
+
+class CrearAvistaje(CreateView):
+    model = Avistaje
+    form_class = AvistajeForm
+    template_name = 'user/crear_lista.html'
+    success_url = reverse_lazy('home')
+
+
+class ListarAvistajes(ListView):
+    model = Avistaje
+    template_name = 'user/lista_avistajes.html'
+    #queryset = User.objects.filter(id=request.pk)
+    context_object_name = 'avistajes'
+
+    def get_queryset(self):
+        self.queryset = Avistaje.objects.filter(id_user_id=self.request.user.pk)
+        return self.queryset

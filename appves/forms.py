@@ -1,5 +1,5 @@
 from django import forms
-from .models import Bird
+from .models import Bird, LineaAvistaje
 
 class BirdForm(forms.ModelForm):
     class Meta:
@@ -31,3 +31,32 @@ class BirdForm(forms.ModelForm):
             ),
             
         }
+
+class LineaAvistajeForm(forms.ModelForm):
+    class Meta:
+        model = LineaAvistaje
+        fields = "__all__"
+        widgets = {
+            'id_ave': forms.Select(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            'cantidad': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Ingrese cantidad avistada'
+                }
+            ),
+            'latitud' : forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            'longitud' : forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+        }
+    

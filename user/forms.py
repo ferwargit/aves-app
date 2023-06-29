@@ -1,5 +1,5 @@
 from django import forms
-from .models import User, Province
+from .models import Avistaje, User, Province
 
 class UserLoginForm(forms.Form):
     username = forms.CharField(
@@ -77,3 +77,7 @@ class CustomUserCreationForm(forms.Form):
 #     class Meta:
 #         model = User
 #         fields = ("email",)
+class AvistajeForm(forms.ModelForm):
+    class Meta:
+        model = Avistaje
+        fields = "__all__"

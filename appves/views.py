@@ -2,8 +2,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView, DetailView
-from .models import Bird, Status
-from .forms import BirdForm
+from .models import Bird, Status, LineaAvistaje
+from .forms import BirdForm, LineaAvistajeForm
 
 
 # Create your views here.
@@ -63,3 +63,10 @@ class DetalleAve(DetailView):
     model = Bird
     template_name = 'appves/detalle_ave.html'
     context_object_name = 'ave'
+
+
+class CargarAveAvistaje(CreateView):
+    model = LineaAvistaje
+    form_class = LineaAvistajeForm
+    template_name = 'appves/ave_avistaje.html'
+    success_url = reverse_lazy('home')

@@ -67,12 +67,20 @@
           {% comment %} <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li> {% endcomment %}
+          {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Avistaje
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'crear_avistaje' %}">Crear avistaje</a></li>
+              <li><a class="dropdown-item" href="{% url 'listar_avistajes' %}">Mis avistajes</a></li>
+            </ul>
+          </li>
+          {% endif %}
         </ul>
         <form class="d-flex" role="search">
           {% if user.is_authenticated %}
-
-          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button> -->
           <a class="btn bg-success me-2 text-white" href="{% url 'logout' %}" type="button">Logout</a>
 
           {% else %}

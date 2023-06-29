@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from appves import views as appves
 from user import views
+from user.views import CrearAvistaje, ListarAvistajes
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -27,7 +28,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.conf.urls.static import static
 
-from appves.views import ListarBirds, CrearAve, EditarAve, EliminarAve, DetalleAve
+from appves.views import ListarBirds, CrearAve, EditarAve, EliminarAve, DetalleAve, CargarAveAvistaje
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,6 +38,9 @@ urlpatterns = [
     path('login_user/', views.login_user, name='login'),
     path('logout_user/', views.logout_user, name='logout'),
     path('logeado/', views.logeado, name='logeado'),
+    path('create_list/', login_required(CrearAvistaje.as_view()), name='crear_avistaje'),
+    path('list_avistaje/', login_required(ListarAvistajes.as_view()), name='listar_avistajes'),
+    path('charge_ave/<int:pk>', login_required(CargarAveAvistaje.as_view()), name='cargar_ave_avistaje'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', login_required(CrearAve.as_view()), name='create_bird'),
