@@ -135,15 +135,25 @@ class EditarAve(UpdateView):
     template_name = 'appves/editar_ave.html'
     success_url = reverse_lazy('list_birds')
 
+# class EliminarAve(DeleteView):
+#     model = Bird
+#     #success_url = reverse_lazy('list_birds')
+
+#     def post(self, request, pk, *args, **kwargs):
+#         ave = Bird.objects.get(id=pk)
+#         ave.status = Status.objects.get(id=3)
+#         ave.save()
+#         return redirect('list_birds')
+
 class EliminarAve(DeleteView):
     model = Bird
-    #success_url = reverse_lazy('list_birds')
+    success_url = reverse_lazy('list_birds')
 
-    def post(self, request, pk, *args, **kwargs):
-        ave = Bird.objects.get(id=pk)
+    def delete(self, request, *args, **kwargs):
+        ave = self.get_object()
         ave.status = Status.objects.get(id=3)
         ave.save()
-        return redirect('list_birds')
+        return self.redirect_to_success_url()
 
 class DetalleAve(DetailView):
     model = Bird
