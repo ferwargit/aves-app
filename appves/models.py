@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
+from user.models import Avistaje
 
 # Create your models here.
 class Family(models.Model):
@@ -84,3 +85,11 @@ class Bird(models.Model):
 
     def __str__(self):
         return f'{self.nombre} - {self.nombre_cientifico}'
+
+class LineaAvistaje(models.Model):
+    id_avistaje = models.ForeignKey(Avistaje, on_delete=models.CASCADE, null=False)
+    id_ave = models.ForeignKey(Bird, on_delete=models.SET_NULL, null=True)
+    cantidad = models.IntegerField(null=False, default=1)
+    latitud = models.FloatField(null=False)
+    longitud = models.FloatField(null=False)
+

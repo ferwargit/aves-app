@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Fichas de Aves</title>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appves/listar_aves.css' %}">
+{% endblock %}
+
+<h1>Mis listas de Avistaje</h1>
+
+<div class="container text-center">
+    {% for avistaje in avistajes %}
+    <div class="row">
+        <div class="col">
+            {{ avistaje.nombre_avistaje }}
+        </div>
+        <div class="col">
+            {{ avistaje.fecha_creacion }}
+        </div>
+        <div class="col">
+            <a href="" type="button" class="btn btn-secondary">Ver lista</a>
+            <a href="{% url 'cargar_ave_avistaje' avistaje.id %}" type="button" class="btn btn-success">Agregar ave</a>
+        </div>
+    
+    
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
