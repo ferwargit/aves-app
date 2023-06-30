@@ -57,9 +57,11 @@ def buscar_ave(request):
 class ListarBirds(ListView):
     model = Bird
     template_name = 'appves/listar_aves.html'
-    queryset = Bird.objects.filter(status=Status.objects.get(id=2) and Status.objects.get(id=1))
-    # Se agrega el atributo context_object_name y se asígna un nombre descriptivo para el contexto de las aves
     context_object_name = 'aves'
+
+    def get_queryset(self):
+        # Asegúrate de que Status con id=2 y id=1 existen en la base de datos antes de ejecutar esta vista, para eso cargamos primero status.json y luego birds.json
+        return Bird.objects.filter(status__in=[Status.objects.get(id=2), Status.objects.get(id=1)])
 
 #@login_required
 class CrearAve(CreateView):
