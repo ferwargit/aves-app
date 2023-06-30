@@ -1,80 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block title %}
 <title>Familias de Aves</title>
-{% endblock %}
+{% endblock %} 
 {% load static %}
 
-{% block content %}
+{% block content %} 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/appves/familias.css' %}">
+<link rel="stylesheet" href="{% static 'css/appves/familias.css' %}" />
 {% endblock %}
 
 <h1>Familias de aves presentes en Argentina</h1>
 
 <ul class="ul-block">
-    <li>Tinamidae</li>
-    <li>Rheidae</li>
-    <li>Cracidae</li>
-    <li>Psittacidae</li>
-    <li>Struthionidae</li>
-    <li>Phoenicopteridae</li>
-    <li>Anhingidae</li>
-    <li>Ardeidae</li>
-    <li>Threskiornithidae</li>
-    <li>Cathartidae</li>
-    <li>Pandionidae</li>
-    <li>Accipitridae</li>
-    <li>Falconidae</li>
-    <li>Odontophoridae</li>
-    <li>Numididae</li>
-    <li>Phasianidae</li>
-    <li>Podicipedidae</li>
-    <li>Phalacrocoracidae</li>
-    <li>Anatidae</li>
-    <li>Diomedeidae</li>
-    <li>Procellariidae</li>
-    <li>Sulidae</li>
-    <li>Phaethontidae</li>
-    <li>Ardeidae</li>
-    <li>Threskiornithidae</li>
-    <li>Cathartidae</li>
-    <li>Fregatidae</li>
-    <li>Phalacrocoracidae</li>
-    <li>Charadriidae</li>
-    <li>Haematopodidae</li>
-    <li>Recurvirostridae</li>
-    <li>Rostratulidae</li>
-    <li>Haematopodidae</li>
-    <li>Scolopacidae</li>
-    <li>Laridae</li>
-    <li>Columbidae</li>
-    <li>Psittacidae</li>
-    <li>Cuculidae</li>
-    <li>Trochilidae</li>
-    <li>Apodidae</li>
-    <li>Trogonidae</li>
-    <li>Bucconidae</li>
-    <li>Momotidae</li>
-    <li>Galbulidae</li>
-    <li>Ramphastidae</li>
-    <li>Podargidae</li>
-    <li>Cuculidae</li>
-    <li>Strigidae</li>
-    <li>Caprimulgidae</li>
-    <li>Nyctibiidae</li>
-    <li>Aegothelidae</li>
-    <li>Apodidae</li>
-    <li>Hemiprocnidae</li>
-    <li>Trochilidae</li>
-    <li>Coliidae</li>
-    <li>Coraciidae</li>
-    <li>Brachypteraciidae</li>
-    <li>Alcedinidae</li>
-    <li>Megalaimidae</li>
-    <li>Meropidae</li>
-    <li>Upupidae</li>
-    <li>Bucerotidae</li>
-    <li>Phoeniculidae</li>
+
+  {% for palabra in palabras %} 
+    {{ palabra }} 
+  {% endfor %}
 
 </ul>
 

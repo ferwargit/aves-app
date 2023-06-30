@@ -33,3 +33,12 @@ p {
   height: 50px;
   border-radius: 50%;
 }
+
+.nav-link.username {
+  margin-left: 300px;
+  margin-right: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  color: white; 
+  text-shadow: black 0.1em 0.1em 0.2em
+}

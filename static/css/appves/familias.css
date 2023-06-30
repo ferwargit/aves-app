@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 50px;
   font-weight: 500;
   background-image: linear-gradient(45deg, #3f9a3c, #762bee);
@@ -11,12 +11,12 @@ h1 {
 }
 
 .ul-block {
-  list-style: none;
-  padding: 0;
-  column-count: 5;
-  column-gap: 40px;
+  column-count: 5; /* Establece el número de columnas */
+  column-gap: 70px; /* Establece el espacio entre las columnas */
   column-rule: 2px solid #ccc;
   color: darkslategrey;
   font-size: 120%;
   font-weight: bold;
+  list-style: none;
+  padding-left: 0px;
 }

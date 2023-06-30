@@ -24,7 +24,65 @@ def topografia(request):
     return render(request, 'appves/topografia.html')
 
 def familias(request):
-    return render(request, 'appves/familias.html')
+    palabras = [
+    "Tinamidae",
+    "Rheidae",
+    "Cracidae",
+    "Struthionidae",
+    "Phoenicopteridae",
+    "Anhingidae",
+    "Ardeidae",
+    "Threskiornithidae",
+    "Pandionidae",
+    "Accipitridae",
+    "Falconidae",
+    "Odontophoridae",
+    "Numididae",
+    "Phasianidae",
+    "Podicipedidae",
+    "Anatidae",
+    "Diomedeidae",
+    "Procellariidae",
+    "Sulidae",
+    "Phaethontidae",
+    "Cathartidae",
+    "Fregatidae",
+    "Phalacrocoracidae",
+    "Charadriidae",
+    "Recurvirostridae",
+    "Rostratulidae",
+    "Haematopodidae",
+    "Scolopacidae",
+    "Laridae",
+    "Columbidae",
+    "Psittacidae",
+    "Trochilidae",
+    "Apodidae",
+    "Trogonidae",
+    "Bucconidae",
+    "Momotidae",
+    "Galbulidae",
+    "Ramphastidae",
+    "Podargidae",
+    "Cuculidae",
+    "Strigidae",
+    "Caprimulgidae",
+    "Nyctibiidae",
+    "Aegothelidae",
+    "Hemiprocnidae",
+    "Coliidae",
+    "Coraciidae",
+    "Brachypteraciidae",
+    "Alcedinidae",
+    "Megalaimidae",
+    "Meropidae",
+    "Upupidae",
+    "Bucerotidae",
+    "Phoeniculidae",
+    ]
+
+    palabras_ordenadas = sorted(palabras)  # Ordena la lista alfabéticamente
+    return render(request, 'appves/familias.html', {'palabras': palabras_ordenadas})
 
 def about(request):
     return render(request, 'appves/about.html')
@@ -59,9 +117,10 @@ class ListarBirds(ListView):
     template_name = 'appves/listar_aves.html'
     context_object_name = 'aves'
 
+    #  Se redefine el método get_queryset para que el listado de aves se muestre ordenado alfabéticamente por nombre
     def get_queryset(self):
-        # Asegúrate de que Status con id=2 y id=1 existen en la base de datos antes de ejecutar esta vista, para eso cargamos primero status.json y luego birds.json
-        return Bird.objects.filter(status__in=[Status.objects.get(id=2), Status.objects.get(id=1)])
+        queryset = super().get_queryset()
+        return queryset.order_by('nombre')
 
 #@login_required
 class CrearAve(CreateView):
@@ -76,15 +135,25 @@ class EditarAve(UpdateView):
     template_name = 'appves/editar_ave.html'
     success_url = reverse_lazy('list_birds')
 
+# class EliminarAve(DeleteView):
+#     model = Bird
+#     #success_url = reverse_lazy('list_birds')
+
+#     def post(self, request, pk, *args, **kwargs):
+#         ave = Bird.objects.get(id=pk)
+#         ave.status = Status.objects.get(id=3)
+#         ave.save()
+#         return redirect('list_birds')
+
 class EliminarAve(DeleteView):
     model = Bird
-    #success_url = reverse_lazy('list_birds')
+    success_url = reverse_lazy('list_birds')
 
-    def post(self, request, pk, *args, **kwargs):
-        ave = Bird.objects.get(id=pk)
+    def delete(self, request, *args, **kwargs):
+        ave = self.get_object()
         ave.status = Status.objects.get(id=3)
         ave.save()
-        return redirect('list_birds')
+        return self.redirect_to_success_url()
 
 class DetalleAve(DetailView):
     model = Bird

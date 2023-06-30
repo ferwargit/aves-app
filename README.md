@@ -10,11 +10,11 @@ En Windows
 
 - Instalacion desde cero de las dependencias del proyecto
 
-> pip i -r requirements.txt
+> pip install -r requirements.txt
 
 - Actualizar en el venv existente
 
-> pip i -r requirements.txt -I
+> pip install -r requirements.txt -I
 
 - Ejecutar migraciones de la app
 
@@ -34,7 +34,7 @@ Levantar la webapp
 
 Crear json con datos para cargar en tablas
 
-> $ python manage.py dumpdata --indent 2 [app].[class model] > [nombre archivo].json
+> py manage.py dumpdata --indent 2 [app].[class model] > [nombre archivo].json
 
 Cargar de datos json
 

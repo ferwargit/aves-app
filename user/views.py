@@ -63,7 +63,7 @@ def login_user(request):
             return HttpResponse("Usuario inexistente")
 
 def logeado(request):
-    return render(request, 'user/logeado_user.html')
+    return render(request, 'appves/home.html')
 
 def logout_user(request):
     logout(request)

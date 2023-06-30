@@ -15,9 +15,9 @@
     {% csrf_token %}
     {% comment %} {{ form.as_p }} {% endcomment %}
     <label for="username">Username:</label>
-    <input type="text" class="form-control smaller-input" name="username" placeholder="">
+    <input type="text" class="form-control smaller-input" name="username" placeholder="" required>
     <label for="password">Password:</label>
-    <input type="password" class="form-control smaller-input" name="password" placeholder="">
+    <input type="password" class="form-control smaller-input" name="password" placeholder="" required>
     <button class="btn btn-success mt-2" type="submit">Login</button>
 </form>
 {% endblock %}
