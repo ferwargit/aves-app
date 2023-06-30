@@ -73,13 +73,12 @@ class CrearAvistaje(CreateView):
     model = Avistaje
     form_class = AvistajeForm
     template_name = 'user/crear_lista.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('listar_avistajes')
 
 
 class ListarAvistajes(ListView):
     model = Avistaje
     template_name = 'user/lista_avistajes.html'
-    #queryset = User.objects.filter(id=request.pk)
     context_object_name = 'avistajes'
 
     def get_queryset(self):
