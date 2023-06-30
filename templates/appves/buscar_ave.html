@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'js/funciones.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block content %}
+
+    {% csrf_token %}
+    <input type="text" id="search-input" placeholder="Ingresar busqueda" class="form-control">
+    <table id="result-search" class="not-visible table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+
+    </table>
+{% endblock content %}

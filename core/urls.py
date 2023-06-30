@@ -41,6 +41,7 @@ urlpatterns = [
     path('create_list/', login_required(CrearAvistaje.as_view()), name='crear_avistaje'),
     path('list_avistaje/', login_required(ListarAvistajes.as_view()), name='listar_avistajes'),
     path('charge_ave/<int:pk>', login_required(CargarAveAvistaje.as_view()), name='cargar_ave_avistaje'),
+    path('search_ave/', appves.buscar_ave, name='buscar_ave'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', login_required(CrearAve.as_view()), name='create_bird'),

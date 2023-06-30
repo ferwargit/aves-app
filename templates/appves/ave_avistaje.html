@@ -1,11 +1,37 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block scripts %}
+    <script src="{% static 'js/funciones.js' %}" defer></script>
+    <script src="{% static 'js/mapas.js' %}" defer></script>
+{% endblock scripts %}
 {% block content %}
-<h1>Crear aves</h1>
+<h1>Agregar aves</h1>
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-success">Agregar</button>
+    <div class="not-visible">{{ form.id_avistaje }}</div>
+    
+    <div class="row form-group">
+        <div class="col-6">{{form.id_ave.label}}</div>
+        <div class="col-2">{{form.cantidad.label}}</div>
+        <div class="col-2">{{form.latitud.label}}</div>
+        <div class="col-2">{{form.longitud.label}}</div>
+    </div>
+    <div class="row form-group">
+        <div class="col-6">
+            {{form.id_ave}}
+        </div>
+        <div class="col-2">{{form.cantidad}}</div>
+        <div class="col-2">{{form.latitud}}</div>
+        <div class="col-2">{{form.longitud}}</div>
+    
+    </div>
+
+    <div>{% include './buscar_ave.html' %}</div>
+
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <button class="btn btn-success" type="submit">Agregar</button>
+    
 </form>
 {% endblock %}

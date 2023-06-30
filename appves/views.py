@@ -1,3 +1,7 @@
+from typing import Any
+from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.http.request import HttpRequest
+from django.http.response import HttpResponseBase
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -27,6 +31,27 @@ def about(request):
 
 def home(request):
     return render(request, 'appves/home.html')
+
+def buscar_ave(request):
+    is_ajax = request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+    if is_ajax:
+        res = None
+        ave = request.POST.get('ave')
+        qs = Bird.objects.filter(nombre__icontains=ave)
+        if len(qs) > 0 and len(ave) > 0:
+            data = []
+            for ave in qs:
+                item = {
+                    'pk': ave.pk,
+                    'nombre': ave.nombre,
+                    'imagen': str(ave.imagen.url)
+                }
+                data.append(item)
+            res = data
+        else:
+            res = 'No se encuentra ave... '
+        return JsonResponse({'data': res})
+    return JsonResponse({})
 
 
 class ListarBirds(ListView):
@@ -70,3 +95,6 @@ class CargarAveAvistaje(CreateView):
     form_class = LineaAvistajeForm
     template_name = 'appves/ave_avistaje.html'
     success_url = reverse_lazy('home')
+
+    def get_initial(self):
+            return {'id_avistaje': self.kwargs['pk']}
