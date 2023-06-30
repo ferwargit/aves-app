@@ -10,20 +10,14 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.custom-strong {
+.glosario-list {
   color: darkslategrey;
   font-size: 150%;
-}
-
-.glosario-list .glosario-li {
-  font-size: 115%;
-  color: darkslategrey;
   text-align: justify;
 }
 
 .glosario-list li {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Ajusta el color y la opacidad según lo deseado */
-  padding-bottom: 0.5em; /* Ajusta el espacio debajo del texto según lo deseado */
-  margin-bottom: 0.5em; /* Ajusta el espacio debajo de la línea según lo deseado */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5em; /* Ajusta el espacio debajo del texto */
+  margin-bottom: 0.5em; /* Ajusta el espacio debajo de la línea */
 }
-
