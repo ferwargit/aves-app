@@ -26,8 +26,9 @@
     {% comment %} Fuente {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
 
 </head>
 <body>
@@ -87,6 +88,9 @@
               <li><a class="dropdown-item" href="{% url 'crear_avistaje' %}">Crear avistaje</a></li>
               <li><a class="dropdown-item" href="{% url 'listar_avistajes' %}">Mis avistajes</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link username" href="#">Bienvenido, {{ user.username }}</a>
           </li>
           {% endif %}
         </ul>
