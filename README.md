@@ -39,3 +39,7 @@ Crear json con datos para cargar en tablas
 Cargar de datos json
 
 > py manage.py loaddata province.json status.json familias.json grupos.json habitat.json movimientos_estacionales.json plumajes.json tamanios_y_formas.json birds.json
+
+# Página de consulta a la API - Mapa de densidades
+
+https://www.gbif.org/developer/maps

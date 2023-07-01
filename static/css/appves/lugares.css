@@ -1,11 +1,17 @@
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 500;
   background-image: linear-gradient(45deg, #3f9a3c, #762bee);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  text-align: justify;
+  font-size: 120%;
+  color: darkslategrey;
 }

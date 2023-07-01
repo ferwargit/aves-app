@@ -53,6 +53,7 @@ urlpatterns = [
     path('biomas/', appves.biomas, name='biomas'),
     path('glosario/', appves.glosario, name='glosario'),
     path('lugares/', appves.lugares, name='lugares'),
+    path('lugares01/', appves.lugares01, name='lugares01'),
     path('topografia/', appves.topografia, name='topografia'),
     path('familias/', appves.familias, name='familias'),
     path('quienes/', views.quienes, name='quienes')
