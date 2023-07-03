@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html> {% endcomment %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -64,6 +64,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mapas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'lugares' %}">Densidad de observaciones 2023</a></li>
+              <li><a class="dropdown-item" href="{% url 'nombre_cientifico' %}">Hábitat de especies</a></li>
+              <li><a class="dropdown-item" href="{% url 'lugares01' %}">Lugares para observar aves</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               FAQS
             </a>
             <ul class="dropdown-menu">
@@ -71,8 +81,7 @@
               <li><a class="dropdown-item" href="{% url 'quienes' %}">Quiénes somos</a></li>
               <li><a class="dropdown-item" href="#">Como usar la guía</a></li>
               <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
-              <li><a class="dropdown-item" href="{% url 'lugares' %}">Mapa de densidad de aves</a></li>
-              <li><a class="dropdown-item" href="{% url 'lugares01' %}">Lugares para observar aves</a></li>
+              
               {% comment %} <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li> {% endcomment %}
             </ul>

@@ -30,7 +30,7 @@ var map = L.map('map', {
  * 
  * @type {L.TileLayer}
  */
-var gbifOccurrences = L.tileLayer('https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=212&basisOfRecord=HUMAN_OBSERVATION&years=2022,2023&bin=hex&hexSize=64&style=purpleYellow-noborder.poly', {
+var gbifOccurrences = L.tileLayer('https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=212&basisOfRecord=HUMAN_OBSERVATION&years=2023,2023&bin=hex&hexSize=64&style=purpleYellow-noborder.poly', {
     attribution: '&copy; <a href="https://www.gbif.org/">GBIF</a>',
     opacity: 0.5
 }).addTo(map);

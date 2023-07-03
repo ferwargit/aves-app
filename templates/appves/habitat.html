@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Hábitat de Aves</title>
+{% endblock title %}
+
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'js/loadBaseMap.js' %}"></script>
+<script src="{% static 'js/csrf.js' %}"></script>
+
+<script src="{% static 'js/form.js' %}"></script>
+
+<script src="{% static 'js/handleFormSubmit.js' %}"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock scripts %}
+
+{% block content %} 
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appves/habitat.css' %}" />
+{% endblock styles %}
+
+<h1>Hábitat de especies de Aves en Argentina</h1>
+<form id="my-form" method="GET" action="{% url 'get_usage_key' %}">
+    {% csrf_token %}
+    <select id= "scientific-name" name="scientific_name">
+    <option value="">Selecciona un nombre científico...</option>
+    {% for name in sorted_scientific_name_list %}
+        <option value="{{ name }}">{{ name }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Enviar">
+</form>
+
+<!-- Contenedor del mapa -->
+<div id="map" style="width: 100%; height: 1100px;"></div>
+
+
+
+{% endblock content %}
