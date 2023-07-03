@@ -119,69 +119,6 @@ def buscar_ave(request):
     return JsonResponse({})
 
 
-def nombre_cientifico(request):
-    # Carga los datos desde el archivo birds.json
-    with open('appves/fixtures/birds.json') as f:
-        data = json.load(f)
-
-    # Crea una lista para almacenar los nombres científicos
-    scientific_names = [bird['fields'].get('nombre_cientifico') for bird in data if 'nombre_cientifico' in bird['fields']]
-
-    # Comprueba si la lista está vacía
-    if not scientific_names:
-        print("La lista de nombres científicos está vacía. Verifique los datos en birds.json.")
-        return render(request, 'appves/habitat.html', {'error_message': 'No se encontraron nombres científicos en los datos.'})
-
-    # Ordena el scientific_names alfabéticamente
-    sorted_scientific_name_list = sorted(scientific_names)
-
-    print(sorted_scientific_name_list)
-
-    # Usa la función render() para usar la plantilla birds.html
-    return render(request, 'appves/habitat.html', {'sorted_scientific_name_list': sorted_scientific_name_list})
-
-
-
-
-
-def get_usage_key(request):
-    try:
-        if request.method == "GET":
-            # data = json.loads(request.body)  # Esta línea no es necesaria. Coméntala o bórrala
-            scientific_name = request.GET.get('scientific_name')
-            if not scientific_name:
-                return JsonResponse({'error': 'El parámetro "scientific_name" es obligatorio.'}, status=400)
-            scientific_name_encoded = quote(scientific_name)  # Codificar el nombre científico
-            print("Desde la consola Django: " + scientific_name_encoded)
-            url = f"https://api.gbif.org/v1/species/match?name={scientific_name_encoded}"
-            response = requests.get(url)
-            if response.status_code != 200:
-                return JsonResponse({'error': f'Response from API was not 200, got {response.status_code}'}, status=500)
-            data = response.json()
-            if isinstance(data, list) and len(data) > 0:
-                first_result = data[0]
-                usage_key = first_result.get('usageKey')
-                print("Desde la consola Django: " + str(usage_key))
-                if usage_key is not None:
-                    url = f"https://api.gbif.org/v1/species/{usage_key}/descriptions"
-                    response = requests.get(url)
-                    if response.status_code != 200:
-                        return JsonResponse({'error': f'Response from API was not 200, got {response.status_code}'}, status=500)
-                    data = response.json()
-                    results = data.get('results', [])
-                    region = "Desconocida"
-                    for result in results:
-                        if 'geographicCoverage' in result:
-                            region = result['geographicCoverage']
-                            break
-                    return JsonResponse({'region': region}, status=200)
-        return JsonResponse({'error': 'Método GET inválido.'}, status=400)
-    except Exception as e:
-        traceback.print_exc()  # Imprime la traza del error en la consola
-        return JsonResponse({'error': 'Se produjo un error inesperado: ' + str(e)}, status=500)
-
-
-
 class ListarBirds(ListView):
     model = Bird
     template_name = 'appves/listar_aves.html'

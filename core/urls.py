@@ -58,8 +58,6 @@ urlpatterns = [
     path('familias/', appves.familias, name='familias'),
     path('quienes/', views.quienes, name='quienes'),
 
-    path('habitat/', appves.nombre_cientifico, name='nombre_cientifico'),
-    path('get_usage_key/', appves.get_usage_key, name='get_usage_key'),
 ]
 
 # Se agrega para que se pueda ver el contenido de la carpeta static
