@@ -1,22 +1,36 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}
     <title>Ecorregiones</title>
 {% endblock %}
-{% load static %}
 
-{% block scripts %}
-    <script src="{% static 'js/mapa-api.js' %}" defer></script>
-{% endblock scripts %}
+{% block head %}
 
-{% block content %}
-{% block styles %}
-  <link rel="stylesheet" href="{% static 'css/appves/lugares.css' %}">
+  {% block scripts %}
+      
+      <script src="{% static 'js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.src.js' %}" defer></script>
+      {% comment %} <script src="{% static 'static\js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.min.js' %}" defer></script> {% endcomment %}
+      <script src="{% static 'js/mapa-api.js' %}" defer></script>
+  {% endblock %}
+
 {% endblock %}
 
-<h1>Mapa de densidad de observaciones de aves - 2023</h1>
+{% block content %}
 
-<p>La GBIF es una organización internacional que se dedica a proporcionar acceso a datos sobre la biodiversidad mundial. Recopila observaciones de especies de todo el mundo, aportadas por miles de fuentes, y las pone a disposición de todos a través de su API. Esta consulta en particular utiliza la API de GBIF para visualizar las observaciones de aves realizadas por humanos en 2023. Los datos se representan en un mapa de densidad, lo que nos permite identificar las áreas con mayor y menor cantidad de observaciones de aves durante ese período de tiempo.</p>
+  {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appves/lugares.css' %}">
+    <link rel="stylesheet" href="{% static 'js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.css' %}">
+    <link rel="stylesheet" href="{% static 'js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.ie.css' %}">
+    
+  {% endblock %}
 
-<div id="map" style="width: 100%; height: 1100px;"></div>
+<h1>Mapa de Densidad</h1>
+<h2>Observaciones de Aves en Argentina - 2023</h2>
+
+<p>La GBIF es una organización internacional que se dedica a proporcionar acceso a datos sobre la biodiversidad mundial. Recopila observaciones de especies de todo el mundo, aportadas por miles de fuentes, y las pone a disposición de todos a través de su API. Esta consulta en particular utiliza la API de GBIF para visualizar las observaciones de aves realizadas en el territorio de la República Argentina por humanos en 2023. Los datos se representan en un mapa de densidad, lo que nos permite identificar las áreas con mayor y menor cantidad de observaciones de aves durante ese período de tiempo.</p>
+
+{% comment %} <div id="map" style="width: 100%; height: 1100px;"></div> {% endcomment %}
+<div id="map" style="height: 600px; position: relative;"></div>
 
 {% endblock %}
