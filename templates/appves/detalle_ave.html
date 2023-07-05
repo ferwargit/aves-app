@@ -7,6 +7,7 @@
 {% block head %}
 {% block scripts %}
 <script src="{% static 'js/mapa-api.js' %}" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 {% endblock %}
 {% endblock %}
 
@@ -24,7 +25,7 @@
         </div>
         <div class="col-md-6">
             <ul class="d-flex flex-column justify-content-center">
-                <li>Nombre Científico: {{ ave.nombre_cientifico }}</li>
+                <li id="aveData" data-nombre-cientifico="{{ ave.nombre_cientifico }}">Nombre Científico: {{ ave.nombre_cientifico }}</li>
                 <li>Nombre en Inglés: {{ ave.nombre_ingles }}</li>
                 <li>Familia: {{ ave.familia }}</li>
                 <li>Descripción: {{ ave.descripcion }}</li>
@@ -48,6 +49,10 @@
             </ul>                    
         </div>
     </div>
+    <script type="application/json">
+        const nombreCientifico = {{ ave.nombre_cientifico }};
+    </script>
+    
     <div>
     <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
     </div>  
