@@ -21,14 +21,13 @@
       crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     {% block scripts %}
-    {% endblock scripts %}
+    {% endblock %}
     {% comment %} Fuente {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
-
 </head>
 <body>
   {% comment %} <nav class="navbar navbar-expand-lg bg-body-tertiary"> {% endcomment %}
@@ -71,13 +70,8 @@
               <li><a class="dropdown-item" href="#">Como usar la guía</a></li>
               <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
               <li><a class="dropdown-item" href="{% url 'lugares' %}">Lugares para observar aves</a></li>
-              {% comment %} <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li> {% endcomment %}
             </ul>
           </li>
-          {% comment %} <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> {% endcomment %}
           {% if user.is_authenticated %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -113,11 +107,10 @@
   {% block content %}
   {% endblock %}
 
-  </div>
+  {% comment %} </div> {% endcomment %}
 
   {% include 'footer.html' %}
 
-  
 </body>
 
 </html>
