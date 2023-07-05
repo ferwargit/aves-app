@@ -15,9 +15,3 @@ h1 {
   font-size: 150%;
   text-align: justify;
 }
-
-.glosario-list li {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 0.5em; /* Ajusta el espacio debajo del texto */
-  margin-bottom: 0.5em; /* Ajusta el espacio debajo de la línea */
-}
