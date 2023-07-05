@@ -24,9 +24,6 @@ def glosario(request):
 def lugares(request):
     return render(request, 'appves/lugares.html')
 
-def lugares01(request):
-    return render(request, 'appves/lugares01.html')
-
 def topografia(request):
     return render(request, 'appves/topografia.html')
 
