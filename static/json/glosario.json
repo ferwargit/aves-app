@@ -1,0 +1,64 @@
+{
+  "glosario": [
+    {
+      "termino": "Ave",
+      "definicion": "Animal vertebrado que pertenece a la clase Aves, caracterizado por tener plumas y alas."
+    },
+    {
+      "termino": "Ornitológico",
+      "definicion": "Relativo al estudio científico de las aves, incluyendo su taxonomía, comportamiento, distribución y características."
+    },
+    {
+      "termino": "Plumaje",
+      "definicion": "Conjunto de plumas que cubren el cuerpo de un ave."
+    },
+    {
+      "termino": "Ala",
+      "definicion": "Extremidad delantera de un ave, adaptada para el vuelo."
+    },
+    {
+      "termino": "Pico",
+      "definicion": "Estructura córnea que se encuentra en la cabeza de las aves y que utilizan para alimentarse."
+    },
+    {
+      "termino": "Anidar",
+      "definicion": "Acción de construir un nido para depositar los huevos y criar a los polluelos."
+    },
+    {
+      "termino": "Migración",
+      "definicion": "Desplazamiento estacional de las aves entre diferentes áreas geográficas en busca de mejores condiciones de alimentación y reproducción."
+    },
+    {
+      "termino": "Endémico",
+      "definicion": "Especie que se encuentra exclusivamente en una región geográfica determinada y no se encuentra de forma natural en ningún otro lugar."
+    },
+    {
+      "termino": "Depredador",
+      "definicion": "Animal que se alimenta de otros animales, conocidos como presas."
+    },
+    {
+      "termino": "Presa",
+      "definicion": "Animal capturado y utilizado como alimento por un depredador."
+    },
+    {
+      "termino": "Plumaje nupcial",
+      "definicion": "Plumaje especial y colorido que los machos de algunas especies de aves desarrollan durante la temporada de reproducción para atraer a las hembras."
+    },
+    {
+      "termino": "Canto",
+      "definicion": "Sonido característico producido por las aves, utilizado para la comunicación y el establecimiento de territorios."
+    },
+    {
+      "termino": "Especies en peligro de extinción",
+      "definicion": "Aves que se encuentran en riesgo de desaparecer debido a factores como la destrucción del hábitat, la caza ilegal o la introducción de especies exóticas."
+    },
+    {
+      "termino": "Hábitat",
+      "definicion": "Lugar o tipo de ambiente en el cual una especie de ave vive y encuentra los recursos necesarios para sobrevivir."
+    },
+    {
+      "termino": "Biodiversidad",
+      "definicion": "Variedad de especies de aves y otros seres vivos presentes en un ecosistema o región geográfica."
+    }
+  ]
+}

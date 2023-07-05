@@ -17,6 +17,6 @@ p {
   color: darkslategrey;
 }
 
-li {
-  font-size: 115%; /* Ajusta el porcentaje según el tamaño de fuente deseado */
+.name {
+  font-size: 115%;
 }

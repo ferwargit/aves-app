@@ -8,6 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Bird, Status, LineaAvistaje
 from .forms import BirdForm, LineaAvistajeForm
+import requests
+import json
+from urllib.parse import quote
+import traceback
 
 
 # Create your views here.
