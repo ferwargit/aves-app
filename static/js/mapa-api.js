@@ -38,14 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             var usageKey = data.usageKey;
-            return fetch(`https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&year=2023`);
+            // return fetch(`https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&fromDate=2022-06&toDate=2023-06&limit=500`);
+            return fetch(`https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&&limit=500`);
         })
         .then(response => response.json())
         .then(data => {
             data.results.forEach(observation => {
                 if (observation.decimalLatitude && observation.decimalLongitude) {
                     // Crea un nuevo marcador
-                    var marker = L.marker([observation.decimalLatitude, observation.decimalLongitude]).addTo(map);
+                    // var marker = L.marker([observation.decimalLatitude, observation.decimalLongitude]).addTo(map);
+                    var circle = L.circle([observation.decimalLatitude, observation.decimalLongitude], {
+                        color: 'blue',
+                        fillColor: '#f03',
+                        fillOpacity: 0.5,
+                        radius: 500
+                    }).addTo(map);
 
                     // Verifica si la propiedad extensions existe y tiene al menos un objeto dentro
                     if (observation.extensions && observation.extensions["http://rs.gbif.org/terms/1.0/Multimedia"] && observation.extensions["http://rs.gbif.org/terms/1.0/Multimedia"].length > 0) {
@@ -79,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
 
 
-                        marker.bindPopup(popupContent);
+                        // marker.bindPopup(popupContent);
+                        circle.bindPopup(popupContent);
                     }
 
                 }
