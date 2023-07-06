@@ -6,22 +6,14 @@
 
 {% block head %}
 {% block scripts %}
-<script src="{% static 'js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.src.js' %}" defer></script>
-      {% comment %} <script src="{% static 'static\js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.min.js' %}" defer></script> {% endcomment %}
-      <script src="{% static 'js/mapa-api.js' %}" defer></script>
+<script src="{% static 'js/mapa-api.js' %}" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 {% endblock %}
 {% endblock %}
 
 {% block content %}
-
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
-
-<link rel="stylesheet" href="{% static 'css/appves/lugares.css' %}">
-    <link rel="stylesheet" href="{% static 'js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.css' %}">
-    <link rel="stylesheet" href="{% static 'js\Leaflet.Coordinates-master\dist\Leaflet.Coordinates-0.1.5.ie.css' %}">
-
-
 {% endblock %}
 
 <div class="container">
@@ -33,7 +25,7 @@
         </div>
         <div class="col-md-6">
             <ul class="d-flex flex-column justify-content-center">
-                <li>Nombre Científico: {{ ave.nombre_cientifico }}</li>
+                <li id="aveData" data-nombre-cientifico="{{ ave.nombre_cientifico }}">Nombre Científico: {{ ave.nombre_cientifico }}</li>
                 <li>Nombre en Inglés: {{ ave.nombre_ingles }}</li>
                 <li>Familia: {{ ave.familia }}</li>
                 <li>Descripción: {{ ave.descripcion }}</li>
@@ -57,6 +49,10 @@
             </ul>                    
         </div>
     </div>
+    <script type="application/json">
+        const nombreCientifico = {{ ave.nombre_cientifico }};
+    </script>
+    
     <div>
     <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
     </div>  
