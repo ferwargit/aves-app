@@ -1,17 +1,11 @@
-from typing import Any
-from django.http import HttpRequest, HttpResponse, JsonResponse
-from django.http.request import HttpRequest
-from django.http.response import HttpResponseBase
-from django.shortcuts import redirect, render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import JsonResponse
+from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.contrib.auth.decorators import login_required
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView, DetailView
-from .models import Bird, Status, LineaAvistaje
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+
 from .forms import BirdForm, LineaAvistajeForm
-import requests
-import json
-from urllib.parse import quote
-import traceback
+from .models import Bird, Status, LineaAvistaje
 
 
 # Create your views here.
@@ -126,14 +120,14 @@ class ListarBirds(ListView):
         queryset = super().get_queryset()
         return queryset.order_by('nombre')
 
-#@login_required
-class CrearAve(CreateView):
+
+class CrearAve(LoginRequiredMixin, CreateView):
     model = Bird
     form_class = BirdForm
     template_name = 'appves/crear_aves.html'
     success_url = reverse_lazy('home/')
 
-class EditarAve(UpdateView):
+class EditarAve(LoginRequiredMixin, UpdateView):
     model = Bird
     form_class = BirdForm
     template_name = 'appves/editar_ave.html'
@@ -149,7 +143,7 @@ class EditarAve(UpdateView):
 #         ave.save()
 #         return redirect('list_birds')
 
-class EliminarAve(DeleteView):
+class EliminarAve(LoginRequiredMixin, DeleteView):
     model = Bird
     success_url = reverse_lazy('list_birds')
 
@@ -164,8 +158,7 @@ class DetalleAve(DetailView):
     template_name = 'appves/detalle_ave.html'
     context_object_name = 'ave'
 
-
-class CargarAveAvistaje(CreateView):
+class CargarAveAvistaje(LoginRequiredMixin, CreateView):
     model = LineaAvistaje
     form_class = LineaAvistajeForm
     template_name = 'appves/ave_avistaje.html'
