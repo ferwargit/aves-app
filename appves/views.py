@@ -119,6 +119,8 @@ class ListarBirds(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.order_by('nombre')
+    
+    
 
 
 class CrearAve(LoginRequiredMixin, CreateView):
