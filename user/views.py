@@ -25,25 +25,21 @@ def create_user(request):
     return render(request, 'user/create_user.html', {'form': form})
 
 def login_user(request):
-    if request.method == 'GET':
-        return render(request, 'user/login_user.html', {
-            'form': UserLoginForm
-        })
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user=user)
+                return redirect('home')
+            else:
+                messages.error(request, 'Usuario o contraseña incorrectos')
     else:
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            print(user)
-            login(request, user=user)
-            print("login exitoso!!")
-            return redirect('logeado')
-        else:
-            print(user)
-            return HttpResponse("Usuario inexistente")
+        form = UserLoginForm()
+    return render(request, 'user/login_user.html', {'form': form})
 
-def logeado(request):
-    return render(request, 'appves/home.html')
 
 def logout_user(request):
     logout(request)

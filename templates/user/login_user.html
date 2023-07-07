@@ -11,13 +11,21 @@
 {% endblock %}
 <h1>Login</h1>
 
-<form action="/login_user/" method="POST">
+<form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    {% comment %} {{ form.as_p }} {% endcomment %}
     <label for="username">Username:</label>
     <input type="text" class="form-control smaller-input" name="username" placeholder="" required>
     <label for="password">Password:</label>
     <input type="password" class="form-control smaller-input" name="password" placeholder="" required>
     <button class="btn btn-success mt-2" type="submit">Login</button>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </form>
+
+
 {% endblock %}
