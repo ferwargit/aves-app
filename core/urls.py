@@ -14,49 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from appves import views as appves
-from user import views
-from user.views import CrearAvistaje, ListarAvistajes
 
-# Se agrega para que se pueda ver el contenido de la carpeta static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.auth.decorators import login_required
-
-# Para poder ver las imagenes en el navegador
 from django.conf import settings
 from django.conf.urls.static import static
-
-from appves.views import ListarBirds, CrearAve, EditarAve, EliminarAve, DetalleAve, CargarAveAvistaje
+from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import include, path
 
 urlpatterns = [
+    path('', include('appves.urls')),
     path('admin/', admin.site.urls),
-    path('home/', appves.home, name='home'),
-    path('about/', appves.about, name='about'),
-    path('create_user/', views.crear_cuenta, name='create_user'),
-    path('login_user/', views.login_user, name='login'),
-    path('logout_user/', views.logout_user, name='logout'),
-    path('logeado/', views.logeado, name='logeado'),
-    path('create_list/', login_required(CrearAvistaje.as_view()), name='crear_avistaje'),
-    path('list_avistaje/', login_required(ListarAvistajes.as_view()), name='listar_avistajes'),
-    path('charge_ave/<int:pk>', login_required(CargarAveAvistaje.as_view()), name='cargar_ave_avistaje'),
-    path('search_ave/', appves.buscar_ave, name='buscar_ave'),
-
-    path('listar/', ListarBirds.as_view(), name='list_birds'),
-    path('crear/', login_required(CrearAve.as_view()), name='create_bird'),
-    path('editar/<int:pk>', login_required(EditarAve.as_view()), name='edit_bird'),
-    path('eliminar/<int:pk>', login_required(EliminarAve.as_view()), name='delete_bird'),
-    path('detalle/<int:pk>', DetalleAve.as_view(), name='detail_birds'),
-    
-    #se agregan templates Roget 16/6/23
-    path('biomas/', appves.biomas, name='biomas'),
-    path('glosario/', appves.glosario, name='glosario'),
-    path('lugares/', appves.lugares, name='lugares'),
-    path('topografia/', appves.topografia, name='topografia'),
-    path('familias/', appves.familias, name='familias'),
-    path('quienes/', views.quienes, name='quienes'),
-
+    path('appves/', include('appves.urls')),
+    path('user/', include('user.urls')),
 ]
 
 # Se agrega para que se pueda ver el contenido de la carpeta static

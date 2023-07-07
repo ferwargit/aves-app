@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}
-<title>Crear Cuenta</title>
+<title>Crear Usuario</title>
 {% endblock %}
 
-{% block content %}
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
 {% endblock %}
-<h1>Crear cuenta</h1>
 
-<form action="/create_user/" method="POST">
+{% block content %}
+<h1>Crear Usuario</h1>
+
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-success">Crear</button>
+    <button type="submit" class="btn btn-success">Crear usuario</button>
 </form>
+
 {% endblock %}
