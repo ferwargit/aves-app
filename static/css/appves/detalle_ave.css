@@ -1,10 +1,21 @@
+.map {
+  height: 600px; /* Altura del mapa */
+  width: 100%; /* Ancho del mapa */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
 .bird-image {
   object-fit: cover; /* Ajusta la imagen dentro del tamaño especificado */
   border-radius: 10px; /* Bordes redondeados */
 }
 
-.map {
-  height: 300px; /* Altura del mapa */
-  width: 100%; /* Ancho del mapa */
-  border-radius: 10px; /* Bordes redondeados */
+.tab-pane.fade.show.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.custom-tab {
+  background-color: #E2E1CD; /* Colot Tab */
 }
