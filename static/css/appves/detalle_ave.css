@@ -2,3 +2,9 @@
   object-fit: cover; /* Ajusta la imagen dentro del tamaño especificado */
   border-radius: 10px; /* Bordes redondeados */
 }
+
+.map {
+  height: 300px; /* Altura del mapa */
+  width: 100%; /* Ancho del mapa */
+  border-radius: 10px; /* Bordes redondeados */
+}
