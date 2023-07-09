@@ -1,63 +1,64 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 {% block title %}
-<title>Detalle de ave</title>
-{% endblock %}
-
+    <title>Detalle de ave</title>
+{% endblock title %}
 {% block head %}
-{% block scripts %}
-<script src="{% static 'js/mapa-api.js' %}" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-{% endblock %}
-{% endblock %}
-
+    {% block scripts %}
+        <script src="{% static 'js/mapa-api.js' %}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    {% endblock scripts %}
+{% endblock head %}
 {% block content %}
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
-{% endblock %}
-
-<div class="container">
-    <h1 class="text-center mb-4"><strong>{{ ave.nombre }}</strong></h1>
-    <div class="card-body">
-        <div class="row">
-        <div class="col-md-6">
-        <img src="{{ ave.imagen.url }}" class="bird-image">
-        </div>
-        <div class="col-md-6">
-            <ul class="d-flex flex-column justify-content-center">
-                <li id="aveData" data-nombre-cientifico="{{ ave.nombre_cientifico }}">Nombre Científico: {{ ave.nombre_cientifico }}</li>
-                <li>Nombre en Inglés: {{ ave.nombre_ingles }}</li>
-                <li>Familia: {{ ave.familia }}</li>
-                <li>Descripción: {{ ave.descripcion }}</li>
-                <li>Tamaño: {{ ave.tamanio }}</li>
-                <li>Habitat: {{ ave.habitat }}</li>
-                <li>Voz: {{ ave.voz }}</li>
-                <li>Alimentación: {{ ave.alimentacion }}</li>
-                <li>Cria: {{ ave.cria }}</li>
-                <li>Movimientos Estacionales: {{ ave.movimientos_estacionales }}</li>
-                <li>Estado de Conservación: {{ ave.status_conservacion }}</li>
-                <li>Largo del pico: {{ ave.largo_pico }}</li>
-                <li>Largo de las patas: {{ ave.largo_patas }}</li>
-                <li>Forma de las alas: {{ ave.forma_alas }}</li>
-                <li>Largo del cuello: {{ ave.largo_cuello }}</li>
-                <li>Cuello en vuelo: {{ ave.cuello_vuelo }}</li>
-                <li>Largo de la cola: {{ ave.largo_cola }}</li>
-                <li>Forma de la cola: {{ ave.forma_cola }}</li>
-                <li>Patrón de coloracion: {{ ave.patron_coloracion }}</li>
-                <li>Cabeza: {{ ave.cabeza }}</li>
-                <li>Grupo: {{ ave.grupo }}</li>
-            </ul>                    
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
+    {% endblock styles %}
+    <div class="container">
+        <h1 class="text-center mb-4">
+            <strong>{{ ave.nombre }}</strong>
+        </h1>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ ave.imagen.url }}"
+                         class="bird-image"
+                         alt="Image-ave"
+                         width="400px"
+                         height="300px">
+                </div>
+                <div class="col-md-6">
+                    <ul class="d-flex flex-column justify-content-center">
+                        <li id="aveData" data-nombre-cientifico="{{ ave.nombre_cientifico }}">
+                            Nombre Científico: {{ ave.nombre_cientifico }}
+                        </li>
+                        <li>Nombre en Inglés: {{ ave.nombre_ingles }}</li>
+                        <li>Familia: {{ ave.familia }}</li>
+                        <li>Descripción: {{ ave.descripcion }}</li>
+                        <li>Tamaño: {{ ave.tamanio }}</li>
+                        <li>Habitat: {{ ave.habitat }}</li>
+                        <li>Voz: {{ ave.voz }}</li>
+                        <li>Alimentación: {{ ave.alimentacion }}</li>
+                        <li>Cria: {{ ave.cria }}</li>
+                        <li>Movimientos Estacionales: {{ ave.movimientos_estacionales }}</li>
+                        <li>Estado de Conservación: {{ ave.status_conservacion }}</li>
+                        <li>Largo del pico: {{ ave.largo_pico }}</li>
+                        <li>Largo de las patas: {{ ave.largo_patas }}</li>
+                        <li>Forma de las alas: {{ ave.forma_alas }}</li>
+                        <li>Largo del cuello: {{ ave.largo_cuello }}</li>
+                        <li>Cuello en vuelo: {{ ave.cuello_vuelo }}</li>
+                        <li>Largo de la cola: {{ ave.largo_cola }}</li>
+                        <li>Forma de la cola: {{ ave.forma_cola }}</li>
+                        <li>Patrón de coloracion: {{ ave.patron_coloracion }}</li>
+                        <li>Cabeza: {{ ave.cabeza }}</li>
+                        <li>Grupo: {{ ave.grupo }}</li>
+                    </ul>
+                </div>
+            </div>
+            <script type="application/json">const nombreCientifico = {{ ave.nombre_cientifico }};</script>
+            <div>
+                <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
+            </div>
         </div>
     </div>
-    <script type="application/json">
-        const nombreCientifico = {{ ave.nombre_cientifico }};
-    </script>
-    
-    <div>
-    <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
-    </div>  
-</div>
-
-<div id="map" style="height: 600px; position: relative;"></div>
-
-{% endblock %}
+        <div id="map" style="height: 600px; position: relative;"></div>
+{% endblock content %}

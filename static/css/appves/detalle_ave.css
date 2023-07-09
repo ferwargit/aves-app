@@ -1,6 +1,4 @@
 .bird-image {
-  width: 400px; /* Ancho deseado */
-  height: 300px; /* Alto deseado */
   object-fit: cover; /* Ajusta la imagen dentro del tamaño especificado */
   border-radius: 10px; /* Bordes redondeados */
 }
