@@ -1,11 +1,9 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block content %}
-<h1>Crear aves</h1>
-
-<form action="/crear/" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-success">Crear</button>
-</form>
-{% endblock %}
+    <h1>Crear aves</h1>
+    <form action="{% url 'create_bird' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success">Crear</button>
+    </form>
+{% endblock content %}

@@ -18,8 +18,10 @@ p {
 }
 
 .navbar-custom-text-color .navbar-nav .nav-link:hover {
-  color: #A3AC44; /* Color Fuente */
+  color: #A3AC44;
+  /* Color Fuente */
 }
+
 .container {
   padding: 20px;
 }
@@ -35,10 +37,10 @@ p {
 }
 
 .nav-link.username {
-  margin-left: 300px;
-  margin-right: 0px;
+  margin-left: 50px;
+  margin-right: 0%;
   font-weight: 500;
   font-size: 16px;
-  color: white; 
+  color: white;
   text-shadow: black 0.1em 0.1em 0.2em
 }
