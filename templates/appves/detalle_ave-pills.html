@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title>Detalle de ave</title>
+{% endblock title %}
+{% block head %}
+    {% block scripts %}
+        <script src="{% static 'js/mapa-api.js' %}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/reproductor.js' %}" defer></script>
+    {% endblock scripts %}
+{% endblock head %}
+{% block content %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
+    {% endblock styles %}
+    <script type="application/json">const nombreCientifico = {{ ave.nombre_cientifico }};</script>
+    <div class="container">
+        <h1 class="text-center mb-4">
+            <strong>{{ ave.nombre }}</strong>
+        </h1>
+        {% comment %} INICIO {% endcomment %}
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active"
+                        id="pills-text-tab"
+                        data-bs-toggle="pill"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-text"
+                        aria-selected="true">Texto</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link"
+                        id="pills-audio-tab"
+                        data-bs-toggle="pill"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-audio"
+                        aria-selected="false">Audio</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link"
+                        id="pills-maps-tab"
+                        data-bs-toggle="pill"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-maps"
+                        aria-selected="false">Mapas</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active"
+                 id="pills-text"
+                 role="tabpanel"
+                 aria-labelledby="pills-text-tab">
+                <!-- Aquí va el contenido de texto -->
+            </div>
+            <div class="tab-pane fade"
+                 id="pills-audio"
+                 role="tabpanel"
+                 aria-labelledby="pills-audio-tab">
+                <!-- Aquí va el contenido de audio -->
+            </div>
+            <div class="tab-pane fade"
+                 id="pills-maps"
+                 role="tabpanel"
+                 aria-labelledby="pills-maps-tab">
+                <!-- Aquí va el contenido del mapa Leaflet -->
+            </div>
+        </div>
+        {% comment %} FIN {% endcomment %}
+        <div class="text-center">
+            <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+{% endblock content %}

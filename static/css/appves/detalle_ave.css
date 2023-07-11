@@ -1,21 +1,32 @@
-.map {
-  height: 600px; /* Altura del mapa */
-  width: 100%; /* Ancho del mapa */
-  border-radius: 10px; /* Bordes redondeados */
-}
+/* .map {
+  height: 600px; 
+  width: 100%; 
+  border-radius: 10px; /* 
 
-.bird-image {
-  object-fit: cover; /* Ajusta la imagen dentro del tamaño especificado */
-  border-radius: 10px; /* Bordes redondeados */
-}
+/* .bird-image {
+  object-fit: cover; 
+  border-radius: 10px; 
+} */
 
-.tab-pane.fade.show.active {
+/* .tab-pane.fade.show.active {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
+} */
+
+/* .custom-tab {
+  background-color: #E2E1CD; /* Colot Tab */
+
+/* Cambia el color de fondo y de la letra de las pestañas activas */
+.nav-tabs .nav-link.active {
+  background-color: #3C644C; /* Cambia #yourColor por el color que quieras */
+  border: 1px solid #333; /* Cambia #yourColor por el color que quieras */
+  color: #fff; /* Cambia #yourColor por el color que quieras */
 }
 
-.custom-tab {
-  background-color: #E2E1CD; /* Colot Tab */
+/* Cambia el color de la letra de las pestañas inactivas */
+.nav-tabs .nav-link {
+  color: #333; /* Cambia #yourColor por el color que quieras */
+  border: 1px solid #333; /* Cambia #yourColor por el color que quieras */
 }
