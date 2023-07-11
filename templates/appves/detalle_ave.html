@@ -7,10 +7,6 @@
     {% block scripts %}
         <script src="{% static 'js/mapa-api.js' %}" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
-        <script src="{% static 'js/reproductor.js' %}" defer></script>
     {% endblock scripts %}
 {% endblock head %}
 {% block content %}
@@ -18,89 +14,133 @@
         <link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
     {% endblock styles %}
     <script type="application/json">const nombreCientifico = {{ ave.nombre_cientifico }};</script>
-    <div class="container">
+    <div class="contenedor">
         <h1 class="text-center mb-4">
             <strong>{{ ave.nombre }}</strong>
         </h1>
-        <nav>
-            <div class="nav nav-tabs justify-content-center custom-tab"
-                 id="nav-tab"
-                 role="tablist">
-                <a class="nav-item nav-link active"
-                   id="nav-descripcion-tab"
-                   data-toggle="tab"
-                   href="#nav-descripcion"
-                   role="tab"
-                   aria-controls="nav-descripcion"
-                   aria-selected="false">Descripción</a>
-                <a class="nav-item nav-link custom-tab"
-                   id="nav-image-tab"
-                   data-toggle="tab"
-                   href="#nav-imagen"
-                   role="tab"
-                   aria-controls="nav-imagen"
-                   aria-selected="true">Imagen</a>
-                <a class="nav-item nav-link custom-tab"
-                   id="nav-audio-tab"
-                   data-toggle="tab"
-                   href="#nav-audio"
-                   role="tab"
-                   aria-controls="nav-audio"
-                   aria-selected="true">Audio</a>
-                <a class="nav-item nav-link custom-tab"
-                   id="nav-mapa-tab"
-                   data-toggle="tab"
-                   href="#nav-mapa"
-                   role="tab"
-                   aria-controls="nav-mapa"
-                   aria-selected="false">Mapa</a>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active"
+                        id="home-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#home"
+                        type="button"
+                        role="tab"
+                        aria-controls="home"
+                        aria-selected="true">Descripción</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link"
+                        id="profile-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#audio"
+                        type="button"
+                        role="tab"
+                        aria-controls="audio"
+                        aria-selected="false">Audio</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link"
+                        {% comment %}
+                        id="contact-tab"
+                        {% endcomment %}
+                        id="nav-mapa"
+                        data-bs-toggle="tab"
+                        data-bs-target="#mapa"
+                        type="button"
+                        role="tab"
+                        aria-controls="mapa"
+                        aria-selected="false">Mapa</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            {% comment %} IMAGEN - DESCRIPCION {% endcomment %}
             <div class="tab-pane fade show active"
-                 id="nav-descripcion"
+                 id="home"
                  role="tabpanel"
-                 aria-labelledby="nav-descripcion-tab">
-                <ul class="d-flex flex-column justify-content-center">
-                    <li id="aveData" data-nombre-cientifico="{{ ave.nombre_cientifico }}">
-                        Nombre Científico: {{ ave.nombre_cientifico }}
-                    </li>
-                    <li>Nombre en Inglés: {{ ave.nombre_ingles }}</li>
-                    <li>Familia: {{ ave.familia }}</li>
-                    <li>Descripción: {{ ave.descripcion }}</li>
-                    <li>Tamaño: {{ ave.tamanio }}</li>
-                    <li>Habitat: {{ ave.habitat }}</li>
-                    <li>Voz: {{ ave.voz }}</li>
-                    <li>Alimentación: {{ ave.alimentacion }}</li>
-                    <li>Cria: {{ ave.cria }}</li>
-                    <li>Movimientos Estacionales: {{ ave.movimientos_estacionales }}</li>
-                    <li>Estado de Conservación: {{ ave.status_conservacion }}</li>
-                    <li>Largo del pico: {{ ave.largo_pico }}</li>
-                    <li>Largo de las patas: {{ ave.largo_patas }}</li>
-                    <li>Forma de las alas: {{ ave.forma_alas }}</li>
-                    <li>Largo del cuello: {{ ave.largo_cuello }}</li>
-                    <li>Cuello en vuelo: {{ ave.cuello_vuelo }}</li>
-                    <li>Largo de la cola: {{ ave.largo_cola }}</li>
-                    <li>Forma de la cola: {{ ave.forma_cola }}</li>
-                    <li>Patrón de coloracion: {{ ave.patron_coloracion }}</li>
-                    <li>Cabeza: {{ ave.cabeza }}</li>
-                    <li>Grupo: {{ ave.grupo }}</li>
-                </ul>
+                 aria-labelledby="home-tab">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 p-2">
+                        <img src="{{ ave.imagen.url }}"
+                             class="bird-image imagen-arriba"
+                             alt="Image"
+                             width="475px"
+                             height="375px">
+                    </div>
+                    <div class="col-md-12 col-sm-12 p-2">
+                        <ul class="d-flex flex-column justify-content-center">
+                            <li id="aveData" data-nombre-cientifico="{{ ave.nombre_cientifico }}">
+                                <strong>Nombre Científico:</strong> {{ ave.nombre_cientifico }}
+                            </li>
+                            <li>
+                                <strong>Nombre en Inglés:</strong> {{ ave.nombre_ingles }}
+                            </li>
+                            <li>
+                                <strong>Familia:</strong> {{ ave.familia }}
+                            </li>
+                            <li>
+                                <strong>Descripción:</strong> {{ ave.descripcion }}
+                            </li>
+                            <li>
+                                <strong>Tamaño:</strong> {{ ave.tamanio }}
+                            </li>
+                            <li>
+                                <strong>Habitat:</strong> {{ ave.habitat }}
+                            </li>
+                            <li>
+                                <strong>Voz:</strong> {{ ave.voz }}
+                            </li>
+                            <li>
+                                <strong>Alimentación:</strong> {{ ave.alimentacion }}
+                            </li>
+                            <li>
+                                <strong>Cria:</strong> {{ ave.cria }}
+                            </li>
+                            <li>
+                                <strong>Movimientos Estacionales:</strong> {{ ave.movimientos_estacionales }}
+                            </li>
+                            <li>
+                                <strong>Estado de Conservación:</strong> {{ ave.status_conservacion }}
+                            </li>
+                            <li>
+                                <strong>Largo del pico:</strong> {{ ave.largo_pico }}
+                            </li>
+                            <li>
+                                <strong>Largo de las patas:</strong> {{ ave.largo_patas }}
+                            </li>
+                            <li>
+                                <strong>Forma de las alas:</strong> {{ ave.forma_alas }}
+                            </li>
+                            <li>
+                                <strong>Largo del cuello:</strong> {{ ave.largo_cuello }}
+                            </li>
+                            <li>
+                                <strong>Cuello en vuelo:</strong> {{ ave.cuello_vuelo }}
+                            </li>
+                            <li>
+                                <strong>Largo de la cola:</strong> {{ ave.largo_cola }}
+                            </li>
+                            <li>
+                                <strong>Forma de la cola:</strong> {{ ave.forma_cola }}
+                            </li>
+                            <li>
+                                <strong>Patrón de coloracion:</strong> {{ ave.patron_coloracion }}
+                            </li>
+                            <li>
+                                <strong>Cabeza:</strong> {{ ave.cabeza }}
+                            </li>
+                            <li>
+                                <strong>Grupo:</strong> {{ ave.grupo }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            {% comment %} AUDIO {% endcomment %}
             <div class="tab-pane fade"
-                 id="nav-imagen"
+                 id="audio"
                  role="tabpanel"
-                 aria-labelledby="nav-imagen-tab">
-                <img src="{{ ave.imagen.url }}"
-                     class="bird-image"
-                     alt="Image"
-                     width="475px"
-                     height="375px">
-            </div>
-            <div class="tab-pane fade"
-                 id="nav-audio"
-                 role="tabpanel"
-                 aria-labelledby="nav-audio-tab">
+                 aria-labelledby="audio-tab">
                 <div class="audio-player">
                     <audio controls>
                         <source src="{{ ave.audio.url }}" type="audio/mpeg">
@@ -109,15 +149,16 @@
                     </audio>
                 </div>
             </div>
+            {% comment %} AUDIO {% endcomment %}
             <div class="tab-pane fade"
-                 id="nav-mapa"
+                 id="mapa"
                  role="tabpanel"
-                 aria-labelledby="nav-mapa-tab">
+                 aria-labelledby="mapa-tab">
                 <div id="map" class="map"></div>
             </div>
-        </div>
-        <div class="text-center">
-            <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
+            <div class="text-center">
+                <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>
+            </div>
         </div>
     </div>
 {% endblock content %}
