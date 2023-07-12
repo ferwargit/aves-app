@@ -1,6 +1,18 @@
 .text-center.text {
   font-weight: 500;
   font-size: 16px;
-  color: white; 
+  color: white;
   text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.text-center.text-white {
+  background-color: #caced1
+}
+
+.text-center.text-green {
+  background-color: #3C644C;
+}
+
+.mask {
+  background-color: rgba(251, 251, 251, 0.2);
 }

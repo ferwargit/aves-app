@@ -1,21 +1,63 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-
 {% block title %}
-<title>Crear Usuario</title>
-{% endblock %}
-
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
-{% endblock %}
-
+    <title>Create Account</title>
+{% endblock title %}
 {% block content %}
-<h1>Crear Usuario</h1>
-
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Crear usuario</button>
-</form>
-
-{% endblock %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
+    {% endblock styles %}
+    <div class="container">
+        <h1 class="cont-titulo">Create Account</h1>
+        <form class="cont-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            <div class="form-group">
+                <label for="emailRegister">Email</label>
+                <input type="email"
+                       id="emailRegister"
+                       name="email"
+                       class="form-control"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text"
+                       id="username"
+                       name="username"
+                       class="form-control"
+                       maxlength="150"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password"
+                       id="password1"
+                       name="password1"
+                       class="form-control"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirmar password</label>
+                <input type="password"
+                       id="password2"
+                       name="password2"
+                       class="form-control"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.province.id_for_label }}">Provincia</label>
+                <select name="{{ form.province.name }}" class="form-control">
+                    {% for choice_value, choice_label in form.province.field.choices %}
+                        <option value="{{ choice_value }}">{{ choice_label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Imagen</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <button type="submit" class="btn btn-success">Create Account</button>
+        </form>
+    </div>
+{% endblock content %}
