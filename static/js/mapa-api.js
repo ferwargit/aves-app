@@ -40,6 +40,16 @@ var baseLayers = {
 // Agregar control de capas al mapa
 L.control.layers(baseLayers, {}).addTo(map);
 
+var navMapa = document.getElementById("nav-mapa");
+navMapa.addEventListener("click", function () {
+  // Código a ejecutar para refrescar el mapa cuando el elemento 'nav-mapa' es clickeado
+  console.log("click en nav-mapa");
+  setTimeout(function () {
+    map.invalidateSize();
+    console.log("Mapa actualizado");
+  }, 10);
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const aveData = document.getElementById("aveData");
   const nombreCientifico = aveData.getAttribute("data-nombre-cientifico");
