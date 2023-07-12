@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-    <title>Create Account</title>
+    <title>Crear cuenta</title>
 {% endblock title %}
 {% block content %}
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
     {% endblock styles %}
     <div class="container">
-        <h1 class="cont-titulo">Create Account</h1>
+        <h1 class="cont-titulo">Crear cuenta</h1>
         <form class="cont-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% comment %} {{ form.as_p }} {% endcomment %}
@@ -57,7 +57,7 @@
                 <label for="image">Imagen</label>
                 <input type="file" id="image" name="image">
             </div>
-            <button type="submit" class="btn btn-success">Create Account</button>
+            <button type="submit" class="btn btn-success">Crear cuenta</button>
         </form>
     </div>
 {% endblock content %}
