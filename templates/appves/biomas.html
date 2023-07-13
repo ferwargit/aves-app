@@ -72,7 +72,7 @@
 	
 	<div id='mapa' style="height:500px;"></div>
 	
-	<script type="text/javascript" src="../static/js/limites_ecorregiones.js"></script>
+	<script type="text/javascript" src="{% static 'js/limites_ecorregiones.js'%}"></script>
 	
 	<script type="text/javascript">
 	
@@ -124,7 +124,7 @@
 							 '#000000';
 			}
 	
-	
+		// Implementa el estilo de las ecorregiones
 		function style(feature) {
 			return {
 				fillColor: getColor(feature.properties.ID),
@@ -135,7 +135,8 @@
 				fillOpacity: 0.7
 			};
 		}
-	
+		
+		//Implementa la lógica para resaltar una ecorregión
 		function highlightFeature(e) {
 			const layer = e.target;
 	
