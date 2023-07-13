@@ -1,6 +1,6 @@
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import AbstractUser, UserManager, PermissionsMixin
 
 # Create your models here.
 class Province(models.Model):

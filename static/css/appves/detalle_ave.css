@@ -1,6 +1,102 @@
+h1 {
+  margin-bottom: 0px;
+  font-size: 50px;
+  font-weight: 500;
+  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}	
+
+.contenedor {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #3C644C;
+  margin: 20px;
+  padding: 20px;
+  color: #333333;
+  background-color: silver;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.map {
+  height: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+
 .bird-image {
-  width: 400px; /* Ancho deseado */
-  height: 300px; /* Alto deseado */
-  object-fit: cover; /* Ajusta la imagen dentro del tamaño especificado */
-  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover;
+  border-radius: 10px;
+  position: top;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Asegúrate que el valor width en px no esté más allá del tamaño máximo que puede tener en el contenedor*/
+  width: 50%;
+}
+
+.imagen-arriba {
+  position: relative;
+  top: 0;
+  width: 60%;
+  height: 100%;
+}
+
+.tab-pane.fade.show.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.custom-tab {
+  background-color: #E2E1CD;
+  /* Colot Tab */
+}
+
+/* Cambia el color de fondo y de la letra de las pestañas activas */
+.nav-tabs .nav-link.active {
+  background-color: #3C644C;
+  color: #fff;
+}
+
+/* Cambia el color de la letra de las pestañas inactivas */
+.nav-tabs .nav-link {
+  color: #333;
+  border: 0.5px solid #3C644C;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.nav-tabs {
+  border-color: #333;
+  /* Cambia "red" al color que desees */
+}
+
+/* LINEA BLANCA */
+.nav-tabs .nav-link {
+  position: relative;
+}
+
+.nav-tabs .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-tabs .nav-link.active::before {
+  transform: scaleX(1);
 }

@@ -1,49 +1,130 @@
-var openStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-});
+var openStreetMap = L.tileLayer(
+  "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }
+);
 
-var stamenTerrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    subdomains: 'abcd',
+var stamenTerrain = L.tileLayer(
+  "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}",
+  {
+    attribution:
+      'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: "abcd",
     minZoom: 0,
     maxZoom: 18,
-    ext: 'png'
+    ext: "png",
+  }
+);
+
+var esriWorldImagery = L.tileLayer(
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  {
+    attribution: "Tiles &copy; Esri",
+  }
+);
+
+var map = L.map("map", {
+  center: [-41.6, -62.0],
+  zoom: 4,
+  layers: [openStreetMap], // La primera capa base que se muestra por defecto
 });
 
-var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri'
-});
-
-var map = L.map('map', {
-    center: [-41.6, -62.0],
-    zoom: 4,
-    layers: [openStreetMap]  // La primera capa base que se muestra por defecto
-});
-
-// Le tengo que pasar el nombre cientifico de la especie
-// https://api.gbif.org/v1/species/match?name=Rhea%20americana
-// De aca obtengo el usageKey: 2495165 y luego se lo paso a la url de abajo
-
-var caracara_plancus = L.tileLayer('https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=2480989&basisOfRecord=HUMAN_OBSERVATION&years=2023,2023&bin=hex&hexSize=64&style=red.poly&country=AR', {
-    attribution: '&copy; <a href="https://www.gbif.org/">GBIF</a>',
-    opacity: 0.5
-});
-
-// Aquí se definen las capas base (solo puede estar seleccionada una a la vez)
 var baseLayers = {
-    "OpenStreetMap": openStreetMap,
-    "Stamen Terrain": stamenTerrain,
-    "Esri World Imagery": esriWorldImagery,
+  OpenStreetMap: openStreetMap,
+  "Stamen Terrain": stamenTerrain,
+  "Esri World Imagery": esriWorldImagery,
 };
 
-// Aquí se definen las capas de superposición (pueden estar seleccionadas varias a la vez)
-var overlays = {
-    "Caracara_plancus": caracara_plancus,
-};
+// Agregar control de capas al mapa
+L.control.layers(baseLayers, {}).addTo(map);
 
-// Se añade el control de capas al mapa
-L.control.layers(baseLayers, overlays).addTo(map);
+var navMapa = document.getElementById("nav-mapa");
+navMapa.addEventListener("click", function () {
+  // Código a ejecutar para refrescar el mapa cuando el elemento 'nav-mapa' es clickeado
+  console.log("click en nav-mapa");
+  setTimeout(function () {
+    map.invalidateSize();
+    console.log("Mapa actualizado");
+  }, 10);
+});
 
-// Agregar escala al mapa
-// L.control.scale().addTo(map);
-L.control.scale({ position: 'bottomright' }).addTo(map);
+document.addEventListener("DOMContentLoaded", function () {
+  const aveData = document.getElementById("aveData");
+  const nombreCientifico = aveData.getAttribute("data-nombre-cientifico");
+  const nombreCientificoFormated = encodeURIComponent(nombreCientifico);
+
+  fetch(
+    `https://api.gbif.org/v1/species/match?name=${nombreCientificoFormated}&country=AR`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      var usageKey = data.usageKey;
+      // return fetch(`https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&fromDate=2022-06&toDate=2023-06&limit=500`);
+      return fetch(
+        `https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&&limit=500`
+      );
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      data.results.forEach((observation) => {
+        if (observation.decimalLatitude && observation.decimalLongitude) {
+          // Crea un nuevo marcador
+          // var marker = L.marker([observation.decimalLatitude, observation.decimalLongitude]).addTo(map);
+          var circle = L.circle(
+            [observation.decimalLatitude, observation.decimalLongitude],
+            {
+              color: "blue",
+              fillColor: "#f03",
+              fillOpacity: 0.5,
+              radius: 500,
+            }
+          ).addTo(map);
+
+          // Verifica si la propiedad extensions existe y tiene al menos un objeto dentro
+          if (
+            observation.extensions &&
+            observation.extensions["http://rs.gbif.org/terms/1.0/Multimedia"] &&
+            observation.extensions["http://rs.gbif.org/terms/1.0/Multimedia"]
+              .length > 0
+          ) {
+            var multimedia =
+              observation.extensions[
+                "http://rs.gbif.org/terms/1.0/Multimedia"
+              ][0];
+            var photoLink = multimedia["http://purl.org/dc/terms/identifier"];
+            var place = observation.stateProvince;
+            var eventDate = observation.eventDate;
+            let eventDateObj = new Date(eventDate);
+            let formattedDate = `${eventDateObj.getDate()}-${
+              eventDateObj.getMonth() + 1
+            }-${eventDateObj.getFullYear()}`;
+            var eventTime = observation.eventTime;
+            var timeWithoutZone = eventTime?.split("-")[0]; // Ignorar la zona horaria
+            var formattedTime = moment(timeWithoutZone, "HH:mm:ss").format(
+              "HH:mm"
+            );
+            var latitude = observation.decimalLatitude;
+            var longitude = observation.decimalLongitude;
+            var photoAuthor = multimedia["http://purl.org/dc/terms/creator"];
+
+            var popupContent = `
+                        <p><a href="${photoLink}" target="_blank">Ver foto</a></p>
+                        <p><strong>Lugar:</strong> ${place}</p>
+                        <p><strong>Fecha:</strong> ${formattedDate}</p>
+                        <p><strong>Hora:</strong> ${formattedTime}</p>
+                        <p><strong>Latitud:</strong> ${latitude}</p>
+                        <p><strong>Longitud:</strong> ${longitude}</p>
+                        <p><strong>Autor:</strong> ${photoAuthor}</p>
+                        `;
+            // marker.bindPopup(popupContent);
+            circle.bindPopup(popupContent);
+          }
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});

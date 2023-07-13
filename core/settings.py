@@ -142,4 +142,4 @@ LOGIN_URL = '/login_user'
 # Esto configura la ruta y la carpeta donde se almacenarán los archivos multimedia.
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

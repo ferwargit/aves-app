@@ -1,11 +1,30 @@
-h1 {
-  text-shadow: 0px 4px 10px rgba(179, 147, 211, 0.8);
-  text-align: center;
+.contenedor-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
-  font-size: 50px;
+}
+
+.texto {
+  text-align: center;
+  border-radius: 10px;
+  text-shadow: 0px 4px 10px rgba(179, 147, 211, 0.8);
+  box-shadow: 0px 4px 10px rgba(179, 147, 211, 0.8);
+  padding: 3px 10px 0px 10px;
+}
+
+h2 {
+  margin: 0;
+  text-shadow: 0px 4px 10px rgba(179, 147, 211, 0.8);
   font-weight: 500;
   background-image: linear-gradient(45deg, #3f9a3c, #762bee);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+.texto p {
+  margin: 0;
+  text-align: right;
+  color: #3f9a3c;
 }
