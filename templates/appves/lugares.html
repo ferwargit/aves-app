@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>Ecorregiones</title>
+    <title>Lugares para observar aves</title>
 {% endblock %}
 
 {% load static %}
@@ -22,19 +22,32 @@
 
 
 <div id="map" style="height: 600px; position: relative;">
-	<html>
-		<head>
-			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-				integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-				crossorigin=""/>
-			<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-				integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-				crossorigin=""></script>
-		</head>
-		<body>                              
-		  <div id="mapa" style="height:500px;"></div>
-		  <script>
-			const parques_nacionales = L.layerGroup();
+  <html>
+  <head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Lugares para observar aves</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+      crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+      crossorigin=""></script>
+  </head>
+  <body>
+  
+  <div id='mapa' style="height:500px;"></div>
+  
+  <script type="text/javascript" src="../static/js/limites_provinciales.js"></script>
+  
+  <script type="text/javascript">
+  
+      const parques_nacionales = L.layerGroup();
 			const mPNciervo = L.marker([-34.2342, -58.8861]).bindPopup('Parque Nacional Ciervo de los Pantanos.').addTo(parques_nacionales);
 			const mPNrey = L.marker([-24.67, -64.63]).bindPopup('Parque Nacional El Rey.').addTo(parques_nacionales);
 			const mPNtalampaya = L.marker([-29.90, -68.01]).bindPopup('Parque Nacional Talampaya').addTo(parques_nacionales);
@@ -74,7 +87,7 @@
 			const mPNtierra = L.marker([-54.65, -68.47]).bindPopup('Parque Nacional Tierra del Fuego').addTo(parques_nacionales);
 			const mPNtraslasierra = L.marker([-31.15, -65.49]).bindPopup('Parque Nacional Traslasierra').addTo(parques_nacionales);
 
-			const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			const argenmap = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png', {
 				maxZoom: 19,
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 			});
@@ -96,25 +109,87 @@
 			const aicas = L.layerGroup();
 			const mAICAmalvinas = L.marker([-51.8, -59.516667], {icon: redIcon}).bindPopup('Islas Malvinas').addTo(aicas);
 
-			const map = L.map('map', {
+      const map = L.map('map', {
 				center: [-40,-59],
 				zoom: 4,
-				layers: [osm, parques_nacionales]
+				layers: [argenmap, parques_nacionales]
 			});
 			
 			const baseLayers = {
-				'OpenStreetMap': osm,
+				'Argenmap': argenmap,
 				'Mapa Satelital': satelital
 			};
 			
 			const overlays = {
 				'Parques Nacionales': parques_nacionales,
-				'AICAs': aicas
+				'AICAs': aicas,
 			};
-			
-			const layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+  
+    
 
-			//agrego marcadores de color
+      const info = L.control();
+      const layerControl = L.control.layers(baseLayers, overlays).addTo(map)
+  
+      info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info');
+        return this._div;
+      };
+  
+    
+  
+      info.addTo(map);
+  
+      //Colorea los limites provinciales
+      function style(feature) {
+        return {
+          weight: 2,
+          opacity: 5,
+          color: '#6aa84f',
+          dashArray: '3',
+          fillOpacity: 0.1,
+        };
+      }
+  
+    function highlightFeature(e) {
+      const layer = e.target;
+  
+      layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.1
+      });
+  
+      layer.bringToFront();
+  
+      
+    }
+  
+    /* limites provinciales */
+    const geojson = L.geoJson(limites, {
+      style,
+      onEachFeature
+    }).addTo(map);
+  
+    function resetHighlight(e) {
+      geojson.resetStyle(e.target);
+    }
+  
+    function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+    }
+  
+    function onEachFeature(feature, layer) {
+      layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+      });
+    }
+  
+    map.attributionControl.addAttribution(' <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">IGN Instituto Geográfico Nacional</a>');
+    
+    //agrego marcadores de color
 			const greenIcon = new L.Icon({
 				iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
 				shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -156,10 +231,13 @@
 			});
 			layerControl.addBaseLayer(openTopoMap, 'Mapa Topográfico');
 			layerControl.addOverlay(parques_provinciales, 'Parques Provinciales');
-			</script>
-		</body>
-		</html>
-</div>
+  
+  </script>
+  
+  
+  
+  </body>
+  </html>
 
 
 {% endblock %}
