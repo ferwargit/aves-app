@@ -9,7 +9,11 @@
     {% endblock styles %}
     <div class="contenedor-texto">
         <div class="texto">
-            <h1>Appves</h1>
+            <h2>
+                <i>Appves</i>
+            </h2>
+        </div>
+        <div class="mensaje">
             {% if messages %}
                 {% for message in messages %}
                     <p {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</p>
