@@ -54,6 +54,9 @@ class CrearAvistaje(LoginRequiredMixin, CreateView):
     template_name = "user/crear_lista.html"
     success_url = reverse_lazy("listar_avistajes")
 
+    def get_initial(self):
+        return {"id_user": self.kwargs["pk"]}
+    
 
 class ListarAvistajes(LoginRequiredMixin, ListView):
     model = Avistaje

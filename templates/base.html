@@ -119,7 +119,7 @@
                                    aria-expanded="false">Avistaje</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="{% url 'crear_avistaje' %}">Crear avistaje</a>
+                                        <a class="dropdown-item" href="{% url 'crear_avistaje' user.id %}">Crear avistaje</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="{% url 'listar_avistajes' %}">Mis avistajes</a>

@@ -5,7 +5,14 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    <!-- {{ form.as_p }} -->
+    <div class="not-visible">{{ form.id_user }}</div>
+    
+    {{ form.label.nombre_avistaje }}
+    {{ form.nombre_avistaje }}
+    
+    {{ form.label.fecha_creacion }}
+    {{ form.fecha_creacion }}
     <button class="btn btn-success">Crear</button>
 </form>
 {% endblock %}
