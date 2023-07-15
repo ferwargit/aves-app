@@ -1,7 +1,25 @@
 from django import forms
-from .models import Bird, LineaAvistaje
+from .models import Bird, LineaAvistaje,TamanioForma
 
 class BirdForm(forms.ModelForm):
+    tamanio = forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(tamanio_aves=True))
+    largo_pico = forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(pico_aves=True))
+    largo_patas = forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(patas_aves=True))
+    forma_alas= forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(alas_aves=True))
+    largo_cuello= forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(cuello_aves=True))
+    cuello_vuelo= forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(cuello_vuelo_aves=True))
+    largo_cola= forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(largo_cola_aves=True))
+    forma_cola= forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(forma_cola_aves=True))
+    cabeza= forms.ModelChoiceField(
+            queryset=TamanioForma.objects.filter(cabeza_aves=True))
     class Meta:
         model = Bird
         fields = "__all__"
@@ -29,8 +47,12 @@ class BirdForm(forms.ModelForm):
                     'class': 'form-control'
                 }
             ),
+        
+        
             
         }
+        
+        
 
 class LineaAvistajeForm(forms.ModelForm):
     class Meta:

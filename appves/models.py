@@ -22,14 +22,23 @@ class Habitat(models.Model):
 
 
 class TamanioForma(models.Model):
-    tamanio = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=50)
+    pico_aves = models.BooleanField(null = False)
+    tamanio_aves = models.BooleanField(null = False)
+    patas_aves = models.BooleanField(null = False)
+    alas_aves = models.BooleanField(null = False)      
+    cuello_aves= models.BooleanField(null = False)
+    cuello_vuelo_aves= models.BooleanField(null = False)
+    largo_cola_aves= models.BooleanField(null = False)
+    forma_cola_aves= models.BooleanField(null = False)
+    cabeza_aves = models.BooleanField(null = False)
 
     class Meta:
         verbose_name = "Tamaño y forma"
         verbose_name_plural = "Tamaños y formas"
 
     def __str__(self):
-        return self.tamanio
+        return self.descripcion
 
 
 class MovimientoEstacion(models.Model):
@@ -41,6 +50,16 @@ class MovimientoEstacion(models.Model):
     class Meta:
         verbose_name = "Movimiento estacional"
         verbose_name_plural = "Movimientos estacionales"
+
+class StatusConservacion(models.Model):
+    estado = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.estado
+
+    class Meta:
+        verbose_name = "Estado de conservacion"
+        verbose_name_plural = "Estados de conservacion"
 
 
 class Plumaje(models.Model):
@@ -81,7 +100,7 @@ class Bird(models.Model):
         TamanioForma, on_delete=models.SET_NULL, null=True, related_name="tamanio_ave"
     )
     habitat = models.ForeignKey(Habitat, on_delete=models.SET_NULL, null=True)
-    voz = models.CharField(max_length=50)  # puede llegar a ser sonido
+    voz = models.CharField(max_length=1000)  # puede llegar a ser sonido
     audio = models.FileField(
         upload_to="bird_audios/",
         blank=True,
@@ -90,12 +109,14 @@ class Bird(models.Model):
         ],
         max_length=10 * 1024 * 1024,  # 10 MB
     )
-    alimentacion = models.CharField(max_length=100)
-    cria = models.CharField(max_length=100)
+    alimentacion = models.CharField(max_length=1000)
+    cria = models.CharField(max_length=1000)
     movimientos_estacionales = models.ForeignKey(
         MovimientoEstacion, on_delete=models.SET_NULL, null=True
     )
-    status_conservacion = models.CharField(max_length=100)
+    status_conservacion = models.ForeignKey(
+        StatusConservacion, on_delete=models.SET_NULL, null=True
+    )
     largo_pico = models.ForeignKey(
         TamanioForma, on_delete=models.SET_NULL, null=True, related_name="pico"
     )
@@ -117,12 +138,18 @@ class Bird(models.Model):
     forma_cola = models.ForeignKey(
         TamanioForma, on_delete=models.SET_NULL, null=True, related_name="forma_cola"
     )
-    patron_coloracion = models.ForeignKey(Plumaje, on_delete=models.SET_NULL, null=True)
+    patron_coloracion = models.ForeignKey(
+        Plumaje, on_delete=models.SET_NULL, null=True
+    )
     cabeza = models.ForeignKey(
         TamanioForma, on_delete=models.SET_NULL, null=True, related_name="cabeza"
     )
-    grupo = models.ForeignKey(Grupo, on_delete=models.SET_NULL, null=True)
-    status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True)
+    grupo = models.ForeignKey(
+        Grupo, on_delete=models.SET_NULL, null=True
+    )
+    status = models.ForeignKey(
+        Status, on_delete=models.SET_NULL, null=True
+    )
 
     def __str__(self):
         return f"{self.nombre} - {self.nombre_cientifico}"

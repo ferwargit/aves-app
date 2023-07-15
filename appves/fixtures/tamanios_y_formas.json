@@ -3,168 +3,385 @@
   "model": "appves.tamanioforma",
   "pk": 1,
   "fields": {
-    "tamanio": "Muy chico < 10 cm"
+    "descripcion": "Muy chico < 10 cm",
+    "pico_aves": false,
+    "tamanio_aves": true,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
+    
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 2,
   "fields": {
-    "tamanio": "Chico 11 a 25 cm"
+    "descripcion": "Chico 11 a 25 cm",
+    "pico_aves": false,
+    "tamanio_aves": true,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 3,
   "fields": {
-    "tamanio": "Mediano 26 a 50 cm"
+    "descripcion": "Mediano 26 a 50 cm",
+    "pico_aves": false,
+    "tamanio_aves": true,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 4,
   "fields": {
-    "tamanio": "Grande 51 a 75 cm"
+    "descripcion": "Grande 51 a 75 cm",
+    "pico_aves": false,
+    "tamanio_aves": true,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 5,
   "fields": {
-    "tamanio": "Muy grande > de 75 cm"
+    "descripcion": "Muy grande > de 75 cm",
+    "pico_aves": false,
+    "tamanio_aves": true,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 6,
   "fields": {
-    "tamanio": "Pico mediano"
+    "descripcion": "Pico mediano",
+    "pico_aves": true,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 7,
   "fields": {
-    "tamanio": "Patas largas"
+    "descripcion": "Patas largas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": true,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 8,
   "fields": {
-    "tamanio": "Cuello largo"
+    "descripcion": "Cuello largo",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": true,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 9,
   "fields": {
-    "tamanio": "No vuela"
+    "descripcion": "No vuela",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": true,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 10,
   "fields": {
-    "tamanio": "Cola corta"
+    "descripcion": "Cola corta",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": true,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 11,
   "fields": {
-    "tamanio": "Sin cola"
+    "descripcion": "Sin cola",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": true,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 12,
   "fields": {
-    "tamanio": "Alas largas y anchas"
+    "descripcion": "Alas largas y anchas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": true,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves":false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 13,
   "fields": {
-    "tamanio": "Otro"
+    "descripcion": "Otro",
+    "pico_aves": true,
+    "tamanio_aves": true,
+    "patas_aves": true,
+    "alas_aves": true,
+    "cuello_aves": true,
+    "cuello_vuelo_aves": true,
+    "largo_cola_aves": true,
+    "forma_cola_aves": true,
+    "cabeza_aves": true
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 14,
   "fields": {
-    "tamanio": "Pico largo"
+    "descripcion": "Pico largo",
+    "pico_aves": true,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 15,
   "fields": {
-    "tamanio": "Alas en punta"
+    "descripcion": "Alas en punta",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": true,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 16,
   "fields": {
-    "tamanio": "Estirado"
+    "descripcion": "Estirado",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": true,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 17,
   "fields": {
-    "tamanio": "Patas medianas"
+    "descripcion": "Patas medianas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": true,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 18,
   "fields": {
-    "tamanio": "Cuello corto"
+    "descripcion": "Cuello corto",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": true,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 19,
   "fields": {
-    "tamanio": "Cresta"
+    "descripcion": "Cresta",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": true
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 20,
   "fields": {
-    "tamanio": "en S"
+    "descripcion": "en S",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": true,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 21,
   "fields": {
-    "tamanio": "Capuchón"
+    "descripcion": "Capuchón",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": true
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 22,
   "fields": {
-    "tamanio": "Patas cortas"
+    "descripcion": "Patas cortas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": true,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 23,
   "fields": {
-    "tamanio": "Cortas y redondeadas"
+    "descripcion": "Cortas y redondeadas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": true,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 },
 {
   "model": "appves.tamanioforma",
   "pk": 24,
   "fields": {
-    "tamanio": "Pico corto"
+    "descripcion": "Pico corto",
+    "pico_aves": true,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
   }
 }
 ]

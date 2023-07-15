@@ -1,0 +1,25 @@
+[
+    {
+      "model": "appves.statusconservacion",
+      "pk": 1,
+      "fields": {
+        "estado": "Amenazada"
+      }
+    },
+    {
+      "model": "appves.statusconservacion",
+      "pk": 2,
+      "fields": {
+        "estado": "Vulnerable"
+      }
+    },
+    {
+      "model": "appves.statusconservacion",
+      "pk": 3,
+      "fields": {
+        "estado": "No Amenazada"
+      }
+    }
+    ]
+
+    
