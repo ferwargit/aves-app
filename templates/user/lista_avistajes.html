@@ -21,7 +21,7 @@
             {{ avistaje.fecha_creacion }}
         </div>
         <div class="col">
-            <a href="" type="button" class="btn btn-secondary">Ver lista</a>
+            <a href="{% url 'ver_avistaje' avistaje.id %}" type="button" class="btn btn-secondary">Ver lista</a>
             <a href="{% url 'cargar_ave_avistaje' avistaje.id %}" type="button" class="btn btn-success">Agregar ave</a>
         </div>
     

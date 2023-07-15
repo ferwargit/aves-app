@@ -171,3 +171,16 @@ class CargarAveAvistaje(LoginRequiredMixin, CreateView):
 
     def get_initial(self):
         return {"id_avistaje": self.kwargs["pk"]}
+
+
+class DetalleAvistaje(ListView):
+    model = LineaAvistaje
+    template_name = 'appves/detalle_avistaje.html'
+    context_object_name = 'avistaje'
+
+    def get_initial(self):
+            return {'id_avistaje': self.kwargs['pk']}
+    
+    def get_queryset(self):
+        self.queryset = LineaAvistaje.objects.filter(id_avistaje_id= self.kwargs['pk'])
+        return self.queryset

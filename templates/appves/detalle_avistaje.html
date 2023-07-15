@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Detalle de avistaje</title>
+{% endblock %}
+{% load static %}
+{% block scripts %}
+    <script src="{% static 'js/avistaje.js' %}" defer></script>
+{% endblock scripts %}
+{% block content %}
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Imagen de Ave</th>
+              <th scope="col">Nombre de Ave</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col"><input type="checkbox" name="mapa" value="all"><label>Ver en mapa</label></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ave in avistaje %}
+            <tr>
+              <td scope="row" style="text-align: justify;">{{ forloop.counter }}</td>
+              <td><img src="{{ ave.id_ave.imagen.url }}" class='ave-img'></td>
+              <td style="text-align: justify;">{{ ave.id_ave.nombre }}</td>
+              <td style="text-align: justify;">{{ ave.cantidad }}</td>
+              <td><input type="checkbox" name="ver[]" value="{{ ave.latitud }}, {{ ave.longitud }}"></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+    <!--div div class="collapse" id="collapseExample">
+      
+      
+    </div-->
+    <div id="map" class="not-visible" style="width: 100%; height: 400px;"></div> 
+
+    
+    <a href="{% url 'list_birds' %}" type="button" class="btn btn-success">Volver</a>  
+      
+</div>
+
+{% endblock %}
