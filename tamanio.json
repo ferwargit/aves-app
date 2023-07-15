@@ -1,0 +1,34 @@
+[
+{
+  "model": "appves.tamanioforma",
+  "pk": 1,
+  "fields": {
+    "descripcion": "Pico largo",
+    "pico_aves": true,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 2,
+  "fields": {
+    "descripcion": "Pico corto",
+    "pico_aves": true,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
+  }
+}
+]
