@@ -116,12 +116,12 @@
             <div class="form-group row">
                 <label for="id_voz" class="col-sm-2 col-form-label">{{ form.voz.label }}</label>
                 <div class="col-sm-10">
-                    <select id="id_voz" name="id_voz" class="form-control">
-                        {% for voz in form.voz.field.queryset %}
-                            <option value="{{ id_voz.pk }}"
-                                    {% if voz.pk == form.voz.value %}selected{% endif %}>{{ voz }}</option>
-                        {% endfor %}
-                    </select>
+                    <input id="id_voz"
+                           type="text"
+                           name="voz"
+                           class="form-control"
+                           placeholder=""
+                           required>
                     {{ form.voz.errors }}
                 </div>
             </div>
@@ -133,17 +133,6 @@
                     {{ form.audio.errors }}
                 </div>
             </div>
-            {% comment %} ALIMENTACION {% endcomment %}
-            {% comment %} <div class="form-group row">
-                <label for="id_alimentacion" class="col-sm-2 col-form-label">{{ form.alimentacion.label }}</label>
-                <div class="col-sm-10">
-                    <input id="id_alimentacion"
-                           type="file"
-                           name="alimentacion"
-                           class="form-control">
-                    {{ form.alimentacion.errors }}
-                </div>
-            </div> {% endcomment %}
             {% comment %} ALIMENTACION {% endcomment %}
             <div class="form-group row">
                 <label for="id_alimentacion" class="col-sm-2 col-form-label">{{ form.alimentacion.label }}</label>
@@ -157,17 +146,6 @@
                     {{ form.alimentacion.errors }}
                 </div>
             </div>
-            {% comment %} REPRODUCCION {% endcomment %}
-            {% comment %} <div class="form-group row">
-                <label for="id_cria" class="col-sm-2 col-form-label">{{ form.cria.label }}</label>
-                <div class="col-sm-10">
-                    <input id="id_cria"
-                           type="file"
-                           name="cria"
-                           class="form-control">
-                    {{ form.cria.errors }}
-                </div>
-            </div> {% endcomment %}
             {% comment %} REPRODUCCION {% endcomment %}
             <div class="form-group row">
                 <label for="id_cria" class="col-sm-2 col-form-label">{{ form.cria.label }}</label>
@@ -201,38 +179,22 @@
                 </div>
             </div>
             {% comment %} STATUS CONSERVACION {% endcomment %}
-            {% comment %} <div class="form-group row">
-                <label for="id_conservacon" class="col-sm-2 col-form-label">{{ form.conservacon.label }}</label>
-                <div class="col-sm-10">
-                    <input id="id_conservacon"
-                           type="file"
-                           name="conservacion"
-                           class="form-control">
-                    {{ form.conservacon.errors }}
-                </div>
-            </div> {% endcomment %}
-            {% comment %} STATUS CONSERVACION {% endcomment %}
             <div class="form-group row">
                 <label for="id_status_conservacion" class="col-sm-2 col-form-label">{{ form.status_conservacion.label }}</label>
                 <div class="col-sm-10">
-                    <select id="id_status_conservacion" name="status_conservacion" class="form-control">
+                    <select id="id_status_conservacion"
+                            name="status_conservacion"
+                            class="form-control">
                         {% for status_conservacion in form.status_conservacion.field.queryset %}
                             <option value="{{ status_conservacion.pk }}"
-                                    {% if status_conservacion.pk == form.status_conservacion.value %}selected{% endif %}>{{ status_conservacion }}</option>
+                                    {% if status_conservacion.pk == form.status_conservacion.value %}selected{% endif %}>
+                                {{ status_conservacion }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.status_conservacion.errors }}
                 </div>
             </div>
-            {% comment %} CABEZA {% endcomment %}
-            {% comment %} <label for="id_cabeza">{{ form.cabeza.label }}</label>
-            <select id="id_cabeza" name="cabeza" class="form-control">
-                {% for cabeza in form.cabeza.field.queryset %}
-                    <option value="{{ cabeza.pk }}"
-                            {% if cabeza.pk == form.cabeza.value %}selected{% endif %}>{{ cabeza }}</option>
-                {% endfor %}
-            </select>
-            {{ form.cabeza.errors }} {% endcomment %}
             {% comment %} CABEZA {% endcomment %}
             <div class="form-group row">
                 <label for="id_cabeza" class="col-sm-2 col-form-label">{{ form.cabeza.label }}</label>
@@ -247,40 +209,20 @@
                 </div>
             </div>
             {% comment %} LARGO PICO {% endcomment %}
-            {% comment %} <label for="id_largo_pico">{{ form.largo_pico.label }}</label>
-            <select id="id_largo_pico" name="largo_pico" class="form-control">
-                {% for largo_pico in form.largo_pico.field.queryset %}
-                    <option value="{{ largo_pico.pk }}"
-                            {% if largo_pico.pk == form.largo_pico.value %}selected{% endif %}>
-                        {{ largo_pico }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.largo_pico.errors }} {% endcomment %}
-            {% comment %} LARGO PICO {% endcomment %}
             <div class="form-group row">
                 <label for="id_largo_pico" class="col-sm-2 col-form-label">{{ form.largo_pico.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_largo_pico" name="largo_pico" class="form-control">
                         {% for largo_pico in form.largo_pico.field.queryset %}
                             <option value="{{ largo_pico.pk }}"
-                                    {% if largo_pico.pk == form.largo_pico.value %}selected{% endif %}>{{ largo_pico }}</option>
+                                    {% if largo_pico.pk == form.largo_pico.value %}selected{% endif %}>
+                                {{ largo_pico }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.largo_pico.errors }}
                 </div>
             </div>
-            {% comment %} LARGO CUELLO {% endcomment %}
-            {% comment %} <label for="id_largo_cuello">{{ form.largo_cuello.label }}</label>
-            <select id="id_largo_cuello" name="largo_cuello" class="form-control">
-                {% for largo_cuello in form.largo_cuello.field.queryset %}
-                    <option value="{{ largo_cuello.pk }}"
-                            {% if largo_cuello.pk == form.largo_cuello.value %}selected{% endif %}>
-                        {{ largo_cuello }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.largo_cuello.errors }} {% endcomment %}
             {% comment %} LARGO CUELLO {% endcomment %}
             <div class="form-group row">
                 <label for="id_largo_cuello" class="col-sm-2 col-form-label">{{ form.largo_cuello.label }}</label>
@@ -288,23 +230,14 @@
                     <select id="id_largo_cuello" name="largo_cuello" class="form-control">
                         {% for largo_cuello in form.largo_cuello.field.queryset %}
                             <option value="{{ largo_cuello.pk }}"
-                                    {% if largo_cuello.pk == form.largo_cuello.value %}selected{% endif %}>{{ largo_cuello }}</option>
+                                    {% if largo_cuello.pk == form.largo_cuello.value %}selected{% endif %}>
+                                {{ largo_cuello }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.largo_cuello.errors }}
                 </div>
             </div>
-            {% comment %} CUELLO VUELO {% endcomment %}
-            {% comment %} <label for="id_cuello_vuelo">{{ form.cuello_vuelo.label }}</label>
-            <select id="id_cuello_vuelo" name="cuello_vuelo" class="form-control">
-                {% for cuello_vuelo in form.cuello_vuelo.field.queryset %}
-                    <option value="{{ cuello_vuelo.pk }}"
-                            {% if cuello_vuelo.pk == form.cuello_vuelo.value %}selected{% endif %}>
-                        {{ cuello_vuelo }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.vuelo_cuello.errors }} {% endcomment %}
             {% comment %} CUELLO VUELO {% endcomment %}
             <div class="form-group row">
                 <label for="id_cuello_vuelo" class="col-sm-2 col-form-label">{{ form.cuello_vuelo.label }}</label>
@@ -312,23 +245,14 @@
                     <select id="id_cuello_vuelo" name="cuello_vuelo" class="form-control">
                         {% for cuello_vuelo in form.cuello_vuelo.field.queryset %}
                             <option value="{{ cuello_vuelo.pk }}"
-                                    {% if cuello_vuelo.pk == form.cuello_vuelo.value %}selected{% endif %}>{{ cuello_vuelo }}</option>
+                                    {% if cuello_vuelo.pk == form.cuello_vuelo.value %}selected{% endif %}>
+                                {{ cuello_vuelo }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.cuello_vuelo.errors }}
                 </div>
             </div>
-            {% comment %} FORMA ALA {% endcomment %}
-            {% comment %} <label for="id_forma_alas">{{ form.forma_alas.label }}</label>
-            <select id="id_forma_alas" name="forma_alas" class="form-control">
-                {% for forma_alas in form.forma_alas.field.queryset %}
-                    <option value="{{ forma_alas.pk }}"
-                            {% if forma_alas.pk == form.forma_alas.value %}selected{% endif %}>
-                        {{ forma_alas }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.forma_alas.errors }} {% endcomment %}
             {% comment %} FORMA ALA {% endcomment %}
             <div class="form-group row">
                 <label for="id_forma_alas" class="col-sm-2 col-form-label">{{ form.forma_alas.label }}</label>
@@ -336,23 +260,14 @@
                     <select id="id_forma_alas" name="forma_alas" class="form-control">
                         {% for forma_alas in form.forma_alas.field.queryset %}
                             <option value="{{ forma_alas.pk }}"
-                                    {% if forma_alas.pk == form.forma_alas.value %}selected{% endif %}>{{ forma_alas }}</option>
+                                    {% if forma_alas.pk == form.forma_alas.value %}selected{% endif %}>
+                                {{ forma_alas }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.forma_alas.errors }}
                 </div>
             </div>
-            {% comment %} LARGO COLA {% endcomment %}
-            {% comment %} <label for="id_largo_cola">{{ form.largo_cola.label }}</label>
-            <select id="id_largo_cola" name="largo_cola" class="form-control">
-                {% for largo_cola in form.largo_cola.field.queryset %}
-                    <option value="{{ largo_cola.pk }}"
-                            {% if largo_cola.pk == form.largo_cola.value %}selected{% endif %}>
-                        {{ largo_cola }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.largo_cola.errors }} {% endcomment %}
             {% comment %} LARGO COLA {% endcomment %}
             <div class="form-group row">
                 <label for="id_largo_cola" class="col-sm-2 col-form-label">{{ form.largo_cola.label }}</label>
@@ -360,23 +275,14 @@
                     <select id="id_largo_cola" name="largo_cola" class="form-control">
                         {% for largo_cola in form.largo_cola.field.queryset %}
                             <option value="{{ largo_cola.pk }}"
-                                    {% if largo_cola.pk == form.largo_cola.value %}selected{% endif %}>{{ largo_cola }}</option>
+                                    {% if largo_cola.pk == form.largo_cola.value %}selected{% endif %}>
+                                {{ largo_cola }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.largo_cola.errors }}
                 </div>
             </div>
-            {% comment %} FORMA COLA {% endcomment %}
-            {% comment %} <label for="id_forma_cola">{{ form.forma_cola.label }}</label>
-            <select id="id_forma_cola" name="forma_cola" class="form-control">
-                {% for forma_cola in form.forma_cola.field.queryset %}
-                    <option value="{{ forma_cola.pk }}"
-                            {% if forma_cola.pk == form.forma_cola.value %}selected{% endif %}>
-                        {{ forma_cola }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.forma_cola.errors }} {% endcomment %}
             {% comment %} FORMA COLA {% endcomment %}
             <div class="form-group row">
                 <label for="id_forma_cola" class="col-sm-2 col-form-label">{{ form.forma_cola.label }}</label>
@@ -384,23 +290,14 @@
                     <select id="id_forma_cola" name="forma_cola" class="form-control">
                         {% for forma_cola in form.forma_cola.field.queryset %}
                             <option value="{{ forma_cola.pk }}"
-                                    {% if forma_cola.pk == form.forma_cola.value %}selected{% endif %}>{{ forma_cola }}</option>
+                                    {% if forma_cola.pk == form.forma_cola.value %}selected{% endif %}>
+                                {{ forma_cola }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.forma_cola.errors }}
                 </div>
             </div>
-            {% comment %} LARGO PATAS {% endcomment %}
-            {% comment %} <label for="id_largo_patas">{{ form.largo_patas.label }}</label>
-            <select id="id_largo_patas" name="largo_patas" class="form-control">
-                {% for largo_patas in form.largo_patas.field.queryset %}
-                    <option value="{{ largo_patas.pk }}"
-                            {% if largo_patas.pk == form.largo_patas.value %}selected{% endif %}>
-                        {{ largo_patas }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.largo_patas.errors }} {% endcomment %}
             {% comment %} LARGO PATAS {% endcomment %}
             <div class="form-group row">
                 <label for="id_largo_patas" class="col-sm-2 col-form-label">{{ form.largo_patas.label }}</label>
@@ -408,47 +305,32 @@
                     <select id="id_largo_patas" name="largo_patas" class="form-control">
                         {% for largo_patas in form.largo_patas.field.queryset %}
                             <option value="{{ largo_patas.pk }}"
-                                    {% if largo_patas.pk == form.largo_patas.value %}selected{% endif %}>{{ largo_patas }}</option>
+                                    {% if largo_patas.pk == form.largo_patas.value %}selected{% endif %}>
+                                {{ largo_patas }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.largo_patas.errors }}
                 </div>
             </div>
             {% comment %} PATRON COLORACION {% endcomment %}
-            {% comment %} <label for="id_patron_coloracion">Patrón coloración</label>
-            <select id="id_patron_coloracion"
-                    name="patron_coloracion"
-                    class="form-control">
-                {% for patron_coloracion in form.patron_coloracion.field.queryset %}
-                    <option value="{{ patron_coloracion.pk }}"
-                            {% if patron_coloracion.pk == form.patron_coloracion.value %}selected{% endif %}>
-                        {{ patron_coloracion }}
-                    </option>
-                {% endfor %}
-            </select>
-            {{ form.patron_coloracion.errors }} {% endcomment %}
-            {% comment %} PATRON COLORACION {% endcomment %}
             <div class="form-group row">
                 <label for="id_patron_coloracion" class="col-sm-2 col-form-label">{{ form.patron_coloracion.label }}</label>
                 <div class="col-sm-10">
-                    <select id="id_patron_coloracion" name="patron_coloracion" class="form-control">
+                    <select id="id_patron_coloracion"
+                            name="patron_coloracion"
+                            class="form-control">
                         {% for patron_coloracion in form.patron_coloracion.field.queryset %}
                             <option value="{{ patron_coloracion.pk }}"
-                                    {% if patron_coloracion.pk == form.patron_coloracion.value %}selected{% endif %}>{{ patron_coloracion }}</option>
+                                    {% if patron_coloracion.pk == form.patron_coloracion.value %}selected{% endif %}>
+                                {{ patron_coloracion }}
+                            </option>
                         {% endfor %}
                     </select>
                     {{ form.patron_coloracion.errors }}
                 </div>
             </div>
             {% comment %} GRUPO {% endcomment %}
-            {% comment %} <label for="id_grupo">{{ form.grupo.label }}</label>
-            <select id="id_grupo" name="grupo" class="form-control">
-                {% for grupo in form.grupo.field.queryset %}
-                    <option value="{{ grupo.pk }}"
-                            {% if grupo.pk == form.grupo.value %}selected{% endif %}>{{ grupo }}</option>
-                {% endfor %}
-            </select>
-            {{ form.grupo.errors }} {% endcomment %}
             <div class="form-group row">
                 <label for="id_grupo" class="col-sm-2 col-form-label">{{ form.grupo.label }}</label>
                 <div class="col-sm-10">
@@ -462,22 +344,13 @@
                 </div>
             </div>
             {% comment %} STATUS {% endcomment %}
-            {% comment %} <label for="id_status">{{ form.status.label }}</label>
-            <select id="id_status" name="status" class="form-control">
-                {% for status in form.status.field.queryset %}
-                    <option value="{{ status.pk }}" {% if status.pk == form.status.value %}selected{% endif %}>{{ status }}</option>
-                {% endfor %}
-            </select>
-            {{ form.status.errors }} {% endcomment %}
             <div class="form-group row">
                 <label for="id_status" class="col-sm-2 col-form-label">{{ form.status.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_status" name="status" class="form-control">
                         {% for status in form.status.field.queryset %}
                             <option value="{{ status.pk }}"
-                                    {% if status.pk == form.status.value %}selected{% endif %}>
-                                {{ status }}
-                            </option>
+                                    {% if status.pk == form.status.value %}selected{% endif %}>{{ status }}</option>
                         {% endfor %}
                     </select>
                     {{ form.status.errors }}
