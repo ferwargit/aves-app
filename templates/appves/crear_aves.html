@@ -134,7 +134,7 @@
                 </div>
             </div>
             {% comment %} ALIMENTACION {% endcomment %}
-            <div class="form-group row">
+            {% comment %} <div class="form-group row">
                 <label for="id_alimentacion" class="col-sm-2 col-form-label">{{ form.alimentacion.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_alimentacion"
@@ -143,16 +143,42 @@
                            class="form-control">
                     {{ form.alimentacion.errors }}
                 </div>
+            </div> {% endcomment %}
+            {% comment %} ALIMENTACION {% endcomment %}
+            <div class="form-group row">
+                <label for="id_alimentacion" class="col-sm-2 col-form-label">{{ form.alimentacion.label }}</label>
+                <div class="col-sm-10">
+                    <input id="id_alimentacion"
+                           type="text"
+                           name="alimentacion"
+                           class="form-control"
+                           placeholder=""
+                           required>
+                    {{ form.alimentacion.errors }}
+                </div>
             </div>
             {% comment %} REPRODUCCION {% endcomment %}
-            <div class="form-group row">
-                <label for="id_reproduccion" class="col-sm-2 col-form-label">{{ form.reproduccion.label }}</label>
+            {% comment %} <div class="form-group row">
+                <label for="id_cria" class="col-sm-2 col-form-label">{{ form.cria.label }}</label>
                 <div class="col-sm-10">
-                    <input id="id_reproduccion"
+                    <input id="id_cria"
                            type="file"
-                           name="reproduccion"
+                           name="cria"
                            class="form-control">
-                    {{ form.reproduccion.errors }}
+                    {{ form.cria.errors }}
+                </div>
+            </div> {% endcomment %}
+            {% comment %} REPRODUCCION {% endcomment %}
+            <div class="form-group row">
+                <label for="id_cria" class="col-sm-2 col-form-label">{{ form.cria.label }}</label>
+                <div class="col-sm-10">
+                    <input id="id_cria"
+                           type="text"
+                           name="cria"
+                           class="form-control"
+                           placeholder=""
+                           required>
+                    {{ form.cria.errors }}
                 </div>
             </div>
             {% comment %} MOVIMIENTOS ESTACIONALES {% endcomment %}
