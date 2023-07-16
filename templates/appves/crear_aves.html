@@ -1,9 +1,256 @@
 {% extends "base.html" %}
+{% block title %}
+    <title>Crear: Ficha de Ave</title>
+{% endblock title %}
+{% load static %}
 {% block content %}
-    <h1>Crear aves</h1>
-    <form action="{% url 'create_bird' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-success">Crear</button>
-    </form>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/crear_aves.css' %}">
+    {% endblock styles %}
+    <div class="container">
+        <h1 class="cont-titulo">Crear: Ficha de Ave</h1>
+        <form class="cont-form"
+              action="{% url 'create_bird' %}"
+              method="post"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            {% comment %} NOMBRE {% endcomment %}
+            <label for="id_nombre">{{ form.nombre.label }}</label>
+            <input id="id_nombre"
+                   type="text"
+                   name="nombre"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.nombre.errors }}
+            {% comment %} NOMBRE CIENTIFICO {% endcomment %}
+            <label for="id_nombre_cientifico">Nombre científico</label>
+            <input id="id_nombre_cientifico"
+                   type="text"
+                   name="nombre_cientifico"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.nombre_cientifico.errors }}
+            {% comment %} NOMBRE INGLES {% endcomment %}
+            <label for="id_nombre_ingles">Nombre en Inglés</label>
+            <input id="id_nombre_ingles"
+                   type="text"
+                   name="nombre_ingles"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.nombre_ingles.errors }}
+            {% comment %} FAMILIA {% endcomment %}
+            <label for="id_familia">{{ form.familia.label }}</label>
+            <select id="id_familia" name="familia" class="form-control">
+                {% for family in form.familia.field.queryset %}
+                    <option value="{{ family.pk }}"
+                            {% if family.pk == form.familia.value %}selected{% endif %}>{{ family }}</option>
+                {% endfor %}
+            </select>
+            {{ form.familia.errors }}
+            {% comment %} DESCRIPCION {% endcomment %}
+            <label for="id_descripcion">Descripción</label>
+            <textarea id="id_descripcion"
+                      name="descripcion"
+                      class="form-control"
+                      placeholder=""
+                      required></textarea>
+            {{ form.descripcion.errors }}
+            {% comment %} IMAGEN {% endcomment %}
+            <label for="id_imagen">{{ form.imagen.label }}</label>
+            <input id="id_imagen" type="file" name="imagen" class="form-control">
+            {{ form.imagen.errors }}
+            {% comment %} TAMAÑO {% endcomment %}
+            <label for="id_tamanio">Tamaño</label>
+            <select id="id_tamanio" name="tamanio" class="form-control">
+                {% for tamanio in form.tamanio.field.queryset %}
+                    <option value="{{ tamanio.pk }}"
+                            {% if tamanio.pk == form.tamanio.value %}selected{% endif %}>{{ tamanio }}</option>
+                {% endfor %}
+            </select>
+            {{ form.tamanio.errors }}
+            {% comment %} HABITAT {% endcomment %}
+            <label for="id_habitat">{{ form.habitat.label }}</label>
+            <select id="id_habitat" name="habitat" class="form-control">
+                {% for habitat in form.habitat.field.queryset %}
+                    <option value="{{ habitat.pk }}"
+                            {% if habitat.pk == form.habitat.value %}selected{% endif %}>{{ habitat }}</option>
+                {% endfor %}
+            </select>
+            {{ form.habitat.errors }}
+            {% comment %} VOZ {% endcomment %}
+            <label for="id_voz">{{ form.voz.label }}</label>
+            <input id="id_voz"
+                   type="text"
+                   name="voz"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.voz.errors }}
+            {% comment %} AUDIO {% endcomment %}
+            <label for="id_audio">{{ form.audio.label }}</label>
+            <input id="id_audio" type="file" name="audio" class="form-control">
+            {{ form.audio.errors }}
+            {% comment %} ALIMENTACION {% endcomment %}
+            <label for="id_alimentacion">Alimentación</label>
+            <input id="id_alimentacion"
+                   type="text"
+                   name="alimentacion"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.alimentacion.errors }}
+            {% comment %} REPRODUCCION {% endcomment %}
+            <label for="id_cria">Reproducción</label>
+            <input id="id_cria"
+                   type="text"
+                   name="cria"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.cria.errors }}
+            {% comment %} MOVIMIENTOS ESTACIONALES {% endcomment %}
+            <label for="id_movimientos_estacionales">{{ form.movimientos_estacionales.label }}</label>
+            <select id="id_movimientos_estacionales"
+                    name="movimientos_estacionales"
+                    class="form-control">
+                {% for movimientos_estacionales in form.movimientos_estacionales.field.queryset %}
+                    <option value="{{ movimientos_estacionales.pk }}"
+                            {% if movimientos_estacionales.pk == form.movimientos_estacionales.value %}selected{% endif %}>
+                        {{ movimientos_estacionales }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.movimientos_estacionales.errors }}
+            {% comment %} STATUS CONSERVACION {% endcomment %}
+            <label for="id_status_conservacion">Status de conservación</label>
+            <input id="id_status_conservacion"
+                   type="text"
+                   name="status_conservacion"
+                   class="form-control"
+                   placeholder=""
+                   required>
+            {{ form.status_conservacion.errors }}
+            {% comment %} CABEZA {% endcomment %}
+            <label for="id_cabeza">{{ form.cabeza.label }}</label>
+            <select id="id_cabeza" name="cabeza" class="form-control">
+                {% for cabeza in form.cabeza.field.queryset %}
+                    <option value="{{ cabeza.pk }}"
+                            {% if cabeza.pk == form.cabeza.value %}selected{% endif %}>{{ cabeza }}</option>
+                {% endfor %}
+            </select>
+            {{ form.cabeza.errors }}
+            {% comment %} LARGO PICO {% endcomment %}
+            <label for="id_largo_pico">{{ form.largo_pico.label }}</label>
+            <select id="id_largo_pico" name="largo_pico" class="form-control">
+                {% for largo_pico in form.largo_pico.field.queryset %}
+                    <option value="{{ largo_pico.pk }}"
+                            {% if largo_pico.pk == form.largo_pico.value %}selected{% endif %}>
+                        {{ largo_pico }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.largo_pico.errors }}
+            {% comment %} LARGO CUELLO {% endcomment %}
+            <label for="id_largo_cuello">{{ form.largo_cuello.label }}</label>
+            <select id="id_largo_cuello" name="largo_cuello" class="form-control">
+                {% for largo_cuello in form.largo_cuello.field.queryset %}
+                    <option value="{{ largo_cuello.pk }}"
+                            {% if largo_cuello.pk == form.largo_cuello.value %}selected{% endif %}>
+                        {{ largo_cuello }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.largo_cuello.errors }}
+            {% comment %} VUELO CUELLO {% endcomment %}
+            <label for="id_cuello_vuelo">{{ form.cuello_vuelo.label }}</label>
+            <select id="id_cuello_vuelo" name="cuello_vuelo" class="form-control">
+                {% for cuello_vuelo in form.cuello_vuelo.field.queryset %}
+                    <option value="{{ cuello_vuelo.pk }}"
+                            {% if cuello_vuelo.pk == form.cuello_vuelo.value %}selected{% endif %}>
+                        {{ cuello_vuelo }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.vuelo_cuello.errors }}
+            {% comment %} FORMA ALA {% endcomment %}
+            <label for="id_forma_alas">{{ form.forma_alas.label }}</label>
+            <select id="id_forma_alas" name="forma_alas" class="form-control">
+                {% for forma_alas in form.forma_alas.field.queryset %}
+                    <option value="{{ forma_alas.pk }}"
+                            {% if forma_alas.pk == form.forma_alas.value %}selected{% endif %}>
+                        {{ forma_alas }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.forma_alas.errors }}
+            {% comment %} LARGO COLA {% endcomment %}
+            <label for="id_largo_cola">{{ form.largo_cola.label }}</label>
+            <select id="id_largo_cola" name="largo_cola" class="form-control">
+                {% for largo_cola in form.largo_cola.field.queryset %}
+                    <option value="{{ largo_cola.pk }}"
+                            {% if largo_cola.pk == form.largo_cola.value %}selected{% endif %}>
+                        {{ largo_cola }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.largo_cola.errors }}
+            {% comment %} FORMA COLA {% endcomment %}
+            <label for="id_forma_cola">{{ form.forma_cola.label }}</label>
+            <select id="id_forma_cola" name="forma_cola" class="form-control">
+                {% for forma_cola in form.forma_cola.field.queryset %}
+                    <option value="{{ forma_cola.pk }}"
+                            {% if forma_cola.pk == form.forma_cola.value %}selected{% endif %}>
+                        {{ forma_cola }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.forma_cola.errors }}
+            {% comment %} LARGO PATAS {% endcomment %}
+            <label for="id_largo_patas">{{ form.largo_patas.label }}</label>
+            <select id="id_largo_patas" name="largo_patas" class="form-control">
+                {% for largo_patas in form.largo_patas.field.queryset %}
+                    <option value="{{ largo_patas.pk }}"
+                            {% if largo_patas.pk == form.largo_patas.value %}selected{% endif %}>
+                        {{ largo_patas }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.largo_patas.errors }}
+            {% comment %} PATRON COLORACION {% endcomment %}
+            <label for="id_patron_coloracion">Patrón coloración</label>
+            <select id="id_patron_coloracion"
+                    name="patron_coloracion"
+                    class="form-control">
+                {% for patron_coloracion in form.patron_coloracion.field.queryset %}
+                    <option value="{{ patron_coloracion.pk }}"
+                            {% if patron_coloracion.pk == form.patron_coloracion.value %}selected{% endif %}>
+                        {{ patron_coloracion }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ form.patron_coloracion.errors }}
+            {% comment %} GRUPO {% endcomment %}
+            <label for="id_grupo">{{ form.grupo.label }}</label>
+            <select id="id_grupo" name="grupo" class="form-control">
+                {% for grupo in form.grupo.field.queryset %}
+                    <option value="{{ grupo.pk }}"
+                            {% if grupo.pk == form.grupo.value %}selected{% endif %}>{{ grupo }}</option>
+                {% endfor %}
+            </select>
+            {{ form.grupo.errors }}
+            {% comment %} STATUS {% endcomment %}
+            <label for="id_status">{{ form.status.label }}</label>
+            <select id="id_status" name="status" class="form-control">
+                {% for status in form.status.field.queryset %}
+                    <option value="{{ status.pk }}"
+                            {% if status.pk == form.status.value %}selected{% endif %}>{{ status }}</option>
+                {% endfor %}
+            </select>
+            {{ form.status.errors }}
+            <button class="btn btn-success mt-3">Crear</button>
+        </form>
+    </div>
 {% endblock content %}
