@@ -15,7 +15,7 @@
               enctype="multipart/form-data">
             {% csrf_token %}
             {% comment %} NOMBRE {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_nombre" class="col-sm-2 col-form-label">{{ form.nombre.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_nombre"
@@ -28,7 +28,7 @@
                 </div>
             </div>
             {% comment %} NOMBRE CIENTIFICO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_nombre_cientifico" class="col-sm-2 col-form-label">{{ form.nombre_cientifico.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_nombre_cientifico"
@@ -41,7 +41,7 @@
                 </div>
             </div>
             {% comment %} NOMBRE INGLES {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_nombre_ingles" class="col-sm-2 col-form-label">{{ form.nombre_ingles.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_nombre_ingles"
@@ -54,7 +54,7 @@
                 </div>
             </div>
             {% comment %} FAMILIA {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_familia" class="col-sm-2 col-form-label">{{ form.familia.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_familia" name="familia" class="form-control">
@@ -67,7 +67,7 @@
                 </div>
             </div>
             {% comment %} DESCRIPCION {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_descripcion" class="col-sm-2 col-form-label">Descripción</label>
                 <div class="col-sm-10">
                     <textarea id="id_descripcion"
@@ -79,7 +79,7 @@
                 </div>
             </div>
             {% comment %} IMAGEN {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_imagen" class="col-sm-2 col-form-label">{{ form.imagen.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_imagen" type="file" name="imagen" class="form-control">
@@ -87,7 +87,7 @@
                 </div>
             </div>
             {% comment %} TAMANIO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_tamanio" class="col-sm-2 col-form-label">{{ form.tamanio.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_tamanio" name="tamanio" class="form-control">
@@ -100,7 +100,7 @@
                 </div>
             </div>
             {% comment %} HABITAT {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_habitat" class="col-sm-2 col-form-label">{{ form.habitat.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_habitat" name="habitat" class="form-control">
@@ -113,7 +113,7 @@
                 </div>
             </div>
             {% comment %} VOZ {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_voz" class="col-sm-2 col-form-label">{{ form.voz.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_voz"
@@ -126,7 +126,7 @@
                 </div>
             </div>
             {% comment %} AUDIO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_audio" class="col-sm-2 col-form-label">{{ form.audio.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_audio" type="file" name="audio" class="form-control">
@@ -134,7 +134,7 @@
                 </div>
             </div>
             {% comment %} ALIMENTACION {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_alimentacion" class="col-sm-2 col-form-label">{{ form.alimentacion.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_alimentacion"
@@ -147,7 +147,7 @@
                 </div>
             </div>
             {% comment %} REPRODUCCION {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_cria" class="col-sm-2 col-form-label">{{ form.cria.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_cria"
@@ -160,7 +160,7 @@
                 </div>
             </div>
             {% comment %} MOVIMIENTOS ESTACIONALES {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_movimientos_estacionales" class="col-sm-2 col-form-label">
                     {{ form.movimientos_estacionales.label }}
                 </label>
@@ -179,7 +179,7 @@
                 </div>
             </div>
             {% comment %} STATUS CONSERVACION {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_status_conservacion" class="col-sm-2 col-form-label">{{ form.status_conservacion.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_status_conservacion"
@@ -196,7 +196,7 @@
                 </div>
             </div>
             {% comment %} CABEZA {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_cabeza" class="col-sm-2 col-form-label">{{ form.cabeza.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_cabeza" name="cabeza" class="form-control">
@@ -209,7 +209,7 @@
                 </div>
             </div>
             {% comment %} LARGO PICO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_largo_pico" class="col-sm-2 col-form-label">{{ form.largo_pico.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_largo_pico" name="largo_pico" class="form-control">
@@ -224,7 +224,7 @@
                 </div>
             </div>
             {% comment %} LARGO CUELLO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_largo_cuello" class="col-sm-2 col-form-label">{{ form.largo_cuello.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_largo_cuello" name="largo_cuello" class="form-control">
@@ -239,7 +239,7 @@
                 </div>
             </div>
             {% comment %} CUELLO VUELO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_cuello_vuelo" class="col-sm-2 col-form-label">{{ form.cuello_vuelo.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_cuello_vuelo" name="cuello_vuelo" class="form-control">
@@ -254,7 +254,7 @@
                 </div>
             </div>
             {% comment %} FORMA ALA {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_forma_alas" class="col-sm-2 col-form-label">{{ form.forma_alas.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_forma_alas" name="forma_alas" class="form-control">
@@ -269,7 +269,7 @@
                 </div>
             </div>
             {% comment %} LARGO COLA {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_largo_cola" class="col-sm-2 col-form-label">{{ form.largo_cola.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_largo_cola" name="largo_cola" class="form-control">
@@ -284,7 +284,7 @@
                 </div>
             </div>
             {% comment %} FORMA COLA {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_forma_cola" class="col-sm-2 col-form-label">{{ form.forma_cola.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_forma_cola" name="forma_cola" class="form-control">
@@ -299,7 +299,7 @@
                 </div>
             </div>
             {% comment %} LARGO PATAS {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_largo_patas" class="col-sm-2 col-form-label">{{ form.largo_patas.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_largo_patas" name="largo_patas" class="form-control">
@@ -314,7 +314,7 @@
                 </div>
             </div>
             {% comment %} PATRON COLORACION {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_patron_coloracion" class="col-sm-2 col-form-label">{{ form.patron_coloracion.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_patron_coloracion"
@@ -331,7 +331,7 @@
                 </div>
             </div>
             {% comment %} GRUPO {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_grupo" class="col-sm-2 col-form-label">{{ form.grupo.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_grupo" name="grupo" class="form-control">
@@ -344,7 +344,7 @@
                 </div>
             </div>
             {% comment %} STATUS {% endcomment %}
-            <div class="form-group row">
+            <div class="form-group row d-flex align-items-center">
                 <label for="id_status" class="col-sm-2 col-form-label">{{ form.status.label }}</label>
                 <div class="col-sm-10">
                     <select id="id_status" name="status" class="form-control">
