@@ -175,7 +175,7 @@
                 </div>
             </div>
             {% comment %} STATUS CONSERVACION {% endcomment %}
-            <div class="form-group row">
+            {% comment %} <div class="form-group row">
                 <label for="id_conservacon" class="col-sm-2 col-form-label">{{ form.conservacon.label }}</label>
                 <div class="col-sm-10">
                     <input id="id_conservacon"
@@ -183,6 +183,19 @@
                            name="conservacion"
                            class="form-control">
                     {{ form.conservacon.errors }}
+                </div>
+            </div> {% endcomment %}
+            {% comment %} STATUS CONSERVACION {% endcomment %}
+            <div class="form-group row">
+                <label for="id_status_conservacion" class="col-sm-2 col-form-label">{{ form.status_conservacion.label }}</label>
+                <div class="col-sm-10">
+                    <select id="id_status_conservacion" name="status_conservacion" class="form-control">
+                        {% for status_conservacion in form.status_conservacion.field.queryset %}
+                            <option value="{{ status_conservacion.pk }}"
+                                    {% if status_conservacion.pk == form.status_conservacion.value %}selected{% endif %}>{{ status_conservacion }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.status_conservacion.errors }}
                 </div>
             </div>
             {% comment %} CABEZA {% endcomment %}
