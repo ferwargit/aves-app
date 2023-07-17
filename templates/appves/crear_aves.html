@@ -8,13 +8,12 @@
         <link rel="stylesheet" href="{% static 'css/appves/crear_aves.css' %}">
     {% endblock styles %}
     <div class="container">
-        <h1 class="text-center cont-titulo">Crear: Ficha de Ave</h1>
-        {% comment %} <form class="mx-auto cont-form" action="{% url 'create_bird' %}" method="post" enctype="multipart/form-data"> {% endcomment %}
-        <form class="mx-auto cont-form col-md-10"
+        <form class="mx-auto cont-form col-md-10 formulario-con-borde"
               action="{% url 'create_bird' %}"
               method="post"
               enctype="multipart/form-data">
             {% csrf_token %}
+            <h1 class="text-center cont-titulo">Ficha de Ave</h1>
             {% comment %} NOMBRE {% endcomment %}
             <div class="form-group row d-flex align-items-center">
                 <label for="id_nombre" class="col-sm-3 col-form-label">{{ form.nombre.label }}</label>
@@ -32,7 +31,6 @@
             <div class="form-group row d-flex align-items-center">
                 <label for="id_nombre_cientifico" class="col-sm-3 col-form-label">{{ form.nombre_cientifico.label }}</label>
                 <div class="col-sm-9">
-                    {% comment %} <div class="col-sm-7 offset-sm-2"> {% endcomment %}
                     <input id="id_nombre_cientifico"
                            type="text"
                            name="nombre_cientifico"
@@ -150,7 +148,7 @@
             </div>
             {% comment %} REPRODUCCION {% endcomment %}
             <div class="form-group row d-flex align-items-center">
-                <label for="id_cria" class="col-sm-3 col-form-label">{{ form.cria.label }}</label>
+                <label for="id_cria" class="col-sm-3 col-form-label">Reproducción</label>
                 <div class="col-sm-9">
                     <input id="id_cria"
                            type="text"
@@ -365,5 +363,4 @@
             </div>
         </div>
     </form>
-</div>
 {% endblock content %}
