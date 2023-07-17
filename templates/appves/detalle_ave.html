@@ -94,7 +94,7 @@
                                 <strong>Alimentación:</strong> {{ ave.alimentacion }}
                             </li>
                             <li>
-                                <strong>Cria:</strong> {{ ave.cria }}
+                                <strong>Reproducción:</strong> {{ ave.cria }}
                             </li>
                             <li>
                                 <strong>Movimientos Estacionales:</strong> {{ ave.movimientos_estacionales }}
@@ -124,7 +124,7 @@
                                 <strong>Forma de la cola:</strong> {{ ave.forma_cola }}
                             </li>
                             <li>
-                                <strong>Patrón de coloracion:</strong> {{ ave.patron_coloracion }}
+                                <strong>Patrón de coloración:</strong> {{ ave.patron_coloracion }}
                             </li>
                             <li>
                                 <strong>Cabeza:</strong> {{ ave.cabeza }}
@@ -142,11 +142,15 @@
                  role="tabpanel"
                  aria-labelledby="audio-tab">
                 <div class="audio-player">
-                    <audio controls>
-                        <source src="{{ ave.audio.url }}" type="audio/mpeg">
-                        <source src="{{ ave.audio.url }}" type="audio/wav">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
+                    {% if ave.audio %}
+                        <audio controls>
+                            <source src="{{ ave.audio.url }}" type="audio/mpeg">
+                            <source src="{{ ave.audio.url }}" type="audio/wav">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    {% else %}
+                        <p>No hay archivo de audio asociado.</p>
+                    {% endif %}
                 </div>
             </div>
             {% comment %} AUDIO {% endcomment %}
