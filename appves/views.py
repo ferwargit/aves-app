@@ -32,17 +32,8 @@ def topografia(request):
     return render(request, "appves/topografia.html")
 
 
-# def familias(request):
-#     # lee la lista de palabras desde el archivo JSON
-#     with open('static/json/familias.json', 'r') as f:
-#         lista_familias = json.load(f)
-
-#     familias_ordenadas = sorted(lista_familias)  # Ordena la lista alfabéticamente
-#     if familias_ordenadas is not None and isinstance(familias_ordenadas, list):
-#         return render(request, "appves/familias.html", {"familias": familias_ordenadas})
-#     else:
-#         familias_ordenadas = []  # O cualquier otra acción que desees realizar cuando no haya datos disponibles
-#     return render(request, "appves/familias.html", {"familias": familias_ordenadas})
+def preguntas_frecuentes(request):
+    return render(request, "appves/preguntas_frecuentes.html")
 
 
 def familias(request):
