@@ -20,6 +20,8 @@ sendSearchData = (ave) => {
             'ave': ave
         },
         success: (res)=> {
+            origen_url = window.location.href
+            console.log(origen_url)
             const data = res.data
             if (Array.isArray(data)) {
                 resultDiv.innerHTML = ""
@@ -30,10 +32,20 @@ sendSearchData = (ave) => {
                       <tr>
                         <th scope="row">${ave.pk}</th>
                         <td><img src="${ave.imagen}" class='ave-img'></td>
-                        <td>${ave.nombre}</td>
-                        <td><button onclick="selectAve('${ave.pk}')">Seleccionar</button></td>
-                      </tr>
-                    </tbody>`
+                        <td>${ave.nombre}</td>`
+                    if (origen_url.includes('charge') == true) {
+                        console.log(origen_url.includes('charge'))
+                        resultDiv.innerHTML += `<td><button onclick="selectAve('${ave.pk}')">Seleccionar</button></td>
+                            </tr>
+                        </tbody>`
+                    } else {
+                        console.log(origen_url.includes('charge'))
+                        resultDiv.innerHTML += `<td>
+                                <a href="detalle/${ave.pk}" class="btn btn-success">Ver ficha</a></td>
+                            </tr>
+                        </tbody>`
+                    }
+                        
                 })
             } else {
             
