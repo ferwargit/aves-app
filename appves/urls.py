@@ -14,6 +14,7 @@ urlpatterns = [
     path('topografia/', views.topografia, name='topografia'),
     path('familias/', views.familias, name='familias'),
     path('search_ave/', views.buscar_ave, name='buscar_ave'),
+    path('obtener_detalle_familia/', views.obtener_detalle_familia, name='obtener_detalle_familia'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', CrearAve.as_view(), name='create_bird'),

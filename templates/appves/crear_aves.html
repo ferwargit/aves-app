@@ -22,7 +22,7 @@
                            type="text"
                            name="nombre"
                            class="form-control"
-                           placeholder=""
+                           placeholder="-- Ingresa un nombre --"
                            required>
                     {{ form.nombre.errors }}
                 </div>
@@ -35,7 +35,7 @@
                            type="text"
                            name="nombre_cientifico"
                            class="form-control"
-                           placeholder=""
+                           placeholder="-- Ingresa el nombre científico --"
                            required>
                     {{ form.nombre_cientifico.errors }}
                 </div>
@@ -48,7 +48,7 @@
                            type="text"
                            name="nombre_ingles"
                            class="form-control"
-                           placeholder=""
+                           placeholder="-- Ingresa el nombre en inglés--"
                            required>
                     {{ form.nombre_ingles.errors }}
                 </div>
@@ -58,6 +58,7 @@
                 <label for="id_familia" class="col-sm-3 col-form-label">{{ form.familia.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_familia" name="familia" class="form-control">
+                        <option value="">-- Selecciona una familia --</option>
                         {% for family in form.familia.field.queryset %}
                             <option value="{{ family.pk }}"
                                     {% if family.pk == form.familia.value %}selected{% endif %}>{{ family }}</option>
@@ -73,7 +74,7 @@
                     <textarea id="id_descripcion"
                               name="descripcion"
                               class="form-control"
-                              placeholder=""
+                              placeholder="-- Ingresa una descripción --"
                               required></textarea>
                     {{ form.descripcion.errors }}
                 </div>
@@ -88,9 +89,10 @@
             </div>
             {% comment %} TAMANIO {% endcomment %}
             <div class="form-group row d-flex align-items-center">
-                <label for="id_tamanio" class="col-sm-3 col-form-label">{{ form.tamanio.label }}</label>
+                <label for="id_tamanio" class="col-sm-3 col-form-label">Tamaño</label>
                 <div class="col-sm-9">
                     <select id="id_tamanio" name="tamanio" class="form-control">
+                        <option value="">-- Selecciona un tamaño --</option>
                         {% for tamanio in form.tamanio.field.queryset %}
                             <option value="{{ tamanio.pk }}"
                                     {% if tamanio.pk == form.tamanio.value %}selected{% endif %}>{{ tamanio }}</option>
@@ -104,6 +106,7 @@
                 <label for="id_habitat" class="col-sm-3 col-form-label">{{ form.habitat.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_habitat" name="habitat" class="form-control">
+                        <option value="">-- Selecciona un habitat --</option>
                         {% for habitat in form.habitat.field.queryset %}
                             <option value="{{ habitat.pk }}"
                                     {% if habitat.pk == form.habitat.value %}selected{% endif %}>{{ habitat }}</option>
@@ -120,7 +123,7 @@
                            type="text"
                            name="voz"
                            class="form-control"
-                           placeholder=""
+                           placeholder="-- Ingresa una descripción de la voz --"
                            required>
                     {{ form.voz.errors }}
                 </div>
@@ -141,7 +144,7 @@
                            type="text"
                            name="alimentacion"
                            class="form-control"
-                           placeholder=""
+                           placeholder="-- Ingresa la alimentación --"
                            required>
                     {{ form.alimentacion.errors }}
                 </div>
@@ -154,7 +157,7 @@
                            type="text"
                            name="cria"
                            class="form-control"
-                           placeholder=""
+                           placeholder="-- Ingresa la reproducción --"
                            required>
                     {{ form.cria.errors }}
                 </div>
@@ -168,6 +171,7 @@
                     <select id="id_movimientos_estacionales"
                             name="movimientos_estacionales"
                             class="form-control">
+                        <option value="">-- Selecciona un movimiento estacional --</option>
                         {% for movimientos_estacionales in form.movimientos_estacionales.field.queryset %}
                             <option value="{{ movimientos_estacionales.pk }}"
                                     {% if movimientos_estacionales.pk == form.movimientos_estacionales.value %}selected{% endif %}>
@@ -180,11 +184,12 @@
             </div>
             {% comment %} STATUS CONSERVACION {% endcomment %}
             <div class="form-group row d-flex align-items-center">
-                <label for="id_status_conservacion" class="col-sm-3 col-form-label">{{ form.status_conservacion.label }}</label>
+                <label for="id_status_conservacion" class="col-sm-3 col-form-label">Status de conservación</label>
                 <div class="col-sm-9">
                     <select id="id_status_conservacion"
                             name="status_conservacion"
                             class="form-control">
+                        <option value="">-- Selecciona un status de conservación --</option>
                         {% for status_conservacion in form.status_conservacion.field.queryset %}
                             <option value="{{ status_conservacion.pk }}"
                                     {% if status_conservacion.pk == form.status_conservacion.value %}selected{% endif %}>
@@ -200,6 +205,7 @@
                 <label for="id_cabeza" class="col-sm-3 col-form-label">{{ form.cabeza.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_cabeza" name="cabeza" class="form-control">
+                        <option value="">-- Selecciona un tipo de cabeza --</option>
                         {% for cabeza in form.cabeza.field.queryset %}
                             <option value="{{ cabeza.pk }}"
                                     {% if cabeza.pk == form.cabeza.value %}selected{% endif %}>{{ cabeza }}</option>
@@ -213,6 +219,7 @@
                 <label for="id_largo_pico" class="col-sm-3 col-form-label">{{ form.largo_pico.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_largo_pico" name="largo_pico" class="form-control">
+                        <option value="">-- Selecciona un largo de pico --</option>
                         {% for largo_pico in form.largo_pico.field.queryset %}
                             <option value="{{ largo_pico.pk }}"
                                     {% if largo_pico.pk == form.largo_pico.value %}selected{% endif %}>
@@ -228,6 +235,7 @@
                 <label for="id_largo_cuello" class="col-sm-3 col-form-label">{{ form.largo_cuello.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_largo_cuello" name="largo_cuello" class="form-control">
+                        <option value="">-- Selecciona un largo de cuello --</option>
                         {% for largo_cuello in form.largo_cuello.field.queryset %}
                             <option value="{{ largo_cuello.pk }}"
                                     {% if largo_cuello.pk == form.largo_cuello.value %}selected{% endif %}>
@@ -243,6 +251,7 @@
                 <label for="id_cuello_vuelo" class="col-sm-3 col-form-label">{{ form.cuello_vuelo.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_cuello_vuelo" name="cuello_vuelo" class="form-control">
+                        <option value="">-- Selecciona un tipo de cuello en vuelo --</option>
                         {% for cuello_vuelo in form.cuello_vuelo.field.queryset %}
                             <option value="{{ cuello_vuelo.pk }}"
                                     {% if cuello_vuelo.pk == form.cuello_vuelo.value %}selected{% endif %}>
@@ -258,6 +267,7 @@
                 <label for="id_forma_alas" class="col-sm-3 col-form-label">{{ form.forma_alas.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_forma_alas" name="forma_alas" class="form-control">
+                        <option value="">-- Selecciona una forma de alas --</option>
                         {% for forma_alas in form.forma_alas.field.queryset %}
                             <option value="{{ forma_alas.pk }}"
                                     {% if forma_alas.pk == form.forma_alas.value %}selected{% endif %}>
@@ -273,6 +283,7 @@
                 <label for="id_largo_cola" class="col-sm-3 col-form-label">{{ form.largo_cola.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_largo_cola" name="largo_cola" class="form-control">
+                        <option value="">-- Selecciona un largo de cola --</option>
                         {% for largo_cola in form.largo_cola.field.queryset %}
                             <option value="{{ largo_cola.pk }}"
                                     {% if largo_cola.pk == form.largo_cola.value %}selected{% endif %}>
@@ -288,6 +299,7 @@
                 <label for="id_forma_cola" class="col-sm-3 col-form-label">{{ form.forma_cola.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_forma_cola" name="forma_cola" class="form-control">
+                        <option value="">-- Selecciona una forma de cola --</option>
                         {% for forma_cola in form.forma_cola.field.queryset %}
                             <option value="{{ forma_cola.pk }}"
                                     {% if forma_cola.pk == form.forma_cola.value %}selected{% endif %}>
@@ -303,6 +315,7 @@
                 <label for="id_largo_patas" class="col-sm-3 col-form-label">{{ form.largo_patas.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_largo_patas" name="largo_patas" class="form-control">
+                        <option value="">-- Selecciona un largo de patas --</option>
                         {% for largo_patas in form.largo_patas.field.queryset %}
                             <option value="{{ largo_patas.pk }}"
                                     {% if largo_patas.pk == form.largo_patas.value %}selected{% endif %}>
@@ -320,6 +333,7 @@
                     <select id="id_patron_coloracion"
                             name="patron_coloracion"
                             class="form-control">
+                        <option value="">-- Selecciona un patrón de coloración --</option>
                         {% for patron_coloracion in form.patron_coloracion.field.queryset %}
                             <option value="{{ patron_coloracion.pk }}"
                                     {% if patron_coloracion.pk == form.patron_coloracion.value %}selected{% endif %}>
@@ -335,6 +349,7 @@
                 <label for="id_grupo" class="col-sm-3 col-form-label">{{ form.grupo.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_grupo" name="grupo" class="form-control">
+                        <option value="">-- Selecciona un grupo --</option>
                         {% for grupo in form.grupo.field.queryset %}
                             <option value="{{ grupo.pk }}"
                                     {% if grupo.pk == form.grupo.value %}selected{% endif %}>{{ grupo }}</option>
@@ -348,6 +363,7 @@
                 <label for="id_status" class="col-sm-3 col-form-label">{{ form.status.label }}</label>
                 <div class="col-sm-9">
                     <select id="id_status" name="status" class="form-control">
+                        <option value="">-- Selecciona un status --</option>
                         {% for status in form.status.field.queryset %}
                             <option value="{{ status.pk }}"
                                     {% if status.pk == form.status.value %}selected{% endif %}>{{ status }}</option>

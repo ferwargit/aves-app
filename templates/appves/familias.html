@@ -1,14 +1,62 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
   <title>Familias de Aves</title>
 {% endblock title %}
-{% load static %}
 {% block content %}
   {% block styles %}
     <link rel="stylesheet" href="{% static 'css/appves/familias.css' %}" />
   {% endblock styles %}
-  <h1>Familias de aves presentes en Argentina</h1>
-  <ul class="ul-block">
-    {% for familia in familias %}{{ familia }}{% endfor %}
-  </ul>
+  <div class="card-mayor">
+    <card class="card-buscador">
+      <h1>Lista de Familias de Aves</h1>
+      <div class="form-group">
+        <label for="familia">Selecciona una familia:</label>
+        <select class="form-control custom-select"
+                id="familia"
+                onchange="mostrarDetalle()">
+          <option value="">-- Selecciona una familia --</option>
+          {% for familia in familias %}
+            <option value="{{ familia }}">{{ familia }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </card>
+    <card id="detalle" class="card-detalle">
+      <h3 class="detalle_titulo">Detalle de la familia seleccionada</h3>
+      <p><strong>Nombre del ave:</strong> <span id="detalle-nombre"></span></p>
+      <p><strong>Nombre Científico:</strong> <span id="detalle-nombre-cientifico"></span></p>
+    </card>
+  </div>
+  <script>
+    function mostrarDetalle() {
+      var select = document.getElementById("familia");
+      var detalle = document.getElementById("detalle");
+      var detalleNombre = document.getElementById("detalle-nombre");
+      var detalleNombreCientifico = document.getElementById("detalle-nombre-cientifico");
+  
+      if (select.value !== "") {
+        detalle.style.display = "block";
+        detalleNombre.textContent = select.value;
+        obtenerDetalle(select.value);  // Llamada a la función para obtener el nombre y el nombre científico
+      } else {
+        detalle.style.display = "none";
+      }
+    }
+
+    function obtenerDetalle(familia) {
+      fetch(`/obtener_detalle_familia?nombre_familia=${familia}`)
+        .then(response => response.json())
+        .then(data => {
+          // Establecer el contenido del nombre y nombre científico en los elementos correspondientes
+          var detalleNombre = document.getElementById("detalle-nombre");
+          var detalleNombreCientifico = document.getElementById("detalle-nombre-cientifico");
+          detalleNombre.textContent = data.nombre;
+          detalleNombreCientifico.textContent = data.nombre_cientifico;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
 {% endblock content %}
