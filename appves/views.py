@@ -12,7 +12,7 @@ from django.views.generic import (
 
 from .forms import BirdForm, LineaAvistajeForm
 from .models import Bird, Status, LineaAvistaje
-
+import json
 
 def biomas(request):
     return render(request, "appves/biomas.html")
@@ -31,65 +31,12 @@ def topografia(request):
 
 
 def familias(request):
-    palabras = [
-        "Tinamidae",
-        "Rheidae",
-        "Cracidae",
-        "Struthionidae",
-        "Phoenicopteridae",
-        "Anhingidae",
-        "Ardeidae",
-        "Threskiornithidae",
-        "Pandionidae",
-        "Accipitridae",
-        "Falconidae",
-        "Odontophoridae",
-        "Numididae",
-        "Phasianidae",
-        "Podicipedidae",
-        "Anatidae",
-        "Diomedeidae",
-        "Procellariidae",
-        "Sulidae",
-        "Phaethontidae",
-        "Cathartidae",
-        "Fregatidae",
-        "Phalacrocoracidae",
-        "Charadriidae",
-        "Recurvirostridae",
-        "Rostratulidae",
-        "Haematopodidae",
-        "Scolopacidae",
-        "Laridae",
-        "Columbidae",
-        "Psittacidae",
-        "Trochilidae",
-        "Apodidae",
-        "Trogonidae",
-        "Bucconidae",
-        "Momotidae",
-        "Galbulidae",
-        "Ramphastidae",
-        "Podargidae",
-        "Cuculidae",
-        "Strigidae",
-        "Caprimulgidae",
-        "Nyctibiidae",
-        "Aegothelidae",
-        "Hemiprocnidae",
-        "Coliidae",
-        "Coraciidae",
-        "Brachypteraciidae",
-        "Alcedinidae",
-        "Megalaimidae",
-        "Meropidae",
-        "Upupidae",
-        "Bucerotidae",
-        "Phoeniculidae",
-    ]
+    # lee la lista de palabras desde el archivo JSON
+    with open('static/json/familias.json', 'r') as f:
+        familias = json.load(f)
 
-    palabras_ordenadas = sorted(palabras)  # Ordena la lista alfabéticamente
-    return render(request, "appves/familias.html", {"palabras": palabras_ordenadas})
+    familias_ordenadas = sorted(familias)  # Ordena la lista alfabéticamente
+    return render(request, "appves/familias.html", {"familias": familias_ordenadas})
 
 
 def about(request):

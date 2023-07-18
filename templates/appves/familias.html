@@ -1,22 +1,14 @@
-{% extends 'base.html' %} 
+{% extends "base.html" %}
 {% block title %}
-<title>Familias de Aves</title>
-{% endblock %} 
+  <title>Familias de Aves</title>
+{% endblock title %}
 {% load static %}
-
-{% block content %} 
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/appves/familias.css' %}" />
-{% endblock %}
-
-<h1>Familias de aves presentes en Argentina</h1>
-
-<ul class="ul-block">
-
-  {% for palabra in palabras %} 
-    {{ palabra }} 
-  {% endfor %}
-
-</ul>
-
-{% endblock %}
+{% block content %}
+  {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appves/familias.css' %}" />
+  {% endblock styles %}
+  <h1>Familias de aves presentes en Argentina</h1>
+  <ul class="ul-block">
+    {% for familia in familias %}{{ familia }}{% endfor %}
+  </ul>
+{% endblock content %}
