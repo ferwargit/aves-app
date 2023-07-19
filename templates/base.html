@@ -31,6 +31,9 @@
                 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
                 crossorigin=""></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        {% comment %} SWEETALERT2 {% endcomment %}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {% comment %} FIN SWEETALERT2 {% endcomment %}
         {% block scripts %}
         {% endblock scripts %}
         {% comment %} Fuente {% endcomment %}
@@ -44,18 +47,9 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-custom-color navbar-custom-text-color">
             <!-- TODO -->
-            <div class="container-fluid">
+            <div class="container-fluid d-flex align-items-center">
                 <a class="navbar-brand" href="#"><?xml version="1.0" encoding="UTF-8"?>
-                    <svg width="24px"
-                         height="24px"
-                         stroke-width="1.5"
-                         viewBox="0 0 24 24"
-                         fill="none"
-                         xmlns="http://www.w3.org/2000/svg"
-                         color="#ff8000">
-                        <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 00-7.86 3v1a10.66 10.66 0 01-9-4.53s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z" stroke="#ff8000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                    </svg>
+                    {% include "./logo.html" %}
                 </a>
                 <button class="navbar-toggler"
                         type="button"
@@ -80,12 +74,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'biomas' %}">Ecorregiones</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'glosario' %}">Glosario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'topografia' %}">Topografía</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
                                href="#"
@@ -93,6 +81,15 @@
                                data-bs-toggle="dropdown"
                                aria-expanded="false">FAQS</a>
                             <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{% url 'glosario' %}">Glosario</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{% url 'topografia' %}">Topografía</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'lugares' %}">Lugares para observar aves</a>
+                                </li>
                                 <li>
                                     <a class="dropdown-item" href="{% url 'about' %}">Qué es Appves</a>
                                 </li>
@@ -103,10 +100,7 @@
                                     <a class="dropdown-item" href="#">Como usar la guía</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Preguntas frecuentes</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'lugares' %}">Lugares para observar aves</a>
+                                    <a class="dropdown-item" href="{% url 'preguntas_frecuentes' %}">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </li>

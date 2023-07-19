@@ -12,7 +12,9 @@ from django.views.generic import (
 
 from .forms import BirdForm, LineaAvistajeForm
 from .models import Bird, Status, LineaAvistaje
-
+import json
+from django.conf import settings
+import sqlite3
 
 def biomas(request):
     return render(request, "appves/biomas.html")
@@ -30,66 +32,50 @@ def topografia(request):
     return render(request, "appves/topografia.html")
 
 
-def familias(request):
-    palabras = [
-        "Tinamidae",
-        "Rheidae",
-        "Cracidae",
-        "Struthionidae",
-        "Phoenicopteridae",
-        "Anhingidae",
-        "Ardeidae",
-        "Threskiornithidae",
-        "Pandionidae",
-        "Accipitridae",
-        "Falconidae",
-        "Odontophoridae",
-        "Numididae",
-        "Phasianidae",
-        "Podicipedidae",
-        "Anatidae",
-        "Diomedeidae",
-        "Procellariidae",
-        "Sulidae",
-        "Phaethontidae",
-        "Cathartidae",
-        "Fregatidae",
-        "Phalacrocoracidae",
-        "Charadriidae",
-        "Recurvirostridae",
-        "Rostratulidae",
-        "Haematopodidae",
-        "Scolopacidae",
-        "Laridae",
-        "Columbidae",
-        "Psittacidae",
-        "Trochilidae",
-        "Apodidae",
-        "Trogonidae",
-        "Bucconidae",
-        "Momotidae",
-        "Galbulidae",
-        "Ramphastidae",
-        "Podargidae",
-        "Cuculidae",
-        "Strigidae",
-        "Caprimulgidae",
-        "Nyctibiidae",
-        "Aegothelidae",
-        "Hemiprocnidae",
-        "Coliidae",
-        "Coraciidae",
-        "Brachypteraciidae",
-        "Alcedinidae",
-        "Megalaimidae",
-        "Meropidae",
-        "Upupidae",
-        "Bucerotidae",
-        "Phoeniculidae",
-    ]
+def preguntas_frecuentes(request):
+    return render(request, "appves/preguntas_frecuentes.html")
 
-    palabras_ordenadas = sorted(palabras)  # Ordena la lista alfabéticamente
-    return render(request, "appves/familias.html", {"palabras": palabras_ordenadas})
+
+def familias(request):
+    # Obtiene la ruta de la base de datos desde la configuración de Django
+    ruta_basededatos = settings.DATABASES['default']['NAME']
+
+    # Establece conexión con la base de datos
+    connection = sqlite3.connect(ruta_basededatos)
+    cursor = connection.cursor()
+
+    # Obtener las familias desde la tabla appves_family
+    cursor.execute("SELECT familia FROM appves_family")
+    result_set = cursor.fetchall()
+
+    # Generar la lista de familias a partir de los resultados de la consulta
+    familias_ordenadas = [row[0] for row in result_set]
+    familias_ordenadas.sort()  # Ordenar alfabéticamente
+
+    if familias_ordenadas:
+        return render(request, "appves/familias.html", {"familias": familias_ordenadas})
+    else:
+        familias_ordenadas = []  # O cualquier otra acción que desees realizar cuando no haya datos disponibles
+
+    return render(request, "appves/familias.html", {"familias": familias_ordenadas})
+
+
+def obtener_detalle_familia(request):
+    nombre_familia = request.GET.get('nombre_familia')
+
+    try:
+        bird = Bird.objects.filter(familia__familia=nombre_familia).first()
+        detalle = {
+            'nombre': bird.nombre if bird else 'No disponible',
+            'nombre_cientifico': bird.nombre_cientifico if bird else 'No disponible',
+        }
+    except Bird.DoesNotExist:
+        detalle = {
+            'nombre': 'No disponible',
+            'nombre_cientifico': 'No disponible',
+        }
+
+    return JsonResponse(detalle)
 
 
 def about(request):

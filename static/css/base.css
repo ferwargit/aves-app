@@ -1,12 +1,14 @@
 body {
-  margin-top: 55px; /* Ajusta este valor según la altura de tu barra de navegación */
+  margin-top: 55px;
+  /* Ajusta este valor según la altura de tu barra de navegación */
 }
 
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Esto asegura que la barra de navegación esté siempre en la parte superior de otros elementos */
+  z-index: 1000;
+  /* Esto asegura que la barra de navegación esté siempre en la parte superior de otros elementos */
 }
 
 body {

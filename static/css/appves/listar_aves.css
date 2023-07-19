@@ -1,15 +1,27 @@
+.ficha {
+  border: 1px solid #3C644C;
+  margin: 20px;
+  padding: 20px;
+  color: #333333;
+  background-color: silver;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  width: 100%;
+}
+
 .container-head {
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 0;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 0px;
-  font-size: 50px;
+  font-size: 47px;
   font-weight: 500;
   background-image: linear-gradient(45deg, #3f9a3c, #762bee);
   color: transparent;
@@ -36,7 +48,7 @@ h1 {
 
 .card-title {
   font-size: 1.2rem;
-  text-align: left;
+  text-align: center;
 }
 
 .card-hover:hover {
@@ -46,6 +58,10 @@ h1 {
 
 .card-hover {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-body {
+  padding: 1.25rem;
 }
 
 .custom-card {
@@ -73,11 +89,24 @@ h1 {
   border-color: #db6b42;
 }
 
+/* BOTON SOLO */
+.card-body {
+  text-align: center;
+}
+
+.card-body .button-container a.btn-success.solo {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* FIN BOTON SOLO */
+
 @media (max-width: 1200px) {
   .row-cols-md-3 {
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .card-container {
     flex: 0 0 50%;
     max-width: 50%;
@@ -89,6 +118,7 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .card-container {
     flex: 0 0 100%;
     max-width: 100%;
