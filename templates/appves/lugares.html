@@ -1,244 +1,226 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
+{% load static %}
 {% block title %}
     <title>Lugares para observar aves</title>
-{% endblock %}
-
-{% load static %}
-
-
-
+{% endblock title %}
 {% block content %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/biomas.css' %}">
+    {% endblock styles %}
+    <h1>Lugares para observar aves</h1>
+    <p>
+        Algunos sitios recomendados para la observación de aves en Argentina, están marcados los parques nacionales, provinciales y algunos sitios considerados como AICAs (Áreas de importancia para la Conservación de las Aves)
+    </p>
+    <div id="map" class="map">
+        <html lang="">
+            <head>
+                <base target="_top">
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="description"
+                      content="Mapa de Argentina con los parques nacionales, provinciales y algunos sitios considerados como AICAs (Áreas de importancia para la Conservación de las Aves)">
+                <meta name="keywords"
+                      content="aves, argentina, parques nacionales, parques provinciales, AICAs, Áreas de importancia para la Conservación de las Aves">
+                <title>Lugares para observar aves</title>
+                <link rel="shortcut icon"
+                      type="image/x-icon"
+                      href="docs/images/favicon.ico" />
+                <link rel="stylesheet"
+                      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                      crossorigin="" />
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                        crossorigin=""></script>
+            </head>
+            <body>
+                <div id="mapa" class="mapa"></div>
+                <script type="text/javascript" src="{% static 'js/limites_provinciales.js'%}"></script>
+                <script type="text/javascript">
+      			const parques_nacionales = L.layerGroup();
+				const mPNciervo = L.marker([-34.2342, -58.8861]).bindPopup('Parque Nacional Ciervo de los Pantanos.').addTo(parques_nacionales);
+				const mPNrey = L.marker([-24.67, -64.63]).bindPopup('Parque Nacional El Rey.').addTo(parques_nacionales);
+				const mPNtalampaya = L.marker([-29.90, -68.01]).bindPopup('Parque Nacional Talampaya').addTo(parques_nacionales);
+				const mPNpalmar = L.marker([-31.87, -58.25]).bindPopup('Parque Nacional El Palmar').addTo(parques_nacionales);
+				const mPNhuapi = L.marker([-40.87, -71.49]).bindPopup('Parque Nacional Nahuel Huapi').addTo(parques_nacionales);
+				const mPNansenuza = L.marker([-30.82, -62.53]).bindPopup('Parque Nacional Ansenuza').addTo(parques_nacionales);
+				const mPNbaritu = L.marker([-22.58, -64.62]).bindPopup('Parque Nacional Baritú').addTo(parques_nacionales);
+				const mPNbosquespetri = L.marker([-47.67, -68.09]).bindPopup('Parque Nacional Bosques Petrificados de Jaramillo').addTo(parques_nacionales);
+				const mPNcalilegua = L.marker([-23.69, -64.79]).bindPopup('Parque Nacional Calilegua ').addTo(parques_nacionales);
+				const mPNcampos = L.marker([-36.35, -56.87]).bindPopup('Parque Nacional Campos del Tuyú ').addTo(parques_nacionales);
+				const mPNchaco = L.marker([-26.83, -59.66]).bindPopup('Parque Nacional Chaco').addTo(parques_nacionales);
+				const mPNopo = L.marker([-25.85, -61.91]).bindPopup('Parque Nacional Copo').addTo(parques_nacionales);
+				const mPNimpenetrable = L.marker([-24.99, -61.08]).bindPopup('Parque Nacional El Impenetrable').addTo(parques_nacionales);
+				const mPNleoncito = L.marker([-31.92, -69.24]).bindPopup('Parque Nacional El Leoncito').addTo(parques_nacionales);
+				const mPNibera = L.marker([-27.93, -56.93]).bindPopup('Parque Nacional Iberá').addTo(parques_nacionales);
+				const mPNiguazu = L.marker([-25.64, -54.34]).bindPopup('Parque Nacional Iguazú').addTo(parques_nacionales);
+				const mPNislas = L.marker([-32.27, -60.71]).bindPopup('Parque Nacional Islas de Santa Fe').addTo(parques_nacionales);
+				const mPNislote = L.marker([-41.48, -65.00]).bindPopup('Parque Nacional Islote Lobos').addTo(parques_nacionales);
+				const mPNlago = L.marker([-42.17, -71.69]).bindPopup('Parque Nacional Lago Puelo').addTo(parques_nacionales);
+				const mPNlagunablanca = L.marker([-39.03, -70.35]).bindPopup('Parque Nacional Laguna Blanca').addTo(parques_nacionales);
+				const mPNlagunapalmar = L.marker([-27.17, -58.70]).bindPopup('Parque Nacional Laguna El Palmar').addTo(parques_nacionales);
+				const mPNlanin = L.marker([-39.89, -71.48]).bindPopup('Parque Nacional Lanín').addTo(parques_nacionales);
+				const mPNlihue = L.marker([-37.95, -65.61]).bindPopup('Parque Nacional Lihué Calel').addTo(parques_nacionales);
+				const mPNalerces = L.marker([-42.87, -71.87]).bindPopup('Parque Nacional Los Alerces').addTo(parques_nacionales);
+				const mPNarrayanes = L.marker([-40.83, -71.61]).bindPopup('Parque Nacional Los Arrayanes').addTo(parques_nacionales);
+				const mPNcardones = L.marker([-25.28, -65.92]).bindPopup('Parque Nacional Los Cardones').addTo(parques_nacionales);
+				const mPNglaciares = L.marker([-50.00, -73.13]).bindPopup('Parque Nacional Los Glaciares').addTo(parques_nacionales);
+				const mPNmburucuya = L.marker([-28.02, -58.07]).bindPopup('Parque Nacional Mburucuyá').addTo(parques_nacionales);
+				const mPNmonte = L.marker([-50.34, -68.90]).bindPopup('Parque Nacional Monte León').addTo(parques_nacionales);
+				const mPNpatagonia = L.marker([-47.16, -71.32]).bindPopup('Parque Nacional Patagonia').addTo(parques_nacionales);
+				const mPNperito = L.marker([-47.92, -72.25]).bindPopup('Parque Nacional Perito Moreno').addTo(parques_nacionales);
+				const mPNpredelta = L.marker([-32.15, -60.63]).bindPopup('Parque Nacional Predelta').addTo(parques_nacionales);
+				const mPNquebrada = L.marker([-31.67, -64.77]).bindPopup('Parque Nacional Quebrada del Condorito').addTo(parques_nacionales);
+				const mPNrio = L.marker([-25.05, -58.13]).bindPopup('Parque Nacional Río Pilcomayo').addTo(parques_nacionales);
+				const mPNsanguillermo = L.marker([-29.31, -69.29]).bindPopup('Parque Nacional San Guillermo').addTo(parques_nacionales);
+				const mPNsierra = L.marker([-32.55, -67.12]).bindPopup('Parque Nacional Sierra de las Quijadas').addTo(parques_nacionales);
+				const mPNtierra = L.marker([-54.65, -68.47]).bindPopup('Parque Nacional Tierra del Fuego').addTo(parques_nacionales);
+				const mPNtraslasierra = L.marker([-31.15, -65.49]).bindPopup('Parque Nacional Traslasierra').addTo(parques_nacionales);
 
-{% block styles %}
-  <link rel="stylesheet" href="{% static 'css/appves/biomas.css' %}">
-{% endblock %}
-
-<h1>Lugares para observar aves</h1>
-
-
-<p>Algunos sitios recomendados para la observación de aves en Argentina, están marcados los parques nacionales, provinciales y algunos sitios considerados como AICAs (Áreas de importancia para la Conservación de las Aves)</p>
-
-
-
-<div id="map" style="height: 600px; position: relative;">
-  <html>
-  <head>
-    <base target="_top">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Lugares para observar aves</title>
-    
-    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-  
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
-      crossorigin=""/>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
-      crossorigin=""></script>
-  </head>
-  <body>
-  
-  <div id='mapa' style="height:500px;"></div>
-  
-  <script type="text/javascript" src="{% static 'js/limites_provinciales.js'%}"></script>
-  
-  <script type="text/javascript">
-  
-      const parques_nacionales = L.layerGroup();
-			const mPNciervo = L.marker([-34.2342, -58.8861]).bindPopup('Parque Nacional Ciervo de los Pantanos.').addTo(parques_nacionales);
-			const mPNrey = L.marker([-24.67, -64.63]).bindPopup('Parque Nacional El Rey.').addTo(parques_nacionales);
-			const mPNtalampaya = L.marker([-29.90, -68.01]).bindPopup('Parque Nacional Talampaya').addTo(parques_nacionales);
-			const mPNpalmar = L.marker([-31.87, -58.25]).bindPopup('Parque Nacional El Palmar').addTo(parques_nacionales);
-			const mPNhuapi = L.marker([-40.87, -71.49]).bindPopup('Parque Nacional Nahuel Huapi').addTo(parques_nacionales);
-			const mPNansenuza = L.marker([-30.82, -62.53]).bindPopup('Parque Nacional Ansenuza').addTo(parques_nacionales);
-			const mPNbaritu = L.marker([-22.58, -64.62]).bindPopup('Parque Nacional Baritú').addTo(parques_nacionales);
-			const mPNbosquespetri = L.marker([-47.67, -68.09]).bindPopup('Parque Nacional Bosques Petrificados de Jaramillo').addTo(parques_nacionales);
-			const mPNcalilegua = L.marker([-23.69, -64.79]).bindPopup('Parque Nacional Calilegua ').addTo(parques_nacionales);
-			const mPNcampos = L.marker([-36.35, -56.87]).bindPopup('Parque Nacional Campos del Tuyú ').addTo(parques_nacionales);
-			const mPNchaco = L.marker([-26.83, -59.66]).bindPopup('Parque Nacional Chaco').addTo(parques_nacionales);
-			const mPNopo = L.marker([-25.85, -61.91]).bindPopup('Parque Nacional Copo').addTo(parques_nacionales);
-			const mPNimpenetrable = L.marker([-24.99, -61.08]).bindPopup('Parque Nacional El Impenetrable').addTo(parques_nacionales);
-			const mPNleoncito = L.marker([-31.92, -69.24]).bindPopup('Parque Nacional El Leoncito').addTo(parques_nacionales);
-			const mPNibera = L.marker([-27.93, -56.93]).bindPopup('Parque Nacional Iberá').addTo(parques_nacionales);
-			const mPNiguazu = L.marker([-25.64, -54.34]).bindPopup('Parque Nacional Iguazú').addTo(parques_nacionales);
-			const mPNislas = L.marker([-32.27, -60.71]).bindPopup('Parque Nacional Islas de Santa Fe').addTo(parques_nacionales);
-			const mPNislote = L.marker([-41.48, -65.00]).bindPopup('Parque Nacional Islote Lobos').addTo(parques_nacionales);
-			const mPNlago = L.marker([-42.17, -71.69]).bindPopup('Parque Nacional Lago Puelo').addTo(parques_nacionales);
-			const mPNlagunablanca = L.marker([-39.03, -70.35]).bindPopup('Parque Nacional Laguna Blanca').addTo(parques_nacionales);
-			const mPNlagunapalmar = L.marker([-27.17, -58.70]).bindPopup('Parque Nacional Laguna El Palmar').addTo(parques_nacionales);
-			const mPNlanin = L.marker([-39.89, -71.48]).bindPopup('Parque Nacional Lanín').addTo(parques_nacionales);
-			const mPNlihue = L.marker([-37.95, -65.61]).bindPopup('Parque Nacional Lihué Calel').addTo(parques_nacionales);
-			const mPNalerces = L.marker([-42.87, -71.87]).bindPopup('Parque Nacional Los Alerces').addTo(parques_nacionales);
-			const mPNarrayanes = L.marker([-40.83, -71.61]).bindPopup('Parque Nacional Los Arrayanes').addTo(parques_nacionales);
-			const mPNcardones = L.marker([-25.28, -65.92]).bindPopup('Parque Nacional Los Cardones').addTo(parques_nacionales);
-			const mPNglaciares = L.marker([-50.00, -73.13]).bindPopup('Parque Nacional Los Glaciares').addTo(parques_nacionales);
-			const mPNmburucuya = L.marker([-28.02, -58.07]).bindPopup('Parque Nacional Mburucuyá').addTo(parques_nacionales);
-			const mPNmonte = L.marker([-50.34, -68.90]).bindPopup('Parque Nacional Monte León').addTo(parques_nacionales);
-			const mPNpatagonia = L.marker([-47.16, -71.32]).bindPopup('Parque Nacional Patagonia').addTo(parques_nacionales);
-			const mPNperito = L.marker([-47.92, -72.25]).bindPopup('Parque Nacional Perito Moreno').addTo(parques_nacionales);
-			const mPNpredelta = L.marker([-32.15, -60.63]).bindPopup('Parque Nacional Predelta').addTo(parques_nacionales);
-			const mPNquebrada = L.marker([-31.67, -64.77]).bindPopup('Parque Nacional Quebrada del Condorito').addTo(parques_nacionales);
-			const mPNrio = L.marker([-25.05, -58.13]).bindPopup('Parque Nacional Río Pilcomayo').addTo(parques_nacionales);
-			const mPNsanguillermo = L.marker([-29.31, -69.29]).bindPopup('Parque Nacional San Guillermo').addTo(parques_nacionales);
-			const mPNsierra = L.marker([-32.55, -67.12]).bindPopup('Parque Nacional Sierra de las Quijadas').addTo(parques_nacionales);
-			const mPNtierra = L.marker([-54.65, -68.47]).bindPopup('Parque Nacional Tierra del Fuego').addTo(parques_nacionales);
-			const mPNtraslasierra = L.marker([-31.15, -65.49]).bindPopup('Parque Nacional Traslasierra').addTo(parques_nacionales);
-
-			const argenmap = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png', {
-				maxZoom: 19,
-				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-			});
+				const argenmap = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png', {
+					maxZoom: 19,
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+				});
 			
-			const satelital = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				const satelital = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 				maxZoom: 19,
 				attribution: 'Imágenes satelitales © Esri'
-			});
+				});
 			
-			const redIcon = new L.Icon({
-				iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-				shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-				iconSize: [25, 41],
-				iconAnchor: [12, 41],
-				popupAnchor: [1, -34],
-				shadowSize: [41, 41] 
-			});
+				const redIcon = new L.Icon({
+					iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+					shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+					iconSize: [25, 41],
+					iconAnchor: [12, 41],
+					popupAnchor: [1, -34],
+					shadowSize: [41, 41] 
+				});
 
-			const aicas = L.layerGroup();
-			const mAICAmalvinas = L.marker([-51.8, -59.516667], {icon: redIcon}).bindPopup('Islas Malvinas').addTo(aicas);
+				const aicas = L.layerGroup();
+				const mAICAmalvinas = L.marker([-51.8, -59.516667], {icon: redIcon}).bindPopup('Islas Malvinas').addTo(aicas);
 
-      const map = L.map('map', {
-				center: [-40,-59],
-				zoom: 4,
-				layers: [argenmap, parques_nacionales]
-			});
+      			const map = L.map('map', {
+					center: [-40,-59],
+					zoom: 4,
+					layers: [argenmap, parques_nacionales]
+				});
 			
-			const baseLayers = {
-				'Argenmap': argenmap,
-				'Mapa Satelital': satelital
-			};
+				const baseLayers = {
+					'Argenmap': argenmap,
+					'Mapa Satelital': satelital
+				};
 			
-			const overlays = {
-				'Parques Nacionales': parques_nacionales,
-				'AICAs': aicas,
-			};
-  
-    
+				const overlays = {
+					'Parques Nacionales': parques_nacionales,
+					'AICAs': aicas,
+				};
 
-      const info = L.control();
-      const layerControl = L.control.layers(baseLayers, overlays).addTo(map)
-  
-      info.onAdd = function (map) {
-        this._div = L.DomUtil.create('div', 'info');
-        return this._div;
-      };
+				const info = L.control();
+				const layerControl = L.control.layers(baseLayers, overlays).addTo(map)
+			
+				info.onAdd = function (map) {
+					this._div = L.DomUtil.create('div', 'info');
+					return this._div;
+				};
   
     
   
-      info.addTo(map);
-  
-      //Colorea los limites provinciales
-      function style(feature) {
-        return {
-          weight: 2,
-          opacity: 5,
-          color: '#6aa84f',
-          dashArray: '3',
-          fillOpacity: 0.1,
-        };
-      }
-  
-    function highlightFeature(e) {
-      const layer = e.target;
-  
-      layer.setStyle({
-        weight: 5,
-        color: '#666',
-        dashArray: '',
-        fillOpacity: 0.1
-      });
-  
-      layer.bringToFront();
-  
-      
-    }
-  
-    /* limites provinciales */
-    const geojson = L.geoJson(limites, {
-      style,
-      onEachFeature
-    }).addTo(map);
-  
-    function resetHighlight(e) {
-      geojson.resetStyle(e.target);
-    }
-  
-    function zoomToFeature(e) {
-      map.fitBounds(e.target.getBounds());
-    }
-  
-    function onEachFeature(feature, layer) {
-      layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
-      });
-    }
-  
-    map.attributionControl.addAttribution(' <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">IGN Instituto Geográfico Nacional</a>');
-    
-    //agrego marcadores de color
-			const greenIcon = new L.Icon({
-				iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-				shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-				iconSize: [25, 41],
-				iconAnchor: [12, 41],
-				popupAnchor: [1, -34],
-				shadowSize: [41, 41] 
-			});
-
+				info.addTo(map);
+		
+				//Colorea los limites provinciales
+				function style(feature) {
+					return {
+						weight: 2,
+						opacity: 5,
+						color: '#6aa84f',
+						dashArray: '3',
+						fillOpacity: 0.1,
+					};
+					}
+		
+				function highlightFeature(e) {
+				const layer = e.target;
 			
+				layer.setStyle({
+					weight: 5,
+					color: '#666',
+					dashArray: '',
+					fillOpacity: 0.1
+				});
 			
-			const PPischi = L.marker([-30.163806,-67.8450689], {icon: greenIcon}).bindPopup('Parque Provincial Ischigualasto.');
-			const PPaconcagua = L.marker([-32.8241288,-69.9453089], {icon: greenIcon}).bindPopup('Parque Provincial Aconcagua.');
-			const PPcopahue = L.marker([-37.8695068,-71.1024801], {icon: greenIcon}).bindPopup('Parque Provincial Copahue.');
-			const PPtromen = L.marker([-37.127962,-70.370074,9], {icon: greenIcon}).bindPopup('Parque Provincial El Tromen.');
-			const PPloro = L.marker([-25.4456694,-62.2106864], {icon: greenIcon}).bindPopup('Parque Provincial Loro Hablador.');
-			const PPfuerte = L.marker([-25.1525384,-61.8148488], {icon: greenIcon}).bindPopup('Parque Natural Provincial Fuerte Esperanza');
-			const PPmonte = L.marker([-47.097778, -66.282222], {icon: greenIcon}).bindPopup('Parque Natural Provincial Monte Loayza'); 
-			const PPbajo = L.marker([-32.283333, -65.4], {icon: greenIcon}).bindPopup('Parque Provincial Bajo de Véliz');
-			const PPcerro = L.marker([-42.150278, -71.485278], {icon: greenIcon}).bindPopup('Parque Provincial Cerro Pirque');
-			const PPcumbres = L.marker([-26.5, -65.633333], {icon: greenIcon}).bindPopup('Parque Provincial Cumbres Calchaquíes');
-			const PPcaballos = L.marker([-29.933333, -59.65], {icon: greenIcon}).bindPopup('Parque Provincial Del Medio-Los Caballos');
-			const PPchiflon = L.marker([-30.2, -67.566667], {icon: greenIcon}).bindPopup('Parque Provincial El Chiflón');
-			const PPtornquist = L.marker([-38.05, -62.033333], {icon: greenIcon}).bindPopup('Parque Provincial Ernesto Tornquist');
-			const PPibatin = L.marker([-27.220556, -65.586944], {icon: greenIcon}).bindPopup('Parque Provincial Ibatín');
-			const PPlaguna = L.marker([-22.866389, -64.481111], {icon: greenIcon}).bindPopup('Parque Provincial Laguna Pintascayo');
-			const PPniuniorcos = L.marker([	-27, -65.716667], {icon: greenIcon}).bindPopup('Parque Provincial Los Ñuñorcos');
-			const PPpampa = L.marker([-26.276944, -59.967658], {icon: greenIcon}).bindPopup('Parque Provincial Pampa del Indio');
-			const PPparque = L.marker([-41.75, -71.516667], {icon: greenIcon}).bindPopup('Parque Provincial Parque Azul');
-			const PPpeninsula = L.marker([-50.399444, -72.889167], {icon: greenIcon}).bindPopup('Parque Provincial Península de Magallanes');
-			const PPpotrero = L.marker([-24.1,-65.466667], {icon: greenIcon}).bindPopup('Parque Provincial Potrero de Yala');
-			const PPchancani = L.marker([-31.333333, -65.45], {icon: greenIcon}).bindPopup('Parque y Reserva Natural Chancaní');
-
-			const parques_provinciales = L.layerGroup([PPischi, PPaconcagua, PPcopahue, PPtromen, PPloro, PPfuerte,PPmonte,PPbajo,PPcerro,PPcumbres,PPcaballos,PPchiflon,PPtornquist,PPibatin,PPlaguna,PPniuniorcos,PPpampa,PPparque,PPpeninsula,PPpotrero,PPchancani]);
+				layer.bringToFront();
 			
-			const openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-				maxZoom: 19,
-				attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-			});
-			layerControl.addBaseLayer(openTopoMap, 'Mapa Topográfico');
-			layerControl.addOverlay(parques_provinciales, 'Parques Provinciales');
-  
-  </script>
-  
-  
-  
-  </body>
-  </html>
+				
+				}
+			
+				/* limites provinciales */
+				const geojson = L.geoJson(limites, {
+				style,
+				onEachFeature
+				}).addTo(map);
+			
+				function resetHighlight(e) {
+				geojson.resetStyle(e.target);
+				}
+			
+				function zoomToFeature(e) {
+				map.fitBounds(e.target.getBounds());
+				}
+			
+				function onEachFeature(feature, layer) {
+				layer.on({
+					mouseover: highlightFeature,
+					mouseout: resetHighlight,
+					click: zoomToFeature
+				});
+				}
+			
+				map.attributionControl.addAttribution(' <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">IGN Instituto Geográfico Nacional</a>');
+				
+				//agrego marcadores de color
+				const greenIcon = new L.Icon({
+					iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+					shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+					iconSize: [25, 41],
+					iconAnchor: [12, 41],
+					popupAnchor: [1, -34],
+					shadowSize: [41, 41] 
+					});
 
+				
+				
+				const PPischi = L.marker([-30.163806,-67.8450689], {icon: greenIcon}).bindPopup('Parque Provincial Ischigualasto.');
+				const PPaconcagua = L.marker([-32.8241288,-69.9453089], {icon: greenIcon}).bindPopup('Parque Provincial Aconcagua.');
+				const PPcopahue = L.marker([-37.8695068,-71.1024801], {icon: greenIcon}).bindPopup('Parque Provincial Copahue.');
+				const PPtromen = L.marker([-37.127962,-70.370074,9], {icon: greenIcon}).bindPopup('Parque Provincial El Tromen.');
+				const PPloro = L.marker([-25.4456694,-62.2106864], {icon: greenIcon}).bindPopup('Parque Provincial Loro Hablador.');
+				const PPfuerte = L.marker([-25.1525384,-61.8148488], {icon: greenIcon}).bindPopup('Parque Natural Provincial Fuerte Esperanza');
+				const PPmonte = L.marker([-47.097778, -66.282222], {icon: greenIcon}).bindPopup('Parque Natural Provincial Monte Loayza'); 
+				const PPbajo = L.marker([-32.283333, -65.4], {icon: greenIcon}).bindPopup('Parque Provincial Bajo de Véliz');
+				const PPcerro = L.marker([-42.150278, -71.485278], {icon: greenIcon}).bindPopup('Parque Provincial Cerro Pirque');
+				const PPcumbres = L.marker([-26.5, -65.633333], {icon: greenIcon}).bindPopup('Parque Provincial Cumbres Calchaquíes');
+				const PPcaballos = L.marker([-29.933333, -59.65], {icon: greenIcon}).bindPopup('Parque Provincial Del Medio-Los Caballos');
+				const PPchiflon = L.marker([-30.2, -67.566667], {icon: greenIcon}).bindPopup('Parque Provincial El Chiflón');
+				const PPtornquist = L.marker([-38.05, -62.033333], {icon: greenIcon}).bindPopup('Parque Provincial Ernesto Tornquist');
+				const PPibatin = L.marker([-27.220556, -65.586944], {icon: greenIcon}).bindPopup('Parque Provincial Ibatín');
+				const PPlaguna = L.marker([-22.866389, -64.481111], {icon: greenIcon}).bindPopup('Parque Provincial Laguna Pintascayo');
+				const PPniuniorcos = L.marker([	-27, -65.716667], {icon: greenIcon}).bindPopup('Parque Provincial Los Ñuñorcos');
+				const PPpampa = L.marker([-26.276944, -59.967658], {icon: greenIcon}).bindPopup('Parque Provincial Pampa del Indio');
+				const PPparque = L.marker([-41.75, -71.516667], {icon: greenIcon}).bindPopup('Parque Provincial Parque Azul');
+				const PPpeninsula = L.marker([-50.399444, -72.889167], {icon: greenIcon}).bindPopup('Parque Provincial Península de Magallanes');
+				const PPpotrero = L.marker([-24.1,-65.466667], {icon: greenIcon}).bindPopup('Parque Provincial Potrero de Yala');
+				const PPchancani = L.marker([-31.333333, -65.45], {icon: greenIcon}).bindPopup('Parque y Reserva Natural Chancaní');
 
-{% endblock %}
-
+				const parques_provinciales = L.layerGroup([PPischi, PPaconcagua, PPcopahue, PPtromen, PPloro, PPfuerte,PPmonte,PPbajo,PPcerro,PPcumbres,PPcaballos,PPchiflon,PPtornquist,PPibatin,PPlaguna,PPniuniorcos,PPpampa,PPparque,PPpeninsula,PPpotrero,PPchancani]);
+				
+				const openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+					maxZoom: 19,
+					attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+				});
+				layerControl.addBaseLayer(openTopoMap, 'Mapa Topográfico');
+				layerControl.addOverlay(parques_provinciales, 'Parques Provinciales');
+                </script>
+            </body>
+        </html>
+    </div>
+{% endblock content %}
