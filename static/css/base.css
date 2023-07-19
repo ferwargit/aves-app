@@ -1,6 +1,8 @@
 body {
   margin-top: 55px;
   /* Ajusta este valor según la altura de tu barra de navegación */
+  font-family: 'Nunito', sans-serif;
+  background-color: #E2E1CD;
 }
 
 .navbar {
@@ -9,11 +11,6 @@ body {
   width: 100%;
   z-index: 1000;
   /* Esto asegura que la barra de navegación esté siempre en la parte superior de otros elementos */
-}
-
-body {
-  font-family: 'Nunito', sans-serif;
-  background-color: #E2E1CD;
 }
 
 p {
