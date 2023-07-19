@@ -1,3 +1,9 @@
+body {
+  background-image: url("../../images/fondo_glosario.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1 {
   text-align: left;
   margin-bottom: 20px;

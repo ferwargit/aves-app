@@ -4,5 +4,5 @@ db.sqlite3
 .vscode
 *.mp3
 *.wav
-*.jpg
+# *.jpg
 *.jpeg
