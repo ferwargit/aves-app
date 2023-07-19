@@ -63,40 +63,6 @@ $(document).ready(function() {
         }
     });
 
-    function markToMap(farr){
-        arrCoord=[]
-        farr.forEach(function(farr) {
-            
-            
-            // console.log(farr.coor)
-            //markersMap(farr.coor)
-            // L.marker([-32.805744732906874, -62.16064453125001])
-            // L.marker(farr.coor).addTo(map)
-            console.log(farr)
-            arrCoord.push(farr.coor)
-            
-            
-        });
-        markersMap(arrCoord)
-    }
-
-    function markersMap (coords) {
-        // if (map.hasLayer(layerGroup)) {
-        //   console.log('already have one, clear it');
-        //   layerGroup.clearLayers();
-
-        // } else {
-        //   console.log('never have it before');
-        // }
-        layerGroup.clearLayers();
-        coords.forEach(function(coords){
-            var marker = L.marker(coords);
-            layerGroup.addLayer(marker);
-        })
-        
-        map.addLayer(layerGroup);
-      }
-
     function markToMapWithNoti(farr){
         console.log(farr)
         layerGroup.clearLayers();
