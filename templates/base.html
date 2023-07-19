@@ -31,6 +31,9 @@
                 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
                 crossorigin=""></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        {% comment %} SWEETALERT2 {% endcomment %}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {% comment %} FIN SWEETALERT2 {% endcomment %}
         {% block scripts %}
         {% endblock scripts %}
         {% comment %} Fuente {% endcomment %}
@@ -71,12 +74,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'biomas' %}">Ecorregiones</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'glosario' %}">Glosario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'topografia' %}">Topografía</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
                                href="#"
@@ -84,6 +81,15 @@
                                data-bs-toggle="dropdown"
                                aria-expanded="false">FAQS</a>
                             <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{% url 'glosario' %}">Glosario</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{% url 'topografia' %}">Topografía</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'lugares' %}">Lugares para observar aves</a>
+                                </li>
                                 <li>
                                     <a class="dropdown-item" href="{% url 'about' %}">Qué es Appves</a>
                                 </li>
@@ -94,10 +100,7 @@
                                     <a class="dropdown-item" href="#">Como usar la guía</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Preguntas frecuentes</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'lugares' %}">Lugares para observar aves</a>
+                                    <a class="dropdown-item" href="{% url 'preguntas_frecuentes' %}">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </li>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title>Preguntas frecuentes</title>
+{% endblock title %}
+{% block content %}
+    {% block styles %}
+        <link rel="stylesheet"
+              href="{% static 'css/appves/preguntas_frecuentes.css' %}">
+    {% endblock styles %}
+    <div class="mx-auto cont-form col-md-11 formulario-con-borde">
+        <h1>Preguntas frecuentes</h1>
+        <ol>
+            <li>
+                <a href="#" id="question1">¿Qué información proporciona la guía de aves de Argentina?</a>
+            </li>
+            <li>¿Cómo puedo utilizar la guía para identificar las aves que veo?</li>
+            <li>¿La guía de aves incluye todas las especies de aves que se encuentran en Argentina?</li>
+            <li>¿Cómo puedo buscar aves específicas en la guía?</li>
+            <li>¿La guía de aves proporciona detalles sobre las características y comportamientos de cada especie?</li>
+            <li>¿Puedo usar la guía para identificar aves tanto por su apariencia como por su canto?</li>
+            <li>¿La guía de aves tiene información sobre el hábitat y distribución de las especies?</li>
+            <li>¿Se incluyen fotografías o ilustraciones de las aves en la guía?</li>
+            <li>¿La guía de aves de Argentina está disponible en formato impreso o solo en línea?</li>
+            <li>¿Cómo puedo contribuir o enviar observaciones de aves para mejorar la guía?</li>
+            <li>¿La guía de aves proporciona información sobre las aves migratorias que visitan Argentina?</li>
+            <li>¿Se incluyen aves raras o poco comunes en la guía?</li>
+            <li>¿La guía ofrece información sobre aves endémicas de Argentina?</li>
+            <li>¿La guía de aves tiene una sección sobre aves en peligro de extinción o en estado vulnerable?</li>
+            <li>
+                ¿Puedo utilizar la guía para aprender sobre las aves migratorias que se encuentran en Argentina durante diferentes épocas del año?
+            </li>
+        </ol>
+    </div>
+    <script>
+        // Escucha el evento de clic en la pregunta 1
+        document.getElementById('question1').addEventListener('click', function (event) {
+            event.preventDefault(); // Evita la acción predeterminada del enlace
+            Swal.fire({
+                title: 'Respuesta a la pregunta 1',
+                text: 'Aquí va la respuesta a la pregunta 1.',
+                icon: 'info',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    </script>
+{% endblock content %}
