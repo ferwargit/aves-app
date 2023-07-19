@@ -1,215 +1,194 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block title %}
     <title>Ecorregiones</title>
-{% endblock %}
-
+{% endblock title %}
 {% load static %}
-
-
-
 {% block content %}
-
-{% block styles %}
-  <link rel="stylesheet" href="{% static 'css/appves/biomas.css' %}">
-{% endblock %}
-
-<h1>Ecorregiones</h1>
-
-<p>Las ecorregiones o biomas son territorios geográficos en los que predomina un ecosistema compartiendo características de clima, suelo, flora, fauna y paisaje entre otras cosas.</p>
-
-<p>Argentina cuenta con 18 ecorregiones lo cual nos posiciona como uno de los países mas rícos en biodiversidad.</p>
-
-<ul class="ul-block">
-<li>ALTOS ANDES</li>
-<li>ANTÁRTIDA</li>
-<li>BOSQUES PATAGÓNICOS</li>
-<li>CAMPOS Y MALEZALES</li>
-<li>CHACO HÚMEDO</li>
-<li>CHACO SECO</li>
-<li>DELTA E ISLAS DEL PARANÁ</li>
-<li>ESPINAL</li>
-<li>ESTEPA PATAGÓNICA</li>
-<li>ESTEROS DEL IBERÁ</li>
-<li>ISLAS DEL ATLÁNTICO SUR</li>
-<li>MAR ARGENTINO</li>
-<li>MONTE DE LLANURAS Y MESETAS</li>
-<li>MONTE DE SIERRAS Y BOLSONES</li>
-<li>LAS PAMPAS</li>
-<li>PUNA</li>
-<li>SELVA PARANAENSE</li>
-<li>YUNGAS</li>
-</ul>
-
-
-
-<div id="map" style="height: 600px; position: relative;">
-	<html>
-	<head>
-		<base target="_top">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/biomas.css' %}">
+    {% endblock styles %}
+    <h1>Ecorregiones</h1>
+    <p>
+        Las ecorregiones o biomas son territorios geográficos en los que predomina un ecosistema compartiendo características de clima, suelo, flora, fauna y paisaje entre otras cosas.
+    </p>
+    <p>Argentina cuenta con 18 ecorregiones lo cual nos posiciona como uno de los países mas rícos en biodiversidad.</p>
+    <ul class="ul-block">
+        <li>ALTOS ANDES</li>
+        <li>ANTÁRTIDA</li>
+        <li>BOSQUES PATAGÓNICOS</li>
+        <li>CAMPOS Y MALEZALES</li>
+        <li>CHACO HÚMEDO</li>
+        <li>CHACO SECO</li>
+        <li>DELTA E ISLAS DEL PARANÁ</li>
+        <li>ESPINAL</li>
+        <li>ESTEPA PATAGÓNICA</li>
+        <li>ESTEROS DEL IBERÁ</li>
+        <li>ISLAS DEL ATLÁNTICO SUR</li>
+        <li>MAR ARGENTINO</li>
+        <li>MONTE DE LLANURAS Y MESETAS</li>
+        <li>MONTE DE SIERRAS Y BOLSONES</li>
+        <li>LAS PAMPAS</li>
+        <li>PUNA</li>
+        <li>SELVA PARANAENSE</li>
+        <li>YUNGAS</li>
+    </ul>
+    <div id="map" class="map">
+        <html lang="en">
+            <head>
+                <base target="_top">
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="description" content="Ecorregiones de Argentina">
+                <meta name="keywords" content="Ecorregiones de Argentina">
+                <title>Ecorregiones de Argentina</title>
+                <link rel="shortcut icon"
+                      type="image/x-icon"
+                      href="docs/images/favicon.ico" />
+                <link rel="stylesheet"
+                      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                      crossorigin="" />
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+                </script>
+                <style>
+					.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+					.legend { text-align: left; line-height: 18px; color: #555; } 
+					.legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+                </style>
+            </head>
+            <body>
+                <div id="mapa" class="mapa"></div>
+                <script type="text/javascript" src="{% static 'js/limites_ecorregiones.js'%}"></script>
+                <script type="text/javascript">
+				const map = L.map('map').setView([-43, -62], 4);
+	
+				const tiles = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png', {
+					maxZoom: 20,
+					minZoom: 1,
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+				}).addTo(map);
+	
+				// control that shows state info on hover
+				const info = L.control();
+	
+				info.onAdd = function (map) {
+					this._div = L.DomUtil.create('div', 'info');
+					this.update();
+					return this._div;
+				};
+	
+				//Muestra la leyenda de la esquina superior derecha
+				info.update = function (props) {
+				const contents = props ? `<b>${props.name}</b><br />${props.area} hectáreas<sup></sup>` : 'Posiciona el mouse sobre una ecorregión';
+				this._div.innerHTML = `<h4>Ecorregiones de Argentina</h4>${contents}`;
+				};
+	
+				info.addTo(map);
+	
+				//Asigna un color para cada ID
+				function getColor(d) {
+					return d == 0 ? '#7c0902' :
+						d == 1  ? '#ffdab9' :
+						d == 2  ? '#f6b26b' :
+						d == 3  ? '#6aa84f' :
+						d == 4   ? '#ffd966' :
+						d == 5   ? '#40826d' :
+						d == 6   ? '#6fa8dc' :
+						d == 7  ? '#8fce00' :
+						d == 8  ? '#cc3333' :
+						d == 9  ? '#d87d0b' :
+						d == 10   ? '#c4a380' :
+						d == 11   ? '#536878' :
+						d == 12   ? '#ffb90f' :
+						d == 13   ? '#c09ede' :
+						d == 14   ? '#bbebaa' :
+						d == 15   ? '#e2ff07' :
+						d == 16   ? '#26eb9e' :
+						d == 17   ? '#14d3bd' :
+									'#000000';
+					}
+					
+				// Implementa el estilo de las ecorregiones
+				function style(feature) {
+					return {
+						fillColor: getColor(feature.properties.ID),
+						weight: 2,
+						opacity: 1,
+						color: 'grey',
+						dashArray: '3',
+						fillOpacity: 0.7
+					};
+				}
 		
-		<title>Ecorregiones de Argentina</title>
-		
-		<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+				//Implementa la lógica para resaltar una ecorregión
+				function highlightFeature(e) {
+					const layer = e.target;
 	
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-				integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
-				crossorigin="">
-		</script>
+					layer.setStyle({
+						weight: 5,
+						color: '#666',
+						dashArray: '',
+						fillOpacity: 0.7
+					});
+			
+					layer.bringToFront();
+			
+					info.update(layer.feature.properties);
+				}
+			
+				/* limites ecorregiones */
+				const geojson = L.geoJson(biomas, {
+					style,
+					onEachFeature
+				}).addTo(map);
+			
+				function resetHighlight(e) {
+					geojson.resetStyle(e.target);
+					info.update();
+				}
+			
+				function zoomToFeature(e) {
+					map.fitBounds(e.target.getBounds());
+				}
+			
+				function onEachFeature(feature, layer) {
+					layer.on({
+						mouseover: highlightFeature,
+						mouseout: resetHighlight,
+						click: zoomToFeature
+					});
+				}
 	
-		
-	
-		<style>
-			.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
-			.legend { text-align: left; line-height: 18px; color: #555; } 
-			.legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
-		</style>
-	</head>
-	<body>
-	
-	<div id='mapa' style="height:500px;"></div>
-	
-	<script type="text/javascript" src="{% static 'js/limites_ecorregiones.js'%}"></script>
-	
-	<script type="text/javascript">
-	
-		const map = L.map('map').setView([-43, -62], 4);
-	
-		const tiles = L.tileLayer('https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png', {
-			maxZoom: 20,
-			minZoom: 1,
-			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-		}).addTo(map);
-	
-		// control that shows state info on hover
-		const info = L.control();
-	
-		info.onAdd = function (map) {
-			this._div = L.DomUtil.create('div', 'info');
-			this.update();
-			return this._div;
-		};
-	
-		//Muestra la leyenda de la esquina superior derecha
-		info.update = function (props) {
-			const contents = props ? `<b>${props.name}</b><br />${props.area} hectáreas<sup></sup>` : 'Posiciona el mouse sobre una ecorregión';
-			this._div.innerHTML = `<h4>Ecorregiones de Argentina</h4>${contents}`;
-		};
-	
-		info.addTo(map);
-	
-		//Asigna un color para cada ID
-		function getColor(d) {
-			return d == 0 ? '#7c0902' :
-				   d == 1  ? '#ffdab9' :
-				   d == 2  ? '#f6b26b' :
-				   d == 3  ? '#6aa84f' :
-				   d == 4   ? '#ffd966' :
-				   d == 5   ? '#40826d' :
-				   d == 6   ? '#6fa8dc' :
-				   d == 7  ? '#8fce00' :
-				   d == 8  ? '#cc3333' :
-				   d == 9  ? '#d87d0b' :
-				   d == 10   ? '#c4a380' :
-				   d == 11   ? '#536878' :
-				   d == 12   ? '#ffb90f' :
-				   d == 13   ? '#c09ede' :
-				   d == 14   ? '#bbebaa' :
-				   d == 15   ? '#e2ff07' :
-				   d == 16   ? '#26eb9e' :
-				   d == 17   ? '#14d3bd' :
-							 '#000000';
-			}
-	
-		// Implementa el estilo de las ecorregiones
-		function style(feature) {
-			return {
-				fillColor: getColor(feature.properties.ID),
-				weight: 2,
-				opacity: 1,
-				color: 'grey',
-				dashArray: '3',
-				fillOpacity: 0.7
-			};
-		}
-		
-		//Implementa la lógica para resaltar una ecorregión
-		function highlightFeature(e) {
-			const layer = e.target;
-	
-			layer.setStyle({
-				weight: 5,
-				color: '#666',
-				dashArray: '',
-				fillOpacity: 0.7
-			});
-	
-			layer.bringToFront();
-	
-			info.update(layer.feature.properties);
-		}
-	
-		/* limites ecorregiones */
-		const geojson = L.geoJson(biomas, {
-			style,
-			onEachFeature
-		}).addTo(map);
-	
-		function resetHighlight(e) {
-			geojson.resetStyle(e.target);
-			info.update();
-		}
-	
-		function zoomToFeature(e) {
-			map.fitBounds(e.target.getBounds());
-		}
-	
-		function onEachFeature(feature, layer) {
-			layer.on({
-				mouseover: highlightFeature,
-				mouseout: resetHighlight,
-				click: zoomToFeature
-			});
-		}
-	
-		//agregamos cuadro de control al mapa
-		const legend = L.control({position: 'bottomleft'});
-	
-		legend.onAdd = function (map) {
-		  const div = L.DomUtil.create('div', 'info legend');
-		  const labels = [];
-		  const addedRegions = [];
-		
-		  for (let i = 0; i < biomas.features.length; i++) {
-			const region = biomas.features[i].properties;
-			const color = getColor(region.ID);
-		
-			// Verifica si la región ya fue agregada
-			if (!addedRegions.includes(region.ID)) {
-			  const label = `<div><i style="background:${color}"></i>${region.name}</div>`;
-			  labels.push(label);
-			  addedRegions.push(region.ID);
-			}
-		  }
-		
-		  div.innerHTML = labels.join('');
-		  return div;
-		};
-	
-	  legend.addTo(map);
-	
-		map.attributionControl.addAttribution('Ecorregiones Argentinas <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">IGN Instituto Geográfico Nacional</a>');
-		
-	
-	</script>
-	
-	
-	
-	</body>
-	</html>
-	
-	  {% endblock %}
-
+				//agregamos cuadro de control al mapa
+				const legend = L.control({position: 'bottomleft'});
+			
+				legend.onAdd = function (map) {
+				const div = L.DomUtil.create('div', 'info legend');
+				const labels = [];
+				const addedRegions = [];
+				
+				for (let i = 0; i < biomas.features.length; i++) {
+					const region = biomas.features[i].properties;
+					const color = getColor(region.ID);
+				
+					// Verifica si la región ya fue agregada
+					if (!addedRegions.includes(region.ID)) {
+					const label = `<div><i style="background:${color}"></i>${region.name}</div>`;
+					labels.push(label);
+					addedRegions.push(region.ID);
+					}
+				}
+				
+				div.innerHTML = labels.join('');
+				return div;
+				};
+			
+				legend.addTo(map);
+			
+				map.attributionControl.addAttribution('Ecorregiones Argentinas <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">IGN Instituto Geográfico Nacional</a>');
+				</script>
+			</body>
+		</html>
+	</div>
+	<script src="{% static 'js/modal_carga.js' %}"></script>
+{% endblock content %}
