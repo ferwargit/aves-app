@@ -1,18 +1,21 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
+{% load static %}
 {% block content %}
-<h1>Crear lista</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    <!-- {{ form.as_p }} -->
-    <div class="not-visible">{{ form.id_user }}</div>
-    
-    {{ form.label.nombre_avistaje }}
-    {{ form.nombre_avistaje }}
-    
-    {{ form.label.fecha_creacion }}
-    {{ form.fecha_creacion }}
-    <button class="btn btn-success">Crear</button>
-</form>
-{% endblock %}
+{% block styles %}
+        <link rel="stylesheet"
+              href="{% static 'css/user/crear_lista.css' %}">
+    {% endblock styles %}
+    <div class="mx-auto cont-form col-md-11 formulario-con-borde">
+        <h1>Crear lista de avistaje</h1>
+        <form class="form" method="post">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            <div class="not-visible">{{ form.id_user }}</div>
+            <div>Nombre del avistaje{{ form.label.nombre_avistaje }}</div>
+            <div>{{ form.nombre_avistaje }}</div>
+            <div>Fecha y hora: {{ form.label.fecha_creacion }}</div>
+            <div>{{ form.fecha_creacion }}</div>
+            <button class="btn btn-success mt-3">Crear</button>
+        </form>
+    </div>
+{% endblock content %}
