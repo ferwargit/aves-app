@@ -16,3 +16,10 @@ img.center {
     margin-right: auto;
     width: 1100px;
 }
+
+.label {
+    font-size: 1.15rem !important;
+    font-weight: bold;
+    color: darkslategrey;
+    text-align: left;
+}
