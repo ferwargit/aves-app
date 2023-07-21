@@ -1,0 +1,26 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 47px;
+    font-weight: 500;
+    color: darkslategrey;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: flex;
+}
+
+.btn.btn-success {
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-secondary {
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
