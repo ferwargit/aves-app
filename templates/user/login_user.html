@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}
+    <title>Login</title>
+{% endblock title %}
 {% block content %}
-    {% block title %}
-        <title>Login</title>
-    {% endblock title %}
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/user/login_user.css' %}">
     {% endblock styles %}
-    <div class="container">
+    <div class="contenedor">
         <h1 class="cont-titulo">Login</h1>
         <form class="cont-form" method="post" action="{% url 'login' %}">
             {% csrf_token %}
@@ -23,12 +23,12 @@
                    name="password"
                    placeholder=""
                    required>
-            <button class="btn btn-success mt-2" type="submit">Login</button>
+            <button class="btn btn-success mt-4" type="submit">Login</button>
         </form>
         {% if messages %}
             <ul class="messages">
                 {% for message in messages %}
-                    <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    <li class="message {% if message.tags %}{{ message.tags }}{% endif %} fade-in">{{ message }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
