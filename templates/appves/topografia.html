@@ -1,15 +1,22 @@
-{% extends 'base.html' %}
-{% block title %}
-<title>Topografía de Aves</title>
-{% endblock %}
+{% extends "base.html" %}
 {% load static %}
-
+{% block title %}
+  <title>Topografía de Aves</title>
+{% endblock title %}
 {% block content %}
-{% block styles %}
-  <link rel="stylesheet" href="{% static 'css/appves/topografia.css' %}">
-{% endblock %}
-<h1>Topografía de las aves</h1>
-
-<img class="center" src="https://i.pinimg.com/originals/f1/71/7a/f1717af1f4e544c3ab09623fbbcae6f8.jpg" alt="topografia de las aves">
-
-{% endblock %}
+  <body>
+    {% block styles %}
+      <link rel="stylesheet" href="{% static 'css/appves/topografia.css' %}">
+    {% endblock styles %}
+    <h1>Topografía de las aves</h1>
+    <h2 class="label">¿Qué es la topografía de las aves?</h2>
+    <p>
+      La topografía de las aves es el estudio de las partes externas del cuerpo de las aves. El conocimiento de la topografía de las aves es importante para la identificación de las especies, ya que las características de las partes externas del cuerpo de las aves son únicas para cada especie.
+    </p>
+    <img class="center"
+         src="https://i.pinimg.com/originals/f1/71/7a/f1717af1f4e544c3ab09623fbbcae6f8.jpg"
+         alt="topografia de las aves"
+         width=""
+         height="">
+  </body>
+{% endblock content %}

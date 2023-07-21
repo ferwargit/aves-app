@@ -1,19 +1,17 @@
-{% extends 'base.html' %}
-{% block title %}
-<title>Glosario</title>
-{% endblock %}
+{% extends "base.html" %}
 {% load static %}
-
+{% block title %}
+  <title>Glosario</title>
+{% endblock title %}
 {% block content %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/appves/glosario.css' %}">
-{% endblock %}
-<h1>Glosario</h1>
-
-<ul id="glosario-list" class="glosario-list"></ul>
-
-<script>
-  var GLOSARIO_JSON_URL = "{% static 'json/glosario.json' %}";
-</script>
-<script src="{% static 'js/glosario.js' %}"></script>
-{% endblock %}
+  <body>
+    {% block styles %}
+      <link rel="stylesheet" href="{% static 'css/appves/glosario.css' %}">
+    {% endblock styles %}
+    <h1>Glosario</h1>
+    <ul id="glosario-list" class="glosario-list">
+    </ul>
+    <script>var GLOSARIO_JSON_URL = "{% static 'json/glosario.json' %}";</script>
+    <script src="{% static 'js/glosario.js' %}"></script>
+  </body>
+{% endblock content %}

@@ -1,66 +1,64 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin: 30px auto 0 auto;
+  border-radius: 10px;
+  border: 1px solid #3C644C;
+  padding: 20px;
+  color: #333333;
+  background-color: #93a8db;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
 .custom-select {
-    width: 50%;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 h1 {
-    text-align: left;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: 500;
-    background-image: linear-gradient(45deg, #3f9a3c, #762bee);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 50px;
+  font-weight: 500;
+  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 label {
-    font-size: 1.15rem !important;
-    font-weight: bold;
-    color: darkslategrey;
-    text-align: center;
+  font-size: 1.15rem !important;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
 }
 
 .detalle_titulo {
-    text-align: center;
-    background-image: linear-gradient(45deg, #3f9a3c, #762bee);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.card-mayor {
-    display: flex;
-    flex-wrap: wrap;
+  text-align: center;
+  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .card-buscador {
-    flex: 1 1 100%;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-detalle {
-    flex: 1 1 100%;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #3C644C;
-    margin: 20px;
-    padding: 20px;
-    color: #333333;
-    background-color: silver;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
-}
-
-@media (min-width: 768px) {
-    .card-buscador {
-        flex: 1 1 50%;
-        width: 50%;
-    }
-
-    .card-detalle {
-        flex: 1 1 50%;
-        width: 50%;
-    }
+  border-radius: 10px;
+  border: 1px solid #3C644C;
+  margin: 20px;
+  padding: 20px;
+  color: #333333;
+  background-color: #69c6b3;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }

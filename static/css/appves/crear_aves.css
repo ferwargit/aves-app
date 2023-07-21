@@ -3,7 +3,7 @@
     margin: 20px;
     padding: 20px;
     color: #333333;
-    background-color: silver;
+    background-color: #9eafa2;
     border-radius: 10px;
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
@@ -24,4 +24,25 @@ label {
     font-weight: bold;
     color: darkslategrey;
     text-align: center;
+}
+
+.form-control {
+    margin: 8px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-success {
+    background-color: rgb(29, 129, 132);
+    color: white;
+    font-size: 1.25rem;
+    margin: 8px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-success:hover {
+    background-color: rgb(29, 129, 132);
+}
+
+.btn.btn-success:active {
+    background-color: rgb(24, 107, 110);
 }
