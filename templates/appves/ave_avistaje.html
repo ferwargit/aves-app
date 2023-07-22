@@ -5,27 +5,35 @@
     <script src="{% static 'js/mapas.js' %}" defer></script>
 {% endblock scripts %}
 {% block content %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/appves/ave_avistaje.css' %}">
-{% endblock styles %}
-    <h1>Agregar aves</h1>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/ave_avistaje.css' %}">
+    {% endblock styles %}
     <form method="post">
         {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10 d-flex align-items-center justify-content-center">
+                <h1>Agregar aves</h1>
+            </div>
+            <div class="col-md-2 d-flex align-items-center justify-content-center justify-content-md-end">
+                <button class="btn btn-success" type="submit">Agregar</button>
+            </div>
+        </div>
         <div class="not-visible">{{ form.id_avistaje }}</div>
         <div class="row form-group">
-            <div class="col-6">{{ form.id_ave.label }}</div>
-            <div class="col-2">{{ form.cantidad.label }}</div>
-            <div class="col-2">{{ form.latitud.label }}</div>
-            <div class="col-2">{{ form.longitud.label }}</div>
+            <div class="col-5">{{ form.id_ave.label }}</div>
+            <div class="col-1">{{ form.cantidad.label }}</div>
+            <div class="col-3">{{ form.latitud.label }}</div>
+            <div class="col-3">{{ form.longitud.label }}</div>
         </div>
         <div class="row form-group">
-            <div class="col-6">{{ form.id_ave }}</div>
-            <div class="col-2">{{ form.cantidad }}</div>
-            <div class="col-2">{{ form.latitud }}</div>
-            <div class="col-2">{{ form.longitud }}</div>
+            <div class="col-5">{{ form.id_ave }}</div>
+            <div class="col-1">{{ form.cantidad }}</div>
+            <div class="col-3">{{ form.latitud }}</div>
+            <div class="col-3">{{ form.longitud }}</div>
         </div>
-        <div>{% include "./buscar_ave.html" %}</div>
-        <div id="map"></div>
-        <button class="btn btn-success" type="submit">Agregar</button>
+        <div class="row form-group mt-4">
+            <div class="col-5">{% include "./buscar_ave.html" %}</div>
+            <div id="map" class="col-7"></div>
+        </div>
     </form>
 {% endblock content %}
