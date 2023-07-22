@@ -28,8 +28,8 @@ sendSearchData = (ave) => {
                 resultDiv.innerHTML = ""
                 console.log('hay un array')
                 data.forEach(ave=> {
-                    tdCadena += "<tr><td><img src=" + ave.imagen + " class='ave-img'></td><td>" + ave.nombre + "</td>"
-                    
+                    tdCadena += "<tr><td><img src=" + ave.imagen + " class='ave-img'></td><td class='nombre-ave'>" + ave.nombre + "</td>";
+
                     if (origen_url.includes('charge') == true) {
                         console.log(origen_url.includes('charge'))
                         tdCadena += "<td><button onclick='selectAve(" + ave.pk + ")'>Seleccionar</button></td></tr>"
