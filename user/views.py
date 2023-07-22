@@ -35,6 +35,7 @@ def login_user(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user=user)
+                messages.success(request, "¡Inicio de sesión exitoso!")
                 return redirect("home")
             else:
                 messages.error(request, "Usuario o contraseña incorrectos")
@@ -45,6 +46,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
+    messages.success(request, "¡Cierre de sesión exitoso!")
     return redirect("home")
 
 
