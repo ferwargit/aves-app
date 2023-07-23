@@ -142,7 +142,18 @@
             <div class="footer my-5">{% include "footer.html" %}</div>
         </div>
         <script>
-            document.getElementById('logout-btn').addEventListener('click', function(event) {
+        document.addEventListener("DOMContentLoaded", function() {
+            // Verificamos si el botón de logout existe en el DOM
+            var logoutBtn = document.getElementById('logout-btn');
+
+            // Verificamos si el usuario está autenticado
+            var isAuthenticated = {% if user.is_authenticated %}true{% else %}false{% endif %};
+
+            // Si el usuario está autenticado y el botón de logout existe, agregamos el evento
+            if (isAuthenticated && logoutBtn) {
+                logoutBtn.addEventListener('click', function(event) {
+                    
+        
               event.preventDefault(); // Evita que el enlace se ejecute automáticamente
               console.log('Button clicked');
               // Mostrar el modal de SweetAlert2 para confirmar el logout
@@ -161,6 +172,8 @@
                 }
               });
             });
+            }
+        });
         </script>
     </body>
 </html>
