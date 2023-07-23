@@ -9,9 +9,15 @@
     {% endblock styles %}
     <div class="contenedor">
         <h1 class="cont-titulo">Crear cuenta</h1>
+        {% if messages %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+                </ul>
+            </div>
+        {% endif %}
         <form class="cont-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {% comment %} {{ form.as_p }} {% endcomment %}
             <div class="form-group">
                 <label for="emailRegister">Email</label>
                 <input type="email"
