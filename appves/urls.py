@@ -12,8 +12,10 @@ urlpatterns = [
     path('glosario/', views.glosario, name='glosario'),
     path('lugares/', views.lugares, name='lugares'),
     path('topografia/', views.topografia, name='topografia'),
+    path('preguntas_frecuentes/', views.preguntas_frecuentes, name='preguntas_frecuentes'),
     path('familias/', views.familias, name='familias'),
     path('search_ave/', views.buscar_ave, name='buscar_ave'),
+    path('obtener_detalle_familia/', views.obtener_detalle_familia, name='obtener_detalle_familia'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', CrearAve.as_view(), name='create_bird'),

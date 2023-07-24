@@ -1,3 +1,4 @@
+// Crear capa de mapa base usando OpenStreetMap
 var openStreetMap = L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   {
@@ -5,7 +6,7 @@ var openStreetMap = L.tileLayer(
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }
 );
-
+// Crear capa de mapa base usando Stamen Terrain
 var stamenTerrain = L.tileLayer(
   "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}",
   {
@@ -18,113 +19,187 @@ var stamenTerrain = L.tileLayer(
   }
 );
 
-var esriWorldImagery = L.tileLayer(
-  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-  {
-    attribution: "Tiles &copy; Esri",
-  }
-);
+// var esriWorldImagery = L.tileLayer(
+//   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+//   {
+//     attribution: "Tiles &copy; Esri",
+//   }
+// );
 
+// Crear el mapa
 var map = L.map("map", {
   center: [-41.6, -62.0],
   zoom: 4,
   layers: [openStreetMap], // La primera capa base que se muestra por defecto
 });
 
+// Capas base disponibles
 var baseLayers = {
   OpenStreetMap: openStreetMap,
   "Stamen Terrain": stamenTerrain,
-  "Esri World Imagery": esriWorldImagery,
+  // "Esri World Imagery": esriWorldImagery,
 };
 
 // Agregar control de capas al mapa
 L.control.layers(baseLayers, {}).addTo(map);
 
+// Capa de marcadores (overlay)
+var markersLayer = L.layerGroup().addTo(map);
+
+// Evento que se activa cuando el botón 'nav-mapa' es clickeado
 var navMapa = document.getElementById("nav-mapa");
 navMapa.addEventListener("click", function () {
-  // Código a ejecutar para refrescar el mapa cuando el elemento 'nav-mapa' es clickeado
-  console.log("click en nav-mapa");
-  setTimeout(function () {
-    map.invalidateSize();
-    console.log("Mapa actualizado");
-  }, 10);
+  map.invalidateSize();
+  console.log("Mapa actualizado");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Obtener el nombre científico de la especie
   const aveData = document.getElementById("aveData");
   const nombreCientifico = aveData.getAttribute("data-nombre-cientifico");
   const nombreCientificoFormated = encodeURIComponent(nombreCientifico);
 
+  // Obtener datos de la especie desde la API de GBIF
   fetch(
     `https://api.gbif.org/v1/species/match?name=${nombreCientificoFormated}&country=AR`
   )
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al obtener los datos de GBIF.");
+      }
+      return response.json();
+    })
     .then((data) => {
       var usageKey = data.usageKey;
-      // return fetch(`https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&fromDate=2022-06&toDate=2023-06&limit=500`);
-      return fetch(
-        `https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&&limit=500`
-      );
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      data.results.forEach((observation) => {
-        if (observation.decimalLatitude && observation.decimalLongitude) {
-          // Crea un nuevo marcador
-          // var marker = L.marker([observation.decimalLatitude, observation.decimalLongitude]).addTo(map);
-          var circle = L.circle(
-            [observation.decimalLatitude, observation.decimalLongitude],
-            {
-              color: "blue",
-              fillColor: "#f03",
-              fillOpacity: 0.5,
-              radius: 500,
-            }
-          ).addTo(map);
 
-          // Verifica si la propiedad extensions existe y tiene al menos un objeto dentro
-          if (
-            observation.extensions &&
-            observation.extensions["http://rs.gbif.org/terms/1.0/Multimedia"] &&
-            observation.extensions["http://rs.gbif.org/terms/1.0/Multimedia"]
-              .length > 0
-          ) {
-            var multimedia =
-              observation.extensions[
-                "http://rs.gbif.org/terms/1.0/Multimedia"
-              ][0];
-            var photoLink = multimedia["http://purl.org/dc/terms/identifier"];
-            var place = observation.stateProvince;
-            var eventDate = observation.eventDate;
-            let eventDateObj = new Date(eventDate);
-            let formattedDate = `${eventDateObj.getDate()}-${
-              eventDateObj.getMonth() + 1
-            }-${eventDateObj.getFullYear()}`;
-            var eventTime = observation.eventTime;
-            var timeWithoutZone = eventTime?.split("-")[0]; // Ignorar la zona horaria
-            var formattedTime = moment(timeWithoutZone, "HH:mm:ss").format(
-              "HH:mm"
-            );
-            var latitude = observation.decimalLatitude;
-            var longitude = observation.decimalLongitude;
-            var photoAuthor = multimedia["http://purl.org/dc/terms/creator"];
-
-            var popupContent = `
-                        <p><a href="${photoLink}" target="_blank">Ver foto</a></p>
-                        <p><strong>Lugar:</strong> ${place}</p>
-                        <p><strong>Fecha:</strong> ${formattedDate}</p>
-                        <p><strong>Hora:</strong> ${formattedTime}</p>
-                        <p><strong>Latitud:</strong> ${latitude}</p>
-                        <p><strong>Longitud:</strong> ${longitude}</p>
-                        <p><strong>Autor:</strong> ${photoAuthor}</p>
-                        `;
-            // marker.bindPopup(popupContent);
-            circle.bindPopup(popupContent);
-          }
+      // Capa de densidades (overlay) usando datos de GBIF
+      var densitiesLayer = L.tileLayer(
+        `https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?taxonKey=${usageKey}&basisOfRecord=HUMAN_OBSERVATION&years=2023,2023&bin=hex&hexSize=64&style=red.poly&country=AR`,
+        {
+          attribution: '&copy; <a href="https://www.gbif.org/">GBIF</a>',
+          opacity: 0.5,
         }
-      });
-    })
-    .catch((error) => {
-      console.error("Error:", error);
+      );
+
+      // Capa de marcadores (overlay) usando datos de GBIF
+      var markersLayer2 = L.layerGroup();
+
+      fetch(
+        `https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&&limit=500`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error al obtener los datos de GBIF.");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          data.results.forEach((observation) => {
+            if (observation.decimalLatitude && observation.decimalLongitude) {
+              var circle = L.circle(
+                [observation.decimalLatitude, observation.decimalLongitude],
+                {
+                  color: "blue",
+                  fillColor: "#f03",
+                  fillOpacity: 0.5,
+                  radius: 500,
+                }
+              );
+
+              if (
+                observation.extensions &&
+                observation.extensions[
+                  "http://rs.gbif.org/terms/1.0/Multimedia"
+                ] &&
+                observation.extensions[
+                  "http://rs.gbif.org/terms/1.0/Multimedia"
+                ].length > 0
+              ) {
+                var multimedia =
+                  observation.extensions[
+                    "http://rs.gbif.org/terms/1.0/Multimedia"
+                  ][0];
+                var photoLink =
+                  multimedia["http://purl.org/dc/terms/identifier"];
+                var place = observation.stateProvince;
+                var eventDate = observation.eventDate;
+                let eventDateObj = new Date(eventDate);
+                let formattedDate = `${eventDateObj.getDate()}-${
+                  eventDateObj.getMonth() + 1
+                }-${eventDateObj.getFullYear()}`;
+                var eventTime = observation.eventTime;
+                var timeWithoutZone = eventTime?.split("-")[0];
+                var formattedTime = moment(timeWithoutZone, "HH:mm:ss").format(
+                  "HH:mm"
+                );
+                var latitude = observation.decimalLatitude;
+                var longitude = observation.decimalLongitude;
+                var photoAuthor =
+                  multimedia["http://purl.org/dc/terms/creator"];
+
+                var popupContent = `
+                              <p><a href="${photoLink}" target="_blank">Archivo multimedia</a></p>
+                              <p><strong>Lugar:</strong> ${place}</p>
+                              <p><strong>Fecha:</strong> ${formattedDate}</p>
+                              <p><strong>Hora:</strong> ${formattedTime}</p>
+                              <p><strong>Latitud:</strong> ${latitude}</p>
+                              <p><strong>Longitud:</strong> ${longitude}</p>
+                              <p><strong>Autor:</strong> ${photoAuthor}</p>
+                              `;
+
+                circle.bindPopup(popupContent);
+              } else {
+                // Si no hay datos multimedia, mostramos un mensaje en el popup
+                var popupContent =
+                  "<p>No hay datos disponibles para esta observación.</p>";
+                circle.bindPopup(popupContent);
+              }
+              // Agregar el marcador a la capa de marcadores (markersLayer2)
+              circle.addTo(markersLayer2);
+            }
+          });
+          // Capa de densidades y marcadores ya cargadas, agregar capa de región
+          fetch(
+            `https://api.gbif.org/v2/map/occurrence/density/capabilities.json?taxonKey=${usageKey}&fromDate=2023-01&toDate=2023-06&country=AR`
+          )
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Error al obtener los datos de GBIF.");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              var minLat = data.minLat;
+              var maxLat = data.maxLat;
+              var minLng = data.minLng;
+              var maxLng = data.maxLng;
+
+              var rectangleOverlay = L.rectangle(
+                [
+                  [minLat, minLng],
+                  [maxLat, maxLng],
+                ],
+                {
+                  color: "orange",
+                  weight: 2,
+                }
+              );
+
+              L.control
+                .layers(null, {
+                  Marcadores: markersLayer2,
+                  Densidades: densitiesLayer,
+                  Región: rectangleOverlay,
+                })
+                .addTo(map);
+
+              densitiesLayer.setZIndex(3);
+              markersLayer2.setZIndex(1);
+              // rectangleOverlay.setZIndex(1);
+            });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     });
 });

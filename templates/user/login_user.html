@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}
+    <title>Login</title>
+{% endblock title %}
 {% block content %}
-    {% block title %}
-        <title>Login</title>
-    {% endblock title %}
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/user/login_user.css' %}">
     {% endblock styles %}
-    <div class="container">
+    <div class="contenedor">
         <h1 class="cont-titulo">Login</h1>
         <form class="cont-form" method="post" action="{% url 'login' %}">
             {% csrf_token %}
@@ -16,21 +16,31 @@
                    class="form-control smaller-input"
                    name="username"
                    placeholder=""
-                   required>
+                   required
+                   autofocus>
             <label for="password">Password</label>
             <input type="password"
                    class="form-control smaller-input"
                    name="password"
                    placeholder=""
                    required>
-            <button class="btn btn-success mt-2" type="submit">Login</button>
+            <button class="btn btn-success mt-4" type="submit">Login</button>
         </form>
         {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
+            {% for message in messages %}
+                {% if message.tags %}
+                    {% if "error" in message.tags %}
+                        <script>
+                            swal.fire({
+                                title: "Error",
+                                text: "{{ message }}",
+                                icon: "error",
+                                timer: 4000
+                            });
+                        </script>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         {% endif %}
     </div>
 {% endblock content %}

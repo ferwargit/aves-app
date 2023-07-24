@@ -34,3 +34,12 @@ p {
   font-size: 120%;
   color: darkslategrey;
 }
+
+.map {
+  height: 600px; 
+  position: relative;
+}
+
+.mapa {
+  height:500px;
+}

@@ -1,4 +1,4 @@
-.container {
+.contenedor {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,17 +10,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 300px;
   border-radius: 10px;
   margin-bottom: 20px;
-
   border-width: 1px;
   border-style: solid;
   border-color: #3C644C;
   margin: 20px;
   padding: 20px;
   color: #333333;
-  background-color: silver;
+  background-color: #d1c7ce;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
@@ -36,16 +35,36 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-input {
-  margin-bottom: 16px;
-}
-
-.smaller-input {
-  width: 200px;
-}
-
 label {
+  margin: 5px;
   font-size: 20px;
   font-weight: bold;
   color: darkslategrey;
+}
+
+.smaller-input {
+  margin: 5px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  width: auto;
+}
+
+.btn.btn-success {
+  margin: 5px;
+  background-color: darkslategrey;
+  border-color: darkslategrey;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-success:hover {
+  background-color: #bfbfbf;
+  border-color: darkslategrey;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.btn.btn-success:active {
+  background-color: #a6a6a6;
+  border-color: darkslategrey;
+  color: #333333;
+  font-size: 1rem;
 }

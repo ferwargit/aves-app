@@ -7,25 +7,32 @@
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
     {% endblock styles %}
-    <div class="container">
+    <div class="contenedor">
         <h1 class="cont-titulo">Crear cuenta</h1>
+        {% if messages %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+                </ul>
+            </div>
+        {% endif %}
         <form class="cont-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {% comment %} {{ form.as_p }} {% endcomment %}
             <div class="form-group">
                 <label for="emailRegister">Email</label>
                 <input type="email"
                        id="emailRegister"
                        name="email"
-                       class="form-control"
-                       required>
+                       class="form-control smaller-input"
+                       required
+                       autofocus>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text"
                        id="username"
                        name="username"
-                       class="form-control"
+                       class="form-control smaller-input"
                        maxlength="150"
                        required>
             </div>
@@ -34,7 +41,7 @@
                 <input type="password"
                        id="password1"
                        name="password1"
-                       class="form-control"
+                       class="form-control smaller-input"
                        required>
             </div>
             <div class="form-group">
@@ -42,22 +49,29 @@
                 <input type="password"
                        id="password2"
                        name="password2"
-                       class="form-control"
+                       class="form-control smaller-input"
                        required>
             </div>
             <div class="form-group">
-                <label for="{{ form.province.id_for_label }}">Provincia</label>
-                <select name="{{ form.province.name }}" class="form-control">
-                    {% for choice_value, choice_label in form.province.field.choices %}
-                        <option value="{{ choice_value }}">{{ choice_label }}</option>
+                <label for="id_province">Provincia</label>
+                <select id="id_province" name="province" class="form-control smaller-input">
+                    <option value="">-- Selecciona una provincia --</option>
+                    {% for province in form.province.field.queryset %}
+                        <option value="{{ province.pk }}"
+                                {% if province.pk == form.province.value %}selected{% endif %}>{{ province }}</option>
                     {% endfor %}
                 </select>
+                {{ form.province.errors }}
             </div>
             <div class="form-group">
-                <label for="image">Imagen</label>
-                <input type="file" id="image" name="image">
+                <label for="id_image">Imagen</label>
+                <input id="id_image"
+                       type="file"
+                       name="image"
+                       class="form-control smaller-input">
+                {{ form.image.errors }}
             </div>
-            <button type="submit" class="btn btn-success">Crear cuenta</button>
+            <button type="submit" class="btn btn-success mt-4">Crear cuenta</button>
         </form>
     </div>
 {% endblock content %}

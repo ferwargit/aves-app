@@ -1,13 +1,376 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block title %}
-<title>Editar ave</title>
-{% endblock %}
+    <title>Editar ave</title>
+{% endblock title %}
+{% load static %}
 {% block content %}
-<h1>Editar ave</h1>
-
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-success">Guardar</button>
-</form>
-{% endblock %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/editar_ave.css' %}">
+    {% endblock styles %}
+    <div class="container">
+        <form class="mx-auto cont-form col-md-10 formulario-con-borde"
+              action=""
+              method="post"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1 class="text-center cont-titulo">Editar ave</h1>
+            {% comment %} NOMBRE {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_nombre" class="col-sm-3 col-form-label">{{ form.nombre.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_nombre"
+                           type="text"
+                           name="nombre"
+                           class="form-control"
+                           placeholder=""
+                           value="{{ form.nombre.value }}"
+                           required>
+                    {{ form.nombre.errors }}
+                </div>
+            </div>
+            {% comment %} NOMBRE CIENTIFICO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_nombre_cientifico" class="col-sm-3 col-form-label">{{ form.nombre_cientifico.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_nombre_cientifico"
+                           type="text"
+                           name="nombre_cientifico"
+                           class="form-control"
+                           placeholder=""
+                           value="{{ form.nombre_cientifico.value }}"
+                           required>
+                    {{ form.nombre_cientifico.errors }}
+                </div>
+            </div>
+            {% comment %} NOMBRE INGLES {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_nombre_ingles" class="col-sm-3 col-form-label">{{ form.nombre_ingles.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_nombre_ingles"
+                           type="text"
+                           name="nombre_ingles"
+                           class="form-control"
+                           placeholder=""
+                           value="{{ form.nombre_ingles.value }}"
+                           required>
+                    {{ form.nombre_ingles.errors }}
+                </div>
+            </div>
+            {% comment %} FAMILIA {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_familia" class="col-sm-3 col-form-label">{{ form.familia.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_familia" name="familia" class="form-control">
+                        {% for family in form.familia.field.queryset %}
+                            <option value="{{ family.pk }}"
+                                    {% if family.pk == form.familia.value %}selected{% endif %}>{{ family }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.familia.errors }}
+                </div>
+            </div>
+            {% comment %} DESCRIPCION {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_descripcion" class="col-sm-3 col-form-label">Descripción</label>
+                <div class="col-sm-9">
+                    <textarea id="id_descripcion"
+                              name="descripcion"
+                              class="form-control"
+                              placeholder=""
+                              required>{{ form.descripcion.value }}</textarea>
+                    {{ form.descripcion.errors }}
+                </div>
+            </div>
+            {% comment %} IMAGEN {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_imagen" class="col-sm-3 col-form-label">{{ form.imagen.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_imagen" type="file" name="imagen" class="form-control">
+                    {{ form.imagen.errors }}
+                </div>
+            </div>
+            {% comment %} TAMANIO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_tamanio" class="col-sm-3 col-form-label">Tamaño</label>
+                <div class="col-sm-9">
+                    <select id="id_tamanio" name="tamanio" class="form-control">
+                        {% for tamanio in form.tamanio.field.queryset %}
+                            <option value="{{ tamanio.pk }}"
+                                    {% if tamanio.pk == form.tamanio.value %}selected{% endif %}>{{ tamanio }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.tamanio.errors }}
+                </div>
+            </div>
+            {% comment %} HABITAT {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_habitat" class="col-sm-3 col-form-label">{{ form.habitat.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_habitat" name="habitat" class="form-control">
+                        {% for habitat in form.habitat.field.queryset %}
+                            <option value="{{ habitat.pk }}"
+                                    {% if habitat.pk == form.habitat.value %}selected{% endif %}>{{ habitat }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.habitat.errors }}
+                </div>
+            </div>
+            {% comment %} VOZ {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_voz" class="col-sm-3 col-form-label">{{ form.voz.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_voz"
+                           type="text"
+                           name="voz"
+                           class="form-control"
+                           placeholder=""
+                           value="{{ form.voz.value }}"
+                           required>
+                    {{ form.voz.errors }}
+                </div>
+            </div>
+            {% comment %} AUDIO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_audio" class="col-sm-3 col-form-label">{{ form.audio.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_audio"
+                           type="file"
+                           name="audio"
+                           class="form-control"
+                           value="{{ form.audio.value }}">
+                    {{ form.audio.errors }}
+                </div>
+            </div>
+            {% comment %} ALIMENTACION {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_alimentacion" class="col-sm-3 col-form-label">{{ form.alimentacion.label }}</label>
+                <div class="col-sm-9">
+                    <input id="id_alimentacion"
+                           type="text"
+                           name="alimentacion"
+                           class="form-control"
+                           placeholder=""
+                           value="{{ form.alimentacion.value }}"
+                           required>
+                    {{ form.alimentacion.errors }}
+                </div>
+            </div>
+            {% comment %} REPRODUCCION {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_cria" class="col-sm-3 col-form-label">Reproducción</label>
+                <div class="col-sm-9">
+                    <input id="id_cria"
+                           type="text"
+                           name="cria"
+                           class="form-control"
+                           placeholder=""
+                           value="{{ form.cria.value }}"
+                           required>
+                    {{ form.cria.errors }}
+                </div>
+            </div>
+            {% comment %} MOVIMIENTOS ESTACIONALES {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_movimientos_estacionales" class="col-sm-3 col-form-label">
+                    {{ form.movimientos_estacionales.label }}
+                </label>
+                <div class="col-sm-9">
+                    <select id="id_movimientos_estacionales"
+                            name="movimientos_estacionales"
+                            class="form-control">
+                        {% for movimientos_estacionales in form.movimientos_estacionales.field.queryset %}
+                            <option value="{{ movimientos_estacionales.pk }}"
+                                    {% if movimientos_estacionales.pk == form.movimientos_estacionales.value %}selected{% endif %}>
+                                {{ movimientos_estacionales }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.movimientos_estacionales.errors }}
+                </div>
+            </div>
+            {% comment %} STATUS CONSERVACION {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_status_conservacion" class="col-sm-3 col-form-label">{{ form.status_conservacion.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_status_conservacion"
+                            name="status_conservacion"
+                            class="form-control">
+                        {% for status_conservacion in form.status_conservacion.field.queryset %}
+                            <option value="{{ status_conservacion.pk }}"
+                                    {% if status_conservacion.pk == form.status_conservacion.value %}selected{% endif %}>
+                                {{ status_conservacion }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.status_conservacion.errors }}
+                </div>
+            </div>
+            {% comment %} CABEZA {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_cabeza" class="col-sm-3 col-form-label">{{ form.cabeza.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_cabeza" name="cabeza" class="form-control">
+                        {% for cabeza in form.cabeza.field.queryset %}
+                            <option value="{{ cabeza.pk }}"
+                                    {% if cabeza.pk == form.cabeza.value %}selected{% endif %}>{{ cabeza }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.cabeza.errors }}
+                </div>
+            </div>
+            {% comment %} LARGO PICO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_largo_pico" class="col-sm-3 col-form-label">{{ form.largo_pico.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_largo_pico" name="largo_pico" class="form-control">
+                        {% for largo_pico in form.largo_pico.field.queryset %}
+                            <option value="{{ largo_pico.pk }}"
+                                    {% if largo_pico.pk == form.largo_pico.value %}selected{% endif %}>
+                                {{ largo_pico }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.largo_pico.errors }}
+                </div>
+            </div>
+            {% comment %} LARGO CUELLO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_largo_cuello" class="col-sm-3 col-form-label">{{ form.largo_cuello.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_largo_cuello" name="largo_cuello" class="form-control">
+                        {% for largo_cuello in form.largo_cuello.field.queryset %}
+                            <option value="{{ largo_cuello.pk }}"
+                                    {% if largo_cuello.pk == form.largo_cuello.value %}selected{% endif %}>
+                                {{ largo_cuello }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.largo_cuello.errors }}
+                </div>
+            </div>
+            {% comment %} CUELLO VUELO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_cuello_vuelo" class="col-sm-3 col-form-label">{{ form.cuello_vuelo.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_cuello_vuelo" name="cuello_vuelo" class="form-control">
+                        {% for cuello_vuelo in form.cuello_vuelo.field.queryset %}
+                            <option value="{{ cuello_vuelo.pk }}"
+                                    {% if cuello_vuelo.pk == form.cuello_vuelo.value %}selected{% endif %}>
+                                {{ cuello_vuelo }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.cuello_vuelo.errors }}
+                </div>
+            </div>
+            {% comment %} FORMA ALA {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_forma_alas" class="col-sm-3 col-form-label">{{ form.forma_alas.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_forma_alas" name="forma_alas" class="form-control">
+                        {% for forma_alas in form.forma_alas.field.queryset %}
+                            <option value="{{ forma_alas.pk }}"
+                                    {% if forma_alas.pk == form.forma_alas.value %}selected{% endif %}>
+                                {{ forma_alas }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.forma_alas.errors }}
+                </div>
+            </div>
+            {% comment %} LARGO COLA {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_largo_cola" class="col-sm-3 col-form-label">{{ form.largo_cola.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_largo_cola" name="largo_cola" class="form-control">
+                        {% for largo_cola in form.largo_cola.field.queryset %}
+                            <option value="{{ largo_cola.pk }}"
+                                    {% if largo_cola.pk == form.largo_cola.value %}selected{% endif %}>
+                                {{ largo_cola }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.largo_cola.errors }}
+                </div>
+            </div>
+            {% comment %} FORMA COLA {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_forma_cola" class="col-sm-3 col-form-label">{{ form.forma_cola.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_forma_cola" name="forma_cola" class="form-control">
+                        {% for forma_cola in form.forma_cola.field.queryset %}
+                            <option value="{{ forma_cola.pk }}"
+                                    {% if forma_cola.pk == form.forma_cola.value %}selected{% endif %}>
+                                {{ forma_cola }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.forma_cola.errors }}
+                </div>
+            </div>
+            {% comment %} LARGO PATAS {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_largo_patas" class="col-sm-3 col-form-label">{{ form.largo_patas.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_largo_patas" name="largo_patas" class="form-control">
+                        {% for largo_patas in form.largo_patas.field.queryset %}
+                            <option value="{{ largo_patas.pk }}"
+                                    {% if largo_patas.pk == form.largo_patas.value %}selected{% endif %}>
+                                {{ largo_patas }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.largo_patas.errors }}
+                </div>
+            </div>
+            {% comment %} PATRON COLORACION {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_patron_coloracion" class="col-sm-3 col-form-label">{{ form.patron_coloracion.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_patron_coloracion"
+                            name="patron_coloracion"
+                            class="form-control">
+                        {% for patron_coloracion in form.patron_coloracion.field.queryset %}
+                            <option value="{{ patron_coloracion.pk }}"
+                                    {% if patron_coloracion.pk == form.patron_coloracion.value %}selected{% endif %}>
+                                {{ patron_coloracion }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {{ form.patron_coloracion.errors }}
+                </div>
+            </div>
+            {% comment %} GRUPO {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_grupo" class="col-sm-3 col-form-label">{{ form.grupo.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_grupo" name="grupo" class="form-control">
+                        {% for grupo in form.grupo.field.queryset %}
+                            <option value="{{ grupo.pk }}"
+                                    {% if grupo.pk == form.grupo.value %}selected{% endif %}>{{ grupo }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.grupo.errors }}
+                </div>
+            </div>
+            {% comment %} STATUS {% endcomment %}
+            <div class="form-group row d-flex align-items-center">
+                <label for="id_status" class="col-sm-3 col-form-label">{{ form.status.label }}</label>
+                <div class="col-sm-9">
+                    <select id="id_status" name="status" class="form-control">
+                        {% for status in form.status.field.queryset %}
+                            <option value="{{ status.pk }}"
+                                    {% if status.pk == form.status.value %}selected{% endif %}>{{ status }}</option>
+                        {% endfor %}
+                    </select>
+                    {{ form.status.errors }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-success mt-3">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

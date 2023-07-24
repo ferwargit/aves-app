@@ -1,0 +1,12 @@
+/* LOGO */
+.texto {
+  -webkit-box-shadow: 69px -74px 144px -54px rgba(204, 129, 204, 1);
+  -moz-box-shadow: 69px -74px 144px -54px rgba(204, 129, 204, 1);
+  box-shadow: 69px -74px 144px -54px rgba(204, 129, 204, 1);
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem !important;
+  color: chartreuse;
+}

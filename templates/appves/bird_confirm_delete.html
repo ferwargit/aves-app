@@ -1,20 +1,29 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block title %}
     <title>Confirmación de eliminación</title>
-{% endblock %}
-
+{% endblock title %}
 {% load static %}
-
 {% block content %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/appves/bird_confirm_delete.css' %}">
-{% endblock %}
-<h1>Confirmación de eliminación</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    <p><strong>Seguro que desea eliminar el registro {{object}}?</strong></p>
-    <button type="submit" class="btn btn-danger">Confirmar</button>
-    <a href="{% url 'list_birds' %}" class="btn btn-secondary">Cancelar</a>
-</form>
-{% endblock %}
+    {% block styles %}
+        <link rel="stylesheet"
+              href="{% static 'css/appves/bird_confirm_delete.css' %}">
+    {% endblock styles %}
+    <div class="container">
+        <form method="post"
+              class="mx-auto cont-form col-md-10 formulario-con-borde">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Confirmación de eliminación</h1>
+                </div>
+            </div>
+            <p class="text-center">
+                <strong>Seguro que desea eliminar el registro {{ object }}?</strong>
+            </p>
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger">Confirmar</button>
+                <a href="{% url 'list_birds' %}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

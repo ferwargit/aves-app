@@ -1,22 +1,34 @@
-{% extends 'base.html' %} 
-{% block title %}
-<title>Familias de Aves</title>
-{% endblock %} 
+{% extends "base.html" %}
 {% load static %}
-
-{% block content %} 
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/appves/familias.css' %}" />
-{% endblock %}
-
-<h1>Familias de aves presentes en Argentina</h1>
-
-<ul class="ul-block">
-
-  {% for palabra in palabras %} 
-    {{ palabra }} 
-  {% endfor %}
-
-</ul>
-
-{% endblock %}
+{% block title %}
+    <title>Familias de Aves</title>
+{% endblock title %}
+{% block content %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/appves/familias.css' %}" />
+    {% endblock styles %}
+    <div class="contenedor">
+        <div class="card-buscador">
+            <h1>Familias de Aves</h1>
+            <div class="form-group">
+                <label for="familia">Selecciona una familia:</label>
+                <select class="form-control custom-select"
+                        id="familia"
+                        onchange="mostrarDetalle()">
+                    <option value="">-- Selecciona una familia --</option>
+                    {% for familia in familias %}<option value="{{ familia }}">{{ familia }}</option>{% endfor %}
+                </select>
+            </div>
+        </div>
+        <div id="detalle" class="card-detalle">
+            <h3 class="detalle_titulo">Detalle de la familia seleccionada</h3>
+            <p>
+                <strong>Nombre del ave:</strong> <span id="detalle-nombre"></span>
+            </p>
+            <p>
+                <strong>Nombre Científico:</strong> <span id="detalle-nombre-cientifico"></span>
+            </p>
+        </div>
+    </div>
+    <script src="{% static 'js/familias.js' %}"></script>
+{% endblock content %}

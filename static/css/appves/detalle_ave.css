@@ -7,7 +7,7 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}	
+}
 
 .contenedor {
   border-width: 2px;
@@ -16,7 +16,7 @@ h1 {
   margin: 20px;
   padding: 20px;
   color: #333333;
-  background-color: silver;
+  background-color: #a7b9ba;
   border-radius: 10px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
@@ -24,18 +24,18 @@ h1 {
 .map {
   height: 600px;
   width: 100%;
+  border: 1px solid #3C644C;
   border-radius: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 .bird-image {
   object-fit: cover;
   border-radius: 10px;
   position: top;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* Asegúrate que el valor width en px no esté más allá del tamaño máximo que puede tener en el contenedor*/
   width: 50%;
 }
 
@@ -44,6 +44,9 @@ h1 {
   top: 0;
   width: 60%;
   height: 100%;
+  border: 1px solid #3C644C;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 .tab-pane.fade.show.active {
@@ -55,16 +58,13 @@ h1 {
 
 .custom-tab {
   background-color: #E2E1CD;
-  /* Colot Tab */
 }
 
-/* Cambia el color de fondo y de la letra de las pestañas activas */
 .nav-tabs .nav-link.active {
   background-color: #3C644C;
   color: #fff;
 }
 
-/* Cambia el color de la letra de las pestañas inactivas */
 .nav-tabs .nav-link {
   color: #333;
   border: 0.5px solid #3C644C;
@@ -77,7 +77,6 @@ h1 {
 
 .nav-tabs {
   border-color: #333;
-  /* Cambia "red" al color que desees */
 }
 
 /* LINEA BLANCA */
@@ -99,4 +98,20 @@ h1 {
 
 .nav-tabs .nav-link.active::before {
   transform: scaleX(1);
+}
+
+.btn.btn-success {
+  background-color: rgb(29, 129, 132);
+  color: white;
+  font-size: 1.25rem;
+  margin: 8px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-success:hover {
+  background-color: rgb(29, 129, 132);
+}
+
+.btn.btn-success:active {
+  background-color: rgb(24, 107, 110);
 }

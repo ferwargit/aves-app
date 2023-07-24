@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 # from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
@@ -21,6 +22,10 @@ def create_user(request):
             form.save()
             messages.success(request, "Te has registrado con éxito")
             return redirect("home")
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}")
     else:
         form = CustomUserCreationForm()
     return render(request, "user/create_user.html", {"form": form})
@@ -35,6 +40,7 @@ def login_user(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user=user)
+                messages.success(request, "¡Inicio de sesión exitoso!")
                 return redirect("home")
             else:
                 messages.error(request, "Usuario o contraseña incorrectos")
@@ -45,6 +51,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
+    messages.success(request, "¡Cierre de sesión exitoso!")
     return redirect("home")
 
 
@@ -56,7 +63,7 @@ class CrearAvistaje(LoginRequiredMixin, CreateView):
 
     def get_initial(self):
         return {"id_user": self.kwargs["pk"]}
-    
+
 
 class ListarAvistajes(LoginRequiredMixin, ListView):
     model = Avistaje

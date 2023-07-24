@@ -1,13 +1,8 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
+{% load static %}
 {% block title %}
     <title>Lugares para observar aves</title>
-{% endblock %}
-
-{% load static %}
-
-
-
+{% endblock title %}
 {% block content %}
 
 {% block styles %}
@@ -173,10 +168,10 @@
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 			});
 			
-			const satelital = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				const satelital = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 				maxZoom: 19,
 				attribution: 'Imágenes satelitales © Esri'
-			});
+				});
 			
 			const redIcon = new L.Icon({
 				iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -211,17 +206,15 @@
 				layers: [argenmap, parques_nacionales]
 			});
 			
-			const baseLayers = {
-				'Argenmap': argenmap,
-				'Mapa Satelital': satelital
-			};
+				const baseLayers = {
+					'Argenmap': argenmap,
+					'Mapa Satelital': satelital
+				};
 			
-			const overlays = {
-				'Parques Nacionales': parques_nacionales,
-				'AICAs': aicas,
-			};
-  
-    
+				const overlays = {
+					'Parques Nacionales': parques_nacionales,
+					'AICAs': aicas,
+				};
 
 			const info = L.control();
 			const layerControl = L.control.layers(baseLayers, overlays).addTo(map)
@@ -399,4 +392,3 @@
 
 
 {% endblock %}
-
