@@ -16,9 +16,9 @@
 
 <h1>Ecorregiones</h1>
 
-<p>Las ecorregiones o biomas son territorios geográficos en los que predomina un ecosistema compartiendo características de clima, suelo, flora, fauna y paisaje entre otras cosas.</p>
+<p>Las ecorregiones son territorios que comparten características ambientales similares y albergan comunidades naturales o seminaturales con especies y dinámicas ecológicas compartidas. En Argentina, se han identificado 18 ecorregiones, 17 en el continente americano y una en el continente antártico, que es la Antártida.</p>
 
-<p>Argentina cuenta con 18 ecorregiones lo cual nos posiciona como uno de los países mas rícos en biodiversidad.</p>
+<p>La Antártida es una ecorregión que comprende el Sector Antártico Argentino y las islas ubicadas por debajo del paralelo de 60º Sur, como las Orcadas y las Shetlands del Sur.</p>
 
 <ul class="ul-block">
 <li>ALTOS ANDES</li>
@@ -95,7 +95,16 @@
 	
 		//Muestra la leyenda de la esquina superior derecha
 		info.update = function (props) {
-			const contents = props ? `<b>${props.name}</b><br />${props.area} hectáreas<sup></sup>` : 'Posiciona el mouse sobre una ecorregión';
+			const contents = props ? `<b>${props.name}</b>
+			<br />
+			<b>Superficie</b>:${props.area} HA<sup></sup>
+			<br />
+			<b>Áreas protegidas</b>:<br />${props.aps}
+			<br />
+			<b>Superficies de Áreas protegidas</b>: ${props.superficieap} HA
+			<br />
+			<b>Porcentaje protegido</b>:${props.protegido}%
+			<br />			` : 'Posiciona el mouse sobre una ecorregión';
 			this._div.innerHTML = `<h4>Ecorregiones de Argentina</h4>${contents}`;
 		};
 	
@@ -202,7 +211,7 @@
 	  legend.addTo(map);
 	
 		map.attributionControl.addAttribution('Ecorregiones Argentinas <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">IGN Instituto Geográfico Nacional</a>');
-		
+	
 	
 	</script>
 	
