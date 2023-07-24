@@ -7,11 +7,11 @@
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/user/lista_avistajes.css' %}">
     {% endblock styles %}
-    <div class="contenedor">
+    <div class="text-center formulario-con-borde">
         <h1>Mis listas de Avistaje</h1>
-        <div class="container text-center">
+        <form class="form">
             {% for avistaje in avistajes %}
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col">{{ avistaje.nombre_avistaje }}</div>
                     <div class="col">{{ avistaje.fecha_creacion }}</div>
                     <div class="col">
@@ -24,6 +24,6 @@
                     </div>
                 </div>
             {% endfor %}
-        </div>
+        </form>
     </div>
 {% endblock content %}

@@ -1,0 +1,32 @@
+h1 {
+  font-weight: 500;
+  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#map {
+  justify-items: center;
+  height: 400px;
+  border: 1px solid #3C644C;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-success {
+  background-color: rgb(29, 129, 132);
+  color: white;
+  font-size: 1.25rem;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-success:hover {
+  background-color: rgb(29, 129, 132);
+}
+
+.btn.btn-success:active {
+  background-color: rgb(24, 107, 110);
+}
+

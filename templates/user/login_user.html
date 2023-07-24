@@ -16,7 +16,8 @@
                    class="form-control smaller-input"
                    name="username"
                    placeholder=""
-                   required>
+                   required
+                   autofocus>
             <label for="password">Password</label>
             <input type="password"
                    class="form-control smaller-input"
@@ -26,11 +27,20 @@
             <button class="btn btn-success mt-4" type="submit">Login</button>
         </form>
         {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li class="message {% if message.tags %}{{ message.tags }}{% endif %} fade-in">{{ message }}</li>
-                {% endfor %}
-            </ul>
+            {% for message in messages %}
+                {% if message.tags %}
+                    {% if "error" in message.tags %}
+                        <script>
+                            swal.fire({
+                                title: "Error",
+                                text: "{{ message }}",
+                                icon: "error",
+                                timer: 4000
+                            });
+                        </script>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         {% endif %}
     </div>
 {% endblock content %}

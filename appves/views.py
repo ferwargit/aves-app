@@ -12,7 +12,9 @@ from django.views.generic import (
 
 from .forms import BirdForm, LineaAvistajeForm
 from .models import Bird, Status, LineaAvistaje
-import json
+
+# import request
+# import json
 from django.conf import settings
 import sqlite3
 
