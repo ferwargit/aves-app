@@ -47,7 +47,7 @@ var baseLayers = {
 };
 
 // Agregar control de capas al mapa
-L.control.layers(baseLayers, {}).addTo(map);
+// L.control.layers(baseLayers, {}).addTo(map);
 
 // Evento que se activa cuando el botón 'nav-mapa' es clickeado
 var navMapa = document.getElementById("nav-mapa");
@@ -205,7 +205,7 @@ function obtenerRegistrosGBIF(usageKey, offset, limit) {
 
           // Agregar el control de capas "Densidades" y "Región" al mapa si no han sido agregados aún
           if (!densitiesLayerControl) {
-            densitiesLayerControl = L.control.layers(null, {
+            densitiesLayerControl = L.control.layers(baseLayers, {
               Densidades: densitiesLayer,
               Región: rectangleOverlay,
             }).addTo(map);
