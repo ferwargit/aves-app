@@ -3,7 +3,7 @@ var openStreetMap = L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   {
     attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      '&copy; Distribución de especies <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }
 );
 // Crear capa de mapa base usando Stamen Terrain
@@ -36,7 +36,7 @@ var map = L.map("map", {
 // Capas base disponibles
 var baseLayers = {
   OpenStreetMap: openStreetMap,
-  "Stamen Terrain": stamenTerrain,
+  "Terreno Stamen": stamenTerrain,
   // "Esri World Imagery": esriWorldImagery,
 };
 
@@ -44,7 +44,8 @@ var baseLayers = {
 L.control.layers(baseLayers, {}).addTo(map);
 
 // Capa de marcadores (overlay)
-var markersLayer = L.layerGroup().addTo(map);
+//var markersLayer = L.layerGroup().addTo(map);
+
 
 // Evento que se activa cuando el botón 'nav-mapa' es clickeado
 var navMapa = document.getElementById("nav-mapa");
@@ -82,10 +83,18 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       // Capa de marcadores (overlay) usando datos de GBIF
+      var markers = L.markerClusterGroup();
+      map.addLayer(markers);
+      
       var markersLayer2 = L.layerGroup();
+      
+      //console.log(markersLayer2)
+ 
 
       fetch(
+        //`https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&&limit=500`
         `https://api.gbif.org/v1/occurrence/search?taxonKey=${usageKey}&country=AR&&limit=500`
+
       )
         .then((response) => {
           if (!response.ok) {
@@ -96,14 +105,14 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data) => {
           data.results.forEach((observation) => {
             if (observation.decimalLatitude && observation.decimalLongitude) {
-              var circle = L.circle(
-                [observation.decimalLatitude, observation.decimalLongitude],
-                {
-                  color: "blue",
-                  fillColor: "#f03",
-                  fillOpacity: 0.5,
-                  radius: 500,
-                }
+              var marker = L.marker(
+                [observation.decimalLatitude, observation.decimalLongitude]
+                //{
+                //  color: "blue",
+                //  fillColor: "#f03",
+                //  fillOpacity: 0.5,
+                //  radius: 500,
+                //}
               );
 
               if (
@@ -147,15 +156,16 @@ document.addEventListener("DOMContentLoaded", function () {
                               <p><strong>Autor:</strong> ${photoAuthor}</p>
                               `;
 
-                circle.bindPopup(popupContent);
+                marker.bindPopup(popupContent);
               } else {
                 // Si no hay datos multimedia, mostramos un mensaje en el popup
                 var popupContent =
                   "<p>No hay datos disponibles para esta observación.</p>";
-                circle.bindPopup(popupContent);
+                marker.bindPopup(popupContent);
               }
               // Agregar el marcador a la capa de marcadores (markersLayer2)
-              circle.addTo(markersLayer2);
+              marker.addTo(markers.addLayers([markersLayer2]));
+              
             }
           });
           // Capa de densidades y marcadores ya cargadas, agregar capa de región
@@ -187,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
               L.control
                 .layers(null, {
-                  Marcadores: markersLayer2,
+                  //Marcadores: markersLayer2,
                   Densidades: densitiesLayer,
                   Región: rectangleOverlay,
                 })

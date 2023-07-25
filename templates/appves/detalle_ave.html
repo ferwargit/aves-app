@@ -11,9 +11,12 @@
 {% endblock head %}
 {% block content %}
     {% block styles %}
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.Default.css" />
         <link rel="stylesheet" href="{% static 'css/appves/detalle_ave.css' %}">
-    {% endblock styles %}
+        {% endblock styles %}
     <script type="application/json">const nombreCientifico = {{ ave.nombre_cientifico }};</script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.0/dist/leaflet.markercluster.js"></script>
     <div class="contenedor">
         <h1 class="text-center mb-4">
             <strong>{{ ave.nombre }}</strong>
