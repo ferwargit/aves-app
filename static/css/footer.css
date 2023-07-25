@@ -17,12 +17,14 @@ footer {
 
 /* Fondo del footer */
 .text-center.text-white {
-  background-color: #3899b1;
+  /* background-color: #3899b1; */
+  background-color: #35a7c5;
 }
 
 /* Texto en el footer */
 .text-center.text-green {
-  background-color: #4f7d96;
+  /* background-color: #4f7d96; */
+  background-color: #0e8aac;
   border-radius: 10px;
 }
 
