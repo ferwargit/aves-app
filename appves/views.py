@@ -13,8 +13,8 @@ from django.views.generic import (
 from .forms import BirdForm, LineaAvistajeForm
 from .models import Bird, Status, LineaAvistaje, Family
 
-# import request
-# import json
+import os
+import json
 from django.conf import settings
 import sqlite3
 
@@ -35,7 +35,13 @@ def topografia(request):
 
 
 def preguntas_frecuentes(request):
-    return render(request, "appves/preguntas_frecuentes.html")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    json_path = os.path.join(base_dir, 'static', 'json', 'faq_data.json')
+    
+    with open(json_path, encoding='utf-8') as json_file:
+        faq_data = json.load(json_file)
+    
+    return render(request, 'appves/preguntas_frecuentes.html', {'faq_data': faq_data})
 
 
 def familias(request):
