@@ -1,107 +1,122 @@
 [
-{
-  "model": "appves.family",
-  "pk": 1,
-  "fields": {
-    "familia": "Rheidae"
+  {
+    "model": "appves.family",
+    "pk": 1,
+    "fields": {
+      "familia": "Rheidae",
+      "descripcion": "Los Rheidae son una familia de aves no voladoras conocidas comúnmente como ñandúes. Estas aves de gran tamaño se caracterizan por sus patas largas y fuertes, adaptadas para correr a altas velocidades. Habitan en las extensas llanuras de Argentina, donde se alimentan de vegetación, insectos y pequeños animales. Su apariencia majestuosa y su comportamiento grupal hacen de los ñandúes una presencia destacada en la fauna argentina."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 2,
+    "fields": {
+      "familia": "Anatidae",
+      "descripcion": "Los Anatidae comprenden un grupo diverso de aves acuáticas que incluye patos, gansos y cisnes. Estas aves son expertas nadadoras y se encuentran en diversos hábitats acuáticos de Argentina, desde lagos y lagunas hasta ríos y costas marinas. Con sus plumajes coloridos y llamativos, los miembros de la familia Anatidae agregan belleza y encanto a los paisajes acuáticos del país."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 3,
+    "fields": {
+      "familia": "Spheniscidae",
+      "descripcion": "Los Spheniscidae son conocidos como pingüinos, aves marinas que han adaptado sus alas en forma de aletas para nadar en el océano. Aunque la mayoría de las especies se encuentran en el hemisferio sur, algunas colonias de pingüinos habitan las costas de Argentina. Su estilo de vida social y su comportamiento juguetón hacen de los pingüinos una atracción favorita para los amantes de la naturaleza en la región."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 4,
+    "fields": {
+      "familia": "Podicipedidae",
+      "descripcion": "Los Podicipedidae son una familia de aves acuáticas que incluye a los zambullidores. Estas aves son expertas buceadoras y se pueden encontrar en lagos, lagunas y estuarios de Argentina. Con su capacidad para sumergirse en busca de peces y otros invertebrados acuáticos, los zambullidores son un ejemplo fascinante de la adaptación de las aves a la vida acuática."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 5,
+    "fields": {
+      "familia": "Diomedeidae",
+      "descripcion": "Los Diomedeidae son albatros, aves marinas de gran envergadura que surcan los vastos océanos del mundo. Aunque pasan la mayor parte de su vida en el aire, vuelan miles de kilómetros para alimentarse y reproducirse en las costas de Argentina. Sus impresionantes habilidades de vuelo y su majestuosa presencia los convierten en símbolos de libertad y belleza natural."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 6,
+    "fields": {
+      "familia": "Strigidae",
+      "descripcion": "Los Strigidae son conocidos como búhos, aves rapaces nocturnas que cazan presas en la oscuridad. Estos depredadores silenciosos se encuentran en diversos hábitats de Argentina, desde bosques y montañas hasta áreas urbanas. Con su agudo sentido auditivo y su misteriosa apariencia, los búhos son un enigma fascinante en el mundo de las aves."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 7,
+    "fields": {
+      "familia": "Falconidae",
+      "descripcion": "Los Falconidae incluyen a los halcones y otras aves de presa similares. Estas aves carnívoras son rápidas y ágiles, capaces de cazar presas en pleno vuelo. Su vista aguda y su vuelo preciso los convierten en depredadores temibles y admirados en los cielos de Argentina."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 9,
+    "fields": {
+      "familia": "Columbidae",
+      "descripcion": "Los Columbidae son conocidos como palomas y tórtolas, aves comunes en ambientes urbanos y rurales de Argentina. Estas aves pacíficas y sociables se han adaptado bien a la presencia humana y a menudo se encuentran cerca de asentamientos humanos en busca de alimento. Su dulce canto y su presencia tranquila los hacen familiares y queridas en todo el país."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 12,
+    "fields": {
+      "familia": "Picidae",
+      "descripcion": "Los Picidae incluyen a los pájaros carpinteros, aves especializadas en buscar insectos bajo la corteza de los árboles. Con su pico fuerte y distintivo, los pájaros carpinteros hacen un trabajo invaluable para controlar las poblaciones de insectos y mantener el equilibrio en los ecosistemas forestales de Argentina."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 13,
+    "fields": {
+      "familia": "Phalacrocoracidae",
+      "descripcion": "Los Phalacrocoracidae son conocidos como cormoranes, aves acuáticas que se sumergen para pescar en aguas profundas. Estos hábiles buceadores se encuentran en ríos, lagos y costas de Argentina, donde son un ejemplo impresionante de la adaptación de las aves al medio acuático."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 14,
+    "fields": {
+      "familia": "Ardeidae",
+      "descripcion": "Los Ardeidae, comúnmente conocidos como garzas, garcetas y avetorillos, conforman una familia de aves zancudas que se encuentran ampliamente distribuidas en la República Argentina. Estas aves destacan por su elegante plumaje y largas patas, adaptadas a la vida en humedales, lagunas y ríos. Su dieta se compone principalmente de peces, anfibios y pequeños invertebrados acuáticos. Su vuelo es caracterizado por movimientos lentos y poderosos, y suelen realizar vuelos rasantes sobre el agua en busca de alimento. Algunas especies notables son la garza blanca (Egretta thula), la garcita azulada (Butorides striata) y el martinete común (Nycticorax nycticorax)."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 15,
+    "fields": {
+      "familia": "Threskiornitidae",
+      "descripcion": "La familia Threskiornitidae incluye a los ibis y espátulas, aves de gran tamaño con un distintivo pico largo y curvado hacia abajo. Estas aves se encuentran en diversos hábitats de la República Argentina, desde pantanos y humedales hasta estuarios y llanuras inundables. Su dieta se basa principalmente en insectos acuáticos, crustáceos y pequeños peces, que buscan con su pico sumergido en el agua. Su plumaje suele ser en tonos oscuros y contrastantes, y algunas especies presentan coloraciones brillantes en la cara y el cuello. Ejemplos de especies presentes en Argentina son el ibis escarlata (Eudocimus ruber), el ibis blanco (Eudocimus albus) y la espátula rosada (Platalea ajaja)."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 16,
+    "fields": {
+      "familia": "Ciconiidae",
+      "descripcion": "Los miembros de la familia Ciconiidae son conocidos como cigüeñas y, aunque suelen ser más comunes en otras regiones del mundo, algunas especies también se pueden encontrar en la República Argentina. Estas aves tienen patas largas y cuellos alargados, lo que les permite buscar alimento en aguas poco profundas, como ríos y lagunas. Su dieta incluye peces, anfibios, reptiles y pequeños mamíferos. Las cigüeñas son conocidas por su comportamiento migratorio, aunque algunas especies se encuentran sedentarias en ciertas áreas. Ejemplos de especies que pueden ser avistadas en Argentina son la cigüeña americana (Mycteria americana) y la cigüeña maguari (Ciconia maguari)."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 17,
+    "fields": {
+      "familia": "Cathartidae",
+      "descripcion": "La familia Cathartidae comprende las aves carroñeras más emblemáticas de la República Argentina, como los cóndores, los jotes y los zamuros. Estas aves rapaces se alimentan principalmente de animales muertos, cumpliendo un papel esencial en el ecosistema al eliminar cadáveres y ayudar a controlar la propagación de enfermedades. Son reconocidas por su agudo sentido del olfato, que les permite detectar carroña a grandes distancias. A menudo, pueden ser observadas en grupos mientras planean en círculos aprovechando las corrientes térmicas. El cóndor andino (Vultur gryphus) y el jote de cabeza colorada (Cathartes aura) son dos ejemplos de aves pertenecientes a esta familia presentes en Argentina."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 18,
+    "fields": {
+      "familia": "Phoenicopteridae",
+      "descripcion": "La familia Phoenicopteridae incluye a los flamencos, aves acuáticas de belleza inigualable. Aunque no todas las especies de flamencos se encuentran en la República Argentina, algunas poblaciones migratorias visitan el país en determinadas épocas del año. Estas aves se caracterizan por su plumaje rosa intenso, cuellos largos y picos curvados, ideales para filtrar pequeños organismos acuáticos que constituyen su principal fuente de alimento. Suelen habitar lagunas salinas y estuarios, donde forman grandes colonias de anidación. Entre las especies que ocasionalmente se pueden avistar en Argentina, se encuentran el flamenco austral (Phoenicopterus chilensis) y el flamenco andino (Phoenicoparrus andinus)."
+    }
   }
-},
-{
-  "model": "appves.family",
-  "pk": 2,
-  "fields": {
-    "familia": "Anatidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 3,
-  "fields": {
-    "familia": "Spheniscidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 4,
-  "fields": {
-    "familia": "Podicipedidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 5,
-  "fields": {
-    "familia": "Diomedeidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 6,
-  "fields": {
-    "familia": "Strigidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 7,
-  "fields": {
-    "familia": "Falconidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 9,
-  "fields": {
-    "familia": "Columbidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 12,
-  "fields": {
-    "familia": "Picidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 13,
-  "fields": {
-    "familia": "Phalacrocoracidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 14,
-  "fields": {
-    "familia": "Ardeidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 15,
-  "fields": {
-    "familia": "Threskiornitidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 16,
-  "fields": {
-    "familia": "Ciconiidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 17,
-  "fields": {
-    "familia": "Cathartidae"
-  }
-},
-{
-  "model": "appves.family",
-  "pk": 18,
-  "fields": {
-    "familia": "Phoenicopteridae"
-  }
-}
 ]

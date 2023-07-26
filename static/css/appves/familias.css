@@ -15,6 +15,7 @@
 
 .custom-select {
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -61,4 +62,31 @@ label {
   background-color: #69c6b3;
   border-radius: 10px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+#map {
+  height: 1100px;
+  width: 100%;
+  border: 1px solid #3C644C;
+  border-radius: 10px;
+}
+
+.my-marker div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.titulo-ave {
+  display: none;
+}
+
+.detalle-ave {
+  display: none;
+}
+
+/* Estilo para ocultar los contenedores hasta que se cargue la información */
+#detalle,
+#especies {
+  display: none;
 }

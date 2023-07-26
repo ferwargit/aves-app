@@ -11,10 +11,10 @@ from django.views.generic import (
 )
 
 from .forms import BirdForm, LineaAvistajeForm
-from .models import Bird, Status, LineaAvistaje
+from .models import Bird, Status, LineaAvistaje, Family
 
-# import request
-# import json
+import os
+import json
 from django.conf import settings
 import sqlite3
 
@@ -35,7 +35,13 @@ def topografia(request):
 
 
 def preguntas_frecuentes(request):
-    return render(request, "appves/preguntas_frecuentes.html")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    json_path = os.path.join(base_dir, 'static', 'json', 'faq_data.json')
+    
+    with open(json_path, encoding='utf-8') as json_file:
+        faq_data = json.load(json_file)
+    
+    return render(request, 'appves/preguntas_frecuentes.html', {'faq_data': faq_data})
 
 
 def familias(request):
@@ -61,20 +67,30 @@ def familias(request):
 
     return render(request, "appves/familias.html", {"familias": familias_ordenadas})
 
-
+# Devuelve un JSON con los detalles de una familia de aves especificada por el parámetro nombre_familia.
 def obtener_detalle_familia(request):
+    """
+    Recupera los detalles de una familia de aves de la base de datos y los devuelve en formato JSON como respuesta a una solicitud HTTP GET. Si la familia no se encuentra en la base de datos, devuelve valores predeterminados.
+    """
     nombre_familia = request.GET.get('nombre_familia')
 
     try:
+        # Intenta obtener un objeto Bird que tenga la familia especificada. Utiliza el método filter para buscar un objeto Bird que tenga la familia que coincide con el nombre proporcionado. Luego, utiliza first() para obtener el primer objeto que coincide o None si no se encuentra ninguna coincidencia.
         bird = Bird.objects.filter(familia__familia=nombre_familia).first()
+        # Obtener la descripción de la familia de la tabla appves_family
+        familia = Family.objects.filter(familia=nombre_familia).first()
+        descripcion = familia.descripcion if familia else 'Descripción no disponible'
+
         detalle = {
             'nombre': bird.nombre if bird else 'No disponible',
             'nombre_cientifico': bird.nombre_cientifico if bird else 'No disponible',
+            'descripcion': descripcion,
         }
     except Bird.DoesNotExist:
         detalle = {
             'nombre': 'No disponible',
             'nombre_cientifico': 'No disponible',
+            'descripcion': 'Descripción no disponible',
         }
 
     return JsonResponse(detalle)

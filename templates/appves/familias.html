@@ -11,24 +11,30 @@
         <div class="card-buscador">
             <h1>Familias de Aves</h1>
             <div class="form-group">
+                <p>
+                    En la República Argentina, la diversidad de aves es excepcional, y estas familias representan solo una pequeña muestra de la riqueza avifaunística que se puede encontrar en este vasto país. Cada una de ellas contribuye a la ecología y el equilibrio del entorno en el que se desenvuelven, formando parte esencial del patrimonio natural argentino.
+                </p>
+                <p>Para conocer más sobre cada una de estas familias, seleccione una de ellas en el menú desplegable.</p>
+            </div>
+            <div class="form-group">
                 <label for="familia">Selecciona una familia:</label>
-                <select class="form-control custom-select"
-                        id="familia"
-                        onchange="mostrarDetalle()">
+                <select class="form-control custom-select" id="familia">
                     <option value="">-- Selecciona una familia --</option>
                     {% for familia in familias %}<option value="{{ familia }}">{{ familia }}</option>{% endfor %}
                 </select>
             </div>
         </div>
         <div id="detalle" class="card-detalle">
-            <h3 class="detalle_titulo">Detalle de la familia seleccionada</h3>
+            <h3 class="detalle_titulo"></h3>
             <p>
-                <strong>Nombre del ave:</strong> <span id="detalle-nombre"></span>
+                <strong class="titulo-ave">Nombre del ave:</strong> <span class="detalle-ave" id="detalle-nombre"></span>
             </p>
             <p>
-                <strong>Nombre Científico:</strong> <span id="detalle-nombre-cientifico"></span>
+                <strong class="titulo-descripcion">Descripción: </strong><span id="detalle-descripcion" class="detalle-descripcion"></span>
             </p>
         </div>
+        <div id="especies" class="card-detalle" data-especies=""></div>
+        <div id="map"></div>
     </div>
     <script src="{% static 'js/familias.js' %}"></script>
 {% endblock content %}
