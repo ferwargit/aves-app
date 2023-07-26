@@ -75,3 +75,12 @@ label {
   height: 10px;
   border-radius: 50%;
 }
+
+.titulo-ave {
+  display: none;
+}
+
+.detalle-ave {
+  display: none;
+}
+

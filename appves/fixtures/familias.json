@@ -3,105 +3,120 @@
   "model": "appves.family",
   "pk": 1,
   "fields": {
-    "familia": "Rheidae"
+    "familia": "Rheidae",
+    "descripcion": "Descriccion familia Rheidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 2,
   "fields": {
-    "familia": "Anatidae"
+    "familia": "Anatidae",
+    "descripcion": "Descriccion familia Anatidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 3,
   "fields": {
-    "familia": "Spheniscidae"
+    "familia": "Spheniscidae",
+    "descripcion": "Descriccion familia Spheniscidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 4,
   "fields": {
-    "familia": "Podicipedidae"
+    "familia": "Podicipedidae",
+    "descripcion": "Descriccion familia Podicipedidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 5,
   "fields": {
-    "familia": "Diomedeidae"
+    "familia": "Diomedeidae",
+    "descripcion": "Descriccion familia Diomedeidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 6,
   "fields": {
-    "familia": "Strigidae"
+    "familia": "Strigidae",
+    "descripcion": "Descriccion familia Strigidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 7,
   "fields": {
-    "familia": "Falconidae"
+    "familia": "Falconidae",
+    "descripcion": "Descriccion familia Falconidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 9,
   "fields": {
-    "familia": "Columbidae"
+    "familia": "Columbidae",
+    "descripcion": "Descriccion familia Columbidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 12,
   "fields": {
-    "familia": "Picidae"
+    "familia": "Picidae",
+    "descripcion": "Descriccion familia Picidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 13,
   "fields": {
-    "familia": "Phalacrocoracidae"
+    "familia": "Phalacrocoracidae",
+    "descripcion": "Descriccion familia Phalacrocoracidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 14,
   "fields": {
-    "familia": "Ardeidae"
+    "familia": "Ardeidae",
+    "descripcion": "Descriccion familia Ardeidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 15,
   "fields": {
-    "familia": "Threskiornitidae"
+    "familia": "Threskiornitidae",
+    "descripcion": "Descriccion familia Threskiornitidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 16,
   "fields": {
-    "familia": "Ciconiidae"
+    "familia": "Ciconiidae",
+    "descripcion": "Descriccion familia Ciconiidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 17,
   "fields": {
-    "familia": "Cathartidae"
+    "familia": "Cathartidae",
+    "descripcion": "Descriccion familia Cathartidae"
   }
 },
 {
   "model": "appves.family",
   "pk": 18,
   "fields": {
-    "familia": "Phoenicopteridae"
+    "familia": "Phoenicopteridae",
+    "descripcion": "Descriccion familia Phoenicopteridae"
   }
 }
 ]

@@ -87,15 +87,23 @@ function actualizarMarcadores(data) {
 function obtenerDetalle(familia) {
   const url = `/obtener_detalle_familia?nombre_familia=${familia}`;
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      // Verificar si la respuesta es exitosa (código de estado 200) y si el tipo de contenido es JSON
+      if (
+        !response.ok ||
+        response.headers.get("content-type") !== "application/json"
+      ) {
+        throw new Error("Respuesta no válida desde el servidor");
+      }
+      return response.json();
+    })
+
     .then((data) => {
       var detalleNombre = document.getElementById("detalle-nombre");
-      var detalleNombreCientifico = document.getElementById(
-        "detalle-nombre-cientifico"
-      );
+      var detalleDescripcion = document.getElementById("detalle-descripcion");
+
       detalleNombre.textContent = data.nombre;
-      detalleNombreCientifico.textContent = data.nombre_cientifico;
-      console.log("Detalle:", data);
+      detalleDescripcion.textContent = data.descripcion;
     })
     .catch((error) => {
       console.error("Error al obtener detalle:", error);

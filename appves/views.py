@@ -72,19 +72,19 @@ def obtener_detalle_familia(request):
         # Intenta obtener un objeto Bird que tenga la familia especificada. Utiliza el método filter para buscar un objeto Bird que tenga la familia que coincide con el nombre proporcionado. Luego, utiliza first() para obtener el primer objeto que coincide o None si no se encuentra ninguna coincidencia.
         bird = Bird.objects.filter(familia__familia=nombre_familia).first()
         # Obtener la descripción de la familia de la tabla appves_family
-        # familia = Family.objects.filter(familia=nombre_familia).first()
-        # descripcion = familia.descripcion if familia else 'Descripción no disponible'
+        familia = Family.objects.filter(familia=nombre_familia).first()
+        descripcion = familia.descripcion if familia else 'Descripción no disponible'
 
         detalle = {
             'nombre': bird.nombre if bird else 'No disponible',
             'nombre_cientifico': bird.nombre_cientifico if bird else 'No disponible',
-            # 'descripcion': descripcion,
+            'descripcion': descripcion,
         }
     except Bird.DoesNotExist:
         detalle = {
             'nombre': 'No disponible',
             'nombre_cientifico': 'No disponible',
-            # 'descripcion': 'Descripción no disponible',
+            'descripcion': 'Descripción no disponible',
         }
 
     return JsonResponse(detalle)
