@@ -19,7 +19,7 @@ function mostrarDetalle() {
     // Llamada a la función para obtener el usageKey utilizando async/await
     obtenerUsageKey(select.value)
       .then((taxonKey) => {
-        return obtenerObservaciones(taxonKey);
+        return obtenerNombresYConteo(taxonKey);
       })
       .then((data) => {
         // Actualizar los marcadores en el mapa con los nuevos datos
@@ -54,11 +54,11 @@ function actualizarMarcadores(data) {
 
   // Diccionario para mapear el nombre de la especie con un color específico
   const speciesColor = {
-    "Chloephaga picta": "red",
-    "Anas flavirostris": "blue",
-    "Coscoroba coscoroba": "yellow",
-    "Netta peposaca": "orange",
-    "Oxyura vittata": "purple",
+    "Cathartes aura": "red",
+    "Cathartes burrovianus": "blue",
+    "Coragyps atratus": "yellow",
+    "Sarcoramphus papa": "orange",
+    "Vultur gryphus": "purple",
     // Agrega más especies con sus colores aquí
   };
 
@@ -124,7 +124,7 @@ async function obtenerUsageKey(familia) {
 
 // Función para obtener las observaciones de especies utilizando el taxonKey.
 function obtenerObservaciones(taxonKey) {
-  const url = `https://api.gbif.org/v1/occurrence/search?rank=species&taxonKey=${taxonKey}&country=AR&year=2023&limit=200`;
+  const url = `https://api.gbif.org/v1/occurrence/search?rank=species&taxonKey=${taxonKey}&country=AR&year=2023&limit=300`;
 
   return fetch(url)
     .then((response) => {
@@ -138,11 +138,11 @@ function obtenerObservaciones(taxonKey) {
 
       // Diccionario para mapear el nombre de la especie con un color específico
       const speciesColor = {
-        "Chloephaga picta": "red",
-        "Anas flavirostris": "blue",
-        "Coscoroba coscoroba": "yellow",
-        "Netta peposaca": "orange",
-        "Oxyura vittata": "purple",
+        "Cathartes aura": "red",
+        "Cathartes burrovianus": "blue",
+        "Coragyps atratus": "yellow",
+        "Sarcoramphus papa": "orange",
+        "Vultur gryphus": "purple",
         // Agrega más especies con sus colores aquí
       };
 
@@ -154,7 +154,7 @@ function obtenerObservaciones(taxonKey) {
         console.log("lng: ", lng);
         const name = species.species;
         console.log("name: ", name);
-        const color = speciesColor[name] || "green"; // Si la especie no tiene color asignado, usar azul por defecto
+        const color = speciesColor[name] || "green"; // Si la especie no tiene color asignado, usa green por defecto
 
         // Crear un marcador y agregarlo al mapa
         const marker = L.marker([lat, lng], {
@@ -173,5 +173,45 @@ function obtenerObservaciones(taxonKey) {
     .catch((error) => {
       console.error("Error al obtener observaciones:", error);
       throw error; // Lanzamos el error para que pueda ser capturado en la función mostrarDetalle si es necesario
+    });
+}
+
+function obtenerNombresYConteo(taxonKey) {
+  return obtenerObservaciones(taxonKey)
+    .then((data) => {
+      const { results } = data;
+      const speciesCount = {};
+      const uniqueSpeciesNames = [];
+
+      // Diccionario para mapear el nombre de la especie con un color específico
+      const speciesColor = {
+        "Cathartes aura": "red",
+        "Cathartes burrovianus": "blue",
+        "Coragyps atratus": "yellow",
+        "Sarcoramphus papa": "orange",
+        "Vultur gryphus": "purple",
+        // Agrega más especies con sus colores aquí
+        // Agrega más especies con sus colores aquí
+      };
+
+      results.forEach((species) => {
+        const name = species.species;
+        if (name) {
+          speciesCount[name] = (speciesCount[name] || 0) + 1;
+          if (!uniqueSpeciesNames.includes(name)) {
+            uniqueSpeciesNames.push(name);
+          }
+        }
+      });
+
+      console.log("Nombres de especies únicos:", uniqueSpeciesNames);
+      console.log("Conteo de cada especie:", speciesCount);
+
+      // Devolvemos los datos adicionales junto con los datos originales
+      return { ...data, uniqueSpeciesNames, speciesCount };
+    })
+    .catch((error) => {
+      console.error("Error al obtener nombres y conteo:", error);
+      throw error;
     });
 }
