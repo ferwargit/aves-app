@@ -18,3 +18,7 @@ h1 {
     -webkit-background-clip: text;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+ol li a {
+    text-decoration: none;
+}
