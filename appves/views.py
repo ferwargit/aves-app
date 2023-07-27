@@ -45,20 +45,8 @@ def preguntas_frecuentes(request):
 
 
 def familias(request):
-    # Obtiene la ruta de la base de datos desde la configuración de Django
-    ruta_basededatos = settings.DATABASES['default']['NAME']
-
-    # Establece conexión con la base de datos
-    connection = sqlite3.connect(ruta_basededatos)
-    cursor = connection.cursor()
-
-    # Obtener las familias desde la tabla appves_family
-    cursor.execute("SELECT familia FROM appves_family")
-    result_set = cursor.fetchall()
-
-    # Generar la lista de familias a partir de los resultados de la consulta
-    familias_ordenadas = [row[0] for row in result_set]
-    familias_ordenadas.sort()  # Ordenar alfabéticamente
+    
+    familias_ordenadas = Family.objects.all().order_by("familia")
 
     if familias_ordenadas:
         return render(request, "appves/familias.html", {"familias": familias_ordenadas})
