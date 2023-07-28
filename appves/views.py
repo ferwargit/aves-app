@@ -159,10 +159,13 @@ class CargarAveAvistaje(LoginRequiredMixin, CreateView):
     model = LineaAvistaje
     form_class = LineaAvistajeForm
     template_name = "appves/ave_avistaje.html"
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("listar_avistajes")
 
     def get_initial(self):
         return {"id_avistaje": self.kwargs["pk"]}
+    
+    # def get_success_url(self):
+    #     return reverse_lazy('ver_avistaje', kwargs={'pk':self.get_initial()['id_avistaje']})
 
 
 class DetalleAvistaje(ListView):
