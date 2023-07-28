@@ -1,0 +1,94 @@
+{
+    "preguntas": [
+        {
+            "id": "question1",
+            "pregunta": "ALTOS ANDES",
+            "respuesta": "Aquí va la respuesta a ALTOS ANDES."
+        },
+        {
+            "id": "question2",
+            "pregunta": "ANTARTIDA",
+            "respuesta": "Aquí va la respuesta a ANTARTIDA."
+        },
+        {
+            "id": "question3",
+            "pregunta": "BOSQUES PATAGÓNICOS",
+            "respuesta": "Aquí va la respuesta a BOSQUES PATAGÓNICOS."
+        },
+        {
+            "id": "question4",
+            "pregunta": "CAMPOS Y MALEZALES",
+            "respuesta": "Aquí va la respuesta a CAMPOS Y MALEZALES."
+        },
+        {
+            "id": "question5",
+            "pregunta": "CHACO HÚMEDO",
+            "respuesta": "Aquí va la respuesta a CHACO HÚMEDO."
+        },
+        {
+            "id": "question6",
+            "pregunta": "CHACO SECO",
+            "respuesta": "Aquí va la respuesta a CHACO SECO."
+        },
+        {
+            "id": "question7",
+            "pregunta": "DELTA E ISLAS DEL PARANÁ",
+            "respuesta": "Aquí va la respuesta a DELTA E ISLAS DEL PARANÁ."
+        },
+        {
+            "id": "question8",
+            "pregunta": "ESPINAL",
+            "respuesta": "Aquí va la respuesta a ESPINAL."
+        },
+        {
+            "id": "question9",
+            "pregunta": "ESTEPA PATAGÓNICA",
+            "respuesta": "Aquí va la respuesta a ESTEPA PATAGÓNICA."
+        },
+        {
+            "id": "question10",
+            "pregunta": "ESTEROS DEL IBERÁ",
+            "respuesta": "Aquí va la respuesta a ESTEROS DEL IBERÁ."
+        },
+        {
+            "id": "question11",
+            "pregunta": "ISLAS DEL ATLÁNTICO SUR",
+            "respuesta": "Aquí va la respuesta a ISLAS DEL ATLÁNTICO SUR."
+        },
+        {
+            "id": "question12",
+            "pregunta": "MAR ARGENTINO",
+            "respuesta": "Aquí va la respuesta a MAR ARGENTINO."
+        },
+        {
+            "id": "question13",
+            "pregunta": "MONTE DE LLANURAS Y MESETAS",
+            "respuesta": "Aquí va la respuesta a MONTE DE LLANURAS Y MESETAS."
+        },
+        {
+            "id": "question14",
+            "pregunta": "MONTE DE SIERRAS Y BOLSONES",
+            "respuesta": "Aquí va la respuesta a MONTE DE SIERRAS Y BOLSONES."
+        },
+        {
+            "id": "question15",
+            "pregunta": "LAS PAMPAS",
+            "respuesta": "Aquí va la respuesta a LAS PAMPAS."
+        },
+        {
+            "id": "question16",
+            "pregunta": "PUNA",
+            "respuesta": "Aquí va la respuesta a PUNA."
+        },
+        {
+            "id": "question17",
+            "pregunta": "SELVA PARANAENSE",
+            "respuesta": "Aquí va la respuesta a SELVA PARANAENSE."
+        },
+        {
+            "id": "question18",
+            "pregunta": "YUNGAS",
+            "respuesta": "Aquí va la respuesta a YUNGAS."
+        }
+    ]
+}
