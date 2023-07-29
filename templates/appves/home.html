@@ -11,7 +11,18 @@
         <div class="mensaje">
             {% if messages %}
                 {% for message in messages %}
-                    <p {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                    {% if message.tags %}
+                        {% if "success" in message.tags %}
+                            <script>
+                            swal.fire({
+                                title: "Exito",
+                                text: "{{ message }}",
+                                icon: "success",
+                                timer: 3500
+                            });
+                            </script>
+                        {% endif %}
+                    {% endif %}
                 {% endfor %}
             {% endif %}
         </div>

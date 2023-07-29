@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showAnswerModal(answer) {
       Swal.fire({
-          title: 'Respuesta',
+          //title: '',
           text: answer,
-          icon: 'info',
-          confirmButtonText: 'Aceptar'
+          //icon: 'info',
+          confirmButtonText: 'Aceptar',
+          width: 1200
       });
   }
 });

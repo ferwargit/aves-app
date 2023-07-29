@@ -19,7 +19,12 @@ from django.conf import settings
 import sqlite3
 
 def biomas(request):
-    return render(request, "appves/biomas.html")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    json_path = os.path.join(base_dir, 'static', 'json', 'biomas_data.json')
+    
+    with open(json_path, encoding='utf-8') as json_file:
+        biomas_data = json.load(json_file)
+    return render(request, "appves/biomas.html", {'biomas_data': biomas_data})
 
 
 def glosario(request):
