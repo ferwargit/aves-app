@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "familia": "Rheidae",
-      "descripcion": "Los Rheidae son una familia de aves no voladoras conocidas comúnmente como ñandúes. Estas aves de gran tamaño se caracterizan por sus patas largas y fuertes, adaptadas para correr a altas velocidades. Habitan en las extensas llanuras de Argentina, donde se alimentan de vegetación, insectos y pequeños animales. Su apariencia majestuosa y su comportamiento grupal hacen de los ñandúes una presencia destacada en la fauna argentina."
+      "descripcion": "Ñandúes, avestruces americanos', suris, choiques. Familia presente en América del Sur, con 2 especie, ambas presentes en Argentina. No vuelan Grandes corredores. Suelen estar en grupos. Polígamos. Nidifican en el suelo con muchos huevos cremosos, el macho es quién los incuba. Enormes. Patas y cuellos largos.Cabeza chica. Alas y cola sin plumas rígidas. 3 dedos. Macho y hembra presentan cierto dimorfismo."
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "familia": "Anatidae",
-      "descripcion": "Los Anatidae comprenden un grupo diverso de aves acuáticas que incluye patos, gansos y cisnes. Estas aves son expertas nadadoras y se encuentran en diversos hábitats acuáticos de Argentina, desde lagos y lagunas hasta ríos y costas marinas. Con sus plumajes coloridos y llamativos, los miembros de la familia Anatidae agregan belleza y encanto a los paisajes acuáticos del país."
+      "descripcion": "Patos, cisnes, gansos, cauquenes, 'avutardas'. Cosmopolita. 144 especies, 38 en Argentina. Acuáticos. Buenos nadadores y voladores. Zambullen. Caminan. Gregarios. Vuelos rápido y batido. Muchos huevos blancuzcos. Uno es parásito (pato cabeza negra). A menudo presa de cazadores. Espejo alar brillante. Pico ancho, chato, con uña apical. Patas cortas. 3 dedos palmeados. En algunos casos macho y hembra son muy distintos."
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "familia": "Spheniscidae",
-      "descripcion": "Los Spheniscidae son conocidos como pingüinos, aves marinas que han adaptado sus alas en forma de aletas para nadar en el océano. Aunque la mayoría de las especies se encuentran en el hemisferio sur, algunas colonias de pingüinos habitan las costas de Argentina. Su estilo de vida social y su comportamiento juguetón hacen de los pingüinos una atracción favorita para los amantes de la naturaleza en la región."
+      "descripcion": "Pingüinos. Presentes en el hemisferio sur (uno en Galápagos.) 17 especies, 8 en Argentina. Pelágicos. No vuelan. Eximios nadadores y buceadores. A tierra solo van a nidificar o exaustos. Postura erecta que recuerda la de cormoranes. Gregarios. Crían en colonias. 1 o 2 huevos blancos. Alas modificadas en aletas. Plumaje como piel. Pico robusto. Patas u cuello cortos. 3 dedos palmeados. Macho y hembra semejantes."
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "familia": "Podicipedidae",
-      "descripcion": "Los Podicipedidae son una familia de aves acuáticas que incluye a los zambullidores. Estas aves son expertas buceadoras y se pueden encontrar en lagos, lagunas y estuarios de Argentina. Con su capacidad para sumergirse en busca de peces y otros invertebrados acuáticos, los zambullidores son un ejemplo fascinante de la adaptación de las aves a la vida acuática."
+      "descripcion": "Macáes, zambullidores. Cosmopolita. 18 especies, 6 en Argentina. Acuáticos. Zambullen a menudo. Buenos buceadores. Bastante gregarios. Vuelan poco de día tras largo carreteo. Cuando muy raramente caminan, lo hacen erguidos. Nido flotante. Varios huevos blancuzcos que luego se tiñen. Recuerdan a patos pequeños. Plumaje compacto satinado. Pico cónico. Cola rudimentaria. 4 dedos lobulados. Macho y hembra parecidos, pueden presentar dimorfismo estacional."
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 5,
     "fields": {
       "familia": "Diomedeidae",
-      "descripcion": "Los Diomedeidae son albatros, aves marinas de gran envergadura que surcan los vastos océanos del mundo. Aunque pasan la mayor parte de su vida en el aire, vuelan miles de kilómetros para alimentarse y reproducirse en las costas de Argentina. Sus impresionantes habilidades de vuelo y su majestuosa presencia los convierten en símbolos de libertad y belleza natural."
+      "descripcion": "Albatros. Cosmopolita. 13 especies, 8 en Argentina. Pelágicos. Eximios planeadores de vuelo bajo. Nadadores. A tierra sólo van a nidificar, a menudo en colonia. Un huevo blanco. Parecen enormes gaviotas. Alas muy largas y estrechas. Robusto pico con un tubo a cada lado. 3 dedos palmeados. Macho y hembra semejantes."
     }
   },
   {
@@ -44,7 +44,7 @@
     "pk": 6,
     "fields": {
       "familia": "Strigidae",
-      "descripcion": "Los Strigidae son conocidos como búhos, aves rapaces nocturnas que cazan presas en la oscuridad. Estos depredadores silenciosos se encuentran en diversos hábitats de Argentina, desde bosques y montañas hasta áreas urbanas. Con su agudo sentido auditivo y su misteriosa apariencia, los búhos son un enigma fascinante en el mundo de las aves."
+      "descripcion": "Lechuzas, búhos, caburés, lechuzones. Cosmopolita. 121 especies, 20 en Argentina. Mayormente nocturnas. Vuelo lento y silencioso. Nido en huecos o en el suelo. 2 a 7 huevos blancos, esféricos. Cabeza grande, a veces con 'orejas'. Disco facial redondeado. Pico curvo y corto. Patas mas bien cortas, y dedos emplumados con garras. Macho y hembra semejantes."
     }
   },
   {
@@ -52,7 +52,7 @@
     "pk": 7,
     "fields": {
       "familia": "Falconidae",
-      "descripcion": "Los Falconidae incluyen a los halcones y otras aves de presa similares. Estas aves carnívoras son rápidas y ágiles, capaces de cazar presas en pleno vuelo. Su vista aguda y su vuelo preciso los convierten en depredadores temibles y admirados en los cielos de Argentina."
+      "descripcion": "Halcones, caranchos y chimangos. Cosmopolita. 57 especies, 15 presente en Argentina. Parecidos a la familia Accipitridae. Pico corto, muy curvo y con borde dentado. Tarsos no emplumados. Cola larga. Con garras. 2 a 4 huevos muy manchados. Machos y hembras tienen plumajes semejantes pero las hembras son de mayor tamaño."
     }
   },
   {
@@ -60,7 +60,7 @@
     "pk": 9,
     "fields": {
       "familia": "Columbidae",
-      "descripcion": "Los Columbidae son conocidos como palomas y tórtolas, aves comunes en ambientes urbanos y rurales de Argentina. Estas aves pacíficas y sociables se han adaptado bien a la presencia humana y a menudo se encuentran cerca de asentamientos humanos en busca de alimento. Su dulce canto y su presencia tranquila los hacen familiares y queridas en todo el país."
+      "descripcion": "Palomas, torcazas. Cosmopolita. 284 especies, 25 presentes en Argentina. Inconfundibles. A menudo grisáceas. Caminadoras. Vuelo sostenido y ruidoso. Arrullo. 1 o 2 huevos blancos o cremosos. Robustas. Cabeza chica, redondeada. Pico fino, corto, con cera en la base. Cuello corto. Alas largas y agudas. Patas cortas, a menudo rojizas. Macho y hembra semejantes."
     }
   },
   {
@@ -68,7 +68,7 @@
     "pk": 12,
     "fields": {
       "familia": "Picidae",
-      "descripcion": "Los Picidae incluyen a los pájaros carpinteros, aves especializadas en buscar insectos bajo la corteza de los árboles. Con su pico fuerte y distintivo, los pájaros carpinteros hacen un trabajo invaluable para controlar las poblaciones de insectos y mantener el equilibrio en los ecosistemas forestales de Argentina."
+      "descripcion": "Carpinteros. Cosmopolita. 210 especies, 28 presente en Argentina. Trepadores. Arborícolas. Algunos terrícolas. Voz fuerte. Vuelo ondulado. Tamborean. Nido en huecos de árboles o barrancas. Varios huevos blancos, brillantes. Cabeza grande. Pico fuerte recto y agudo. Cola rígida, que usan para apoyarse. Tarsos cortos, 2 dedos hacia adelante y 2 hacia atrás. Macho y hembra apenas distintos."
     }
   },
   {
@@ -76,7 +76,7 @@
     "pk": 13,
     "fields": {
       "familia": "Phalacrocoracidae",
-      "descripcion": "Los Phalacrocoracidae son conocidos como cormoranes, aves acuáticas que se sumergen para pescar en aguas profundas. Estos hábiles buceadores se encuentran en ríos, lagos y costas de Argentina, donde son un ejemplo impresionante de la adaptación de las aves al medio acuático."
+      "descripcion": "Cormoranes, biguáes. Cosmopolitas. 30 especies, 5 en Argentina. Costeros (2 también en aguas interiores). Gregarios. Zambulles y bucean. Postura erecta. A veces al sol con las alas extendidas. Crían en colonia. 4 huevos celestes. Pico recto, más bien largo, con gancho apical. Cuello largo. Cola larga, algo rígida. 4 dedos palmeados. Macho y hembra semejantes."
     }
   },
   {
@@ -84,7 +84,7 @@
     "pk": 14,
     "fields": {
       "familia": "Ardeidae",
-      "descripcion": "Los Ardeidae, comúnmente conocidos como garzas, garcetas y avetorillos, conforman una familia de aves zancudas que se encuentran ampliamente distribuidas en la República Argentina. Estas aves destacan por su elegante plumaje y largas patas, adaptadas a la vida en humedales, lagunas y ríos. Su dieta se compone principalmente de peces, anfibios y pequeños invertebrados acuáticos. Su vuelo es caracterizado por movimientos lentos y poderosos, y suelen realizar vuelos rasantes sobre el agua en busca de alimento. Algunas especies notables son la garza blanca (Egretta thula), la garcita azulada (Butorides striata) y el martinete común (Nycticorax nycticorax)."
+      "descripcion": "Garzas, mirasoles, hocóes. Cosmopolita. 60 especies, 15 en Argentina. Palustres. Vuelo lento con el cuello recogido. Gregarias. Vadean. La mayoría cría en colonia. 3 o 4 huevos a menudo azul verdoso. Pico largo y agudo. Patas largas, con dedos no palmeados. Macho y hembra semejantes"
     }
   },
   {
@@ -92,7 +92,7 @@
     "pk": 15,
     "fields": {
       "familia": "Threskiornitidae",
-      "descripcion": "La familia Threskiornitidae incluye a los ibis y espátulas, aves de gran tamaño con un distintivo pico largo y curvado hacia abajo. Estas aves se encuentran en diversos hábitats de la República Argentina, desde pantanos y humedales hasta estuarios y llanuras inundables. Su dieta se basa principalmente en insectos acuáticos, crustáceos y pequeños peces, que buscan con su pico sumergido en el agua. Su plumaje suele ser en tonos oscuros y contrastantes, y algunas especies presentan coloraciones brillantes en la cara y el cuello. Ejemplos de especies presentes en Argentina son el ibis escarlata (Eudocimus ruber), el ibis blanco (Eudocimus albus) y la espátula rosada (Platalea ajaja)."
+      "descripcion": "Bandurrias, cuervillos, espátulas. Cosmopolita. 28 especies, 8 en Argentina. Recuerdan a garzas. Mucho menores. Gregarias. Algo palustres. Vuelo rápido con el cuello extendido; a veces  formación en 'V'. En general crían en colonia. 2 a 5 huevos. Cuello y patas largos. Dedos no palmeados. Pico largo, delgado y curvo (excepto espátula). Macho y hembra semejantes"
     }
   },
   {
@@ -100,7 +100,7 @@
     "pk": 16,
     "fields": {
       "familia": "Ciconiidae",
-      "descripcion": "Los miembros de la familia Ciconiidae son conocidos como cigüeñas y, aunque suelen ser más comunes en otras regiones del mundo, algunas especies también se pueden encontrar en la República Argentina. Estas aves tienen patas largas y cuellos alargados, lo que les permite buscar alimento en aguas poco profundas, como ríos y lagunas. Su dieta incluye peces, anfibios, reptiles y pequeños mamíferos. Las cigüeñas son conocidas por su comportamiento migratorio, aunque algunas especies se encuentran sedentarias en ciertas áreas. Ejemplos de especies que pueden ser avistadas en Argentina son la cigüeña americana (Mycteria americana) y la cigüeña maguari (Ciconia maguari)."
+      "descripcion": "Cigüeñas. Cosmopolita. 17 especies, 3 en Argentina. Recuerdan a garzas, mas grandes y robustas. No tan gregarias ni tan palustres. Cuello extendido en vuelo. A menudo crían en colonia. 2 a 4 huevos blancos. Cabeza y cuello desnudos en Tuyuyú y Yabirú y cara desnuda en Cigüeña americana. Pico largo y grueso. PAtas largas, con dedos no palmeados. Macho y hembra semejantes."
     }
   },
   {
@@ -108,7 +108,7 @@
     "pk": 17,
     "fields": {
       "familia": "Cathartidae",
-      "descripcion": "La familia Cathartidae comprende las aves carroñeras más emblemáticas de la República Argentina, como los cóndores, los jotes y los zamuros. Estas aves rapaces se alimentan principalmente de animales muertos, cumpliendo un papel esencial en el ecosistema al eliminar cadáveres y ayudar a controlar la propagación de enfermedades. Son reconocidas por su agudo sentido del olfato, que les permite detectar carroña a grandes distancias. A menudo, pueden ser observadas en grupos mientras planean en círculos aprovechando las corrientes térmicas. El cóndor andino (Vultur gryphus) y el jote de cabeza colorada (Cathartes aura) son dos ejemplos de aves pertenecientes a esta familia presentes en Argentina."
+      "descripcion": "Jotes, cóndores, urubúes, 'cuervos'. 7 especies exclusivas del continente Americano, 5 presentes en Argentina. Comen carroña. Suelen planear alto. Mas bien gregarios. A veces asentados con las alas abiertas. 1 a 2 huevos, blancos o manchados. Recuerdan a la familia Accipitridae. Grandes. En general negros, cabeza desnuda, a menudo coloreada. Pico con gancho apical. Alas largas y anchas. Patas robustas. Sin garras. Macho y hembra semejantes."
     }
   },
   {
@@ -116,7 +116,7 @@
     "pk": 18,
     "fields": {
       "familia": "Phoenicopteridae",
-      "descripcion": "La familia Phoenicopteridae incluye a los flamencos, aves acuáticas de belleza inigualable. Aunque no todas las especies de flamencos se encuentran en la República Argentina, algunas poblaciones migratorias visitan el país en determinadas épocas del año. Estas aves se caracterizan por su plumaje rosa intenso, cuellos largos y picos curvados, ideales para filtrar pequeños organismos acuáticos que constituyen su principal fuente de alimento. Suelen habitar lagunas salinas y estuarios, donde forman grandes colonias de anidación. Entre las especies que ocasionalmente se pueden avistar en Argentina, se encuentran el flamenco austral (Phoenicopterus chilensis) y el flamenco andino (Phoenicoparrus andinus)."
+      "descripcion": "Flamencos, parinas. Cosmopolita. 5 especies, 3 en Argentina. En aguas salobres y dulces. Gregarios. Vuelo en fila con el cuello extendido. Crian en colonia. Nido de barro. 1 huevo blanco. Rosados. Patas y cuello muy largos. Dedos palmeados. Pico abruptamente curvado. Macho y hembra semejantes."
     }
   }
 ]

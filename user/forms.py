@@ -68,7 +68,7 @@ class CustomUserCreationForm(UserCreationForm):
         )
     )
     image = forms.ImageField(required=False)
-    province = forms.ModelChoiceField(queryset=Province.objects.all())
+    province = forms.ModelChoiceField(required=False, queryset=Province.objects.all())
 
     class Meta:
         # model = User
@@ -78,8 +78,8 @@ class CustomUserCreationForm(UserCreationForm):
     def save(self, commit=True):
         user = super(CustomUserCreationForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
-        user.province = self.cleaned_data["province"]
-        user.image = self.cleaned_data["image"]
+        #user.province = self.cleaned_data["province"]
+        #user.image = self.cleaned_data["image"]
         if commit:
             user.save()
         return user
