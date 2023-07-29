@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
@@ -159,13 +159,12 @@ class CargarAveAvistaje(LoginRequiredMixin, CreateView):
     model = LineaAvistaje
     form_class = LineaAvistajeForm
     template_name = "appves/ave_avistaje.html"
-    success_url = reverse_lazy("listar_avistajes")
 
     def get_initial(self):
         return {"id_avistaje": self.kwargs["pk"]}
     
-    # def get_success_url(self):
-    #     return reverse_lazy('ver_avistaje', kwargs={'pk':self.get_initial()['id_avistaje']})
+    def get_success_url(self):
+        return reverse_lazy('ver_avistaje', kwargs={'pk':self.get_initial()['id_avistaje']})
 
 
 class DetalleAvistaje(ListView):
@@ -177,5 +176,25 @@ class DetalleAvistaje(ListView):
             return {'id_avistaje': self.kwargs['pk']}
     
     def get_queryset(self):
-        self.queryset = LineaAvistaje.objects.filter(id_avistaje_id= self.kwargs['pk'])
+        self.queryset = LineaAvistaje.objects.filter(id_avistaje_id= self.kwargs['pk']).filter(activo=True)
         return self.queryset
+
+
+class EliminarLineaAvistaje(LoginRequiredMixin, DeleteView):
+    model = LineaAvistaje
+    # success_url = reverse_lazy("ver_avistaje")
+
+    def get_initial(self):
+        print({'id_avistaje': self.kwargs['pk_avi']})
+        print({'id_ave_avistaje': self.kwargs['pk']})
+        return {'id_avistaje': self.kwargs['pk_avi']}
+
+    def get_success_url(self):
+        return reverse_lazy('ver_avistaje', kwargs={'pk':self.get_initial()['id_avistaje']})
+
+    def post(self, request, *args, **kwargs):
+        linea_avistaje = self.get_object()
+        linea_avistaje.activo = False
+        linea_avistaje.save()
+        return redirect(self.get_success_url())
+    

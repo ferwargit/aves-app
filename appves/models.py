@@ -162,3 +162,4 @@ class LineaAvistaje(models.Model):
     cantidad = models.IntegerField(null=False, default=1)
     latitud = models.FloatField(null=False)
     longitud = models.FloatField(null=False)
+    activo = models.BooleanField(default=True)

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from appves import views
-from .views import CargarAveAvistaje, CrearAve, DetalleAve, EditarAve, EliminarAve, ListarBirds, DetalleAvistaje
+from .views import CargarAveAvistaje, CrearAve, DetalleAve, EditarAve, EliminarAve, ListarBirds, DetalleAvistaje, EliminarLineaAvistaje
 
 
 urlpatterns = [
@@ -24,5 +24,6 @@ urlpatterns = [
     path('detalle/<int:pk>', DetalleAve.as_view(), name='detail_birds'),
     path('charge_ave/<int:pk>', CargarAveAvistaje.as_view(), name='cargar_ave_avistaje'),
     path('detalle_avistaje/<int:pk>', DetalleAvistaje.as_view(), name='ver_avistaje'),
+    path('detalle_avistaje/<int:pk_avi>/eliminar_ave_avistaje/<int:pk>', EliminarLineaAvistaje.as_view(), name='eliminar_linea_avistaje'),
 
 ]
