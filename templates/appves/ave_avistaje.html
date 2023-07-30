@@ -10,6 +10,7 @@
     {% endblock styles %}
     <form method="post">
         {% csrf_token %}
+        <div class="not-visible">{{ form.activo }}</div>
         <div class="row">
             <div class="col-md-10 d-flex align-items-center justify-content-center">
                 <h1>Agregar aves</h1>

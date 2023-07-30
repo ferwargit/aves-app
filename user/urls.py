@@ -1,7 +1,7 @@
 from django.urls import path
 
 from user import views
-from .views import CrearAvistaje, ListarAvistajes
+from .views import CrearAvistaje, ListarAvistajes, EliminarAvistaje
 
 
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     
     path('create_list/<int:pk>', CrearAvistaje.as_view(), name='crear_avistaje'),
     path('list_avistaje/', ListarAvistajes.as_view(), name='listar_avistajes'),
+    path('eliminar/<int:pk>', EliminarAvistaje.as_view(), name='eliminar_avistaje'),
     
 ]
