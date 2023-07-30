@@ -55,6 +55,7 @@ class BirdForm(forms.ModelForm):
         
 
 class LineaAvistajeForm(forms.ModelForm):
+    activo = forms.BooleanField(initial=True)
     class Meta:
         model = LineaAvistaje
         fields = "__all__"
