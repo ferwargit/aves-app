@@ -105,7 +105,8 @@ function obtenerNombresYConteo(taxonKey) {
 
 // Función para obtener las observaciones de especies utilizando el taxonKey.
 function obtenerObservaciones(taxonKey) {
-  const url = `https://api.gbif.org/v1/occurrence/search?rank=species&taxonKey=${taxonKey}&country=AR&year=2023&limit=300`;
+  //const url = `https://api.gbif.org/v1/occurrence/search?rank=species&taxonKey=${taxonKey}&country=AR&year=2023&limit=300`;
+  const url = `https://api.gbif.org/v1/occurrence/search?rank=species&taxonKey=${taxonKey}&country=AR&limit=300`;
 
   return fetch(url)
     .then((response) => {

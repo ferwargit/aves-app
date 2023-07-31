@@ -29,10 +29,6 @@
       "definicion": "Desplazamiento estacional de las aves entre diferentes áreas geográficas en busca de mejores condiciones de alimentación y reproducción."
     },
     {
-      "termino": "Endémico",
-      "definicion": "Especie que se encuentra exclusivamente en una región geográfica determinada y no se encuentra de forma natural en ningún otro lugar."
-    },
-    {
       "termino": "Depredador",
       "definicion": "Animal que se alimenta de otros animales, conocidos como presas."
     },
@@ -59,6 +55,490 @@
     {
       "termino": "Biodiversidad",
       "definicion": "Variedad de especies de aves y otros seres vivos presentes en un ecosistema o región geográfica."
+    },
+    {
+      "termino": "Ecorregión",
+      "definicion": "Área geográfica que posee un conjunto único de comunidades naturales y ecosistemas con características ambientales particulares."
+    },
+    {
+      "termino": "Bioma",
+      "definicion": "Gran región ecológica caracterizada por un tipo principal de vegetación y fauna que se adapta a condiciones ambientales similares."
+    },
+    {
+      "termino": "Hidromorfo",
+      "definicion": "Que se adapta o vive en ambientes acuáticos o con exceso de humedad."
+    },
+    {
+      "termino": "Huayco",
+      "definicion": "Aluvión o corriente de agua repentina y violenta que se produce especialmente en regiones montañosas y puede arrastrar tierra, piedras y árboles."
+    },
+    {
+      "termino": "Edáfico",
+      "definicion": "Relacionado con el suelo y sus propiedades físicas y químicas."
+    },
+    {
+      "termino": "Culmen",
+      "definicion": "Parte superior de la mandíbula superior de un ave, correspondiente al pico."
+    },
+    {
+      "termino": "Pantropical",
+      "definicion": "Que se encuentra o se distribuye ampliamente en regiones tropicales de todo el mundo."
+    },
+    {
+      "termino": "Hallux",
+      "definicion": "Dedo posterior de las aves, que generalmente se proyecta hacia atrás y les permite agarrarse a las ramas y otras superficies."
+    },
+    {
+      "termino": "Tarso",
+      "definicion": "Parte de la pata de un ave que corresponde a la región entre la tibia y los dedos."
+    },
+    {
+      "termino": "Cera",
+      "definicion": "Área carnosa y cerosa situada en la base del pico de algunas aves."
+    },
+    {
+      "termino": "Cosmopolita",
+      "definicion": "Que se encuentra distribuido en diversas partes del mundo."
+    },
+    {
+      "termino": "Uña apical",
+      "definicion": "Uña situada en la parte extrema de un dedo o dedo de un ave."
+    },
+    {
+      "termino": "Palustre",
+      "definicion": "Que vive o se adapta a ambientes pantanosos."
+    },
+    {
+      "termino": "Vadear",
+      "definicion": "Cruzar a pie un cuerpo de agua, como un río o un arroyo, generalmente sin sumergirse completamente."
+    },
+    {
+      "termino": "Vibrisas",
+      "definicion": "Plumas rígidas y largas que rodean la base del pico de algunas aves y tienen funciones táctiles."
+    },
+    {
+      "termino": "Mimetismo",
+      "definicion": "Adaptación en la que un organismo evoluciona para parecerse a otro, generalmente para obtener protección contra depredadores."
+    },
+    {
+      "termino": "Plumaje laxo",
+      "definicion": "Conjunto de plumas en las aves que no están tan apretadas como las plumas de vuelo."
+    },
+    {
+      "termino": "Dimorfismo",
+      "definicion": "Diferencia en la forma o apariencia entre los machos y las hembras de una especie."
+    },
+    {
+      "termino": "Periantártica",
+      "definicion": "Etapa en el desarrollo del plumaje de un ave joven cuando los contornos de las plumas se encuentran desgastados y desiguales."
+    },
+    {
+      "termino": "Malla calcárea",
+      "definicion": "Cubierta exterior del huevo de algunas aves, compuesta principalmente de carbonato de calcio, que proporciona protección y permite el intercambio de gases."
+    },
+    {
+      "termino": "Pelágico",
+      "definicion": "Que vive en alta mar, lejos de la costa."
+    },
+    {
+      "termino": "Eximio",
+      "definicion": "Que sobresale o es notable por su habilidad o destreza."
+    },
+    {
+      "termino": "Granívoro",
+      "definicion": "Que se alimenta principalmente de semillas."
+    },
+    {
+      "termino": "Bolsa gular",
+      "definicion": "Estructura de piel extensible presente en algunas aves en la parte inferior del cuello, utilizada para almacenar y transportar alimentos."
+    },
+    {
+      "termino": "Color pardo",
+      "definicion": "Coloración marrón o pardusca en el plumaje de las aves."
+    },
+    {
+      "termino": "Color rufo",
+      "definicion": "Coloración rojiza o de tonos rojizos en el plumaje de las aves."
+    },
+    {
+      "termino": "Dedos lobulados",
+      "definicion": "Dedos de algunas aves que están unidos por una membrana o lóbulo de piel."
+    },
+    {
+      "termino": "Poliándrico",
+      "definicion": "Relacionado con una especie en la que una hembra se aparea con varios machos."
+    },
+    {
+      "termino": "Abigarrado",
+      "definicion": "Plumaje abigarrado de diseño complejo. Ej. Botaurus pinnatus."
+    },
+    {
+      "termino": "Acrobático",
+      "definicion": "Que realiza ágiles movimientos en las ramas, colocándose incluso cabeza abajo. Ej: Leptasthenura."
+    },
+    {
+      "termino": "Activo",
+      "definicion": "Inquieto, que a menudo está en movimiento. Ej: Aphrastura spinicauda."
+    },
+    {
+      "termino": "Aguas someras",
+      "definicion": "Aguas playas, de poca profundidad. Sitio preferido por ciertos playeros."
+    },
+    {
+      "termino": "Ala angulada",
+      "definicion": "Silueta en vuelo con el ala abruptamente doblada hacia atrás en la articulación carpometacarpo. Ej: Pandion haliaetus."
+    },
+    {
+      "termino": "Ala ventral",
+      "definicion": "Parte interna o inferior del ala, visible en vuelo."
+    },
+    {
+      "termino": "Alisal",
+      "definicion": "Comunidad de aliso (Alnus), en la yunga. En general incluye también pino de cerro (Podocarpus)."
+    },
+    {
+      "termino": "Alopátricas/os",
+      "definicion": "Dícese de dos o más especies que no viven en la misma localidad."
+    },
+    {
+      "termino": "Altoandino",
+      "definicion": "Referido a las alturas de la cordillera de los Andes o del Aconquija, por lo general sobre los 3.000 m."
+    },
+    {
+      "termino": "Altoserrano",
+      "definicion": "Referido al nivel superior de las sieras altas, por lo general sobre los 1.200 m."
+    },
+    {
+      "termino": "Antifaz",
+      "definicion": "Amplia zona oscura periocular, más ancha hacia atrás. Ej: Geothlypis aequinoctialis."
+    },
+    {
+      "termino": "Aperdizado",
+      "definicion": "Diseño abigarrado de tonos ocre, castaño y negro, a menudo mimético. Ej: Nothura maculosa."
+    },
+    {
+      "termino": "Apical",
+      "definicion": "Referido al ápice, punta o extremo distal."
+    },
+    {
+      "termino": "Arboleda",
+      "definicion": "Se aplica aquí para agrupaciones de árboles de especies introducidas. Ej: Eucaliptal (Eucaliptus), Alameda (Populus)."
+    },
+    {
+      "termino": "Arborícola",
+      "definicion": "Que vive en árboles."
+    },
+    {
+      "termino": "Area rural",
+      "definicion": "Zona agrícola o ganadera, habitualmente modificada por el hombre."
+    },
+    {
+      "termino": "Arisco",
+      "definicion": "Esquivo. Que huye o se oculta dificultando la observación. Desconfiado. Ej: Leptotila verreauxi."
+    },
+    {
+      "termino": "Audaz",
+      "definicion": "Atrevido, osado. Ej: Larus dominicanus."
+    },
+    {
+      "termino": "Auricular",
+      "definicion": "Zona auricular, región del oído."
+    },
+    {
+      "termino": "Babero",
+      "definicion": "Amplia zona gular que incluye el superior del pecho."
+    },
+    {
+      "termino": "Bajos submeridionales",
+      "definicion": "Depresión que abarca el norte de Formosa y el sur de Chaco, rica en avifauna palustre."
+    },
+    {
+      "termino": "Balanceo",
+      "definicion": "Movimiento vertical del cuerpo o de la cola. Ej: Actitis macularia."
+    },
+    {
+      "termino": "Banda",
+      "definicion": "Larga y ancha zona coloreada, similar a faja pero solo usada para el ala, notable en vuelo. Banda alar. Ej: Cinclodes fuscus."
+    },
+    {
+      "termino": "Bañado",
+      "definicion": "Cuerpo de agua semipermanente, sin perímetro definido, con abundante vegetación emergente. Suelo inundable. Característico de la llanura pampeana."
+    },
+    {
+      "termino": "Barba",
+      "definicion": "Lo superior de la garganta. Área debajo del pico."
+    },
+    {
+      "termino": "Barrado",
+      "definicion": "Que posee barras o líneas transversales. Ej: Pecho de Thamnophilus ruficapilus."
+    },
+    {
+      "termino": "Basal",
+      "definicion": "Referido a la base, lo opuesto a apical."
+    },
+    {
+      "termino": "Bataraz",
+      "definicion": "Diseño que combina pintas o manchitas blancas y negras. Ej: Picoides mixtus."
+    },
+    {
+      "termino": "Bigote",
+      "definicion": "Línea oscura en región malar. Ej: Falco."
+    },
+    {
+      "termino": "Bosque",
+      "definicion": "Comunidad de árboles arbustos de porte variado, poco estratificado, que incluye la unidad fitogeográfica del espinal."
+    },
+    {
+      "termino": "Araucano",
+      "definicion": "Bosque subantártico. Bosque húmedo con abundancia de Nothofagus que forma una angosta faja en la ladera oriental de la cordillera austral al oeste de la Patagonia. De transición: Con inclusión de elementos selváticos (se utiliza para el noroeste). Húmedo: Con cierta presencia de elementos selváticos. En general se corresponde con el Distrito Oriental del Dominio Chaqueño. Montano: Bosque serrano. En laderas de cerros en el noroeste, con predominio de aliso (Alnus) y pino de cerro (Podocarpus)."
+    },
+    {
+      "termino": "Xerófilo/Xerófito",
+      "definicion": "De zonas secas. 'Monte.'"
+    },
+    {
+      "termino": "Bullanguero",
+      "definicion": "Ruidoso. Que emite muy a menudo su voz. Ej: Myiodynastes maculatus."
+    },
+    {
+      "termino": "Capuera",
+      "definicion": "Vegetación selvática secundaria surgida tras el desmonte. También se utiliza aquí para indicar áreas empobrecidas o semiexplotadas de la selva."
+    },
+    {
+      "termino": "Cara",
+      "definicion": "Se utiliza con el mismo aparente significado que en anatomía humana."
+    },
+    {
+      "termino": "Cardonal",
+      "definicion": "Comunidad de cardones o grandes cactáceas columnares (Trichocereus) en la prepuna."
+    },
+    {
+      "termino": "Carúncula",
+      "definicion": "Excrecencia carnosa en la base de la maxila. Ej: Netta peposaca."
+    },
+    {
+      "termino": "Caudal",
+      "definicion": "Referido a la cola."
+    },
+    {
+      "termino": "Colonia",
+      "definicion": "Asociación de individuos de una o más especies que se reúnen para nidificar."
+    },
+    {
+      "termino": "Coloración modesta",
+      "definicion": "Plumaje no vistoso, de tonos más bien uniformes. Ej: Furnarius rufus."
+    },
+    {
+      "termino": "Collar",
+      "definicion": "Collar pectoral. Faja pectoral, a menudo oscura. Ej: Charadrius collaris."
+    },
+    {
+      "termino": "Completo",
+      "definicion": "Collar que se continúa y une en lo dorsal del cuello. Ej: Charadrius semipalmatus."
+    },
+    {
+      "termino": "Collarín",
+      "definicion": "Collar de plumas alargadas que rodean el cuello. Ej: Circus buffoni."
+    },
+    {
+      "termino": "Conespecífico",
+      "definicion": "Coespecífico. Dos poblaciones son conespecíficas cuando pertenecen a la misma especie."
+    },
+    {
+      "termino": "Conspicuo",
+      "definicion": "Visible o destacado. Usado para indicar un grado menor que notable."
+    },
+    {
+      "termino": "Copete",
+      "definicion": "Prolongadas plumas en corona. Puede ser también frontal o nucal."
+    },
+    {
+      "termino": "Corona oculta",
+      "definicion": "Plumas coloreadas de la corona visibles solo en ciertos casos. Ej. Pitangus sulphuratus."
+    },
+    {
+      "termino": "Costero",
+      "definicion": "Que vive en las costas. Aquí se utiliza más bien para costas de mar."
+    },
+    {
+      "termino": "Cubiertas",
+      "definicion": "Usado como sinónimo de cubiertas alares. Plumas que cubren dorsalmente el ala."
+    },
+    {
+      "termino": "Curiosea",
+      "definicion": "Que se acerca al observador a menudo entre la espesura, para huir luego. Ej. Scytalopus magellanicus."
+    },
+    {
+      "termino": "Chaleco",
+      "definicion": "Zona pectoral más angosta en el centro. Ej: Falco femoralis."
+    },
+    {
+      "termino": "Chorreado",
+      "definicion": "Goteado, manchitas alargadas. Ej: Grallaria ochroleuca."
+    },
+    {
+      "termino": "Despliegue nupcial",
+      "definicion": "Cortejo. Conjunto de actitudes de la pareja, previas al apareamiento. Ej: Sturnella superciliaris."
+    },
+    {
+      "termino": "Diminuto",
+      "definicion": "Muy pequeño, menor que 10 cm de medida natural. Ej: Myiornis auricularis."
+    },
+    {
+      "termino": "Dimorfismo estacional",
+      "definicion": "Característica de ciertas especies que poseen diferente coloración y/o aspecto en la época reproductiva (PN) y la de reposo sexual (PI) lo que suele equivaler, respectivamente, a verano e invierno. Ej: Zonibyx modestus."
+    },
+    {
+      "termino": "Dimorfismo sexual",
+      "definicion": "Característica de ciertas especies que poseen diferencias de coloración o aspecto entre los sexos. Ej: Hymenops perspicillata."
+    },
+    {
+      "termino": "Diseño común",
+      "definicion": "Usado para señalar un tipo de plumaje habitual en una especie. También un diseño similar entre macho y hembra de diferentes especies. Ej: Sporophila."
+    },
+    {
+      "termino": "Diversidad de plumajes",
+      "definicion": "Frase utilizada para señalar que por razones de edad o de fases, pueden encontrarse otros plumajes no descriptos."
+    },
+    {
+      "termino": "Dorsal",
+      "definicion": "Parte dorsal. Parte superior incluyendo cabeza y cola."
+    },
+    {
+      "termino": "Dorso",
+      "definicion": "Parte dorsal, a menudo con exclusión de cabeza y/o cola."
+    },
+    {
+      "termino": "Egretes",
+      "definicion": "Largas plumas que aparecen en algunas garzas durante la época nupcial. Ej: Egretta alba."
+    },
+    {
+      "termino": "En disminución",
+      "definicion": "Especie cuyo número va decreciendo. Ej: Gubernatrix cristata."
+    },
+    {
+      "termino": "En expansión",
+      "definicion": "Que va extendiendo su distribución."
+    },
+    {
+      "termino": "Endémico",
+      "definicion": "Que vive tan solo en una localidad. Aquí úsase exclusivamente con referencia a la Argentina. Ej: Podiceps gallardoi."
+    },
+    {
+      "termino": "Envergadura (Env.)",
+      "definicion": "Distancia de extremo a extremo de las alas, en vuelo. Ej: Diomedea exulans."
+    },
+    {
+      "termino": "Eréctil",
+      "definicion": "Que se puede elevar. Ej: Tapera naevia."
+    },
+    {
+      "termino": "Escamado",
+      "definicion": "Diseño de plumas con aspecto de escamas. Ej: Geositta cunicularia."
+    },
+    {
+      "termino": "Escarapela",
+      "definicion": "Manchita en lo frontal."
+    },
+    {
+      "termino": "Escudete",
+      "definicion": "Membrana frontal coloreada. Ej: Jacana jacana."
+    },
+    {
+      "termino": "Escutelaciones",
+      "definicion": "Placas sobre el tarso. Ej: Pterocnemia pennata."
+    },
+    {
+      "termino": "Espejo",
+      "definicion": "Espejo alar. Fajas en el ápice de las secundarias, a menudo con brillo metálico, notables en vuelo. Ej: Anatidae."
+    },
+    {
+      "termino": "Estepa",
+      "definicion": "Extensión de terreno con predominio de gramíneas, en forma de matas, dejando entre ellas suelo más o menos desnudo. Arbustiva: Formada por arbustos bajos y esparcidos."
+    },
+    {
+      "termino": "Estero",
+      "definicion": "Laguna de regiones tropicales y subtropicales de poca profundidad, con mínimo espejo de agua y abundante vegetación."
+    },
+    {
+      "termino": "Estratos",
+      "definicion": "Niveles de vegetación. Usado para las selvas, dividiéndolos en estratos bajo, medio y alto."
+    },
+    {
+      "termino": "Estrías",
+      "definicion": "Líneas cortas de color. Ej. Pecho de Anthus correndera."
+    },{
+      "termino": "Estuario",
+      "definicion": "Sistema acuático fluviomarino inestable, característico de la desembocadura de ríos en el mar."
+    },
+    {
+      "termino": "Faja",
+      "definicion": "Alargada zona de color. Faja caudal, pectoral, nucal, ocular, etc. Similar a banda, que se reserva para el ala (Banda alar)."
+    },
+    {
+      "termino": "Fase",
+      "definicion": "Variantes de coloración que presentan individuos en algunas especies, no relacionadas con edad, sexo, etc. Ej: Buteo polyosoma."
+    },
+    {
+      "termino": "Filete",
+      "definicion": "Usado solo para el ala. Ápice de cubiertas alares o de vexilos de remeras, con aspecto de línea continuada. Ej: Muchos Tyrannidae."
+    },
+    {
+      "termino": "Forma",
+      "definicion": "Especie o subespecie. Se utiliza a menudo cuando se duda sobre el nivel taxonómico."
+    },
+    {
+      "termino": "Frugívoro",
+      "definicion": "Que se alimenta de frutos. Ej: Thraupidae."
+    },
+    {
+      "termino": "Gancho apical",
+      "definicion": "Terminación afilada y curva del pico de ciertas especies. Ej: Tyrannidae."
+    },
+    {
+      "termino": "Gola",
+      "definicion": "Plumas alargadas en lo dorsal del cuello, en general algo eréctiles. Ej: Gnorimopsar chopi."
+    },
+    {
+      "termino": "Goteado",
+      "definicion": "Manchas como gotas. Ej: Hypoedaleus guttatus."
+    },
+    {
+      "termino": "Gregario",
+      "definicion": "Que vive asociado con otros individuos de su especie o de otras."
+    },
+    {
+      "termino": "Grupo",
+      "definicion": "Conjunto de individuos en número menor que bandada. Mixto: Grupo de individuos de varias especies."
+    },
+    {
+      "termino": "Mixto",
+      "definicion": "Grupo de individuos de varias especies."
+    },
+    {
+      "termino": "Gular",
+      "definicion": "Zona gular. Referido a la garganta de las aves."
+    },
+    {
+      "termino": "Halconear",
+      "definicion": "Cernirse. Mantenerse en un punto fijo batiendo las alas pero sin desplazarse. Ej: Elanus leucurus."
+    },
+    {
+      "termino": "Hibridizan",
+      "definicion": "Quienes perteneciendo a especies supuestamente distintas, se reproducen entre sí."
+    },
+    {
+      "termino": "Hombro",
+      "definicion": "Cubiertas alares superiores o menores entre sí. Tiene el mismo aparente significado que en la anatomía humana."
+    },
+    {
+      "termino": "Huella palmeada/semipalmeada",
+      "definicion": "Marca dejada en el barro por la pisada. En este caso, con palmeadura o semi. Ej: Calidris pusilla."
+    },
+    {
+      "termino": "Imbricado",
+      "definicion": "Diseño complejo. Trama en la que partes del dibujo se entremezclan con otras."
     }
+
   ]
 }
