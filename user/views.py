@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DeleteView
 
 from .forms import AvistajeForm, CustomUserCreationForm, UserLoginForm
 from .models import Avistaje, Contacto
@@ -89,5 +89,17 @@ class ListarAvistajes(LoginRequiredMixin, ListView):
     context_object_name = "avistajes"
 
     def get_queryset(self):
-        self.queryset = Avistaje.objects.filter(id_user_id=self.request.user.pk)
+        self.queryset = Avistaje.objects.filter(id_user_id=self.request.user.pk).filter(activo=True)
         return self.queryset
+
+
+class EliminarAvistaje(LoginRequiredMixin, DeleteView):
+    model = Avistaje
+    success_url = reverse_lazy("listar_avistajes")
+
+    def post(self, request, *args, **kwargs):
+        avistaje = self.get_object()
+        avistaje.activo = False
+        avistaje.save()
+        return redirect(self.success_url)
+        

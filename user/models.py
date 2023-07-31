@@ -24,6 +24,7 @@ class Avistaje(models.Model):
     id_user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     nombre_avistaje = models.CharField(max_length=50, null=False)
     fecha_creacion = models.DateTimeField(default=timezone.now)
+    activo = models.BooleanField(default=True)
 
 
 class Contacto(models.Model):

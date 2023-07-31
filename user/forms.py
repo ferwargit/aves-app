@@ -85,6 +85,7 @@ class CustomUserCreationForm(UserCreationForm):
         return user
 
 class AvistajeForm(forms.ModelForm):
+    activo = forms.BooleanField(initial=True)
     class Meta:
         model = Avistaje
         fields = "__all__"

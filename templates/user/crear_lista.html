@@ -9,6 +9,7 @@
         <form class="form" method="post">
             {% csrf_token %}
             <div class="not-visible">{{ form.id_user }}</div>
+            <div class="not-visible">{{ form.activo }}</div>
             <div class="form-group">
                 <label for="{{ form.nombre_avistaje.id_for_label }}">Nombre del avistaje</label>
                 <input type="text"
