@@ -4,11 +4,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
 from .forms import AvistajeForm, CustomUserCreationForm, UserLoginForm
-from .models import Avistaje
+from .models import Avistaje, Contacto
 
 
 def quienes(request):
@@ -53,6 +54,23 @@ def logout_user(request):
     logout(request)
     messages.success(request, "¡Cierre de sesión exitoso!")
     return redirect("home")
+
+
+def contacto(request):
+    if request.method == "POST":
+        contacto = Contacto()
+        nombre = request.POST.get("nombre")
+        username = request.POST.get("username")
+        email = request.POST.get("email")
+        mensaje = request.POST.get("mensaje")
+        contacto.nombre = nombre
+        contacto.username = username
+        contacto.email = email
+        contacto.mensaje = mensaje
+        contacto.save()
+        messages.success(request, "Mensaje enviado con éxito, Gracias por contactarnos")
+        return redirect("home")
+    return render(request, "user/contacto.html")
 
 
 class CrearAvistaje(LoginRequiredMixin, CreateView):
