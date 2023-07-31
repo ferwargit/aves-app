@@ -21,7 +21,7 @@ $(document).ready(function() {
             });
             
             arr.push(this.value.split(', '))
-            o = new Object();o.posicion=arr[0]; o.nombre=arr[2]; o.cantidad=arr[3]; o.coor=arr[4];
+            o = new Object();o.posicion=arr[0]; o.nombre=arr[2]; o.cantidad=arr[3]; o.coor=arr[5];
         
             farr.push(o)
         });
