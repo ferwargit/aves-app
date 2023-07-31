@@ -8,40 +8,40 @@
         <link rel="stylesheet" href="{% static 'css/user/contacto.css' %}">
     {% endblock styles %}
     <div class="contenedor">
-        <form method="post">
+        <form class="form-col">
             {% csrf_token %}
-            <div class="form-group">
-                <h1>Contacto</h1>
+            <h1>Contacto</h1>
+            <div class="form-row">
                 <label for="nombre">Nombre</label>
                 <input type="text"
-                       class="form-control smaller-input"
-                       name="nombre"
-                       placeholder=""
-                       required
-                       autofocus>
+                    class="form-control"
+                    name="nombre"
+                    placeholder=""
+                    required
+                    autofocus>
             </div>
-            <div class="form-group">
+            <div class="form-row">
                 <label for="username">Username</label>
                 <input type="text"
-                       class="form-control smaller-input"
-                       name="username"
-                       placeholder="">
+                    class="form-control"
+                    name="username"
+                    placeholder="">
             </div>
-            <div class="form-group">
+            <div class="form-row">
                 <label for="femail">Email</label>
                 <input type="email"
-                       id="femail"
-                       name="email"
-                       class="form-control smaller-input"
-                       required>
+                    id="femail"
+                    name="email"
+                    class="form-control"
+                    required>
             </div>
-            <div class="form-group">
+            <div class="form-row">
                 <label for="mensaje">Mensaje</label>
                 <textarea id="fmensaje"
-                          name="mensaje"
-                          class="form-control"
-                          placeholder="-- Ingresa un mensaje --"
-                          required></textarea>
+                        name="mensaje"
+                        class="form-control"
+                        placeholder="-- Ingresa un mensaje --"
+                        required></textarea>
             </div>
             <div class="d-flex justify-content-center">
                 <input type="submit" class="btn btn-success mt-3">
