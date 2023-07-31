@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "familia": "Rheidae",
-      "descripcion": "Ñandúes, avestruces americanos', suris, choiques. Familia presente en América del Sur, con 2 especie, ambas presentes en Argentina. No vuelan Grandes corredores. Suelen estar en grupos. Polígamos. Nidifican en el suelo con muchos huevos cremosos, el macho es quién los incuba. Enormes. Patas y cuellos largos.Cabeza chica. Alas y cola sin plumas rígidas. 3 dedos. Macho y hembra presentan cierto dimorfismo."
+      "descripcion": "Ñandúes, 'avestruces americanos', suris, choiques. América del Sur. 2 especies, ambas presentes en Argentina. No vuelan Grandes corredores. Suelen estar en grupos. Polígamos. Nidifican en el suelo con muchos huevos cremosos, el macho es quién los incuba. Enormes. Patas y cuellos largos.Cabeza chica. Alas y cola sin plumas rígidas. 3 dedos. Macho y hembra presentan cierto dimorfismo."
     }
   },
   {
@@ -100,7 +100,7 @@
     "pk": 16,
     "fields": {
       "familia": "Ciconiidae",
-      "descripcion": "Cigüeñas. Cosmopolita. 17 especies, 3 en Argentina. Recuerdan a garzas, mas grandes y robustas. No tan gregarias ni tan palustres. Cuello extendido en vuelo. A menudo crían en colonia. 2 a 4 huevos blancos. Cabeza y cuello desnudos en Tuyuyú y Yabirú y cara desnuda en Cigüeña americana. Pico largo y grueso. PAtas largas, con dedos no palmeados. Macho y hembra semejantes."
+      "descripcion": "Cigüeñas. Cosmopolita. 17 especies, 3 en Argentina. Recuerdan a garzas, mas grandes y robustas. No tan gregarias ni tan palustres. Cuello extendido en vuelo. A menudo crían en colonia. 2 a 4 huevos blancos. Cabeza y cuello desnudos en Tuyuyú y Yabirú y cara desnuda en Cigüeña americana. Pico largo y grueso. Patas largas, con dedos no palmeados. Macho y hembra semejantes."
     }
   },
   {
@@ -118,5 +118,486 @@
       "familia": "Phoenicopteridae",
       "descripcion": "Flamencos, parinas. Cosmopolita. 5 especies, 3 en Argentina. En aguas salobres y dulces. Gregarios. Vuelo en fila con el cuello extendido. Crian en colonia. Nido de barro. 1 huevo blanco. Rosados. Patas y cuello muy largos. Dedos palmeados. Pico abruptamente curvado. Macho y hembra semejantes."
     }
-  }
+  },
+  {
+    "model": "appves.family",
+    "pk": 8,
+    "fields": {
+      "familia": "Tinamidae",
+      "descripcion": "Inambúes, 'perdices', martinetas, quiulas. 41 especies presentes en todo el continente americano, 16 en Argentina. Terrícolas. Poco voladores. Caminadores. Polígamos. Incuba el macho. Brillantes huevos coloreados. A menudo presa de cazadores. Miméticos. Plumaje compacto. Recuerdan pollos. Cabeza chica y cola corta. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 9,
+    "fields": {
+      "familia": "Odontophoridae",
+      "descripcion": "Urúes, codornices de California. 34 especies, en Argentina se encuentran 2 especies, una nativa y otra introducida. Terrícolas. En la espesura. Nido en el suelo. Hasta 14 huevos manchados. Robustos. Recuerdan pollos. Pico corto, grueso. Alas, patas, cola y cuello cortos. Macho y hembra parecidos."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 10,
+    "fields": {
+      "familia": "Procellariidae",
+      "descripcion": "Petreles, pardelas, priones, fulmares, yuncos. Cosmopolita. 57 especies, 22 en Argentina. Pelágicos. En general migradores. Menores que albatros y no tan planeadores. A tierra van solo a nidificar. Un huevo blanco. Parecen gaviotas. Doble tubo sobre el culmen. 3 dedos palmeados. Macho y hembra semejantes.[Yuncos, potoyuncos, petreles zambullidores. Presentes en el Hemisferio sur. 4 especies de las cuales 3 se encuentran en Argentina. Costeros. Parecen pequeños y robustos petreles. Vuelo bajo y rápido. Eximios zambullidores. Bucean. Un huevo blanco. Alas cortas. Pico corto y robusto con 2 tubos en la base del culmen, abiertos hacia arriba. Patas cortas. 3 dedos palmeados. Macho y hembra semejantes.]"
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 11,
+    "fields": {
+      "familia": "Hydrobatidae",
+      "descripcion": "Paiños, petreles de tormenta, 'golondrinas de tormenta'. Cosmopolita. 23 especies. 5 presente en Argentina. Pelágicos. Parecen pequeños petreles de vuelo errático. Revolotean sobre las olas con las patas colgando. No planean. Suelen aparecer en tiempo tormentoso. A tierra solo van a nidificar, de noche. Un huevo blanco. Pico fino con gancho apical. Un solo túbo sobre el culmen. 3 dedos palmeados. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 20,
+    "fields": {
+      "familia": "Sulidae",
+      "descripcion": "Piqueros, alcatraces. Cosmopolita. 9 especies, 2 en Argentina. Costeros. Zambullen desde cierta altura. Vuelan en fila. Gregarios. No anidan en el área. Alas largas y estrechas. Cola en cuña. Pico robusto, casi recto, agudo. 4 dedos palmeados. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 21,
+    "fields": {
+      "familia": "Fregatidae",
+      "descripcion": "Fragatas, aves fragata, rabihorcados. Pantropicales. 5 especies, 1 en Argentina. Costeros. Vuelo ágil. Persiguen aves. No nadan. Gregarios. No anidan en el área. Alas largas y angostas. Larga cola ahorquillada. Pico largo con gancho apical. 4 dedos palmeados. Macho presenta bolsa gular inflable. Macho y hembra algo distintos."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 22,
+    "fields": {
+      "familia": "Anhingidae",
+      "descripcion": "Aningas, biguáes víbora. Hemisferio sur. 2 especies, 1 en Argentina. Pantanos y ríos arbolados. Zambullen persiguiendo peces, que ensartan con su pico largo, recto y aguado. Nadan semihundidos. Suelen planear alto. Crían en colonia. 4 huevos celestes. Parecen cormoranes de cuello y cola mas largos. 4 dedos palmeados. Macho y hembra distintos."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 23,
+    "fields": {
+      "familia": "Anhimidae",
+      "descripcion": "Chajáes. Sudamérica. 3 especies, 1 presente en Argentina. Algo palustres. A veces gregarios. Vuelo lento. Planeo. Gritones. 4 a 6 huevos blancuzcos. Robustos. Pico como de gallina. Cabeza pequeña con copete nucal. Alas largas y anchas, con espolones. Tarsos gruesos. Dedos largos, no palmeados. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 24,
+    "fields": {
+      "familia": "Accipitridae",
+      "descripcion": "Gavilanes, águilas, aguiluchos. Cosmopolita. 210 especies, 40 en Argentina. Diurnos. Vuelo rápido. Postura erecta. 1 a 4 huevos, a menudo manchados. Coloración modesta. Suelen ser difíciles de identificar (fases, juveniles, etc.) Pico corto, muy curvo, sin borde dentado. A veces tarso emplumado. Con garras. Iris, cera y patas coloreadas. Alas largas. Hembras de mayor tamaño que los machos."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 25,
+    "fields": {
+      "familia": "Cracidae",
+      "descripcion": "Pavas de monte, yacúes. 43 especies exclusivas del continente Americano, 7 presentes en Argentina. Terrícolas y arborícolas. A menudo presa de cazadores. Anidan en árboles. 2 a 4 huevos blancos. Recuerdan pavos. Grandes. cabeza pequeña. Zona gular y cara desnudas. coloreadas. Pico como de gallina. Alas anchas. Cola larga. Tarsos y dedos fuertes. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 26,
+    "fields": {
+      "familia": "Phasianidae",
+      "descripcion": "Gallinas, pavos y faisanes. 177 especies, 4 en Argentina, todas introducidas o domésticas. Terrícolas. En la espesura. Nido en el suelo. Hasta 14 huevos manchados. Robustos. Recuerdan pollos. Pico corto, grueso. Alas, patas, cola y cuello cortos. Macho y hembra distintos."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 27,
+    "fields": {
+      "familia": "Rallidae",
+      "descripcion": "Gallinetas, gallaretas, burritos, pollas. Cosmopolita. 120 especies, 26 en Argentina. Palustres. De día poco voladores. Grito fuerte. Varios huevos manchados. A veces escudete. Alas cortas y redondeadas. Cola corta, a menudo erecta. Dedos largos. Dedos lobulados en el caso de las gallaretas. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 28,
+    "fields": {
+      "familia": "Heliornithidae",
+      "descripcion": "Aves de sol, Ipequíes. Cosmopolita. 3 especies, 1 presente en Argentina. Acuáticas. Difíciles de ver. Nido en árboles cerca del agua. 2 a 6 huevos poco manchados. Pico fino, cónico. Alas y patas cortas. Cola larga. Dedos lobulados. Macho y hembra semejantes."
+    }
+  },
+  {
+    "model": "appves.family",
+    "pk": 29,
+      "fields": {
+        "familia": "Aramidae",
+        "descripcion": "Caraús. Esta familia esta representada por una sola especie presente en América y también en Argentina. Gritón. Palustre. Vuela con las primarias separadas. Oculto nido en bañados. Hasta 7 huevos manchados. Negruzco. Pico largo, apenas curvo. Cuello y patas largas. Alas largas y anchas. Cola corta. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 30,
+      "fields": {
+        "familia": "Cariamidae",
+        "descripcion": "Chuñas. Familia representada por 2 especies, endémicas de Sudamérica. Ambas presentes en Argentina. Terrícolas. Corredoras. Grito fuerte. Nido en árboles. 2 a 3 huevos manchados. Plumaje laxo. Penacho frontal. Pico como de gallina. Cuello, patas y cola largos. Alas algo cortas y redondeadas. Dedos cortos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 31,
+      "fields": {
+        "familia": "Jacanidae",
+        "descripcion": "Jacanas, gallitos de agua. Cosmopolita. 7 especies, 1 en Argentina. Palustres. Caminan sobre vegetación flotante. Poliándricos. 4 huevos con dibujos en negro, sobre plantas acuáticas. Plumaje vistos. Pico corto con escudete. Alas redondeadas, con espolón. Dedos y uñas muy largos. Macho y hembra semejantes. Juvenil muy distinto."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 32,
+      "fields": {
+        "familia": "Rostratulidae",
+        "descripcion": "Aguateros. Cosmopolita. 2 especies. 1 presente en Argentina. Palustres. De día oculotos. Poliándricos. Nido en el suelo. 2 huevos manchados. Miméticos. Pico largo, curvo en el ápice. Alas anchas. Cola corta. Dedos largos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 33,
+      "fields": {
+        "familia": "Haematopodidae",
+        "descripcion": "Ostreros. Cosmopolita. 7 especies, 3 presentes en Argentina. Costeros. Silbos fuertes. Vuelo bajo. Nido en el suelo. 2 o 3 huevos manchados. Plumaje compacto, negruzo o blanquinegro. Pico rojo, largo y angos. Alas y patas largas. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 34,
+      "fields": {
+        "familia": "Recurvirostridae",
+        "descripcion": "Teros reales, avocetas. Cosmopolita. 8 especies, 2 en Argentina. Costeros en aguas interiores. Nido en el suelo. 2 a 4 huevos manchados. Esbeltos. Plumaje blanco y negro. Pico largo y fino, recto o curvo hacia arriba. Cola corta. Patas muy largas. Dedos algo palmeados. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 35,
+      "fields": {
+        "familia": "Charadriidae",
+        "descripcion": "Chorlos, chorlitos. Cosmopolita. 63 especies. 12 en Argentina. Recuerdan Scolopacidae. No tan gregarios ni tan costeros. Vuelo rápido. Nido en el suelo. 2 a 4 huevos manchados. A menudo dimorfismo estacional. Pico corto con ápice engrosado. Cabeza grande y chata. Patas no muy largas. 3 dedos y 1 rudimentarios o ausente. [Teros: No costeros. Gritones. Alas redondeadas con espolón] Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 36,
+      "fields": {
+        "familia": "Scolopacidae",
+        "descripcion": "Playeros, falaropos, becasas, becasinas, pitotoys. Cosmopolitas. 82 especies, 24 en Argentina. Migradores, con dimorfismo estacional, salvo Gallinago. Mas gregarios, costeros, y de cabeza menor que Charadriidae. Vuelo rápido. Nido en el suelo. 3 o 4 huevos manchados. Esbeltos. Pico y patas a veces muy largos. Alas agudas. 4 dedos. Macho y hembra semejantes. [Falaropos: Nadadores. Gregarios. Pico largo, fino y recto. Alas largas y agudas. Dedos lobulados. La hembra es de mayor tamaño y más colorida.]"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 37,
+      "fields": {
+        "familia": "Thinocoridae",
+        "descripcion": "Agachonas. Familia exclusiva de Sudamérica, con 4 especies. Todas presentes en Argentina. Terrícolas. Caminadoras. Vuelo sorpresivo. No palustres ni costeras. Asentadas parecen palomas, y en vuelo chorlos. Nido en el suelo. 4 huevos manchados. Robustas. Miméticas. Pico corto y grueso. Patas y cola cortas. Macho y hembra semejantes o apenas distintos. "
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 38,
+      "fields": {
+        "familia": "Chionidae",
+        "descripcion": "Palomas antárticas. Periantártica. 2 especies, 1 presente en Argentina. Costeras. Parecen palomas blancas. Confiadas. Terrícolas. Vuelo a desgano. Nido entre rocas o en hoyos. 2 a 3 huevos manchados. Pico grueso y corto, con vaina córnea en la base. Cola corta. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 39,
+      "fields": {
+        "familia": "Laridae",
+        "descripcion": "Gaviotas, gaviotines, escúas, rayadores. Cosmopolita. 97 especies, 25 en Argentina. Diversos ambientes acuáticos. Gregarios. Bullangueros. Nadan. Anidan en colonia. Hasta 4 huevos manchados. Varios con dimorfismo estacional. Gaviotas y gaviotines mas bien blancos. En escúas, gancho apical mas notable que en gaviotas. Alas largas y agudas. Dedos palmeados. Macho y hembra semejantes. [Gaviotines: Recuerdan gaviotas. Mas esbeltos. Zambullen. No nadan. Pico recto, agudo, sin gancho. Cola a menudo muy larga y furcada. Patas muy cortas.][Escúas, salteadores: Roban alimento a otras especies. Pardas. Alas con notable mancha blanca. Timoneras centrales alargadas. Rayadores: Rayan el agua con su largo y extraño pico de maxila mas corta. Patas muy cortas.]"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 40,
+      "fields": {
+        "familia": "Psittacidae",
+        "descripcion": "Loros, aras, guacamayos, cotorras, catas. Cosmopolita. 327 especies, 24 en Argentina. Inconfundibles. Bullangueros. Trepadores. Vuelo rápido y batido. Mas bien gregarios. Nido en huevos salvo la cotorra. 2 a 6 huevos blancos. Verdes. Cabeza grande. Pico robusto y ganchudo. Alas largas y agudas. Patas cortas. 2 dedos hacia adelante y 2 hacia atrás. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 41,
+      "fields": {
+        "familia": "Cuculidae",
+        "descripcion": "Cuclillos, pirinchos, anós, crespines. Cosmopolita. 125 especies. 12 en Argentina. Varios son parásitos. Nido en árboles. Número y color de huevos variable, algunos con malla calcárea. Esbeltos. Coloración modesta. Pico algo curvo. Alas cortas. Cola larga, graduada. 2 dedos hacia adelante y 2 hacia atrás. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 42,
+      "fields": {
+        "familia": "Tytonidae",
+        "descripcion": "Lechuzas de campanario. Cosmopolita. 9 especies, 2 en Argentina. Nocturnas. Voz fuerte. Nido en edificios o árboles. Varios huevos blancos. Parecen Strigidae. Esbeltas. Cara blanca con disco facial acorazonado. Pico recto y alargado. Patas largas y emplumadas. Dedos cubiertos por 'Cerdas' con garras. Machos y hembras semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 43,
+      "fields": {
+        "familia": "Nyctibiidae",
+        "descripcion": "Urutaúes. América. 5 especies. 2 en Argentina. Nocturnos. De día inmóviles. Cazan insectos desde un apostadero o en vuelo. 1 huevo manchado, en extremos de troncos. Incuban en posición vertical. Miméticos. Parecen Caprimulgidae. Cabeza y ojos grandes. Pico muy pequeño. Boca enorme sin vibrisas. Alas y cola largas. Patas cortas. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 44,
+      "fields": {
+        "familia": "Caprimulgidae",
+        "descripcion": "Atajacaminos, dormilones. Cosmopolita. 67 especies. 14 en Argentina. Nocturnos o crepusculares. De día inmóviles en el suelo o en ramas, en posición horizontal. Vuelo quebrado y silencioso. 2 huevos manchados, en el suelo. Miméticos. Cabeza grande. Patas, pico y cuello cortos. Boca amplia, rodeada de vibrisas. Ojos rojos de noche. Alas y cola largas. Macho y hembra algo distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 45,
+      "fields": {
+        "familia": "Apodidae",
+        "descripcion": "Vencejos. Cosmopolita. 80 especies. 9 en Argentina. Gregarios. Vuelo permanente, rápido y sinuoso, a menudo a gran altura. Posan verticalmente en paredes rocosas, en las que anidan. Varios huevos blancos. Recuerdan golondrinas. A menudo coloración oscura. Pico corto, boca grande. Alas muy largas y estrechas, curvadas. Patas cortas. Uñas fuertes. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 46,
+      "fields": {
+        "familia": "Trochilidae",
+        "descripcion": "Picaflores, colibríes. América. 319 especies, 30 en Argentina. Inconfundibles. A menudo confiados. Vuelo muy veloz, ágil y sonoro. incluso hacia atrás. Se mantienen en el aire frente a flores. Polígamos. Nido a baja altura. 2 huevos blancos, cilíndricos. Pequeños. Recuerdan insectos. Plumaje vistoso con brillo metálico. Pico fino y largo, a veces curvo. Patas diminutas. Macho y hembra mas bien distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 47,
+      "fields": {
+        "familia": "Trogonidae",
+        "descripcion": "Surucuáes. Cosmopolita. 35 especies, 3 en Argentina.Selváticos. Arborícolas. Vuelo corto y lento. Crían en árboles o termiteros. 2 a 4 huevos blancuzcos. Plumaje vistos. Pico corto, robusto y dentado. Alas y patas cortas. Cola larga, ancha y graduada. 2 dedos hacia adelante y 2 hacia atrás. Macho y hembra distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 48,
+      "fields": {
+        "familia": "Alcedinidae",
+        "descripcion": "Martín pescadores. Cosmopolita. 86 especies, 4 en Argentina. Pasivos. Asentados en ramas o postes cerca del agua. Postura vertical. Zambullen para capturar peces. Vuelo rápido y ondulado. Nido en cuevas. Varios huevos blancos, brillantes. Plumaje vistoso. Cuerpo corto. Cabeza grande. Semicopete. Pico recto, largo, robusto y agudo. Alas cortas y redondeadas. 3 dedos hacia adelante, 2 de ellos unidos y 1 hacia atrás. Macho y hembra algo distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 49,
+      "fields": {
+        "familia": "Momotidae",
+        "descripcion": "Burgos, yeruvás. América. 8 especies, 2 en Argentina. Selváticos. Arborícolas. Pasivos. Postura vertical. Vuelo lento y ondulado. Nido en cuevas. 2 huevos blancos, brillantes. Plumaje vistoso, más bien verde. Pico robusto con bordes aserrados. Alas cortas. Cola larga, graduada. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 50,
+      "fields": {
+        "familia": "Ramphastidae",
+        "descripcion": "Tucanes, arasaríes. América. 37 especies, 5 en Argentina. Arborícolas. Bullangueris. Más bien en grupos. Vuelo alto, lento y ondulados. Nido en huecos de árboles. 2 a 4 huevos blancos, brillantes. Plumaje vistoso. Pico muy grande y colorido, comprimido, con bordes aserrados. Alas cortas. Cola larga que apoyan en la cabeza al dormir. Dedos largos, 2 hacia adelante y 2 hacia atrás. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 51,
+      "fields": {
+        "familia": "Bucconidae",
+        "descripcion": "Chacurúes, durmilíes. América. 31 especies, 5 en Argentina. Pasivos. Confiados. En sitios visibles. Vuelo corto y lento. Nido en cuevas o huecos de árboles. 2 a 4 huevos blancos, brillantes. Recuerdan a Alcedinidae. Cabeza grande, redondeada. Pico robusto, con vibrisas en la base. Patas cortas. 2 dedos hacia adelante y 2 hacia atrás. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 52,
+      "fields": {
+        "familia": "Furnariidae",
+        "descripcion": "Horneros, camineras, pijuíes, leñateros. Trepadores, chincheros. América. 256 especies, 89 en Argentina. Vuelo débil. Voces fuertes, poco melodiosas, a veces a dúo. A menudo grandes nidos cerrados de palitos, espinas o barro. También en cuevas. 2 a 5 huevos blancos (raramente verdosos). Coloración modesta, a menuda parda o rufa. Pico fino, sin gancho apical. Alas cortas y redondeadas. Macho y hembra semejantes.[Chincheros: Arborícolas. Trepan en espiral. Cola larga, rígida, en puntas. Se posan verticalmente en troncos. Pico a menudo largo y curvo. Tarsos cortos. 3 dedos hacia adelante y 1 hacia atrás.]"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 53,
+      "fields": {
+        "familia": "Donacobiidae",
+        "descripcion": "Angúes. Sudamérica. 1 especie, presente en Argentina. Palustres. Gregarios. Confiados. Gritos fuertes, melódicos, a veces a dúo. Cabeza negra, dorso castaño. Notable mancha alar blanca. Larga cola escalonada."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 54,
+      "fields": {
+        "familia": "Thamnophilidae",
+        "descripcion": "Bataráes, tiluchíes y chocas. América. 209 especies, 18 en Argentina. A menudo confiados. Fuertes voces. Nidos colgantes y translucidos. Huevos manchados. Pico robusto con gancho apical. Alas cortas y redondeadas. Macho y hembra distintas."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 55,
+      "fields": {
+        "familia": "Formicariidae",
+        "descripcion": "Chululúes, tovacas, chupadientes. América. 63 especies, 6 en Argentina. Ocultos. Vuelan poco. Voces fuertes. Confiados. Nido a baja altura. 2 huevos inmaculados salvo el chupadientes. Pico robusto. Rechonchos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 56,
+      "fields": {
+        "familia": "Rhinocryptidae",
+        "descripcion": "Gallitos, churrines, chucáos. América. 28 especies. 11 en Argentina. Terrícolas. A veces ocultos. Corren rápido. Voces fuertes. Nido a baja altura. 2 o 3 huevos blancos. Cuerpo robusto. Cabeza grande. Alas cortas. Cola erecta, a menudo inclinada sobre el dorso. Tarsos largos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 57,
+      "fields": {
+        "familia": "Tyrannidae",
+        "descripcion": "Viuditas, monjitas, benteveos, mosquetas, piojitos, fiofíos. América. 380 especies, 130 en Argentina. Suelen cazar insectos, vuelo elástico. Algunos agresivos. Voces, nidos y huevos variados. Pico a menudo findo, con vibrisas y gancho apical. Alas y tarsos largos. Macho y hembra generalmente semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 58,
+      "fields": {
+        "familia": "Pipridae",
+        "descripcion": "Bailarines. América. 55 especies, 6 en Argentina. Selváticos. Arborícolas. Voces potentes. Complicadas ceremonias nupciales. Nido a baja altura. 2 huevos manchados. Recuerdan Cotingidae y Tyrannidae. Pequeños. Rechonchos. Plumaje vistoso. Cabeza grande. Pico corto y ancho. Cola más bien corta. Alas cortas y redondeadas. Macho y hembra distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 59,
+      "fields": {
+        "familia": "Cotingidae",
+        "descripcion": "Picoagudos, cortarramas, yacutoros, pájaros campana. América. 80 especies, 6 en Argentina. Arborícolas. Pasivos. Pico ancho. A menudo voces fuertes. Plumaje vistoso. [Cortarramas: Voz ronca, como balido. Comen brotes. Nido en arbustos a baja altura. 2 a 4 huevos verdosos, manchados. Pico corto, grueso con bordes aserrados. Macho y hembra distintos.]"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 60,
+      "fields": {
+        "familia": "Vireonidae",
+        "descripcion": "Chivíes, Juan chiviros. América. 37 especies. 3 en Argentina. Arborícolas. Más oídos que vistos. Voz fuerte, continua y musical. Nido en árboles, semiesférico. 3 a 4 huevos manchados. Dorsalmente verdosos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 61,
+      "fields": {
+        "familia": "Corvidae",
+        "descripcion": "Urracas. Cosmopolita. 102 especies, 3 en Argentina. Grupos. Bullangueras. Inquietas. Confiadas. Nido en árboles. Varios huevos manchados. Grandes. Plumaje vistoso, azulado. Pico robusto, con 'cerdas' sobre las narinas. Cola larga y redondeada. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 62,
+      "fields": {
+        "familia": "Hirundinidae",
+        "descripcion": "Golondrinas. Cosmopolita. 79 especies, 15 en Argentina. Vuelo rápido, ágil, con mucho planeo. Gregarias. Beben en vuelo. Se asientan en cables y alambrados. Mayormente migradoras. Nido en huecos, o debajo de puentes a veces en colonia. Varios huevos blancos o poco manchados. Cuello, pico y patas cortos. Alas largas y agudas. Macho y hembra a menudo semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 63,
+      "fields": {
+        "familia": "Troglodytidae",
+        "descripcion": "Ratonas. Cosmopolita. 59 especies, 5 en Argentina. Inquietas. Vuelo corto. Canto variado. Anidan en huevos. Varios huevos manchados. Pequeñas. Coloración modesta. Pico fino, más bien largo y algo curvo. Alas redondeadas. Cola corta, erecta. Tarsos y dedos robustos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 64,
+      "fields": {
+        "familia": "Cinclidae",
+        "descripcion": "Mirlos de agua. Cosmopolita. 5 especies, 1 en Argentina. Acuáticos. Zambullen. Caminan sumergidos. Vuelo bajo. Nido cerrado de musgo, en paredes rocosas, sobre el agua. Varios huevos blancos. Rechonchos. Pico recto. Alas y cola, cortas. Tarsos largos. Dedos robustos. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 65,
+      "fields": {
+        "familia": "Polioptilidae",
+        "descripcion": "Tacuaritas. Cosmopolita. 3 especies, 2 en Argentina. Arborícolas. Acrobáticas. Activas. Canto agradable y variado. A veces imitan. Nido mullido en árboles, a media altura. 3 o 4 huevos celestes, manchados. Pequeñas. Esbeltas. Pico fino y recto. Larga cola a menudo erecta. Macho y hembra algo distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 66,
+      "fields": {
+        "familia": "Turdidae",
+        "descripcion": "Zorzales. Cosmopolita. 303 especies, 11 en Argentina. Más bien terrícolas. Balancean la cola con las alas caídas. Canto melodioso. No imitan. Nido semiesférico, a baja altura, de barro y vegetales. 3 huevos verdosos, manchados. Recuerdan calandrias, con cola mas corta. Más ocultos y robustos. Pico casi recto. Alas largas y agudas. Tarsos fuertes. Macho y hembra a menudo semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 67,
+      "fields": {
+        "familia": "Mimidae",
+        "descripcion": "Calandrias. América. 31 especies, 5 en Argentina. Conspicuas. Vuelo bajo. Canto melodioso y variado. Imitan. Nido semiesférico, a baja altura. 3 a 5 huevos verdosos, manchados. Esbeltas. Pico fino, algo curvo. Alas cortas y redondeadas. Cola larga, a menudo erecta. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 68,
+      "fields": {
+        "familia": "Motacillidae",
+        "descripcion": "Cachirlas. Cosmopolita. 53 especies, 8 en Argentina. Confiadas. Terrícolas. Muy caminadoras. Miméticas. En época nupcial se elevan alto, emitiendo un típico canto y cayendo en planeo. Nido en el suelo. 3 o 4 huevos manchados. Parecidas entre sí. Estriadas. Pico fino y recto. Alas largas y agudas. Cola oscura con timoneras externas claras. Uña del hallux muy larga. Macho y hembra semejantes."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 69,
+      "fields": {
+        "familia": "Parulidae",
+        "descripcion": "Arañeros. América. 117 especies, 10 en Argentina. Arborícolas. Activos. Acrobáticos. Voz agradable. Nido en árboles o matorrales. Hasta 4 huevos manchados. Plumaje vistoso. Pequeños. Recuerdan a Tyrannidae. Pico fino y recto. Cola redondeada. En algunas especies., macho y hembra son distintos"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 70,
+      "fields": {
+        "familia": "Thraupidae",
+        "descripcion": "Cardenales, fruteros, tangaráes, diademas, saíes, tersinas, corbatitas, yales, monteritas. América. 383 especies, 90 en Argentina. Arborícolas. En general gregarios. Voces melodiosas. A menudo frugívoros. Nido en árboles. 2 a 4 huevos manchados. Plumaje vistoso. Recuerdan a Emberizidae. Pico mas bien robusto y cónico. Alas agudas. Macho y hembra pueden diferir o ser similares dependiendo la especie.."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 71,
+      "fields": {
+        "familia": "Emberizidae",
+        "descripcion": "Chingolos, cachilos, cerqueros. Cosmopolita. 131 especies, 11 en Argentina. Más bien granívoros y gregarios. Canto agradable y variado. Huevos blancos o manchados. Pico robusto, corto y cónico. Macho y hembra generalmente parecidos. *Hoy en día esta familia se pasó a Passerellidae"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 72,
+      "fields": {
+        "familia": "Icteridae",
+        "descripcion": "Tordos, boyeros, varilleros. América. 88 especies, 23 en Argentina. A menudo gregarios y bullangueros. Activos. Nido variable, a veces muy grande y colgante. Algunos crían en colonia y otros son parásitos. Varios huevos manchados. Plumaje vistoso, más bien negro. Pico cónico, recto y agudo, en general largo. Tarsos y dedos robustos. Hembras algo menor"
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 73,
+      "fields": {
+        "familia": "Fringillidae",
+        "descripcion": "Cabecitanegras, tangaráes. Cosmopolita. 112 especies, 13 en Argentina, 2 de ellos introducidos. Gregarios. Bullangueros. Canto fino y agradable. Nido en árboles o huecos. 2 a 4 huevos. Pequeños. Recuerdan Emberizidae. Pico algo más largo y agudo. Plumaje vistoso con negro y amarillo. Macho y hembra distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 74,
+      "fields": {
+        "familia": "Passeridae",
+        "descripcion": "Gorriones. Cosmopolita. 156 especies, 1 especie introducida en Argentina. Asociados al ser humano. Atrevidos. Bullangueros. Gregarios. Más bien terrícolas. Nido cerrado en huecos diversos, también en árboles. Varios huevos manchados. Pico corto, robusto y cónico. Macho y hembra distintos."
+      }
+    },
+    {
+      "model": "appves.family",
+      "pk": 75,
+      "fields": {
+        "familia": "Sturnidae",
+        "descripcion": "Estorninos. Cosmopolita. 110 especies, 2 introducidas en Argentina. Peligro de plagas. Peridomésticos. A menudo en bandadas. Recuerdan ictéridos negros. Bastante terrícolas. Nido en huecos de construcciones humanas. Huevos en general lisos. Macho y hembra semejantes."
+      }
+    }
+  
 ]
