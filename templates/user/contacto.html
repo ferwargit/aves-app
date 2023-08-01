@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{% static 'css/user/contacto.css' %}">
     {% endblock styles %}
     <div class="contenedor">
-        <form class="form-col">
+        <form class="form-col" method="post">
             {% csrf_token %}
             <h1>Contacto</h1>
             <div class="form-row">
