@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +21,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)fr03!0%wlt1z--wx2m+0c!5ks2npvps-r%@$c!(d5#_n--out'
+# SECRET_KEY = 'django-insecure-)fr03!0%wlt1z--wx2m+0c!5ks2npvps-r%@$c!(d5#_n--out'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-)fr03!0%wlt1z--wx2m+0c!5ks2npvps-r%@$c!(d5#_n--out')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -43,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # render
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -53,7 +63,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-import os
+
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 TEMPLATES = [
@@ -81,14 +91,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "appves",
-        "USER": "postgres",
-        "PASSWORD": "admin",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
+    # 'default': {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "appves",
+    #     "USER": "postgres",
+    #     "PASSWORD": "admin",
+    #     "HOST": "127.0.0.1",
+    #     "PORT": "5432",
+    # }
+
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        # default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgresql://postgres:admin@localhost:5432/appves',
+        conn_max_age=600
+    )
 }
 
 
@@ -129,7 +146,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATICFILES_DIRS = [
 #    BASE_DIR / "static",
-#
+
+# Following settings only make sense on production and may break development environments.
+if not DEBUG:
+    # Tell Django to copy statics to the `staticfiles` directory
+    # in your application directory on Render.
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # Turn on WhiteNoise storage backend that takes care of compressing static files
+    # and creating unique names for each version so they can safely be cached forever.
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 STATICFILES_DIRS = [BASE_DIR/ 'static']
 
 # Default primary key field type
