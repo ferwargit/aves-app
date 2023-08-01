@@ -21,11 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-)fr03!0%wlt1z--wx2m+0c!5ks2npvps-r%@$c!(d5#_n--out'
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-)fr03!0%wlt1z--wx2m+0c!5ks2npvps-r%@$c!(d5#_n--out')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -99,7 +96,6 @@ DATABASES = {
     #     "HOST": "127.0.0.1",
     #     "PORT": "5432",
     # }
-
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
         # default='postgresql://postgres:postgres@localhost:5432/mysite',
