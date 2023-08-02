@@ -21,10 +21,22 @@ h1 {
 
 .btn.btn-secondary {
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
-  margin-right: 5px;
+  margin: 3px;
 }
 
 .btn.btn-success {
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
-  margin-left: 5px;
+  margin: 3px;
+}
+
+.btn.btn-danger {
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  margin: 3px;
+}
+
+/* Reduce font size for small devices */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 30px;
+  }
 }
