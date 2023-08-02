@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
@@ -178,11 +179,17 @@ class DetalleAvistaje(ListView):
     context_object_name = 'avistaje'
 
     def get_initial(self):
-            return {'id_avistaje': self.kwargs['pk']}
+        return {'id_avistaje': self.kwargs['pk']}
     
     def get_queryset(self):
         self.queryset = LineaAvistaje.objects.filter(id_avistaje_id= self.kwargs['pk']).filter(activo=True)
         return self.queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['avistaje'] = self.get_queryset()
+        context['id_avistaje_context'] = self.get_initial()['id_avistaje']
+        return context
 
 
 class EliminarLineaAvistaje(LoginRequiredMixin, DeleteView):

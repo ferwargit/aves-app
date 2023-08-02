@@ -1,5 +1,5 @@
 from django import forms
-from .models import Bird, LineaAvistaje,TamanioForma
+from .models import Bird, LineaAvistaje,TamanioForma, Status
 
 class BirdForm(forms.ModelForm):
     tamanio = forms.ModelChoiceField(
@@ -20,6 +20,7 @@ class BirdForm(forms.ModelForm):
             queryset=TamanioForma.objects.filter(forma_cola_aves=True))
     cabeza= forms.ModelChoiceField(
             queryset=TamanioForma.objects.filter(cabeza_aves=True))
+    status = forms.ModelChoiceField(queryset=Status.objects.all(), initial=0)
     class Meta:
         model = Bird
         fields = "__all__"
@@ -39,7 +40,7 @@ class BirdForm(forms.ModelForm):
             'nombre_ingles': forms.TextInput(
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Ingrese nombre en ingrles del ave'
+                    'placeholder': 'Ingrese nombre en ingles del ave'
                 }
             ),
             'familia': forms.Select(
@@ -56,20 +57,19 @@ class BirdForm(forms.ModelForm):
 
 class LineaAvistajeForm(forms.ModelForm):
     activo = forms.BooleanField(initial=True)
+    id_ave = forms.ModelChoiceField(queryset=Bird.objects.all(),
+                                    empty_label="-- Selecciona un ave --",
+                                    widget=forms.Select(attrs={'class': 'form-control'}))
     class Meta:
         model = LineaAvistaje
         fields = "__all__"
         widgets = {
-            'id_ave': forms.Select(
-                attrs={
-                    'class': 'form-control'
-                }
-            ),
             'cantidad': forms.TextInput(
                 attrs={
                     'class': 'form-control',
                     'placeholder': 'Ingrese cantidad avistada'
                 }
+                
             ),
             'latitud' : forms.TextInput(
                 attrs={

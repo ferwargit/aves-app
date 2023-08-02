@@ -6,12 +6,16 @@
 {% block content %}
     {% block styles %}
         <!-- Option 1: Include in HTML -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{% static 'css/user/lista_avistajes.css' %}">
     {% endblock styles %}
     <div class="text-center formulario-con-borde">
         <h1>Mis listas de Avistaje</h1>
         <form class="form">
+            <div class="row mt-2">
+            <div class="col"><h3>Nombre</h3></div>
+            <div class="col"><h3>Fecha de creacion</h3></div>
+            <div class="col"><h3>Acciones</h3></div>
+        </div>
             {% for avistaje in avistajes %}
                 <div class="row mt-2">
                     <div class="col">{{ avistaje.nombre_avistaje }}</div>
@@ -19,10 +23,10 @@
                     <div class="col">
                         <a href="{% url 'ver_avistaje' avistaje.id %}"
                            type="button"
-                           class="btn btn-secondary">Ver lista</a>
+                           class="btn btn-secondary" style="margin-right: 0px;"><i class="bi bi-eye"></i></a>
                         <a href="{% url 'cargar_ave_avistaje' avistaje.id %}"
                            type="button"
-                           class="btn btn-success">Agregar ave</a>
+                           class="btn btn-success" style="margin-left: 0px;width: 42px;"><i class="bi bi-plus"></i></a>
                         <a href="{% url 'eliminar_avistaje' avistaje.id %}" type="button" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                     </div>
                 </div>

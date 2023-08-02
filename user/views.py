@@ -22,6 +22,10 @@ def create_user(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Te has registrado con éxito")
+            username = request.POST["username"]
+            password = request.POST["password1"]
+            user = authenticate(request, username=username, password=password)
+            login(request, user=user)
             return redirect("home")
         else:
             for field, errors in form.errors.items():

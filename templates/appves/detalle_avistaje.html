@@ -4,7 +4,6 @@
 {% endblock title %}
 {% load static %}
 {% block scripts %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="{% static 'js/avistaje.js' %}" defer></script>
 {% endblock scripts %}
 {% block content %}
@@ -51,6 +50,7 @@
         </table>
         <div id="map" class="not-visible"></div>
         <div class="boton-volver">
+            <a href="../charge_ave/{{ id_avistaje_context }}" type="button" class="btn btn-success">Agregar</a>
             <a href="{% url 'listar_avistajes' %}" type="button" class="btn btn-success">Volver</a>
         </div>
     </div>
