@@ -1,25 +1,32 @@
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 500;
-  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  background-image: linear-gradient(45deg, #080808, #222f26);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 30px;
-  font-weight: 500;
-  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1100px;
+  border-radius: 25px;
+}
+
+.ul-block {
+  list-style: none;
+  padding: 0;
+  column-count: 3;
+  column-gap: 150px;
+  column-rule: 2px solid #ccc;
+  color: darkslategrey;
+  font-size: 110%;
+  font-weight: bold;
 }
 
 p {
@@ -28,11 +35,55 @@ p {
   color: darkslategrey;
 }
 
-.map {
-  height: 600px; 
+/* map */
+#map {
+  height: 600px;
   position: relative;
 }
 
-.mapa {
-  height:500px;
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+.legend {
+  text-align: left;
+  line-height: 18px;
+  color: #555;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* mapa */
+#mapa {
+  height: 500px;
+}
+
+.ul-block li a {
+  text-decoration: none;
+}
+
+a.question-link {
+  color: #333333;
+  
+}
+
+a.question-link:hover {
+  color: #7e7c7c;
+  
 }

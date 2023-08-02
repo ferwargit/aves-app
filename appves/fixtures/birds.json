@@ -26,7 +26,7 @@
       "forma_cola": 11,
       "patron_coloracion": 7,
       "cabeza": 13,
-      "grupo": 9,
+      "grupo": 48,
       "status": 1
     }
   },
@@ -57,7 +57,7 @@
       "forma_cola": 13,
       "patron_coloracion": 7,
       "cabeza": 13,
-      "grupo": 6,
+      "grupo": 33,
       "status": 1
     }
   },
@@ -88,7 +88,7 @@
       "forma_cola": 13,
       "patron_coloracion": 7,
       "cabeza": 19,
-      "grupo": 4,
+      "grupo": 26,
       "status": 1
     }
   },
@@ -119,7 +119,7 @@
       "forma_cola": 13,
       "patron_coloracion": 7,
       "cabeza": 13,
-      "grupo": 3,
+      "grupo": 17,
       "status": 1
     }
   },
@@ -150,7 +150,7 @@
       "forma_cola": 13,
       "patron_coloracion": 7,
       "cabeza": 13,
-      "grupo": 13,
+      "grupo": 31,
       "status": 1
     }
   },
@@ -181,7 +181,7 @@
       "forma_cola": 13,
       "patron_coloracion": 7,
       "cabeza": 21,
-      "grupo": 7,
+      "grupo": 36,
       "status": 1
     }
   },
@@ -193,14 +193,14 @@
       "nombre_cientifico": "Nannopterum brasilianum",
       "nombre_ingles": "Neotropical cormorant",
       "familia": 13,
-      "descripcion": "58-73 cm. Negro lustroso de costas marinas y agua dulce. Macho y hembra similares. Pico pardo. Piel desnuda en la cara.",
+      "descripcion": "58-73 cm. Negro lustroso de costas marinas y agua dulce. Macho y hembra similares. Pico pardo. Piel desnuda de la cara y la garganta amarillenta. Iris verde turquesa. Patas negras. En reproducción luce una banda blanca que se extiende por el borde de la bolsa gular y la comisura del pico hasta la parte inferior de la zona ocular. También un penacho de plumas blancas a los lados de la cabeza y cuello. Juvenil: pardo, ventral claro.",
       "imagen": "bird_images/Nannopterum_brasilianum.jpeg",
       "tamanio": 4,
       "habitat": 1,
       "voz": "Graznidos ásperos como voz de chancho",
       "audio": "bird_audios/Nannopterum_brasilianum.mp3",
-      "alimentacion": "Principalmente peces pero también crustáceos, anfibios e insectos acuáticos.",
-      "cria": "Septiembre a junio. Nidifica en colonias, a veces junto a otras especies como garzas.",
+      "alimentacion": "Principalmente peces pero también crustáceos, anfibios e insectos acuáticos. Con frecuencia pesca en formación, nadando tras un cardúmen y con zambullidas en forma simultánea.",
+      "cria": "Septiembre a junio. Nidifica en colonias, a veces junto a otras especies, en campos anegados y arbolados, islotes en ríos o costas de mar. Nido en árboles, arbustos y acantilados, a variada altura del suelo. El nido es una plataforma de palitos de unos 40 cm de diámetro. Pone 3 a 5 huevos ovoidales alargados o elípticos, celeste pálido, recubiertos de material calcáreo.",
       "movimientos_estacionales": 3,
       "status_conservacion": 3,
       "largo_pico": 6,
@@ -212,7 +212,7 @@
       "forma_cola": 13,
       "patron_coloracion": 7,
       "cabeza": 13,
-      "grupo": 5,
+      "grupo": 27,
       "status": 1
     }
   },
@@ -243,7 +243,7 @@
       "forma_cola": 13,
       "patron_coloracion": 2,
       "cabeza": 21,
-      "grupo": 15,
+      "grupo": 16,
       "status": 1
     }
   },
@@ -255,14 +255,14 @@
       "nombre_cientifico": "Caracara plancus",
       "nombre_ingles": "Southern Crested-Caracara",
       "familia": 7,
-      "descripcion": "49-64 cm. Una de las rapaces mas comunes. Cuello grueso y llamativa cabeza de pico fuerte, partes desnudas amarillas o anaranjadas y contrastante boina negra con penacho nucal. Patas amarillas. Tiene mejillas, cuello y pecho blanco barrados de pardo oscuro. El resto del cuerpo es pardo oscuro.",
+      "descripcion": "49-64 cm. Una de las rapaces mas comunes. Cuello grueso y llamativa cabeza de pico fuerte, partes desnudas amarillas o anaranjadas y contrastante boina negra con penacho nucal. Patas amarillas. Tiene mejillas, cuello y pecho blanco barrados de pardo oscuro. El resto del cuerpo es pardo oscuro. En vuelo: base de primarias con parche blanco, cola blancuzca tenuemente barrada con banda subterminal pardo oscura. Juvenil: boina como en el adulto. Estrías en el cuello y el pecho. Patas grises. Las partes desnudas de la cara son blanquecinas o rosadas.",
       "imagen": "bird_images/Caracara_plancus_card.jpg",
       "tamanio": 4,
       "habitat": 11,
       "voz": "áspero \"Kra-kra-kra\"",
       "audio": "bird_audios/Caracara_plancus.mp3",
-      "alimentacion": "Oportunista. Principalmente carroña pero también puede cazar distintos vertebrados.",
-      "cria": "Jullio a enero en el centro de Argentina y noviembre a diciembre en Patagonia.",
+      "alimentacion": "Oportunista. Principalmente carroña pero también puede cazar vertebrados chicos y medianos como palomas, ratas, liebres, anfibios, reptiles o peces. Aprovecha principalmente los animales débiles. También depreda sobre pichones de aves. Los nidos depredados varían desde grandes aves coloniales hasta pequeños pájaros. En algunas zonas los insectos son importantes en su dieta. También se alimenta en basurales.",
+      "cria": "Julio a enero en el centro de Argentina y noviembre a diciembre en Patagonia. Nidifica en árboles a media altura y sobre estructuras antrópicas. El nido tiene un diámetro de 60 a 100 cm, poniendo de 1 a 3 huevos ovoides pardo rojizos. El período de incubación se extiende entre 28 y 30 días. Los pichones dejan el nido a los 2 meses.",
       "movimientos_estacionales": 3,
       "status_conservacion": 3,
       "largo_pico": 6,
@@ -274,7 +274,7 @@
       "forma_cola": 13,
       "patron_coloracion": 2,
       "cabeza": 21,
-      "grupo": 10,
+      "grupo": 15,
       "status": 1
     }
   },
@@ -305,7 +305,7 @@
       "forma_cola": 13,
       "patron_coloracion": 3,
       "cabeza": 13,
-      "grupo": 12,
+      "grupo": 51,
       "status": 1
     }
   },
@@ -336,7 +336,7 @@
       "forma_cola": 13,
       "patron_coloracion": 3,
       "cabeza": 13,
-      "grupo": 12,
+      "grupo": 44,
       "status": 1
     }
   },
@@ -367,7 +367,7 @@
       "forma_cola": 13,
       "patron_coloracion": 3,
       "cabeza": 13,
-      "grupo": 12,
+      "grupo": 69,
       "status": 1
     }
   }

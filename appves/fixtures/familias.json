@@ -153,22 +153,6 @@
   },
   {
     "model": "appves.family",
-    "pk": 20,
-    "fields": {
-      "familia": "Sulidae",
-      "descripcion": "Piqueros, alcatraces. Cosmopolita. 9 especies, 2 en Argentina. Costeros. Zambullen desde cierta altura. Vuelan en fila. Gregarios. No anidan en el área. Alas largas y estrechas. Cola en cuña. Pico robusto, casi recto, agudo. 4 dedos palmeados. Macho y hembra semejantes."
-    }
-  },
-  {
-    "model": "appves.family",
-    "pk": 21,
-    "fields": {
-      "familia": "Fregatidae",
-      "descripcion": "Fragatas, aves fragata, rabihorcados. Pantropicales. 5 especies, 1 en Argentina. Costeros. Vuelo ágil. Persiguen aves. No nadan. Gregarios. No anidan en el área. Alas largas y angostas. Larga cola ahorquillada. Pico largo con gancho apical. 4 dedos palmeados. Macho presenta bolsa gular inflable. Macho y hembra algo distintos."
-    }
-  },
-  {
-    "model": "appves.family",
     "pk": 22,
     "fields": {
       "familia": "Anhingidae",
@@ -201,26 +185,10 @@
   },
   {
     "model": "appves.family",
-    "pk": 26,
-    "fields": {
-      "familia": "Phasianidae",
-      "descripcion": "Gallinas, pavos y faisanes. 177 especies, 4 en Argentina, todas introducidas o domésticas. Terrícolas. En la espesura. Nido en el suelo. Hasta 14 huevos manchados. Robustos. Recuerdan pollos. Pico corto, grueso. Alas, patas, cola y cuello cortos. Macho y hembra distintos."
-    }
-  },
-  {
-    "model": "appves.family",
     "pk": 27,
     "fields": {
       "familia": "Rallidae",
-      "descripcion": "Gallinetas, gallaretas, burritos, pollas. Cosmopolita. 120 especies, 26 en Argentina. Palustres. De día poco voladores. Grito fuerte. Varios huevos manchados. A veces escudete. Alas cortas y redondeadas. Cola corta, a menudo erecta. Dedos largos. Dedos lobulados en el caso de las gallaretas. Macho y hembra semejantes."
-    }
-  },
-  {
-    "model": "appves.family",
-    "pk": 28,
-    "fields": {
-      "familia": "Heliornithidae",
-      "descripcion": "Aves de sol, Ipequíes. Cosmopolita. 3 especies, 1 presente en Argentina. Acuáticas. Difíciles de ver. Nido en árboles cerca del agua. 2 a 6 huevos poco manchados. Pico fino, cónico. Alas y patas cortas. Cola larga. Dedos lobulados. Macho y hembra semejantes."
+      "descripcion": "Gallinetas, gallaretas, burritos, pollonas. Cosmopolita. 120 especies, 26 en Argentina. Palustres. De día poco voladores. Grito fuerte. Varios huevos manchados. A veces escudete. Alas cortas y redondeadas. Cola corta, a menudo erecta. Dedos largos. Dedos lobulados en el caso de las gallaretas. Macho y hembra semejantes."
     }
   },
   {

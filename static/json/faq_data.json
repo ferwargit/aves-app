@@ -3,77 +3,67 @@
         {
             "id": "question1",
             "pregunta": "¿Qué información proporciona la guía de aves de Argentina?",
-            "respuesta": "Aquí va la respuesta a la pregunta 1."
+            "respuesta": "En esta guía podrás encontrar fichas de las aves de Argentina, junto con su distribución y el canto de ellas. A su vez cada ficha trae información respecto de las mismas como puede ser nidificación alimento y más características."
         },
         {
             "id": "question2",
             "pregunta": "¿Cómo puedo utilizar la guía para identificar las aves que veo?",
-            "respuesta": "Aquí va la respuesta a la pregunta 2."
+            "respuesta": "En base a las carácteristicas que logres identificar de algun ave podrás usar nuestro buscador para llegar a la especie avistada."
         },
         {
             "id": "question3",
             "pregunta": "¿La guía de aves incluye todas las especies de aves que se encuentran en Argentina?",
-            "respuesta": "Aquí va la respuesta a la pregunta 3."
+            "respuesta": "Aún no. Argentina cuenta con cerca de 1000 especies de aves asi que nos va a llevar un tiempo cargarlas todas."
         },
         {
             "id": "question4",
             "pregunta": "¿Cómo puedo buscar aves específicas en la guía?",
-            "respuesta": "Aquí va la respuesta a la pregunta 4."
+            "respuesta": "Si querés buscar un aves específica y sabés su nombre podes usar el buscador del home. Sino podés buscarlo por características. "
         },
         {
             "id": "question5",
             "pregunta": "¿La guía de aves proporciona detalles sobre las características y comportamientos de cada especie?",
-            "respuesta": "Aquí va la respuesta a la pregunta 5."
+            "respuesta": "Exacto. Cada ficha tiene información al respecto."
         },
         {
             "id": "question6",
             "pregunta": "¿Puedo usar la guía para identificar aves tanto por su apariencia como por su canto?",
-            "respuesta": "Aquí va la respuesta a la pregunta 6."
+            "respuesta": "Podes usarla para identificar por algunas apariencias, como largo de pico, tamaño de cola, etc. La identificación por canto aún no existe."
         },
         {
             "id": "question7",
             "pregunta": "¿La guía de aves tiene información sobre el hábitat y distribución de las especies?",
-            "respuesta": "Aquí va la respuesta a la pregunta 7."
+            "respuesta": "Si, cada ficha cuenta con un mapa de distribución dentro del país e info de su habitat."
         },
         {
             "id": "question8",
             "pregunta": "¿Se incluyen fotografías o ilustraciones de las aves en la guía?",
-            "respuesta": "Aquí va la respuesta a la pregunta 8."
+            "respuesta": "Por ahora se incluye una fotografía de cada especie. Esperamos poder ir agregando luego más info."
         },
         {
             "id": "question9",
             "pregunta": "¿La guía de aves de Argentina está disponible en formato impreso o solo en línea?",
-            "respuesta": "Aquí va la respuesta a la pregunta 9."
+            "respuesta": "Solo en línea. Existen varias guias impresas y la idea es poder tener algo al alcance del celular."
         },
         {
             "id": "question10",
             "pregunta": "¿Cómo puedo contribuir o enviar observaciones de aves para mejorar la guía?",
-            "respuesta": "Aquí va la respuesta a la pregunta 10."
+            "respuesta": "Nos pueden enviar sugerencias a través del formulario."
         },
         {
             "id": "question11",
             "pregunta": "¿La guía de aves proporciona información sobre las aves migratorias que visitan Argentina?",
-            "respuesta": "Aquí va la respuesta a la pregunta 11."
+            "respuesta": "Si, dentro del buscador de características podrás filtrar aves migratorias."
         },
         {
             "id": "question12",
             "pregunta": "¿Se incluyen aves raras o poco comunes en la guía?",
-            "respuesta": "Aquí va la respuesta a la pregunta 12."
+            "respuesta": "Al momento de ampliar las especies a mostrar se irán incorporando aves más esporádicas en nuestro territorio."
         },
         {
             "id": "question13",
-            "pregunta": "¿La guía ofrece información sobre aves endémicas de Argentina?",
-            "respuesta": "Aquí va la respuesta a la pregunta 13."
-        },
-        {
-            "id": "question14",
             "pregunta": "¿La guía de aves tiene una sección sobre aves en peligro de extinción o en estado vulnerable?",
-            "respuesta": "Aquí va la respuesta a la pregunta 14."
-        },
-        {
-            "id": "question15",
-            "pregunta": "¿Puedo utilizar la guía para aprender sobre las aves migratorias que se encuentran en Argentina durante diferentes épocas del año?",
-            "respuesta": "Aquí va la respuesta a la pregunta 15."
+            "respuesta": "Cada ficha cuenta con un campo de estado de conservación el cual se puede usar dentro del buscador."
         }
     ]
 }
