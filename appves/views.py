@@ -124,6 +124,7 @@ class ListarBirds(ListView):
     model = Bird
     template_name = "appves/listar_aves.html"
     context_object_name = "aves"
+    paginate_by = 9
 
     def get_queryset(self):
         queryset = super().get_queryset()
