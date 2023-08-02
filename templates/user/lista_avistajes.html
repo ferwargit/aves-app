@@ -14,9 +14,9 @@
         <form class="form">
             {% for avistaje in avistajes %}
                 <div class="row mt-2">
-                    <div class="col">{{ avistaje.nombre_avistaje }}</div>
-                    <div class="col">{{ avistaje.fecha_creacion }}</div>
-                    <div class="col">
+                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">{{ avistaje.nombre_avistaje }}</div>
+                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">{{ avistaje.fecha_creacion }}</div>
+                    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                         <a href="{% url 'ver_avistaje' avistaje.id %}"
                            type="button"
                            class="btn btn-secondary">Ver lista</a>
@@ -29,5 +29,4 @@
             {% endfor %}
         </form>
     </div>
-    
 {% endblock content %}

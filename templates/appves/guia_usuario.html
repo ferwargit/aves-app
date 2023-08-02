@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  <title>Guia Usuario</title>
+{% endblock title %}
+{% block content %}
+  <body>
+    {% block styles %}
+      <link rel="stylesheet" href="{% static 'css/appves/guia_usuario.css' %}">
+    {% endblock styles %}
+    <h1>Como usar la guía</h1>
+  </body>
+{% endblock content %}

@@ -16,7 +16,7 @@ from .models import Bird, Status, LineaAvistaje, Family
 import os
 import json
 from django.conf import settings
-import sqlite3
+# import sqlite3
 
 def biomas(request):
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -117,6 +117,10 @@ def buscar_ave(request):
             res = "No se encuentra ave... "
         return JsonResponse({"data": res})
     return JsonResponse({})
+
+
+def guia_usuario(request):
+    return render(request, "appves/guia_usuario.html")
 
 
 class ListarBirds(ListView):

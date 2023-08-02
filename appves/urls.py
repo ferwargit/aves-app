@@ -17,6 +17,7 @@ urlpatterns = [
     path('familias/', views.familias, name='familias'),
     path('search_ave/', views.buscar_ave, name='buscar_ave'),
     path('obtener_detalle_familia/', views.obtener_detalle_familia, name='obtener_detalle_familia'),
+    path('guia_usuario/', views.guia_usuario, name='guia_usuario'),
 
     path('listar/', ListarBirds.as_view(), name='list_birds'),
     path('crear/', CrearAve.as_view(), name='create_bird'),
