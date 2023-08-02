@@ -19,7 +19,7 @@
   margin: 20px;
   padding: 20px;
   color: #333333;
-  background-color: #d1c7ce;
+  background-color: #d0ccb8;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
@@ -28,7 +28,7 @@ h1 {
   margin-bottom: 20px;
   font-size: 50px;
   font-weight: 500;
-  background-image: linear-gradient(45deg, #3f9a3c, #762bee);
+  background-image: linear-gradient(45deg, #333333, #333333);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
