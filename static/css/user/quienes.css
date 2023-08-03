@@ -10,6 +10,20 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+h3,
+p {
+  text-align: center;
+}
+
+li {
+  display: block;
+  text-align: center;
+}
+
+a {
+  color: darkgreen;
+}
+
 p {
   font-size: 20px;
   font-weight: 300;
@@ -19,4 +33,31 @@ p {
 
 .name {
   font-size: 115%;
+}
+
+/* Estilos personalizados para centrar verticalmente el contenido */
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+.logo {
+  border: 1px solid darkslategrey;
+  border-radius: 15%;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  background-color: cadetblue;
 }
