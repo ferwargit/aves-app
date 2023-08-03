@@ -12,21 +12,21 @@
         <h1>Mis listas de Avistaje</h1>
         <form class="form">
             <div class="row mt-2">
-            <div class="col"><h3>Nombre</h3></div>
-            <div class="col"><h3>Fecha de creacion</h3></div>
-            <div class="col"><h3>Acciones</h3></div>
+            <div class="col-12 col-md-3 d-flex align-items-center justify-content-center"><h3>Nombre</h3></div>
+            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center"><h3>Fecha de creacion</h3></div>
+            <div class="col-12 col-md-5 d-flex align-items-center justify-content-center"><h3>Acciones</h3></div>
         </div>
             {% for avistaje in avistajes %}
                 <div class="row mt-2">
                     <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">{{ avistaje.nombre_avistaje }}</div>
-                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">{{ avistaje.fecha_creacion }}</div>
-                    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">{{ avistaje.fecha_creacion }}</div>
+                    <div class="col-12 col-md-5 d-flex align-items-center justify-content-center">
                         <a href="{% url 'ver_avistaje' avistaje.id %}"
                            type="button"
-                           class="btn btn-secondary" style="margin-right: 0px;"><i class="bi bi-eye"></i></a>
+                           class="btn btn-secondary"><i class="bi bi-eye"></i></a>
                         <a href="{% url 'cargar_ave_avistaje' avistaje.id %}"
                            type="button"
-                           class="btn btn-success" style="margin-left: 0px;width: 42px;"><i class="bi bi-plus"></i></a>
+                           class="btn btn-success"><i class="bi bi-plus"></i></a>
                         <a href="{% url 'eliminar_avistaje' avistaje.id %}" type="button" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                     </div>
                 </div>
