@@ -1,19 +1,233 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}
-<title>Quiénes somos?</title>
-{% endblock %}
+{% block title %}<title>Quiénes somos?</title>{% endblock %}
 {% block content %}
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/user/quienes.css' %}">
-{% endblock %}
-<h1>Quiénes somos</h1>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/user/quienes.css' %}" />
+    {% endblock %}
+    <h1>Quiénes somos</h1>
+    <p>
+        Somos un grupo de compañeros del Instituto de Formación Técnica Superior N° 18 - 
+        <a href="https://www.ifts18.edu.ar/">(IFTS 18)</a>.
+        <br />
+        <br />
+        Nos conocimos
+        estudiando Tecnicatura en Análisis de Sistemas y esta webapp es nuestro
+        trabajo final.
+    </p>
+    <hr>
+    <hr>
+    <ul>
+        <li class="name">Manuel Jigena</li>
+        <li class="name">Gonzalo Roget</li>
+        <li class="name">Fernando Warno</li>
+    </ul>
+    <hr>
+    <hr>
+    <h3>Herramientas Tecnológicas</h3>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/html_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">HTML</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/css_logo.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">CSS</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/javascript_logo.png' %}"
+                     alt="Logo 3"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Javascript</h5>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/jquery_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">jQuery</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/json_logo.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">JSON</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/python_logo.png' %}"
+                     alt="Logo 3"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Python</h5>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/django_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">Django</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/bootstrap_logo.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Bootstrap</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/sweetalert2_logo.png' %}"
+                     alt="Logo 3"
+                     class="img-fluid mr-3 m-2"
+                     width="100" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">SweetAlert2</h5>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/postgresql_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">PostgreSQL</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/leaflet_logo.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="90" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Leaflet</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/openstreetmap_logo.png' %}"
+                     alt="Logo 3"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">OpenStreetMap</h5>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/gbif_logo.png' %}"
+                     alt="Logo 3"
+                     class="img-fluid mr-3 m-2"
+                     width="90" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">API GBIF</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/datos_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="120" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">API Georef</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/ArcGIS_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">Esri - ArcGIS</h5>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/IGN_Argentina.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="70" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Istituto Geográfico Nacional</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/git_logo.png' %}"
+                     alt="Logo 3"
+                     class="img-fluid mr-3 m-2"
+                     width="90" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Git</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/gitHub_logo.png' %}"
+                     alt="Logo 1"
+                     class="img-fluid mr-3 m-2"
+                     width="80" />
+                <div class="d-flex flex-column">
+                    <h5 class="text-center mb-0">GitHub</h5>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/render_logo.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="100" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Render</h5>
+                </div>
+            </div>
 
-<p>Somos un grupo de compañeros del Instituto de Formación Técnica Superior N° 18 <a href="https://www.ifts18.edu.ar/">(IFTS 18)</a>. <br><br>Nos conocimos estudiando Tecnicatura en Análisis de Sistemas y esta webapp es nuestro trabajo final. Esperamos sea de su agrado.</p>
 
-<ul>
-    <li class="name">Manuel Jigena</li>
-    <li class="name">Gonzalo Roget</li>
-    <li class="name">Fernando Warno</li>
-</ul>
-{% endblock %}
+            <div class="col-md-4 d-flex align-items-center justify-content-center logo">
+                <img src="{% static 'images/logos/vsc_logo.png' %}"
+                     alt="Logo 2"
+                     class="img-fluid mr-3 m-2"
+                     width="60" />
+                <div class="d-flex flex-column justify-content-center">
+                    <h5 class="text-center mb-0">Visual Studio Code</h5>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center"></div>
+        </div>
+    {% endblock %}
+</div>
