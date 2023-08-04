@@ -48,6 +48,10 @@ label {
   width: auto;
 }
 
+.form-check {
+  margin-left: 5px;
+}
+
 .btn.btn-success {
   margin: 5px;
   background-color: darkslategrey;
