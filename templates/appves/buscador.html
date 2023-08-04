@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Buscador de Aves</title>
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/appves/crear_aves.css' %}">
+  <script src="{% static 'js/buscar.js' %}" defer></script>
+{% endblock %}
+
+<h2>Buscador por filtro</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="form group">
+                <label for="">Familia</label>
+                {{form.familia}}
+            </div>
+            <div class="form group">
+                <label for="">Tamaño</label>
+                {{form.tamanio}}
+            </div>
+            <div class="form group">
+                <label for="">Movimientos estacionales</label>
+                {{form.movimientos_estacionales}}
+            </div>
+            <div class="form group">
+                <label for="">Estado de conservación</label>
+                {{form.status_conservacion}}
+            </div>
+            <div class="form group">
+                <label for="">Larco del pico</label>
+                {{form.largo_pico}}
+            </div>
+            <div class="form group">
+                <label for="">Largo de las patas</label>
+                {{form.largo_patas}}
+            </div>
+            <div class="form group">
+                <label for="">Forma de las alas</label>
+                {{form.forma_alas}}
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form group">
+                <label for="">Largo del cuello</label>
+                {{form.largo_cuello}}
+            </div>
+            <div class="form group">
+                <label for="">Cuello en vuelo</label>
+                {{form.cuello_vuelo}}
+            </div>
+            <div class="form group">
+                <label for="">Largo de la cola</label>
+                {{form.largo_cola}}
+            </div>
+            <div class="form group">
+                <label for="">Forma de la cola</label>
+                {{form.forma_cola}}
+            </div>
+            <div class="form group">
+                <label for="">Patrón de coloracion</label>
+                {{form.patron_coloracion}}
+            </div>
+            <div class="form group">
+                <label for="">Cabeza</label>
+                {{form.cabeza}}
+            </div>
+            <div class="form group">
+                <label for="">Grupo</label>
+                {{form.grupo}}
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    {% csrf_token %}
+    <table id="result-search" class="not-visible table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+{% endblock %}
+

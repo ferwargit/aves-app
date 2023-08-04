@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
+from django.db.models import Q
 from django.views.generic import (
     ListView,
     CreateView,
@@ -11,7 +12,7 @@ from django.views.generic import (
     DetailView,
 )
 
-from .forms import BirdForm, LineaAvistajeForm
+from .forms import BirdForm, BirdFormFilter, LineaAvistajeForm
 from .models import Bird, Status, LineaAvistaje, Family
 
 import os
@@ -96,6 +97,50 @@ def about(request):
 
 def home(request):
     return render(request, "appves/home.html")
+
+def buscar(request):
+    template_name='appves/buscador.html'
+    form_class=BirdFormFilter
+    form = form_class
+
+    if request.method == 'GET':
+        return render(request, template_name, {'form': form})
+    is_ajax = request.META.get("HTTP_X_REQUESTED_WITH") == "XMLHttpRequest"
+    if is_ajax:
+        res = None
+        ave = request.POST.get("ave")
+        aves= json.loads(ave)
+        
+        print("------------")
+        query=Q()
+        query2=Q()
+        query2 &=Q()
+        print(query2)
+        for key, val in aves.items():
+            print(f'{key} - {val}')
+            if val != '':     
+                condicion={f'{key}': val}
+                query &=Q(**condicion)
+        print(query)
+        if query != query2:
+            qs = Bird.objects.filter(query)
+        else:
+            qs=[]
+        print(len(qs))
+        if len(qs) > 0 and len(ave) > 0:
+            data = []
+            for ave in qs:
+                item = {
+                    "pk": ave.pk,
+                    "nombre": ave.nombre,
+                    "imagen": str(ave.imagen.url),
+                }
+                data.append(item)
+            res = data
+        else:
+            res = "No se encuentran aves con estos filtros "
+        return JsonResponse({"data": res})
+    return JsonResponse({})
 
 
 def buscar_ave(request):
