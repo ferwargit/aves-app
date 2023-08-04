@@ -16,6 +16,7 @@ urlpatterns = [
     path('preguntas_frecuentes/', views.preguntas_frecuentes, name='preguntas_frecuentes'),
     path('familias/', views.familias, name='familias'),
     path('search_ave/', views.buscar_ave, name='buscar_ave'),
+    path('search/', views.buscar, name='buscador'),
     path('obtener_detalle_familia/', views.obtener_detalle_familia, name='obtener_detalle_familia'),
     path('guia_usuario/', views.guia_usuario, name='guia_usuario'),
 
