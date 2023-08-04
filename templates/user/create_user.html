@@ -6,6 +6,7 @@
 {% block content %}
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/user/create_user.css' %}">
+        <script src="{% static 'js/modal.js' %}" defer></script>
     {% endblock styles %}
     <div class="contenedor">
         <h1 class="cont-titulo">Crear cuenta</h1>
@@ -37,20 +38,32 @@
                        required>
             </div>
             <div class="form-group">
-                <label for="password1">Password</label>
-                <input type="password"
-                       id="password1"
-                       name="password1"
-                       class="form-control smaller-input"
-                       required>
+                <div class="form-row">
+                    <label for="password1">Password</label>
+                    <input type="password"
+                        id="password1"
+                        name="password1"
+                        class="form-control smaller-input"
+                        required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="chbxpass" class="form-check-input">
+                    <label style="font-size: x-small;" for="chbxpass">Mostrar password</label>
+                </div>
             </div>
             <div class="form-group">
-                <label for="password2">Confirmar password</label>
-                <input type="password"
-                       id="password2"
-                       name="password2"
-                       class="form-control smaller-input"
-                       required>
+                <div class="form-row">
+                    <label for="password2">Confirmar password</label>
+                    <input type="password"
+                        id="password2"
+                        name="password2"
+                        class="form-control smaller-input"
+                        required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="chbxpass2" class="form-check-input">
+                    <label style="font-size: x-small;" for="chbxpass2">Mostrar confirmacion</label>
+                </div>
             </div>
             <div class="form-group not-visible">
                 <label for="id_province">Provincia</label>
@@ -74,4 +87,28 @@
             <button type="submit" class="btn btn-success mt-4">Crear cuenta</button>
         </form>
     </div>
+
+    <script type="text/javascript" defer>
+
+        var checkpass = document.getElementById("chbxpass");
+        var checkpass2 = document.getElementById("chbxpass2");
+        var txtpass = document.getElementById("password1");
+        var txtpass2 = document.getElementById("password2");
+        checkpass.addEventListener('click', ()=> {
+            showhide(checkpass, txtpass);
+        })
+        checkpass2.addEventListener('click', ()=> {
+            showhide(checkpass2, txtpass2);
+        })
+
+        function showhide(chk, txtinput) {
+            console.log(txtinput.type);
+        
+            if (chk.checked) {
+                txtinput.type = "text";
+            } else {
+                txtinput.type = "password";
+            }
+        }
+    </script>
 {% endblock content %}
