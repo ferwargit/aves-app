@@ -35,7 +35,7 @@ $(document).ready(function() {
                     resultDiv.innerHTML = ""
                     console.log('hay un array')
                     data.forEach(ave=> {
-                        tdCadena += "<tr><td><img src=" + ave.imagen + " class='ave-img'></td><td class='nombre-ave'>" + ave.nombre + "</td>";
+                        tdCadena += "<tr><td><img src=" + ave.imagen + " class='ave-img'></td><td class='nombre-ave'><label style='font-size: 1.15rem !important;font-weight: bold;color: darkslategrey;'>" + ave.nombre + "</label></td>";
                         tdCadena += "<td><a href='../detalle/" + ave.pk + "' class='btn btn-success'>Ver ficha</a></td></tr>"
                         
                         resultDiv.innerHTML = tdCadena
