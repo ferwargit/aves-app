@@ -47,5 +47,12 @@
   "fields": {
     "plumaje": "Uniforme"
   }
+},
+{
+  "model": "appves.plumaje",
+  "pk": 8,
+  "fields": {
+    "plumaje": "Otro"
+  }
 }
 ]

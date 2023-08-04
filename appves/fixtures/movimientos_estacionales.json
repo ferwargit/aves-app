@@ -19,5 +19,12 @@
   "fields": {
     "temporada": "Sedentario"
   }
+},
+{
+  "model": "appves.movimientoestacion",
+  "pk": 4,
+  "fields": {
+    "temporada": "Sin información"
+  }
 }
 ]
