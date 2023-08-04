@@ -127,6 +127,7 @@ def buscar(request):
         else:
             qs=[]
         print(len(qs))
+        cant_encontrados = len(qs)
         if len(qs) > 0 and len(ave) > 0:
             data = []
             for ave in qs:
@@ -134,6 +135,7 @@ def buscar(request):
                     "pk": ave.pk,
                     "nombre": ave.nombre,
                     "imagen": str(ave.imagen.url),
+                    "cantidad": cant_encontrados
                 }
                 data.append(item)
             res = data

@@ -27,9 +27,10 @@ $(document).ready(function() {
                 'ave': JSON.stringify(ave)
             },
             success: (res)=> {
-                var tdCadena = "<thead><tr><th scope='col'>Imagen</th><th scope='col'>Nombre</th><th scope='col'>Accion</th></tr></thead>"
                 const data = res.data
-                console.log(data)
+                console.log(data[0].cantidad)
+                var tdCadena = "<caption>Se encontraron en total "+ data[0].cantidad + " aves</caption><thead><tr><th scope='col'>Imagen</th><th scope='col'>Nombre</th><th scope='col'>Accion</th></tr></thead>"
+                
                 
                 if (Array.isArray(data)) {
                     resultDiv.innerHTML = ""
