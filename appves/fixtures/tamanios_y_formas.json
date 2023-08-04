@@ -324,7 +324,7 @@
   "model": "appves.tamanioforma",
   "pk": 21,
   "fields": {
-    "descripcion": "Capuchón",
+    "descripcion": "Capucho",
     "pico_aves": false,
     "tamanio_aves": false,
     "patas_aves": false,
@@ -356,7 +356,7 @@
   "model": "appves.tamanioforma",
   "pk": 23,
   "fields": {
-    "descripcion": "Cortas y redondeadas",
+    "descripcion": "Alas cortas y redondeadas",
     "pico_aves": false,
     "tamanio_aves": false,
     "patas_aves": false,
@@ -381,6 +381,182 @@
     "cuello_vuelo_aves": false,
     "largo_cola_aves": false,
     "forma_cola_aves": false,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 25,
+  "fields": {
+    "descripcion": "Alas largas y estrechas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": true,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 26,
+  "fields": {
+    "descripcion": "Cola mediana",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": true,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 27,
+  "fields": {
+    "descripcion": "Cola larga",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": true,
+    "forma_cola_aves": false,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 28,
+  "fields": {
+    "descripcion": "Copete",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": true
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 29,
+  "fields": {
+    "descripcion": "Boina",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": true
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 30,
+  "fields": {
+    "descripcion": "Rayas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": false,
+    "cabeza_aves": true
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 31,
+  "fields": {
+    "descripcion": "Ahorquillada",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": true,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 32,
+  "fields": {
+    "descripcion": "Furcada",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": true,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 33,
+  "fields": {
+    "descripcion": "Redondeada",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": true,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 34,
+  "fields": {
+    "descripcion": "En puntas",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": true,
+    "cabeza_aves": false
+  }
+},
+{
+  "model": "appves.tamanioforma",
+  "pk": 35,
+  "fields": {
+    "descripcion": "Cuadrada",
+    "pico_aves": false,
+    "tamanio_aves": false,
+    "patas_aves": false,
+    "alas_aves": false,
+    "cuello_aves": false,
+    "cuello_vuelo_aves": false,
+    "largo_cola_aves": false,
+    "forma_cola_aves": true,
     "cabeza_aves": false
   }
 }

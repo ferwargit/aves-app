@@ -111,3 +111,15 @@ img.card-img.custom-img {
 .btn.btn-danger {
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
+
+.page-link {
+  background-color: #d0ccb8;
+  color: #333333;
+  border-color: #333333
+}
+
+.page-item.active .page-link {
+  /*color: red;*/
+  background-color: #306754;
+  border-color: #006A4E
+}

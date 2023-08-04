@@ -35,6 +35,7 @@ Levantar la webapp
 Crear json con datos para cargar en tablas
 
 > py manage.py dumpdata --indent 2 [app].[class model] > [nombre archivo].json
+> EJEMPLO: py -Xutf8 manage.py dumpdata --indent 2 appves.bird > birds.json
 
 Cargar de datos json
 
